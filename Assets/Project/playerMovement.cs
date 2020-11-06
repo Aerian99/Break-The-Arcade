@@ -43,7 +43,7 @@ public class playerMovement : MonoBehaviour
         p_JumpDust = this.transform.GetChild(0).GetComponent<ParticleSystem>();
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
-        moveSpeed = 6f;
+        moveSpeed = 8f;
         jumpForce = 15f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
@@ -89,7 +89,7 @@ public class playerMovement : MonoBehaviour
     #region Dash
     void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !IsGrounded() && movX != 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0)
         {
             isDashing = true;
             CurrentDashTimer = StartDashTimer;

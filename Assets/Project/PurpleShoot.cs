@@ -14,20 +14,28 @@ public class PurpleShoot : MonoBehaviour
     // BULLET SETTINGS
     private float bulletForce = 20f;
     private float bulletLifeTime = 0.35f;
+    private float cd;
+    public float maxCd;
     void Start()
     {
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        bulletCounter = 99999;
+        bulletCounter = 100000;
+        cd = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
+        cd += Time.deltaTime;
+        if (Input.GetButton("Fire1") && bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
-            Shoot();
+            if (cd > maxCd)
+            { 
+                Shoot();
+                cd = 0;
+            }
         }
     }
     void Shoot()
