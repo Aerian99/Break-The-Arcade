@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Platform
+  - EnemyBullet
+  - Gun
+  - AbsorbGun
+  - Enemy
+  - Range
+  - RedBullet
+  - PurpleBullet
+  - NPC
+  - YellowBullet
   layers:
   - Default
   - TransparentFX
@@ -13,9 +24,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Platforms
+  - Bullet
+  - Player
   - 
   - 
   - 
@@ -40,4 +51,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2263954501
+    locked: 0
+  - name: Bullet
+    uniqueID: 2105085085
     locked: 0
