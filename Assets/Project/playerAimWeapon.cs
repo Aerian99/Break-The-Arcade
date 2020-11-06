@@ -8,6 +8,7 @@ public class playerAimWeapon : MonoBehaviour
     private Transform aimPos;
     private SpriteRenderer player;
     private Vector3 worldPosition;
+    public static bool isFacingLeft;
 
     void Start()
     {
@@ -35,11 +36,13 @@ public class playerAimWeapon : MonoBehaviour
         {
             aimlocalScale.y = -1f;
             player.flipX = true;
+            isFacingLeft = true;
         }
         else
         {
             aimlocalScale.y = +1f;
             player.flipX = false;
+            isFacingLeft = false;
         }
         aimPos.localScale = aimlocalScale;
     }

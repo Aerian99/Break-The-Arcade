@@ -8,10 +8,12 @@ public class playerMovement : MonoBehaviour
     // System components
     [SerializeField] private LayerMask platformsLayerMask;
 
+    GhostController ghostController;
+
     // Player components
     private Rigidbody2D rb;
     private Animator animator;
-    private SpriteRenderer p_sprite;
+    public SpriteRenderer p_sprite;
     private BoxCollider2D p_collider;
 
     // Particles
@@ -36,6 +38,7 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
+        ghostController = GetComponent<GhostController>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         p_sprite = GetComponent<SpriteRenderer>();
@@ -47,6 +50,7 @@ public class playerMovement : MonoBehaviour
         jumpForce = 15f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
+        ghostController.enabled = false;
     }
 
 
@@ -54,7 +58,7 @@ public class playerMovement : MonoBehaviour
     {
         // InGame variables
         movX = Input.GetAxis("Horizontal");
-
+        
         // Functions
         Move();
         Jump();
@@ -96,6 +100,7 @@ public class playerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
             DashDirection = (int)movX;
             canDash = false;
+            ghostController.enabled = true;
         }
         if (isDashing)
         {
@@ -105,6 +110,7 @@ public class playerMovement : MonoBehaviour
             if (CurrentDashTimer <= 0)
             {
                 isDashing = false;
+                ghostController.enabled = false;
             }
         }
     }
