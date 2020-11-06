@@ -13867,6 +13867,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: yellowGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7645115450566651165, guid: 286fa4c05682ab84fa9c9eda20816133,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7645115450690821005, guid: 286fa4c05682ab84fa9c9eda20816133,
         type: 3}
       propertyPath: m_LocalPosition.z

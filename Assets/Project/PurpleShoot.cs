@@ -9,42 +9,36 @@ public class PurpleShoot : MonoBehaviour
     private Transform shootPoint;
     public GameObject bulletPrefab;
     private GameObject bullet;
-    public static int bulletCounter;
 
     // BULLET SETTINGS
     private float bulletForce = 20f;
     private float bulletLifeTime = 0.35f;
-    private float cd;
-    public float maxCd;
+    private float timeBetweenShots = 0.25f;
+    private float timestamp;
+
     void Start()
     {
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        bulletCounter = 100000;
-        cd = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        cd += Time.deltaTime;
-        if (Input.GetButton("Fire1") && bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
-            if (cd > maxCd)
-            { 
-                Shoot();
-                cd = 0;
-            }
+            Shoot();
         }
     }
     void Shoot()
     {
         muzzle.Play();
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        timestamp = Time.time + timeBetweenShots;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
-        bulletCounter--;
+        playerBehaviour._bulletCounter--;
 
         Destroy(bullet, bulletLifeTime);
     }

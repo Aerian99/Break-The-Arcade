@@ -20,7 +20,7 @@ public class Absorb_Gun : MonoBehaviour
     {
         if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false) 
         {
-            PurpleShoot.bulletCounter++;
+            playerBehaviour._bulletCounter++;
             Destroy(other.gameObject);
         }
     }

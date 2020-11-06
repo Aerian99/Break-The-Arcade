@@ -19,6 +19,8 @@ public class RedShoot : MonoBehaviour
     private float bulletForce = 25f;
     private int bulletCount = 5;
     private float bulletLifeTime = 0.15f;
+    private float timeBetweenShots = 0.35f;  // Allow 3 shots per second
+    private float timestamp;
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class RedShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && this.gameObject.activeInHierarchy == true)
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
             Shoot();
         }
@@ -52,6 +54,8 @@ public class RedShoot : MonoBehaviour
         bullet3 = Instantiate(bulletPrefab, shootPoint3.position, shootPoint3.rotation);
         Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
         rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
+        timestamp = Time.time + timeBetweenShots;
+        playerBehaviour._bulletCounter--;
 
         Destroy(bullet, bulletLifeTime);
         Destroy(bullet2, bulletLifeTime);

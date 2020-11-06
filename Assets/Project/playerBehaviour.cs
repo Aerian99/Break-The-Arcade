@@ -7,9 +7,9 @@ public class playerBehaviour : MonoBehaviour
 {
     private Animator animator;
     public static int _playerLifes;
+    public static int _bulletCounter;
     public TextMeshProUGUI lifes;
     public TextMeshProUGUI bullets;
-
     private float timer = 0.0f;
     private int seconds;
 
@@ -21,6 +21,7 @@ public class playerBehaviour : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         _playerLifes = 5;
+        _bulletCounter = 1000;
     }
 
     void Update()
@@ -32,6 +33,6 @@ public class playerBehaviour : MonoBehaviour
             Destroy(this.gameObject);
         }
         lifes.text = "Lifes:  " + _playerLifes;
-        bullets.text = "Bullets:  " + PurpleShoot.bulletCounter;
+        bullets.text = "Bullets:  " + playerBehaviour._bulletCounter;
     }
 }
