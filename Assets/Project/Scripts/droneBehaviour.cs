@@ -17,7 +17,7 @@ public class droneBehaviour : MonoBehaviour
         playerCharacter = GameObject.FindWithTag("Player").transform;
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        _droneLifes = 1000;
+        _droneLifes = 10;
     }
 
     public void Update()

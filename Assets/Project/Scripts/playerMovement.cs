@@ -24,8 +24,8 @@ public class playerMovement : MonoBehaviour
     private float moveSpeed;
     private float jumpForce;
 
-    public float dashForce;
-    public float StartDashTimer;
+    private float dashForce;
+    private float StartDashTimer;
     float CurrentDashTimer;
     float DashDirection;
     bool isDashing;
@@ -47,7 +47,7 @@ public class playerMovement : MonoBehaviour
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
         moveSpeed = 8f;
-        jumpForce = 15f;
+        jumpForce = 16f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
         ghostController.enabled = false;
