@@ -14,9 +14,9 @@ public class playerBehaviour : MonoBehaviour
     private int seconds;
 
     // CURSOR
-    public Texture2D cursorTexture;
+    /*public Texture2D cursorTexture;
     private CursorMode cursorMode = CursorMode.Auto;
-    private Vector2 hotSpot = Vector2.zero;
+    private Vector2 hotSpot = Vector2.zero;*/
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,7 +26,7 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
 
         if (_playerLifes <= 0)
         {

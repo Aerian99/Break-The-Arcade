@@ -11,9 +11,9 @@ public class PurpleShoot : MonoBehaviour
     private GameObject bullet;
 
     // BULLET SETTINGS
-    private float bulletForce = 20f;
-    private float bulletLifeTime = 0.35f;
-    private float timeBetweenShots = 0.25f;
+    private float bulletSpeed = 25f; // Speed
+    private float bulletLifeTime = 0.40f; // Distance
+    private float timeBetweenShots = 0.30f; // Cadence
     private float timestamp;
 
     void Start()
@@ -39,7 +39,7 @@ public class PurpleShoot : MonoBehaviour
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         timestamp = Time.time + timeBetweenShots;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
         playerBehaviour._bulletCounter--;
 
         Destroy(bullet, bulletLifeTime);

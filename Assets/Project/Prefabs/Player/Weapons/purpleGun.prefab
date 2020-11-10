@@ -754,7 +754,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 2.8798926
+    angle: 4.6125426
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4860,7 +4860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3322973854294079141
 Transform:
   m_ObjectHideFlags: 0
@@ -4939,8 +4939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575f387c0bb3da146bd5f33493ab1221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimTransform: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &3322973854294079147
 MonoBehaviour:
   m_ObjectHideFlags: 0

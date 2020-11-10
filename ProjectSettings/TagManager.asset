@@ -15,6 +15,7 @@ TagManager:
   - PurpleBullet
   - NPC
   - YellowBullet
+  - JumpPlatform
   layers:
   - Default
   - TransparentFX

@@ -12,17 +12,21 @@ public class playerMovement : MonoBehaviour
     // Player components
     private Rigidbody2D rb;
     private Animator animator;
-    public SpriteRenderer p_sprite;
+    [HideInInspector] public SpriteRenderer p_sprite;
     private BoxCollider2D p_collider;
 
     // Particles
     private ParticleSystem p_JumpDust;
     private ParticleSystem p_RunDust;
 
-    // Player movement
+    // Movement
     private float moveSpeed;
-    private float jumpForce;
 
+    // Jump
+    public static float jumpForce;
+    private bool isJumping;
+
+    // Dash
     private float dashForce;
     private float StartDashTimer;
     float CurrentDashTimer;
@@ -82,7 +86,7 @@ public class playerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             p_JumpDust.Play();
             rb.velocity = Vector2.up * jumpForce;
