@@ -26,11 +26,13 @@ public class PurpleShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 &&
+            this.gameObject.activeInHierarchy == true)
         {
             Shoot();
         }
     }
+
     void Shoot()
     {
         muzzle.Play();

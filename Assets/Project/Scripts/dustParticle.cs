@@ -14,10 +14,12 @@ public class dustParticle : MonoBehaviour
     {
         hit = false;
     }
+
     void Update()
     {
         Destroy(dustGO, 0.3f);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Platform" && hit == true)

@@ -444,5 +444,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e8ad2235d0d24ea1fca3603c2588e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 0}
   lifes: {fileID: 1079088951}

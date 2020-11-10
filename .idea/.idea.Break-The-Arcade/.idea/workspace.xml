@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 3x1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 3x1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/dust.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/dust.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ResetScene.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ResetScene.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1k4XLQMyDztM09omtrX5hEEKvN1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="" />
+      <created>1604960783912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604960783912</updated>
+      <workItem from="1604960787954" duration="24000" />
+      <workItem from="1604962583370" duration="1292000" />
+      <workItem from="1605005710512" duration="2744000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1605005776629">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605005776629" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605006577382">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605006577382" />
+  </component>
+</project>

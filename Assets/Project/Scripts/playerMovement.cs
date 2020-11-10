@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-
     // System components
     [SerializeField] private LayerMask platformsLayerMask;
 
@@ -35,7 +34,6 @@ public class playerMovement : MonoBehaviour
     // Other variables
     private float movX;
 
-
     void Start()
     {
         ghostController = GetComponent<GhostController>();
@@ -47,7 +45,7 @@ public class playerMovement : MonoBehaviour
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
         moveSpeed = 8f;
-        jumpForce = 16f;
+        jumpForce = 17f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
         ghostController.enabled = false;
@@ -58,13 +56,14 @@ public class playerMovement : MonoBehaviour
     {
         // InGame variables
         movX = Input.GetAxis("Horizontal");
-        
+
         // Functions
         Move();
         Jump();
         Dash();
         SetAnimationState();
     }
+
     void Move()
     {
         if (Input.GetKey(KeyCode.A))
@@ -90,7 +89,6 @@ public class playerMovement : MonoBehaviour
         }
     }
 
-    #region Dash
     void Dash()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0)
@@ -98,10 +96,11 @@ public class playerMovement : MonoBehaviour
             isDashing = true;
             CurrentDashTimer = StartDashTimer;
             rb.velocity = Vector2.zero;
-            DashDirection = (int)movX;
+            DashDirection = (int) movX;
             canDash = false;
             ghostController.enabled = true;
         }
+
         if (isDashing)
         {
             rb.velocity = transform.right * DashDirection * dashForce;
@@ -116,12 +115,10 @@ public class playerMovement : MonoBehaviour
     }
 
 
-    #endregion
-
-
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(p_collider.bounds.center, p_collider.bounds.size, 0f, Vector2.down, 0.2f, platformsLayerMask);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(p_collider.bounds.center, p_collider.bounds.size, 0f,
+            Vector2.down, 0.2f, platformsLayerMask);
         return raycastHit2D.collider != null;
     }
 
@@ -140,15 +137,18 @@ public class playerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
+
         if (rb.velocity.y > 0)
         {
             animator.SetBool("isJumping", true);
         }
+
         if (rb.velocity.y < 0)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", true);
         }
+
         if (rb.velocity.y == 0 && IsGrounded())
         {
             animator.SetBool("isJumping", false);
