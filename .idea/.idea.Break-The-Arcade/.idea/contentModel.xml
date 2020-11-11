@@ -81,7 +81,7 @@
             </e>
           </e>
         </e>
-        <e p="SuperJumpPlatform.cs" t="Include" />
+        <e p="SuperJumpCollision.cs" t="Include" />
       </e>
       <e p="Break-The-Arcade.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

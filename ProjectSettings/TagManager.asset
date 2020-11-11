@@ -16,6 +16,8 @@ TagManager:
   - NPC
   - YellowBullet
   - JumpPlatform
+  - PlayerCenterPivot
+  - footTrigger
   layers:
   - Default
   - TransparentFX

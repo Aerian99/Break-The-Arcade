@@ -28,66 +28,25 @@
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 9x1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 9x1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/yellowBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/yellowBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/purpleGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/purpleGun.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/yellowGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/yellowGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purpleHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purpleHit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/redHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/redHit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/yellowHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/yellowHit.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/Bullets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/Bullets/_purpleBullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/Bullets/_purpleBullet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/Bullets/yellowBullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/Bullets/yellowBullet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/abGun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/abGun.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/absorbGun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/absorbGun.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/arcZone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/absorb/arcZone.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/purple.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/purple/purpleGun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/purple/purpleGun.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (1).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (2).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (3).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (4).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png (5).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1.png.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1_png (1).controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/FX024_1-1_png (1).controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBullet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBulletImpact-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBulletImpact-1.png.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBulletImpact-1_png_0.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redBulletImpact-1_png_0.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redExplosion.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redExplosion.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redGun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redGun.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redMuzzle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/red/redMuzzle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/yellow.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/yellow/yellowGun.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Weapons/yellow/yellowGun.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_01.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/Player/playerDust/FX052_04.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,22 +57,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/pivot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
       </list>
     </option>
   </component>
@@ -158,7 +126,9 @@
       <updated>1604960783912</updated>
       <workItem from="1604960787954" duration="24000" />
       <workItem from="1604962583370" duration="1292000" />
-      <workItem from="1605005710512" duration="8484000" />
+      <workItem from="1605005710512" duration="13652000" />
+      <workItem from="1605092301335" duration="3279000" />
+      <workItem from="1605103724831" duration="6540000" />
     </task>
     <servers />
   </component>
@@ -177,11 +147,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="824" y="382" key="#Notifications" timestamp="1605048941735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="824" y="382" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605048941735" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1605005776629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,5 +165,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605020215337" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1605049110233">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605049110233" />
   </component>
 </project>

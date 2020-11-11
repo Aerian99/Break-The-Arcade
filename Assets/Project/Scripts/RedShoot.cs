@@ -37,6 +37,7 @@ public class RedShoot : MonoBehaviour
         if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
             Shoot();
+            playerAimWeapon.ShakeCamera(.03f, .1f);
         }
     }
 

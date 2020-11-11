@@ -19,10 +19,6 @@ public class playerAimWeapon : MonoBehaviour
     void Update()
     {
         HandleAiming();
-        if (Input.GetMouseButtonDown(0) && playerBehaviour._bulletCounter > 0)
-        {
-            ShakeCamera(.03f, .1f);
-        }
     }
     void HandleAiming()
     {

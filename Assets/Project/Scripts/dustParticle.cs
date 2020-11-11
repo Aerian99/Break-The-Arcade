@@ -24,7 +24,7 @@ public class dustParticle : MonoBehaviour
     {
         if (other.gameObject.tag == "Platform" && hit == true)
         {
-            dustGO = Instantiate(dustEffect, dustPosition.transform.position, dustEffect.transform.rotation);
+            dustGO = Instantiate(dustEffect, this.gameObject.transform.position, dustEffect.transform.rotation);
         }
         hit = true;
     }

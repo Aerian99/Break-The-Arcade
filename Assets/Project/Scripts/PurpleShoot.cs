@@ -30,6 +30,7 @@ public class PurpleShoot : MonoBehaviour
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
+            playerAimWeapon.ShakeCamera(.03f, .1f);
         }
     }
 
