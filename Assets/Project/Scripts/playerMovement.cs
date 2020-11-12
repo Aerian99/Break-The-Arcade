@@ -25,6 +25,8 @@ public class playerMovement : MonoBehaviour
     // Jump
     public static float jumpForce;
     private bool isJumping;
+    private float jumpTimeCounter;
+    private float jumpTime;
 
     // Dash
     private float dashForce;
@@ -49,21 +51,19 @@ public class playerMovement : MonoBehaviour
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
         moveSpeed = 8f;
-        jumpForce = 17f;
+        jumpForce = 15f;
+        jumpTime = 0.13f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
         ghostController.enabled = false;
     }
 
-
     void Update()
     {
-        // InGame variables
-        movX = Input.GetAxis("Horizontal");
-
         // Functions
         Move();
-        Jump();
+        //Jump();
+        alternativeJump();
         Dash();
         SetAnimationState();
     }
@@ -73,23 +73,59 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            movX = -1;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+            movX = 1;
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            movX = 0;
         }
     }
 
+    // Normal jump. Same jump force always.
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             p_JumpDust.Play();
             rb.velocity = Vector2.up * jumpForce;
+        }
+    }
+
+    // This Jump function works with key hold detection. Hold to jump higher.
+    void alternativeJump()
+    {
+        if (IsGrounded() == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            p_JumpDust.Play();
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                p_JumpDust.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            p_RunDust.Play();
+            isJumping = false;
         }
     }
 
@@ -117,7 +153,6 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
-
 
     private bool IsGrounded()
     {

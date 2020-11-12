@@ -170,6 +170,7 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  p_sprite: {fileID: 0}
 --- !u!1 &2485867330888594600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9952,7 +9953,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dustEffect: {fileID: 8673351820678738541, guid: 38ce0a86cda6e0a4e9bb9886aec6ece0,
     type: 3}
-  dustPosition: {fileID: 2485867332089559759}
 --- !u!1 &2485867332089559756
 GameObject:
   m_ObjectHideFlags: 0
@@ -10131,8 +10131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575f387c0bb3da146bd5f33493ab1221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimTransform: {fileID: 2485867331624710417}
-  player: {fileID: 2485867330596554758}
 --- !u!114 &2485867332127171588
 MonoBehaviour:
   m_ObjectHideFlags: 0
