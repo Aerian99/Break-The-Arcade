@@ -18,6 +18,7 @@ TagManager:
   - JumpPlatform
   - PlayerCenterPivot
   - footTrigger
+  - Potion
   layers:
   - Default
   - TransparentFX

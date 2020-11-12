@@ -26,11 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/Slippery.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/Slippery.physicsMaterial2D" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/keysDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,27 +47,41 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/keysDetector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/keysDetector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///absorbCooldown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/dashCooldown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/pivot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
@@ -69,9 +89,14 @@
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/keysDetector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
+        <option value="$PROJECT_DIR$/Assets/dashCooldown.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +145,7 @@
       <workItem from="1605092301335" duration="3279000" />
       <workItem from="1605103724831" duration="6540000" />
       <workItem from="1605132973225" duration="10130000" />
-      <workItem from="1605172694801" duration="5191000" />
+      <workItem from="1605172694801" duration="14906000" />
     </task>
     <servers />
   </component>
@@ -149,6 +174,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="824" y="382" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605048941735" />
+    <state x="194" y="97" key="DiffContextDialog" timestamp="1605203773753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="194" y="97" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605203773753" />
+    <state x="758" y="241" key="RollbackChangesDialog" timestamp="1605203775193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="758" y="241" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605203775193" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1605005776629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,6 +190,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605020215337" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605204000609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605204000609" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1605049110233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

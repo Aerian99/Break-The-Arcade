@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -13,10 +14,6 @@ public class playerBehaviour : MonoBehaviour
     private float timer = 0.0f;
     private int seconds;
 
-    // CURSOR
-    /*public Texture2D cursorTexture;
-    private CursorMode cursorMode = CursorMode.Auto;
-    private Vector2 hotSpot = Vector2.zero;*/
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,13 +23,20 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
-        //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-
         if (_playerLifes <= 0)
         {
             Destroy(this.gameObject);
         }
+
         lifes.text = "Lifes:  " + _playerLifes;
         bullets.text = "Bullets:  " + playerBehaviour._bulletCounter;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Potion")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -15,8 +15,8 @@ public class keysDetector : MonoBehaviour
     public Sprite HoldSpace;
     void Start()
     {
-        shiftSR = gameObject.transform.GetChild(7).GetComponent<Image>();
-        spaceSR = gameObject.transform.GetChild(9).GetComponent<Image>();
+        shiftSR = gameObject.transform.GetChild(8).GetComponent<Image>();
+        spaceSR = gameObject.transform.GetChild(10).GetComponent<Image>();
     }
 
     // Update is called once per frame

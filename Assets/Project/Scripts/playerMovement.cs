@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
@@ -31,11 +32,12 @@ public class playerMovement : MonoBehaviour
     // Dash
     private float dashForce;
     private float StartDashTimer;
-    float CurrentDashTimer;
-    float DashDirection;
-    bool isDashing;
-    bool canDash;
-
+    private float CurrentDashTimer;
+    private float DashDirection;
+    private float dashCooldown;
+    private bool isDashing;
+    private bool canDash;
+    public GameObject dashWarning;
 
     // Other variables
     private float movX;
@@ -50,19 +52,19 @@ public class playerMovement : MonoBehaviour
         p_JumpDust = this.transform.GetChild(0).GetComponent<ParticleSystem>();
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
-        moveSpeed = 8f;
+        moveSpeed = 6.5f;
         jumpForce = 15f;
         jumpTime = 0.13f;
         dashForce = 25f;
         StartDashTimer = 0.1f;
+        dashCooldown = 0f;
         ghostController.enabled = false;
     }
 
     void Update()
     {
-        // Functions
+        // FUNCTIONS
         Move();
-        //Jump();
         alternativeJump();
         Dash();
         SetAnimationState();
@@ -131,14 +133,15 @@ public class playerMovement : MonoBehaviour
 
     void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0 && canDash)
         {
             isDashing = true;
             CurrentDashTimer = StartDashTimer;
             rb.velocity = Vector2.zero;
             DashDirection = (int) movX;
-            canDash = false;
             ghostController.enabled = true;
+            canDash = false;
+            dashWarning.SetActive(false);
         }
 
         if (isDashing)
@@ -151,6 +154,14 @@ public class playerMovement : MonoBehaviour
                 isDashing = false;
                 ghostController.enabled = false;
             }
+        }
+
+        dashCooldown -= Time.deltaTime;
+        if (dashCooldown <= 0)
+        {
+            canDash = true;
+            dashWarning.SetActive(true);
+            dashCooldown = 3f;
         }
     }
 

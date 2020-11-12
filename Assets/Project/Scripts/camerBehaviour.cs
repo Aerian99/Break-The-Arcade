@@ -20,7 +20,7 @@ public class camerBehaviour : MonoBehaviour
 
         Vector3 cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
         float distance = Vector3.Distance(cameraFollowPosition, transform.position);
-        float cameraMoveSpeed = 2f;
+        float cameraMoveSpeed = 3f;
 
         transform.position = transform.position + cameraMoveDir * distance * cameraMoveSpeed * Time.deltaTime;
     }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,6 @@ public class gameHandler : MonoBehaviour
     public Transform playerTransform;
     void Start()
     {
-        cameraFollow.Setup(() => playerTransform.position);
+        cameraFollow.Setup(() => new Vector3(playerTransform.position.x, playerTransform.position.y + 3f, playerTransform.position.z));
     }
 }

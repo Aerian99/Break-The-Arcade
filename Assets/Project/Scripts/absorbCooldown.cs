@@ -32,14 +32,12 @@ public class absorbCooldown : MonoBehaviour
         {
             cooldown.fillAmount -= 1.0f / waitTime * Time.deltaTime;
             coolingDown = true;
-
         }
 
         if (cooldown.fillAmount == 1f)
         {
             cooldown.color = new Color(255, 0, 0);
             coolFull = true;
-
         }
         else if (cooldown.fillAmount == 0f)
         {

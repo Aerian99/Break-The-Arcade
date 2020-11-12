@@ -7,6 +7,7 @@ using UnityEngine;
 public class OneSidePlatform : MonoBehaviour
 {
     private PlatformEffector2D pE;
+    private float waitTime;
 
     void Start()
     {
@@ -16,12 +17,25 @@ public class OneSidePlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.S))
         {
-            pE.rotationalOffset = 180f;
+            waitTime = 0.05f;
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (waitTime <= 0)
+            {
+                pE.rotationalOffset = 180f;
+                waitTime = 0.05f;
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             pE.rotationalOffset = 0f;
         }
