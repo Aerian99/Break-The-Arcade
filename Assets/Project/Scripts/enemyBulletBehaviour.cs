@@ -7,6 +7,8 @@ public class enemyBulletBehaviour : MonoBehaviour
 
     private Animator animator;
     private Transform target;
+   
+   
     void Start()
     {
         animator = GameObject.Find("Player").GetComponent<Animator>();
@@ -17,9 +19,10 @@ public class enemyBulletBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range")
         {
-            Destroy(this.gameObject);
+            playerBehaviour.activePostProcessing = true;
             playerBehaviour._playerLifes--;
             other.GetComponent<Animator>().SetTrigger("hit");
+            Destroy(this.gameObject);
         }
         else if 
         (other.gameObject.tag != "Enemy" 
@@ -31,5 +34,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+       
     }
 }
