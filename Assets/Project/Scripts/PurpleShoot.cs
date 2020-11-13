@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PurpleShoot : MonoBehaviour
 {
     private GameObject particlePoint;
@@ -9,18 +10,19 @@ public class PurpleShoot : MonoBehaviour
     private Transform shootPoint;
     public GameObject bulletPrefab;
     private GameObject bullet;
-
-    // BULLET SETTINGS
+    //BULLETS
     private float bulletSpeed = 25f; // Speed
     private float bulletLifeTime = 0.40f; // Distance
     private float timeBetweenShots = 0.30f; // Cadence
     private float timestamp;
+
 
     void Start()
     {
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
+        
     }
 
     // Update is called once per frame
@@ -30,8 +32,10 @@ public class PurpleShoot : MonoBehaviour
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
-            playerAimWeapon.ShakeCamera(.03f, .1f);
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
         }
+        
     }
 
     void Shoot()

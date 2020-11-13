@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 1392876}
   - component: {fileID: 1392877}
   - component: {fileID: 1392878}
+  - component: {fileID: 1392879}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -206,6 +207,22 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &1392879
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &99743707
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +797,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc20b02af35da844b9d874a1a0cfbed, type: 3}
+--- !u!1 &533781121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3322973854294079143, guid: f11b3c90c9f0a4041929b721584bbd99,
+    type: 3}
+  m_PrefabInstance: {fileID: 3322973854793929826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &533781122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533781121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04737aa721dbac48849d0e055bd7017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &544790510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4428269335344496222, guid: 7bc20b02af35da844b9d874a1a0cfbed,
@@ -7048,7 +7083,7 @@ GameObject:
   - component: {fileID: 1132165218}
   m_Layer: 0
   m_Name: CM vCam1
-  m_TagString: Untagged
+  m_TagString: Camara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7075,7 +7110,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1194856140}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 9
+    OrthographicSize: 7.5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -13249,7 +13284,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13881,6 +13916,16 @@ PrefabInstance:
       propertyPath: maxCd
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3322973854294079147, guid: f11b3c90c9f0a4041929b721584bbd99,
+        type: 3}
+      propertyPath: camara
+      value: 
+      objectReference: {fileID: 1132165218}
+    - target: {fileID: 3322973854294079147, guid: f11b3c90c9f0a4041929b721584bbd99,
+        type: 3}
+      propertyPath: purpleGun
+      value: 
+      objectReference: {fileID: 533781121}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11b3c90c9f0a4041929b721584bbd99, type: 3}
 --- !u!4 &4103122319256094587 stripped
