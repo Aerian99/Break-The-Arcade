@@ -712,6 +712,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc20b02af35da844b9d874a1a0cfbed, type: 3}
+--- !u!1 &468117615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6896057090863143120, guid: b462b8d771207e84aa04983a3008a97f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6896057091597174240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &468117619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468117615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 1132165218}
 --- !u!4 &471976745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5415591083614275794, guid: bd4f4951e4fe0a6419d118f800d505a0,
@@ -812,9 +831,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 533781121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04737aa721dbac48849d0e055bd7017, type: 3}
+  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camara: {fileID: 1132165218}
 --- !u!4 &544790510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4428269335344496222, guid: 7bc20b02af35da844b9d874a1a0cfbed,
@@ -8072,6 +8092,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623790033}
   m_CullTransparentMesh: 0
+--- !u!1 &1640979138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645115450566651165, guid: 286fa4c05682ab84fa9c9eda20816133,
+    type: 3}
+  m_PrefabInstance: {fileID: 7645115450926009451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1640979142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640979138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 1132165218}
 --- !u!1 &1752501232
 GameObject:
   m_ObjectHideFlags: 0
