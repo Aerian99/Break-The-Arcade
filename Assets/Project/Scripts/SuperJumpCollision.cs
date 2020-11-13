@@ -8,7 +8,7 @@ using UnityEngine;
 public class SuperJumpCollision : MonoBehaviour
 {
     // Si hace trigger con las plataformas de salto, aumentamos la velocidad del Rigidbody hacía arriba
-    private float platformJumpForce = 20f;
+    private float platformJumpForce = 30f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "JumpPlatform")

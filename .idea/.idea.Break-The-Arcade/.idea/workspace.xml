@@ -28,15 +28,24 @@
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/keysDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,35 +57,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/keysDetector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///gameHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///absorbCooldown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/dashCooldown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/pivot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -89,14 +81,15 @@
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/keysDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/dashCooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +138,9 @@
       <workItem from="1605092301335" duration="3279000" />
       <workItem from="1605103724831" duration="6540000" />
       <workItem from="1605132973225" duration="10130000" />
-      <workItem from="1605172694801" duration="14906000" />
+      <workItem from="1605172694801" duration="15145000" />
+      <workItem from="1605223149835" duration="50000" />
+      <workItem from="1605270257607" duration="1603000" />
     </task>
     <servers />
   </component>

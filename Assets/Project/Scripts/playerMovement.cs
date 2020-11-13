@@ -52,7 +52,7 @@ public class playerMovement : MonoBehaviour
         p_JumpDust = this.transform.GetChild(0).GetComponent<ParticleSystem>();
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
-        moveSpeed = 6.5f;
+        moveSpeed = 7f;
         jumpForce = 15f;
         jumpTime = 0.13f;
         dashForce = 25f;

@@ -31,12 +31,4 @@ public class playerBehaviour : MonoBehaviour
         lifes.text = "Lifes:  " + _playerLifes;
         bullets.text = "Bullets:  " + playerBehaviour._bulletCounter;
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Potion")
-        {
-            Destroy(other.gameObject);
-        }
-    }
 }
