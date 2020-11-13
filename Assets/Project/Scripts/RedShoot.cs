@@ -12,6 +12,7 @@ public class RedShoot : MonoBehaviour
     private GameObject bullet2;
     private GameObject bullet3;
     private GameObject particlePoint;
+    public GameObject player;
     private ParticleSystem muzzle;
     private Transform shootPoint;
     private Transform shootPoint2;
@@ -19,8 +20,9 @@ public class RedShoot : MonoBehaviour
     private float bulletForce = 25f;
     private int bulletCount = 5;
     private float bulletLifeTime = 0.20f; // Alcance de la bala
-    private float timeBetweenShots = 0.35f;  
+    private float timeBetweenShots = 0.35f;
     private float timestamp;
+    private Vector2 vector2r, vector2l;
 
     void Start()
     {
@@ -29,10 +31,12 @@ public class RedShoot : MonoBehaviour
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
+        vector2r = new Vector2(100f,0f);
+        vector2l = new Vector2(-100f,0f);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
@@ -45,6 +49,9 @@ public class RedShoot : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log(playerMovement.movX);
+        if (playerMovement.movX == -1) { player.GetComponent<Rigidbody2D>().AddForce(vector2r, ForceMode2D.Impulse); }
+        else if (playerMovement.movX == 1) { player.GetComponent<Rigidbody2D>().AddForce(vector2l, ForceMode2D.Impulse); }
         muzzle.Play();
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
