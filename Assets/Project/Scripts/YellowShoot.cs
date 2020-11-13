@@ -28,8 +28,8 @@ public class YellowShoot : MonoBehaviour
         if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
         {
             Shoot();
-            SoundManagerScript.PlaySound("yellowGun");
-            playerAimWeapon.ShakeCamera(.03f, .1f);
+            ScreenShake.shake = 1f;
+            ScreenShake.canShake = true;
         }
     }
     void Shoot()
