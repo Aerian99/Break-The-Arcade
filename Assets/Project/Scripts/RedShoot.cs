@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class RedShoot : MonoBehaviour
     private GameObject bullet2;
     private GameObject bullet3;
     private GameObject particlePoint;
+    private GameObject player;
     private ParticleSystem muzzle;
     private Transform shootPoint;
     private Transform shootPoint2;
@@ -19,8 +21,9 @@ public class RedShoot : MonoBehaviour
     private float bulletForce = 25f;
     private int bulletCount = 5;
     private float bulletLifeTime = 0.20f; // Alcance de la bala
-    private float timeBetweenShots = 0.35f;  
+    private float timeBetweenShots = 0.35f;
     private float timestamp;
+    private Vector2 vector2r, vector2l;
 
     void Start()
     {
@@ -28,13 +31,17 @@ public class RedShoot : MonoBehaviour
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
+        player = GameObject.FindWithTag("Player").gameObject;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
+        vector2r = new Vector2(20f, 0f);
+        vector2l = new Vector2(-20f, 0f);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 &&
+            this.gameObject.activeInHierarchy == true)
         {
             Shoot();
             SoundManagerScript.PlaySound("shotgun");
@@ -60,8 +67,22 @@ public class RedShoot : MonoBehaviour
         timestamp = Time.time + timeBetweenShots;
         playerBehaviour._bulletCounter--;
 
+        knockBack();
+
         Destroy(bullet, bulletLifeTime);
         Destroy(bullet2, bulletLifeTime);
         Destroy(bullet3, bulletLifeTime);
+    }
+
+    void knockBack()
+    {
+        if (playerAimWeapon.isFacingLeft)
+        {
+            player.GetComponent<Rigidbody2D>().AddForce(vector2r, ForceMode2D.Impulse);
+        }
+        else if (!playerAimWeapon.isFacingLeft)
+        {
+            player.GetComponent<Rigidbody2D>().AddForce(vector2l, ForceMode2D.Impulse);
+        }
     }
 }
