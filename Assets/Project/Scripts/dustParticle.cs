@@ -24,6 +24,7 @@ public class dustParticle : MonoBehaviour
         if (other.gameObject.tag == "Platform" || other.gameObject.tag == "JumpPlatform" && hit == true)
         {
             dustGO = Instantiate(dustEffect, this.transform.position, dustEffect.transform.rotation);
+            SoundManagerScript.PlaySound("landing");
         }
         hit = true;
     }

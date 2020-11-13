@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class playerMovement : MonoBehaviour
 {
     // System components
@@ -68,6 +69,7 @@ public class playerMovement : MonoBehaviour
         alternativeJump();
         Dash();
         SetAnimationState();
+       
     }
 
     void Move()
@@ -105,6 +107,7 @@ public class playerMovement : MonoBehaviour
         if (IsGrounded() == true && Input.GetKeyDown(KeyCode.Space))
         {
             p_JumpDust.Play();
+            SoundManagerScript.PlaySound("jump");
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -135,6 +138,7 @@ public class playerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0 && canDash)
         {
+            SoundManagerScript.PlaySound("dash");
             isDashing = true;
             CurrentDashTimer = StartDashTimer;
             rb.velocity = Vector2.zero;
@@ -205,4 +209,5 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isFalling", false);
         }
     }
+
 }
