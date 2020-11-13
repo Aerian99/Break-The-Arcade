@@ -26,26 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Animations.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +39,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/pivot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,7 +62,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
@@ -90,6 +75,7 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
       </list>
     </option>
   </component>
