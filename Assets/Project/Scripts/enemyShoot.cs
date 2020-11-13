@@ -18,8 +18,9 @@ public class enemyShoot : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = GetComponent<Rigidbody2D>();
 
-        bulletSpeed = 15f;
-        startTimeBtwShoots = UnityEngine.Random.Range(0.5f, 1f); // Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
+        bulletSpeed = 10f;
+        //startTimeBtwShoots = UnityEngine.Random.Range(0.5f, 1f);
+        startTimeBtwShoots = 1f;// Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
         timeBtwShoots = startTimeBtwShoots;
     }
 
