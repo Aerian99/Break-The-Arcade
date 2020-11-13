@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OneSidePlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Cyber-Drugs (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/GUI.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SuperJumpCollision.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/dashCooldown.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/keysDetector.cs.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/pivot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/keysDetector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
+        <option value="$PROJECT_DIR$/Assets/dashCooldown.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1k4XLQMyDztM09omtrX5hEEKvN1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="" />
+      <created>1604960783912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604960783912</updated>
+      <workItem from="1604960787954" duration="24000" />
+      <workItem from="1604962583370" duration="1292000" />
+      <workItem from="1605005710512" duration="13652000" />
+      <workItem from="1605092301335" duration="3279000" />
+      <workItem from="1605103724831" duration="6540000" />
+      <workItem from="1605132973225" duration="10130000" />
+      <workItem from="1605172694801" duration="15145000" />
+      <workItem from="1605223149835" duration="50000" />
+      <workItem from="1605270257607" duration="1603000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="824" y="382" key="#Notifications" timestamp="1605048941735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="824" y="382" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605048941735" />
+    <state x="194" y="97" key="DiffContextDialog" timestamp="1605203773753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="194" y="97" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605203773753" />
+    <state x="758" y="241" key="RollbackChangesDialog" timestamp="1605203775193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="758" y="241" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605203775193" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1605005776629">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605005776629" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605020215337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605020215337" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605204000609">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605204000609" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1605049110233">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605049110233" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605133733189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605133733189" />
+  </component>
+</project>

@@ -15,6 +15,10 @@ TagManager:
   - PurpleBullet
   - NPC
   - YellowBullet
+  - JumpPlatform
+  - PlayerCenterPivot
+  - footTrigger
+  - Potion
   layers:
   - Default
   - TransparentFX

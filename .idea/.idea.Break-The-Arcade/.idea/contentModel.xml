@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\tonim\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tonim\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Break-The-Arcade.-1666325132.00" t="ExcludeRecursive" />
+    <e p="C:\Users\tonim\Documents\Break-The-Arcade" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Project" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Absorb_Gun.cs" t="Include" />
+            <e p="absorbCooldown.cs" t="Include" />
+            <e p="boxMovement.cs" t="Include" />
+            <e p="Bullet.cs" t="Include" />
+            <e p="cameraShake.cs" t="Include" />
+            <e p="camerBehaviour.cs" t="Include" />
+            <e p="dashCooldown.cs" t="Include" />
+            <e p="droneBehaviour.cs" t="Include" />
+            <e p="dustParticle.cs" t="Include" />
+            <e p="enemyBulletBehaviour.cs" t="Include" />
+            <e p="enemyShoot.cs" t="Include" />
+            <e p="FunctionUpdater.cs" t="Include" />
+            <e p="gameHandler.cs" t="Include" />
+            <e p="GhostController.cs" t="Include" />
+            <e p="gun_Change.cs" t="Include" />
+            <e p="handController.cs" t="Include" />
+            <e p="handPivot.cs" t="Include" />
+            <e p="joystickShoot.cs" t="Include" />
+            <e p="keysDetector.cs" t="Include" />
+            <e p="mageMovement.cs" t="Include" />
+            <e p="OneSidePlatform.cs" t="Include" />
+            <e p="particleTrigger.cs" t="Include" />
+            <e p="PinkNPC.cs" t="Include" />
+            <e p="pivot.cs" t="Include" />
+            <e p="pjMovement.cs" t="Include" />
+            <e p="playerAimWeapon.cs" t="Include" />
+            <e p="playerBehaviour.cs" t="Include" />
+            <e p="playerMovement.cs" t="Include" />
+            <e p="purpleBulletBehaviour.cs" t="Include" />
+            <e p="PurpleShoot.cs" t="Include" />
+            <e p="recognizeGun.cs" t="Include" />
+            <e p="redBulletBehaviour.cs" t="Include" />
+            <e p="RedShoot.cs" t="Include" />
+            <e p="ResetScene.cs" t="Include" />
+            <e p="rotateGun.cs" t="Include" />
+            <e p="rotateHands.cs" t="Include" />
+            <e p="rotationScript.cs" t="Include" />
+            <e p="shooting.cs" t="Include" />
+            <e p="slimeAI.cs" t="Include" />
+            <e p="slimeBehaviour.cs" t="Include" />
+            <e p="SuperJumpCollision.cs" t="Include" />
+            <e p="triggerAttack.cs" t="Include" />
+            <e p="yellowBulletBehaviour.cs" t="Include" />
+            <e p="YellowShoot.cs" t="Include" />
+          </e>
+          <e p="TextMesh Pro" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans - OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Mobile.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Break-The-Arcade.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
