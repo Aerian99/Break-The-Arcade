@@ -9,6 +9,7 @@ public class playerAimWeapon : MonoBehaviour
     private SpriteRenderer player;
     private Vector3 worldPosition;
     public static bool isFacingLeft;
+    public static float angle;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class playerAimWeapon : MonoBehaviour
     {
         Vector3 mousePosition = GetMouseWorldPosition();
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         aimPos.eulerAngles = new Vector3(0, 0, angle);
 
         Vector3 aimlocalScale = Vector3.one;

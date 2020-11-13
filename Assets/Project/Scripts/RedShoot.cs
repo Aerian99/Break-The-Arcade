@@ -13,14 +13,14 @@ public class RedShoot : MonoBehaviour
     private GameObject bullet2;
     private GameObject bullet3;
     private GameObject particlePoint;
-    private GameObject player;
+    private Rigidbody2D player;
     private ParticleSystem muzzle;
     private Transform shootPoint;
     private Transform shootPoint2;
     private Transform shootPoint3;
     private float bulletForce = 25f;
     private int bulletCount = 5;
-    private float bulletLifeTime = 0.20f; // Alcance de la bala
+    private float bulletLifeTime = 0.40f; // Alcance de la bala
     private float timeBetweenShots = 0.35f;
     private float timestamp;
     private Vector2 vector2r, vector2l;
@@ -31,10 +31,10 @@ public class RedShoot : MonoBehaviour
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
-        player = GameObject.FindWithTag("Player").gameObject;
+        player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        vector2r = new Vector2(20f, 0f);
-        vector2l = new Vector2(-20f, 0f);
+        vector2r = new Vector2(25f, 0f);
+        vector2l = new Vector2(-25f, 0f);
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class RedShoot : MonoBehaviour
             ScreenShake.shake = 8.5f;
             ScreenShake.canShake = true;
         }
+
     }
 
     void Shoot()
@@ -76,13 +77,28 @@ public class RedShoot : MonoBehaviour
 
     void knockBack()
     {
-        if (playerAimWeapon.isFacingLeft)
+        if (playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()) // CUANDO EL JUGADOR MIRA HACIA LA IZQUIERDA
         {
-            player.GetComponent<Rigidbody2D>().AddForce(vector2r, ForceMode2D.Impulse);
+            player.AddForce(vector2r, ForceMode2D.Impulse);
         }
-        else if (!playerAimWeapon.isFacingLeft)
+        else if (!playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()) // CUANDO EL JUGADOR MIRA HACIA LA DERECHA
         {
-            player.GetComponent<Rigidbody2D>().AddForce(vector2l, ForceMode2D.Impulse);
+            player.AddForce(vector2l, ForceMode2D.Impulse);
+        }
+        
+        if (playerAimWeapon.angle > -170 && playerAimWeapon.angle < -90 && playerMovement.IsGrounded())
+        {
+            player.AddForce(new Vector2(vector2r.x, 10f), ForceMode2D.Impulse);
+        }
+        else if (playerAimWeapon.angle > -90 && playerAimWeapon.angle < -10 && playerMovement.IsGrounded())
+        {
+            player.AddForce(new Vector2(vector2l.x, 10f), ForceMode2D.Impulse);
+        }
+
+        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30)
+        {
+            player.velocity = Vector2.zero;
+            player.AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
         }
     }
 }

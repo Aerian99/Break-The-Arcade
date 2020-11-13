@@ -28,7 +28,8 @@
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
@@ -73,8 +73,9 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
       </list>
     </option>
