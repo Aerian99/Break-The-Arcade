@@ -32,6 +32,7 @@ public class PurpleShoot : MonoBehaviour
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
+            SoundManagerScript.PlaySound("purpleGun");
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
         }
