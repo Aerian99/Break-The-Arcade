@@ -22,7 +22,7 @@ public class playerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         _playerLifes = 5;
         _bulletCounter = 1000;
-        maxcdAberration = 2.0f;
+        maxcdAberration = 0.1f;
         cdAberration = 0;
         activePostProcessing = false;
     }
