@@ -19,7 +19,6 @@ public class RedShoot : MonoBehaviour
     private Transform shootPoint2;
     private Transform shootPoint3;
     private float bulletForce = 25f;
-    private int bulletCount = 5;
     private float bulletLifeTime = 0.40f; // Alcance de la bala
     private float timeBetweenShots = 0.35f;
     private float timestamp;

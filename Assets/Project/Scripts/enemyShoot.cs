@@ -6,7 +6,6 @@ public class enemyShoot : MonoBehaviour
 {
     // COMPONENTES
     private Transform target;
-    private Rigidbody2D rigidbody;
     public GameObject enemyBullet;
 
     // BULLET 
@@ -16,7 +15,6 @@ public class enemyShoot : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody2D>();
 
         bulletSpeed = 10f;
         //startTimeBtwShoots = UnityEngine.Random.Range(0.5f, 1f);

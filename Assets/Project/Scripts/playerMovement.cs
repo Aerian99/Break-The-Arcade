@@ -162,7 +162,10 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        dashCooldown -= Time.deltaTime;
+        if (!canDash)
+        { 
+            dashCooldown -= Time.deltaTime;
+        }
         if (dashCooldown <= 0)
         {
             canDash = true;

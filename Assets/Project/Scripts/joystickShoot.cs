@@ -6,7 +6,6 @@ public class joystickShoot : MonoBehaviour
 {
     // COMPONENTES
     private Transform target;
-    private Rigidbody2D rigidbody;
     public GameObject enemyBullet;
     public Sprite noHeadSprite;
     public Sprite yesHeadSprite;
@@ -21,7 +20,6 @@ public class joystickShoot : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody2D>();
         isInside = false;
         bulletSpeed = 10f;
         startTimeBtwShoots = UnityEngine.Random.Range(0.5f, 1f); // Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
