@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour
     public GameObject dashWarning;
 
     // Other variables
-    private float movX;
+    public static float movX;
 
     void Start()
     {
@@ -87,7 +87,6 @@ public class playerMovement : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            movX = 0;
         }
     }
 
