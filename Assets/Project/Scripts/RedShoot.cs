@@ -8,6 +8,7 @@ public class RedShoot : MonoBehaviour
     private GameObject effect;
     public ParticleSystem hitEffectPrefab;
     private ParticleSystem shootParticles;
+
     public GameObject bulletPrefab;
     private GameObject bullet;
     private GameObject bullet2;
@@ -15,9 +16,13 @@ public class RedShoot : MonoBehaviour
     private GameObject particlePoint;
     private Rigidbody2D player;
     private ParticleSystem muzzle;
+
     private Transform shootPoint;
     private Transform shootPoint2;
     private Transform shootPoint3;
+
+    // BULLET
+    public static float bulletDamage;
     private float bulletForce = 25f;
     private float bulletLifeTime = 0.40f; // Alcance de la bala
     private float timeBetweenShots = 0.35f;
@@ -34,6 +39,8 @@ public class RedShoot : MonoBehaviour
         muzzle = particlePoint.GetComponent<ParticleSystem>();
         vector2r = new Vector2(25f, 0f);
         vector2l = new Vector2(-25f, 0f);
+
+        bulletDamage = 5f;
     }
 
     // Update is called once per frame
@@ -47,7 +54,6 @@ public class RedShoot : MonoBehaviour
             ScreenShake.shake = 8.5f;
             ScreenShake.canShake = true;
         }
-
     }
 
     void Shoot()
@@ -80,11 +86,12 @@ public class RedShoot : MonoBehaviour
         {
             player.AddForce(vector2r, ForceMode2D.Impulse);
         }
-        else if (!playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()) // CUANDO EL JUGADOR MIRA HACIA LA DERECHA
+        else if (!playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()
+        ) // CUANDO EL JUGADOR MIRA HACIA LA DERECHA
         {
             player.AddForce(vector2l, ForceMode2D.Impulse);
         }
-        
+
         if (playerAimWeapon.angle > -170 && playerAimWeapon.angle < -90 && playerMovement.IsGrounded())
         {
             player.AddForce(new Vector2(vector2r.x, 10f), ForceMode2D.Impulse);

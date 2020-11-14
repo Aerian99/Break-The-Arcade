@@ -11,6 +11,7 @@ public class YellowShoot : MonoBehaviour
     private GameObject bullet;
 
     // BULLET SETTINGS
+    public static float bulletDamage;
     private float bulletForce = 25f;
     private float bulletLifeTime = 0.35f;
     private float timeBetweenShots = 0.20f;
@@ -20,6 +21,7 @@ public class YellowShoot : MonoBehaviour
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
+        bulletDamage = 1f;
     }
 
     // Update is called once per frame

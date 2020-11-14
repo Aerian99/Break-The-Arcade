@@ -10,7 +10,9 @@ public class PurpleShoot : MonoBehaviour
     private Transform shootPoint;
     public GameObject bulletPrefab;
     private GameObject bullet;
+    
     //BULLETS
+    public static float bulletDamage;
     private float bulletSpeed = 25f; // Speed
     private float bulletLifeTime = 0.40f; // Distance
     private float timeBetweenShots = 0.30f; // Cadence
@@ -22,7 +24,7 @@ public class PurpleShoot : MonoBehaviour
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        
+        bulletDamage = 2f;
     }
 
     // Update is called once per frame
