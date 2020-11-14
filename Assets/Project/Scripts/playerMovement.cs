@@ -7,7 +7,8 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     // System components
-    [SerializeField] private LayerMask platformsLayerMask;
+    public static LayerMask platformsLayerMask;
+    public LayerMask copyLayerMask;
 
     GhostController ghostController;
 
@@ -15,7 +16,7 @@ public class playerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     [HideInInspector] public SpriteRenderer p_sprite;
-    private BoxCollider2D p_collider;
+    public static BoxCollider2D p_collider;
 
     // Particles
     private ParticleSystem p_JumpDust;
@@ -52,6 +53,8 @@ public class playerMovement : MonoBehaviour
         p_collider = GetComponent<BoxCollider2D>();
         p_JumpDust = this.transform.GetChild(0).GetComponent<ParticleSystem>();
         p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
+
+        platformsLayerMask = copyLayerMask;
 
         moveSpeed = 7f;
         jumpForce = 15f;
@@ -159,7 +162,10 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        dashCooldown -= Time.deltaTime;
+        if (!canDash)
+        { 
+            dashCooldown -= Time.deltaTime;
+        }
         if (dashCooldown <= 0)
         {
             canDash = true;
@@ -168,7 +174,7 @@ public class playerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    public static bool IsGrounded()
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(p_collider.bounds.center, p_collider.bounds.size, 0f,
             Vector2.down, 0.2f, platformsLayerMask);

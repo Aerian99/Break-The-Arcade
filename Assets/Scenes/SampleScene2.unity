@@ -7685,7 +7685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f1c20e5b66e6248a60eaf26e720571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformsLayerMask:
+  copyLayerMask:
     serializedVersion: 2
     m_Bits: 256
   p_sprite: {fileID: 0}
