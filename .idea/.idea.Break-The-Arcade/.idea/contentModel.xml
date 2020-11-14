@@ -6,6 +6,7 @@
     <e p="C:\Users\tonim\Documents\Break-The-Arcade" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="hitDamagePopUp.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
@@ -45,9 +46,11 @@
             <e p="rotateGun.cs" t="Include" />
             <e p="rotateHands.cs" t="Include" />
             <e p="rotationScript.cs" t="Include" />
+            <e p="ScreenShake.cs" t="Include" />
             <e p="shooting.cs" t="Include" />
             <e p="slimeAI.cs" t="Include" />
             <e p="slimeBehaviour.cs" t="Include" />
+            <e p="SoundManagerScript.cs" t="Include" />
             <e p="SuperJumpCollision.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />

@@ -7833,6 +7833,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7550396626069712193, guid: 72414716944cbc945a6c92416e0ba89b,
+        type: 3}
+      propertyPath: hitDamagePopUp
+      value: 
+      objectReference: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
+        type: 3}
     - target: {fileID: 8164862232358180742, guid: 72414716944cbc945a6c92416e0ba89b,
         type: 3}
       propertyPath: m_Name
