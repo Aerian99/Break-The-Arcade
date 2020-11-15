@@ -28,6 +28,7 @@
             <e p="handPivot.cs" t="Include" />
             <e p="joystickShoot.cs" t="Include" />
             <e p="keysDetector.cs" t="Include" />
+            <e p="landCollision.cs" t="Include" />
             <e p="mageMovement.cs" t="Include" />
             <e p="OneSidePlatform.cs" t="Include" />
             <e p="particleTrigger.cs" t="Include" />
@@ -51,7 +52,6 @@
             <e p="slimeAI.cs" t="Include" />
             <e p="slimeBehaviour.cs" t="Include" />
             <e p="SoundManagerScript.cs" t="Include" />
-            <e p="SuperJumpCollision.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />
             <e p="YellowShoot.cs" t="Include" />

@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour
 {
     // System components
     public static LayerMask platformsLayerMask;
-    public LayerMask copyLayerMask;
+    [HideInInspector] public LayerMask copyLayerMask;
 
     GhostController ghostController;
 
@@ -19,8 +19,8 @@ public class playerMovement : MonoBehaviour
     public static BoxCollider2D p_collider;
 
     // Particles
-    private ParticleSystem p_JumpDust;
-    private ParticleSystem p_RunDust;
+    private ParticleSystem p_JumpParticle;
+    private ParticleSystem p_JumpParticle2;
 
     // Movement
     private float moveSpeed;
@@ -51,8 +51,8 @@ public class playerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         p_sprite = GetComponent<SpriteRenderer>();
         p_collider = GetComponent<BoxCollider2D>();
-        p_JumpDust = this.transform.GetChild(0).GetComponent<ParticleSystem>();
-        p_RunDust = this.transform.GetChild(1).GetComponent<ParticleSystem>();
+        p_JumpParticle = this.transform.GetChild(0).GetComponent<ParticleSystem>();
+        p_JumpParticle2 = this.transform.GetChild(1).GetComponent<ParticleSystem>();
 
         platformsLayerMask = copyLayerMask;
 
@@ -69,10 +69,9 @@ public class playerMovement : MonoBehaviour
     {
         // FUNCTIONS
         Move();
-        alternativeJump();
+        Jump();
         Dash();
         SetAnimationState();
-       
     }
 
     void Move()
@@ -92,23 +91,12 @@ public class playerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
-
-    // Normal jump. Same jump force always.
+    
+    // This Jump function works with key hold detection. Hold to jump higher.
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (IsGrounded() == true && Input.GetKeyDown(KeyCode.Space) && !landCollision.groundSuperJump)
         {
-            p_JumpDust.Play();
-            rb.velocity = Vector2.up * jumpForce;
-        }
-    }
-
-    // This Jump function works with key hold detection. Hold to jump higher.
-    void alternativeJump()
-    {
-        if (IsGrounded() == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            p_JumpDust.Play();
             SoundManagerScript.PlaySound("jump");
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -119,7 +107,7 @@ public class playerMovement : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
-                p_JumpDust.Play();
+                p_JumpParticle.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpTimeCounter -= Time.deltaTime;
             }
@@ -131,8 +119,12 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            p_RunDust.Play();
             isJumping = false;
+        }
+        
+        if (rb.velocity.y > -1f)
+        {
+            p_JumpParticle2.Play();
         }
     }
 
