@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManagerScript : MonoBehaviour
 {
 
-    public static AudioClip jumpSound, shotgunSound, landingSound, yellowgunSound, purpleGunSound, dashSound, platformJump;
+    public static AudioClip jumpSound, shotgunSound, landingSound, yellowgunSound, purpleGunSound, dashSound, platformJump, platformSuperJump;
     static AudioSource audioSrc;
 
     void Start()
@@ -17,6 +17,7 @@ public class SoundManagerScript : MonoBehaviour
         purpleGunSound = Resources.Load<AudioClip>("purpleGun");
         dashSound = Resources.Load<AudioClip>("dash");
         platformJump = Resources.Load<AudioClip>("platformJump");
+        platformSuperJump = Resources.Load<AudioClip>("platformSuperJump");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -54,6 +55,10 @@ public class SoundManagerScript : MonoBehaviour
             case "platformJump":
                 audioSrc.PlayOneShot(platformJump);
                 break;
+            case "platformSuperJump":
+                audioSrc.PlayOneShot(platformJump);
+                break;
+            
             default:
                 break;
         }

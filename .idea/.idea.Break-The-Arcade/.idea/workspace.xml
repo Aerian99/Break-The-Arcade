@@ -26,16 +26,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/popUpText.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/popUpText.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +53,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,7 +75,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/SuperJumpPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/SuperJumpCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
         <option value="$PROJECT_DIR$/Assets/keysDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/dashCooldown.cs" />
@@ -79,14 +82,17 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/hitDamagePopUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
       </list>
     </option>
   </component>
@@ -139,7 +145,7 @@
       <workItem from="1605223149835" duration="50000" />
       <workItem from="1605270257607" duration="1603000" />
       <workItem from="1605390490960" duration="4277000" />
-      <workItem from="1605431755836" duration="352000" />
+      <workItem from="1605431755836" duration="4186000" />
     </task>
     <servers />
   </component>
@@ -180,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605005776629" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605020215337">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605440118902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605020215337" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605440118902" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605204000609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
