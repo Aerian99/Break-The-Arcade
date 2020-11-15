@@ -6,7 +6,6 @@
     <e p="C:\Users\tonim\Documents\Break-The-Arcade" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="hitDamagePopUp.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
@@ -26,6 +25,7 @@
             <e p="gun_Change.cs" t="Include" />
             <e p="handController.cs" t="Include" />
             <e p="handPivot.cs" t="Include" />
+            <e p="hitDamagePopUp.cs" t="Include" />
             <e p="joystickShoot.cs" t="Include" />
             <e p="keysDetector.cs" t="Include" />
             <e p="landCollision.cs" t="Include" />
@@ -43,15 +43,16 @@
             <e p="recognizeGun.cs" t="Include" />
             <e p="redBulletBehaviour.cs" t="Include" />
             <e p="RedShoot.cs" t="Include" />
-            <e p="ResetScene.cs" t="Include" />
             <e p="rotateGun.cs" t="Include" />
             <e p="rotateHands.cs" t="Include" />
             <e p="rotationScript.cs" t="Include" />
+            <e p="SceneBehaviour.cs" t="Include" />
             <e p="ScreenShake.cs" t="Include" />
             <e p="shooting.cs" t="Include" />
             <e p="slimeAI.cs" t="Include" />
             <e p="slimeBehaviour.cs" t="Include" />
             <e p="SoundManagerScript.cs" t="Include" />
+            <e p="SpikesBehaviour.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />
             <e p="YellowShoot.cs" t="Include" />
@@ -88,7 +89,6 @@
             </e>
           </e>
         </e>
-        <e p="SpikesBehaviour.cs" t="Include" />
       </e>
       <e p="Break-The-Arcade.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
