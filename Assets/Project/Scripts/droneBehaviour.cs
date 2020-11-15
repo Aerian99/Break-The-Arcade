@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 
 public class droneBehaviour : MonoBehaviour
@@ -11,7 +13,7 @@ public class droneBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator anim;
 
-    public GameObject hitDamagePopUp;
+    public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
@@ -24,6 +26,7 @@ public class droneBehaviour : MonoBehaviour
         maxHealth = 15f;
         actualHealth = maxHealth;
         life.fillAmount = actualHealth;
+        //hitDamagePopUp = new GameObject[4];
     }
 
     public void Update()
@@ -63,7 +66,7 @@ public class droneBehaviour : MonoBehaviour
 
     void popUpDamage(float hitdamage)
     {
-        GameObject dmg = Instantiate(hitDamagePopUp, transform.position, Quaternion.identity);
+        GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0,4)], transform.position, Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 }
