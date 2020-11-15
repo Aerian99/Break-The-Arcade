@@ -26,9 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Drone.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/hitDamage.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/popUpText.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/popUpText.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +85,8 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/hitDamagePopUp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -132,6 +139,7 @@
       <workItem from="1605223149835" duration="50000" />
       <workItem from="1605270257607" duration="1603000" />
       <workItem from="1605390490960" duration="4277000" />
+      <workItem from="1605431755836" duration="352000" />
     </task>
     <servers />
   </component>
