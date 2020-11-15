@@ -257,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffectPrefab: {fileID: 5394566744571616057, guid: 27ebbda424e7f8540bcc3aff029d9e19,
     type: 3}
+  hitEffect: {fileID: 8377408501486123291, guid: 47a1175d01165f04a9c4a985fb5edf3f,
+    type: 3}
 --- !u!61 &1185259519973987480
 BoxCollider2D:
   m_ObjectHideFlags: 0
