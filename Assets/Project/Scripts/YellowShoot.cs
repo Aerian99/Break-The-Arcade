@@ -5,10 +5,10 @@ using UnityEngine;
 public class YellowShoot : MonoBehaviour
 {
     private GameObject particlePoint;
-    private ParticleSystem muzzle;
     private Transform shootPoint;
     public GameObject bulletPrefab;
     private GameObject bullet;
+    public GameObject alternativeMuzzle;
 
     // BULLET SETTINGS
     public static float bulletDamage;
@@ -20,7 +20,6 @@ public class YellowShoot : MonoBehaviour
     {
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
-        muzzle = particlePoint.GetComponent<ParticleSystem>();
         bulletDamage = 1f;
     }
 
@@ -37,13 +36,14 @@ public class YellowShoot : MonoBehaviour
     }
     void Shoot()
     {
-        muzzle.Play();
+        GameObject alternativeMuzzleGO = Instantiate(alternativeMuzzle, particlePoint.transform.position, particlePoint.transform.rotation);
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         timestamp = Time.time + timeBetweenShots;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
         playerBehaviour._bulletCounter--;
 
+        Destroy(alternativeMuzzleGO, 0.05f);
         Destroy(bullet, bulletLifeTime);
     }
 }

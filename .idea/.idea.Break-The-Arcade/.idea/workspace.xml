@@ -26,18 +26,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/dustParticles/dust.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/yellowBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/yellowBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purpleHit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purpleHit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/redHit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/redHit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/yellowHit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/yellowHit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/yellowGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/yellowGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Environment/Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Environment/Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Environment/healthPotion.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Environment/healthPotion.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_idle_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_jump_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_jump_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_jump_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_jump_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_0.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/32 x 32 platform character_run_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/a00020004050200-1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Player/a00020004050200-1.png.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +82,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,7 +94,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SpikesBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/hitDamagePopUp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,18 +117,21 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/camerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/OneSidePlatform.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerAimWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/hitDamagePopUp.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SpikesBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -117,10 +156,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16408">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="16408" />
       <method v="2" />
     </configuration>
   </component>
@@ -145,7 +184,7 @@
       <workItem from="1605223149835" duration="50000" />
       <workItem from="1605270257607" duration="1603000" />
       <workItem from="1605390490960" duration="4277000" />
-      <workItem from="1605431755836" duration="4186000" />
+      <workItem from="1605431755836" duration="10230000" />
     </task>
     <servers />
   </component>
@@ -178,6 +217,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="194" y="97" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605203773753" />
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1605449188278">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605449188278" />
     <state x="758" y="241" key="RollbackChangesDialog" timestamp="1605203775193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

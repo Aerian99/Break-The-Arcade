@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using TMPro;
 
@@ -9,11 +10,16 @@ public class playerBehaviour : MonoBehaviour
     private Animator animator;
     public static int _playerLifes;
     public static int _bulletCounter;
+    
     public static bool activePostProcessing;
     private float cdAberration, maxcdAberration;
     public GameObject postProcessingAberration;
+    
     public TextMeshProUGUI lifes;
     public TextMeshProUGUI bullets;
+
+    public GameObject deathEffect;
+    
     private float timer = 0.0f;
     private int seconds;
 
@@ -32,6 +38,8 @@ public class playerBehaviour : MonoBehaviour
         if (_playerLifes <= 0)
         {
             Destroy(this.gameObject);
+            GameObject deathEffectGO = Instantiate(deathEffect, this.transform.position, Quaternion.identity);
+            Destroy(deathEffectGO, 0.5f);
         }
 
         chromaticAberration();

@@ -6,6 +6,7 @@ public class yellowBulletBehaviour : MonoBehaviour
 {
     private GameObject effect;
     public ParticleSystem hitEffectPrefab;
+    public GameObject hitEffect;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,14 +19,16 @@ public class yellowBulletBehaviour : MonoBehaviour
         && other.gameObject.tag != "NPC")
         {
             Destroy(this.gameObject);
-            effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+            //effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+            effect = Instantiate(hitEffect, transform.position, hitEffect.transform.localRotation);
         } 
-        Destroy(effect, 0.5f); // Eliminamos la explosión de la bala.
+        Destroy(effect, 0.3f); // Eliminamos la explosión de la bala.
     }
     
     void OnDestroy()
     {
-        effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
-        Destroy(effect, 0.5f);
+        //effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+        effect = Instantiate(hitEffect, transform.position, hitEffect.transform.localRotation);
+        Destroy(effect, 0.3f);
     }
 }

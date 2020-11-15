@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class enemyBulletBehaviour : MonoBehaviour
 {
-
-    private Animator animator;
-    private Transform target;
-   
-   
-    void Start()
-    {
-        animator = GameObject.Find("Player").GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range")

@@ -13,7 +13,7 @@ public class droneBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator anim;
 
-    public GameObject[] hitDamagePopUp;
+    [HideInInspector] public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
