@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class playerBehaviour : MonoBehaviour
 {

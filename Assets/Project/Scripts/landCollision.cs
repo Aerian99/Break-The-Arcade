@@ -32,7 +32,7 @@ public class landCollision : MonoBehaviour
             this.gameObject.transform.parent.GetComponent<Rigidbody2D>().velocity = Vector2.up * platformJumpForce;
             landGameObject = Instantiate(landEffect, this.transform.position, landEffect.transform.rotation);
             groundSuperJump = true;
-            SoundManagerScript.PlaySound("platformSuperJump");
+            SoundManagerScript.PlaySound("platformJump");
         }
     }
 

@@ -20,6 +20,7 @@ TagManager:
   - footTrigger
   - Potion
   - Camara
+  - gunSelector
   layers:
   - Default
   - TransparentFX
