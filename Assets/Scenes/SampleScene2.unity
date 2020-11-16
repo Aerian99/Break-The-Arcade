@@ -1036,6 +1036,7 @@ GameObject:
   - component: {fileID: 435789021}
   - component: {fileID: 435789023}
   - component: {fileID: 435789022}
+  - component: {fileID: 435789024}
   m_Layer: 5
   m_Name: gunSelector
   m_TagString: gunSelector
@@ -1052,7 +1053,7 @@ RectTransform:
   m_GameObject: {fileID: 435789020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.8785334, y: 3.8785334, z: 3.8785334}
+  m_LocalScale: {x: 4.4948325, y: 4.4948325, z: 4.4948325}
   m_Children: []
   m_Father: {fileID: 1015400734}
   m_RootOrder: 13
@@ -1081,7 +1082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 546313dac4965674da51fd2edfbeec89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef02560d0b6aad1439c5d7b3f0e236e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1099,6 +1100,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435789020}
   m_CullTransparentMesh: 0
+--- !u!95 &435789024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435789020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17274f37baebd1c4d922774372d34220, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &468117615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6896057090863143120, guid: b462b8d771207e84aa04983a3008a97f,
@@ -14435,6 +14455,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 858824348}
     m_Modifications:
+    - target: {fileID: 5415591082637324499, guid: bd4f4951e4fe0a6419d118f800d505a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.185
+      objectReference: {fileID: 0}
     - target: {fileID: 5415591082637324508, guid: bd4f4951e4fe0a6419d118f800d505a0,
         type: 3}
       propertyPath: m_Layer
@@ -14513,6 +14538,11 @@ PrefabInstance:
     - target: {fileID: 5415591083614275795, guid: bd4f4951e4fe0a6419d118f800d505a0,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415591083614275795, guid: bd4f4951e4fe0a6419d118f800d505a0,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5415591084394106338, guid: bd4f4951e4fe0a6419d118f800d505a0,
@@ -14701,6 +14731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: yellowGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645115450566651165, guid: 286fa4c05682ab84fa9c9eda20816133,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286fa4c05682ab84fa9c9eda20816133, type: 3}
