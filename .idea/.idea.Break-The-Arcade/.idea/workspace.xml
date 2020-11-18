@@ -28,17 +28,14 @@
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 3x1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 3x1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 9x1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/DefaultPlatform 9x1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/OneSidePlatform 3x1_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatform 3x1_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/SuperJumpPlatformOneSide 3x1_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/spikes/spikesAppear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/spikes/spikesAppear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/spikes/spikesDisAppear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Environment/spikes/spikesDisAppear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/keysDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/keysDetector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,13 +53,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/redRobotPatrol.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SceneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/keysDetector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,9 +92,7 @@
         <option value="$PROJECT_DIR$/Assets/hitDamagePopUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/SpikesBehaviour.cs" />
@@ -108,6 +104,12 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/spikeTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/redRobotPatrol.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
       </list>
     </option>
   </component>
@@ -134,10 +136,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16408">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16408" />
+      <option name="pid" />
       <method v="2" />
     </configuration>
   </component>
@@ -163,6 +165,10 @@
       <workItem from="1605270257607" duration="1603000" />
       <workItem from="1605390490960" duration="4277000" />
       <workItem from="1605431755836" duration="16696000" />
+      <workItem from="1605572851204" duration="350000" />
+      <workItem from="1605651225430" duration="715000" />
+      <workItem from="1605695360518" duration="6444000" />
+      <workItem from="1605736166713" duration="4511000" />
     </task>
     <servers />
   </component>

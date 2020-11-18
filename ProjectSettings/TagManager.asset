@@ -21,6 +21,7 @@ TagManager:
   - Potion
   - Camara
   - gunSelector
+  - Spikes
   layers:
   - Default
   - TransparentFX

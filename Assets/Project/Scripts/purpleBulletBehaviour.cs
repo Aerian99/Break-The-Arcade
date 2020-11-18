@@ -11,7 +11,8 @@ public class purpleBulletBehaviour : MonoBehaviour {
         if (other.gameObject.tag != "Player" 
         && other.gameObject.tag != "EnemyBullet" 
         && other.gameObject.tag != "Range" 
-        && other.gameObject.tag != "NPC")
+        && other.gameObject.tag != "NPC"
+        && other.gameObject.tag != "Platform")
 
         {
             Destroy (this.gameObject);

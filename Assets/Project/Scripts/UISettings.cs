@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 
-public class keysDetector : MonoBehaviour
+public class UISettings : MonoBehaviour
 {
     private Image shiftSR;
     private Image spaceSR;
@@ -13,6 +13,8 @@ public class keysDetector : MonoBehaviour
     public Sprite HoldShift;
     public Sprite notHoldSpace;
     public Sprite HoldSpace;
+    public Image dashImage;
+    
     void Start()
     {
         shiftSR = gameObject.transform.GetChild(8).GetComponent<Image>();
@@ -21,6 +23,12 @@ public class keysDetector : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        keysInfo();
+    }
+    
+
+    void keysInfo()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
