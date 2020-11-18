@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class playerMovement : MonoBehaviour
@@ -39,7 +40,7 @@ public class playerMovement : MonoBehaviour
     private float dashCooldown;
     private bool isDashing;
     private bool canDash;
-    public GameObject dashWarning;
+    public Image dashImage;
 
     // Other variables
     public static float movX;
@@ -139,7 +140,7 @@ public class playerMovement : MonoBehaviour
             DashDirection = (int) movX;
             ghostController.enabled = true;
             canDash = false;
-            dashWarning.SetActive(false);
+            dashImage.fillAmount = 0f;
         }
 
         if (isDashing)
@@ -161,9 +162,12 @@ public class playerMovement : MonoBehaviour
         if (dashCooldown <= 0)
         {
             canDash = true;
-            dashWarning.SetActive(true);
+            dashImage.fillAmount = 1f;
             dashCooldown = 3f;
+            dashImage.GetComponent<Animator>().SetTrigger("ready");
         }
+        
+        dashImage.fillAmount += 1.0f / 3.0f  * Time.deltaTime;
     }
 
     public static bool IsGrounded()
