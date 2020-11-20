@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-public class redRobotPatrol : MonoBehaviour
+public class enemyPatrol : MonoBehaviour
 {
     private float patrolSpeed;
     private float patrolDistance;
     private Rigidbody2D rb;
+    private GameObject canvasGO;
 
     private bool movingRight = true;
     public Transform groundDetecion;
@@ -26,6 +27,7 @@ public class redRobotPatrol : MonoBehaviour
         anim = GetComponent<Animator>();
         vecDir = new Vector2(180, 0f);
         anim.SetBool("isRunning", true);
+        canvasGO = gameObject.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -55,11 +57,13 @@ public class redRobotPatrol : MonoBehaviour
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
+                canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = false;
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
         }
