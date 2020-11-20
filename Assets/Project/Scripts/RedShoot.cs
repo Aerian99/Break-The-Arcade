@@ -37,8 +37,8 @@ public class RedShoot : MonoBehaviour
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
         player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        vector2r = new Vector2(25f, 0f);
-        vector2l = new Vector2(-25f, 0f);
+        vector2r = new Vector2(150f, 10f);
+        vector2l = new Vector2(-150f, 10f);
 
         bulletDamage = 5f;
     }
@@ -51,7 +51,7 @@ public class RedShoot : MonoBehaviour
         {
             Shoot();
             SoundManagerScript.PlaySound("shotgun");
-            ScreenShake.shake = 8.5f;
+            ScreenShake.shake = 4.5f;
             ScreenShake.canShake = true;
         }
     }
@@ -94,17 +94,17 @@ public class RedShoot : MonoBehaviour
 
         if (playerAimWeapon.angle > -170 && playerAimWeapon.angle < -90 && playerMovement.IsGrounded())
         {
-            player.AddForce(new Vector2(vector2r.x, 10f), ForceMode2D.Impulse);
+            player.AddForce(new Vector2(vector2r.x, vector2r.y), ForceMode2D.Impulse);
         }
         else if (playerAimWeapon.angle > -90 && playerAimWeapon.angle < -10 && playerMovement.IsGrounded())
         {
-            player.AddForce(new Vector2(vector2l.x, 10f), ForceMode2D.Impulse);
+            player.AddForce(new Vector2(vector2l.x, vector2l.y), ForceMode2D.Impulse);
         }
 
         if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30)
         {
             player.velocity = Vector2.zero;
-            player.AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
+            player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
         }
     }
 }
