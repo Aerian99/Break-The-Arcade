@@ -22,6 +22,7 @@ TagManager:
   - Camara
   - gunSelector
   - Spikes
+  - Bullet Pacman
   layers:
   - Default
   - TransparentFX

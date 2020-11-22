@@ -18,10 +18,15 @@ public class Absorb_Gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false) 
+        if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false)
         {
             playerBehaviour._bulletCounter++;
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "Bullet Pacman")
+        {
+            droneBehaviour.canBeAttacked = true;        
+        }
+
     }
 }

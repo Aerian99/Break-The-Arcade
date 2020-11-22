@@ -6,41 +6,70 @@ public class enemyShoot : MonoBehaviour
 {
     // COMPONENTES
     private Transform target;
-    public GameObject enemyBullet;
+    public GameObject enemyBullet, enemyBulletAttack;
+    private float keepCadency;
+    
 
     // BULLET 
     private float bulletSpeed;
     private float timeBtwShoots;
     private float startTimeBtwShoots;
+    private float cadency;
+    private int shootCounter;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        bulletSpeed = 10f;
-        //startTimeBtwShoots = UnityEngine.Random.Range(0.5f, 1f);
-        startTimeBtwShoots = 1f;// Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
+        shootCounter = 5;
+        bulletSpeed = 15f;
+        cadency = Random.Range(2.0f, 3.5f);
+        keepCadency = cadency;
+        startTimeBtwShoots = 0.5f; // Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
         timeBtwShoots = startTimeBtwShoots;
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+        cadency -= Time.fixedDeltaTime;
         RotateTowards(target.position);
-        if (timeBtwShoots <= 0)
-        {
-            ShootPlayer();
-            timeBtwShoots = startTimeBtwShoots;
-        }
-        else
-        {
-            timeBtwShoots -= Time.deltaTime;
+        if(cadency <=0)
+        { 
+            if (timeBtwShoots <= 0)
+            {
+                ShootPlayer();
+                shootCounter--;
+                timeBtwShoots = startTimeBtwShoots;
+            }
+            else
+            {
+                timeBtwShoots -= Time.deltaTime;
+            }
+
+            if (shootCounter == 0)
+            {
+                shootCounter = 5;
+                cadency = keepCadency;
+            }
         }
     }
     private void ShootPlayer() // Función para disparar hacia la ultima dirección en el frame del jugador.
     {
-        GameObject bullet = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        GameObject bullet;
+        Rigidbody2D rb;
+       if(!droneBehaviour.canBeAttacked)
+        { 
+            if (Random.Range(0f,100f) <= 10)
+            {
+                bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
+                rb = bullet.GetComponent<Rigidbody2D>();
+            }
+            else
+            {
+                bullet = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+                rb = bullet.GetComponent<Rigidbody2D>();
+            }
+            rb.AddForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        }
     }
     private void RotateTowards(Vector2 target) // funcion para rotar mirando al player
     {

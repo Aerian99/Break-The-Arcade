@@ -8425,7 +8425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1599511221
 Transform:
   m_ObjectHideFlags: 0
@@ -13653,7 +13653,7 @@ PrefabInstance:
     - target: {fileID: 5075396575871029337, guid: 4fdbb5a2f430b4c4199d068fb6ccabcb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5075396575871029338, guid: 4fdbb5a2f430b4c4199d068fb6ccabcb,
         type: 3}
@@ -13806,18 +13806,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6896057090863143121, guid: b462b8d771207e84aa04983a3008a97f,
     type: 3}
   m_PrefabInstance: {fileID: 6896057091597174240}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1851090894 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8164862232358180763, guid: 72414716944cbc945a6c92416e0ba89b,
-    type: 3}
-  m_PrefabInstance: {fileID: 858528211}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1857005245 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8164862232358180763, guid: 72414716944cbc945a6c92416e0ba89b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1420592191}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861495686
 GameObject:
@@ -14439,6 +14427,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3122758236653104049, guid: 315f3498b16e2194bad496d6cd695790,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
+        type: 3}
+    - target: {fileID: 3122758236653104049, guid: 315f3498b16e2194bad496d6cd695790,
+        type: 3}
+      propertyPath: enemyBulletAttack
+      value: 
+      objectReference: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
+        type: 3}
     - target: {fileID: 6492271890028013610, guid: 315f3498b16e2194bad496d6cd695790,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14663,6 +14663,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2596693037154807640, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
+        type: 3}
+    - target: {fileID: 2596693037154807640, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+        type: 3}
+      propertyPath: enemyBulletAttack
+      value: 
+      objectReference: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
+        type: 3}
     - target: {fileID: 6144638873485585603, guid: 5f1dcca9676be434ea2849e92bfb86d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15099,6 +15111,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7678537624292687242, guid: ee7d47f84e63f6f44baf078384aff647,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
+        type: 3}
+    - target: {fileID: 7678537624292687242, guid: ee7d47f84e63f6f44baf078384aff647,
+        type: 3}
+      propertyPath: enemyBulletAttack
+      value: 
+      objectReference: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
+        type: 3}
     - target: {fileID: 7678537624597384530, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -15124,6 +15148,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2132315122051934161, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
+        type: 3}
+    - target: {fileID: 2132315122051934161, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: enemyBulletAttack
+      value: 
+      objectReference: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
+        type: 3}
     - target: {fileID: 4152594890571925030, guid: 766ddd25a3c11084eb9898d26c139374,
         type: 3}
       propertyPath: m_GravityScale
