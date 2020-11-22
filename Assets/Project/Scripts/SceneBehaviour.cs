@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneBehaviour : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class SceneBehaviour : MonoBehaviour
         IEnumerator PlayAgain(float time)
         {
             yield return new WaitForSeconds(time);
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene("SampleScene2");
         }
 
         void playGameOver()

@@ -35,7 +35,6 @@ public class droneBehaviour : MonoBehaviour
 
     public void Update()
     {
-        this.spriteRenderer.flipX = playerCharacter.transform.position.x > this.transform.position.x;
         if (actualHealth <= 0)
         {
             anim.SetBool("dead", true);
