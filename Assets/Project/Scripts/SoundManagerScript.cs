@@ -11,7 +11,8 @@ public class SoundManagerScript : MonoBehaviour
         purpleGunSound,
         dashSound,
         platformJump,
-        gameOver;
+        gameOver,
+        EnemyShoot;
 
     static AudioSource audioSrc;
 
@@ -25,6 +26,7 @@ public class SoundManagerScript : MonoBehaviour
         dashSound = Resources.Load<AudioClip>("dash");
         platformJump = Resources.Load<AudioClip>("platformJump");
         gameOver = Resources.Load<AudioClip>("gameOver");
+        EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -62,6 +64,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "gameOver":
                 audioSrc.PlayOneShot(gameOver);
+                break;
+            case "EnemyShoot":
+                audioSrc.PlayOneShot(EnemyShoot);
                 break;
 
             default:
