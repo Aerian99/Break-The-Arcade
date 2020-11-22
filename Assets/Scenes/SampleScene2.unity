@@ -15056,15 +15056,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1999826631166950927, guid: ee7d47f84e63f6f44baf078384aff647,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950929, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.74
+      value: 17.91
       objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950929, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950929, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
@@ -15220,10 +15225,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009108, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009109, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009109, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009109, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7843277954731009111, guid: 766ddd25a3c11084eb9898d26c139374,
         type: 3}
       propertyPath: m_Name
       value: cyanGhost
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009111, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8457730362450370192, guid: 766ddd25a3c11084eb9898d26c139374,
         type: 3}

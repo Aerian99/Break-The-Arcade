@@ -6,8 +6,8 @@
     <e p="C:\Users\tonim\Documents\Break-The-Arcade" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="enemyPatrol.cs" t="Include" />
         <e p="Project" t="Include">
+          <e p="MainMenuManager.cs" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
             <e p="absorbCooldown.cs" t="Include" />
@@ -19,6 +19,7 @@
             <e p="droneBehaviour.cs" t="Include" />
             <e p="dustParticle.cs" t="Include" />
             <e p="enemyBulletBehaviour.cs" t="Include" />
+            <e p="enemyPatrol.cs" t="Include" />
             <e p="enemyShoot.cs" t="Include" />
             <e p="FunctionUpdater.cs" t="Include" />
             <e p="gameHandler.cs" t="Include" />
@@ -53,6 +54,7 @@
             <e p="slimeBehaviour.cs" t="Include" />
             <e p="SoundManagerScript.cs" t="Include" />
             <e p="SpikesBehaviour.cs" t="Include" />
+            <e p="spikeTrigger.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="UISettings.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />
@@ -90,7 +92,6 @@
             </e>
           </e>
         </e>
-        <e p="spikeTrigger.cs" t="Include" />
       </e>
       <e p="Break-The-Arcade.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

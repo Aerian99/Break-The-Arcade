@@ -30,7 +30,7 @@ public class droneBehaviour : MonoBehaviour
         life.fillAmount = actualHealth;
         boolCounter = 0f;
         boolMaxCounter = 5f;
-        //hitDamagePopUp = new GameObject[4];
+        anim.enabled = true;
     }
 
     public void Update()
@@ -49,6 +49,7 @@ public class droneBehaviour : MonoBehaviour
             boolCounter = boolMaxCounter;
             canBeAttacked = false;
         }
+        Hittable();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -79,6 +80,17 @@ public class droneBehaviour : MonoBehaviour
         }
     }
 
+    void Hittable()
+    {
+        if (canBeAttacked)
+        {
+            anim.SetBool("hittable", true);
+        }
+        else
+        {
+            anim.SetBool("hittable", false);
+        }
+    }
     void popUpDamage(float hitdamage)
     {
         GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0,4)], transform.position, Quaternion.identity);
