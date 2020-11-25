@@ -12,7 +12,7 @@ public class purpleBulletBehaviour : MonoBehaviour {
         && other.gameObject.tag != "EnemyBullet" 
         && other.gameObject.tag != "Range" 
         && other.gameObject.tag != "NPC"
-        && other.gameObject.tag != "Platform")
+        && other.gameObject.tag != "Platform" && other.gameObject.tag != "greyPlatform")
 
         {
             Destroy (this.gameObject);

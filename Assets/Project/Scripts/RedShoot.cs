@@ -6,13 +6,16 @@ using UnityEngine;
 public class RedShoot : MonoBehaviour
 {
     private GameObject effect;
+    private Animator anim;
     public ParticleSystem hitEffectPrefab;
     private ParticleSystem shootParticles;
-
+   
     public GameObject bulletPrefab;
     private GameObject bullet;
     private GameObject bullet2;
     private GameObject bullet3;
+    private GameObject reloadBullet;
+    public GameObject reloadPrefab;
     private GameObject particlePoint;
     private Rigidbody2D player;
     private ParticleSystem muzzle;
@@ -31,6 +34,7 @@ public class RedShoot : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
@@ -59,6 +63,7 @@ public class RedShoot : MonoBehaviour
     void Shoot()
     {
         muzzle.Play();
+
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
@@ -73,11 +78,14 @@ public class RedShoot : MonoBehaviour
         timestamp = Time.time + timeBetweenShots;
         playerBehaviour._bulletCounter--;
 
+        
+
         knockBack();
 
         Destroy(bullet, bulletLifeTime);
         Destroy(bullet2, bulletLifeTime);
         Destroy(bullet3, bulletLifeTime);
+        Destroy(reloadBullet, 0.3f);
     }
 
     void knockBack()
@@ -107,4 +115,6 @@ public class RedShoot : MonoBehaviour
             player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
         }
     }
+
+ 
 }

@@ -23,6 +23,7 @@ TagManager:
   - gunSelector
   - Spikes
   - Bullet Pacman
+  - greyPlatform
   layers:
   - Default
   - TransparentFX
