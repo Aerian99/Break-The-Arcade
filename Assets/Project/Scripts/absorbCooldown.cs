@@ -12,6 +12,9 @@ public class absorbCooldown : MonoBehaviour
     public static bool coolFull;
     private float waitTime;
     private Color _initColor;
+    private float incAbsorbSpeed;
+    private float decAbsorbSpeed;
+    
 
     void Start()
     {
@@ -20,17 +23,19 @@ public class absorbCooldown : MonoBehaviour
         coolingDown = true;
         coolFull = false;
         cooldown.fillAmount = 0f;
+        incAbsorbSpeed = 1.0f;
+        decAbsorbSpeed = 0.2f;
     }
 
     void Update()
     {
         if (Input.GetButton("Fire2") && coolFull == false)
         {
-            cooldown.fillAmount += 1.0f / waitTime * Time.deltaTime;
+            cooldown.fillAmount += incAbsorbSpeed / waitTime * Time.deltaTime;
         }
         else
         {
-            cooldown.fillAmount -= 1.0f / waitTime * Time.deltaTime;
+            cooldown.fillAmount -= decAbsorbSpeed / waitTime * Time.deltaTime;
             coolingDown = true;
         }
 
