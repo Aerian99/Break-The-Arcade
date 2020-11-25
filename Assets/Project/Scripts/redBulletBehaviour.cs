@@ -15,7 +15,7 @@ public class redBulletBehaviour : MonoBehaviour
         && other.gameObject.tag != "Range" 
         && other.gameObject.tag != "RedBullet" 
         && other.gameObject.tag != "NPC"
-        && other.gameObject.tag != "Platform")
+        && other.gameObject.tag != "Platform" && other.gameObject.tag != "greyPlatform")
         {
             Destroy(this.gameObject);
             effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
