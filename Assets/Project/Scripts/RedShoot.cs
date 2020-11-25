@@ -78,9 +78,7 @@ public class RedShoot : MonoBehaviour
         timestamp = Time.time + timeBetweenShots;
         playerBehaviour._bulletCounter--;
 
-        
-
-        knockBack();
+        shotgunJump();
 
         Destroy(bullet, bulletLifeTime);
         Destroy(bullet2, bulletLifeTime);
@@ -88,28 +86,10 @@ public class RedShoot : MonoBehaviour
         Destroy(reloadBullet, 0.3f);
     }
 
-    void knockBack()
+    void shotgunJump()
     {
-        if (playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()) // CUANDO EL JUGADOR MIRA HACIA LA IZQUIERDA
-        {
-            player.AddForce(vector2r, ForceMode2D.Impulse);
-        }
-        else if (!playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()
-        ) // CUANDO EL JUGADOR MIRA HACIA LA DERECHA
-        {
-            player.AddForce(vector2l, ForceMode2D.Impulse);
-        }
-
-        if (playerAimWeapon.angle > -170 && playerAimWeapon.angle < -90 && playerMovement.IsGrounded())
-        {
-            player.AddForce(new Vector2(vector2r.x, vector2r.y), ForceMode2D.Impulse);
-        }
-        else if (playerAimWeapon.angle > -90 && playerAimWeapon.angle < -10 && playerMovement.IsGrounded())
-        {
-            player.AddForce(new Vector2(vector2l.x, vector2l.y), ForceMode2D.Impulse);
-        }
-
-        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30)
+        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30) // Si el jugador dispara hacia abajo con un angulo determinado,
+                                                                                                                 // se realizara un salto con la potencia de la escopeta;
         {
             player.velocity = Vector2.zero;
             player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
