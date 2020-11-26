@@ -7,10 +7,11 @@ public class AlienAttack : MonoBehaviour
     float cdShoot, maxCdShoot;
     public GameObject bullet;
     private Vector3 positionBulletPointer;
-    public float force;
+    private float force;
     void Start()
     {
-        maxCdShoot = 2;
+        force = 30f;
+        maxCdShoot = 1;
         cdShoot = maxCdShoot;
     }
 
