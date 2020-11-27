@@ -23,6 +23,7 @@ TagManager:
   - gunSelector
   - Spikes
   - Bullet Pacman
+  - Wall
   layers:
   - Default
   - TransparentFX

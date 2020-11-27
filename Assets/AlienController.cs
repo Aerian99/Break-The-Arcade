@@ -34,6 +34,7 @@ public class AlienController : MonoBehaviour
         {
             this.transform.Translate(new Vector3(speed, 0, 0));
             justActive = false;
+            AlienMovement.inRange = false;
         }
         cd = maxCd;
     

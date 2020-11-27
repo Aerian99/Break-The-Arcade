@@ -7,7 +7,7 @@ public class AlienMovement: MonoBehaviour
     private float range;
     public static bool inRange;
     public LayerMask layer;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -15,14 +15,21 @@ public class AlienMovement: MonoBehaviour
         range = 4;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        inRange = Physics2D.OverlapCircle(transform.position, range, layer); //Look if collides with a wall
+        if (collision.tag == "Wall")
+        { 
+            inRange = true;
+        }
     }
-    private void OnDrawGizmosSelected()
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Gizmos.DrawSphere(transform.position, range); //Look visually the range
+        if (collision.tag == "Wall")
+        {
+            inRange = false;
+        }
     }
+
 }
 
