@@ -9,6 +9,9 @@ public class YellowShoot : MonoBehaviour
     public GameObject bulletPrefab;
     private GameObject bullet;
     public GameObject alternativeMuzzle;
+    public GameObject bulletReloadPrefab;
+    private GameObject bulletReload;
+    
 
     // BULLET SETTINGS
     public static float bulletDamage;
@@ -43,7 +46,22 @@ public class YellowShoot : MonoBehaviour
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
         playerBehaviour._bulletCounterYellow--;
 
+        ReloadBullet();
+        
         Destroy(alternativeMuzzleGO, 0.05f);
         Destroy(bullet, bulletLifeTime);
+    }
+    void ReloadBullet()
+    {
+        bulletReload = Instantiate(bulletReloadPrefab, this.transform.position, Quaternion.identity);
+        if (playerAimWeapon.isFacingLeft)
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(6f, 7f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(-6f, 7f), ForceMode2D.Impulse);
+        }
+        Destroy(bulletReload, 1f);
     }
 }

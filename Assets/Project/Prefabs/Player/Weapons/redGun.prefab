@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575f387c0bb3da146bd5f33493ab1221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimTransform: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &6896057090863143124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +115,11 @@ MonoBehaviour:
     type: 3}
   bulletPrefab: {fileID: 5986094977469769210, guid: 93bb4e9270d485243a211c5ae2f91a56,
     type: 3}
+  bulletReloadPrefab: {fileID: 3302647461779056323, guid: 1e220e597ea892a47adb32e99e4c28e0,
+    type: 3}
+  reloadGun1: {fileID: 0}
+  reloadGun2: {fileID: 0}
+  reloadGun3: {fileID: 0}
 --- !u!1 &6896057091102964566
 GameObject:
   m_ObjectHideFlags: 0

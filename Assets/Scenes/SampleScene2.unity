@@ -18589,6 +18589,12 @@ PrefabInstance:
       propertyPath: purpleGun
       value: 
       objectReference: {fileID: 533781121}
+    - target: {fileID: 3322973854294079147, guid: f11b3c90c9f0a4041929b721584bbd99,
+        type: 3}
+      propertyPath: bulletReloadPrefab
+      value: 
+      objectReference: {fileID: 3302647461779056323, guid: faa1c9da7acabae4a84ec4f7c61cf8ab,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11b3c90c9f0a4041929b721584bbd99, type: 3}
 --- !u!1001 &5056223536554944956
@@ -18890,6 +18896,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2150796557462658692, guid: c9b6cbc53feb1c3408612d32c8f7b756,
         type: 3}
+    - target: {fileID: 6896057090863143124, guid: b462b8d771207e84aa04983a3008a97f,
+        type: 3}
+      propertyPath: bulletReloadPrefab
+      value: 
+      objectReference: {fileID: 3302647461779056323, guid: 1e220e597ea892a47adb32e99e4c28e0,
+        type: 3}
+    - target: {fileID: 6896057090863143124, guid: b462b8d771207e84aa04983a3008a97f,
+        type: 3}
+      propertyPath: reloadGun1
+      value: 
+      objectReference: {fileID: 1031274747361703955, guid: b127f140f6093794ebdca4791cec3c30,
+        type: 3}
+    - target: {fileID: 6896057090863143124, guid: b462b8d771207e84aa04983a3008a97f,
+        type: 3}
+      propertyPath: reloadGun2
+      value: 
+      objectReference: {fileID: 142011696524649555, guid: b127f140f6093794ebdca4791cec3c30,
+        type: 3}
+    - target: {fileID: 6896057090863143124, guid: b462b8d771207e84aa04983a3008a97f,
+        type: 3}
+      propertyPath: reloadGun3
+      value: 
+      objectReference: {fileID: 306299815861982430, guid: b127f140f6093794ebdca4791cec3c30,
+        type: 3}
     - target: {fileID: 6896057091102964566, guid: b462b8d771207e84aa04983a3008a97f,
         type: 3}
       propertyPath: m_Layer
@@ -18923,6 +18953,18 @@ PrefabInstance:
       propertyPath: camara
       value: 
       objectReference: {fileID: 1132165218}
+    - target: {fileID: 7645115450566651153, guid: 286fa4c05682ab84fa9c9eda20816133,
+        type: 3}
+      propertyPath: bulletReloadPrefab
+      value: 
+      objectReference: {fileID: 3302647461779056323, guid: 1474c5b89f0a6674a927af316abb767c,
+        type: 3}
+    - target: {fileID: 7645115450566651153, guid: 286fa4c05682ab84fa9c9eda20816133,
+        type: 3}
+      propertyPath: reloadGun1
+      value: 
+      objectReference: {fileID: 21300000, guid: f9deb3897bab82a4898575db5395eb34,
+        type: 3}
     - target: {fileID: 7645115450566651164, guid: 286fa4c05682ab84fa9c9eda20816133,
         type: 3}
       propertyPath: m_LocalPosition.x
