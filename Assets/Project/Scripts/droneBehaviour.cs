@@ -12,8 +12,8 @@ public class droneBehaviour : MonoBehaviour
     private Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
-    public static bool canBeAttacked;
-    private float boolCounter, boolMaxCounter;
+    public static bool canBeAttacked, Laserdamaged;
+    private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
     [HideInInspector] public GameObject[] hitDamagePopUp;
     private float actualHealth;
@@ -22,6 +22,8 @@ public class droneBehaviour : MonoBehaviour
 
     public void Awake()
     {
+        laserDamagecdMax = 0.5f;
+        laserDamagecd = laserDamagecdMax;
         playerCharacter = GameObject.FindWithTag("Player").transform;
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -48,6 +50,18 @@ public class droneBehaviour : MonoBehaviour
             boolCounter = boolMaxCounter;
             canBeAttacked = false;
         }
+        if(canBeAttacked)
+        { 
+            if (Laserdamaged && laserDamagecd <= 0.0f)
+            {
+                anim.SetTrigger("hit");
+                actualHealth -= LaserShoot.damage;
+                life.fillAmount -= LaserShoot.damage / maxHealth;
+                popUpDamage(LaserShoot.damage);
+                laserDamagecd = laserDamagecdMax;
+            }
+        }
+        laserDamagecd -= Time.deltaTime;
         Hittable();
     }
 
