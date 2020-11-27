@@ -26,7 +26,6 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         vecDir = new Vector2(180, 0f);
-        anim.SetBool("isRunning", true);
         canvasGO = gameObject.transform.GetChild(1).gameObject;
     }
 
