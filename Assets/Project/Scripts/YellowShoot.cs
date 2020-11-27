@@ -26,7 +26,7 @@ public class YellowShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 && this.gameObject.activeInHierarchy == true)
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounterYellow > 0 && this.gameObject.activeInHierarchy == true)
         {
             Shoot();
             SoundManagerScript.PlaySound("yellowGun");
@@ -41,7 +41,7 @@ public class YellowShoot : MonoBehaviour
         timestamp = Time.time + timeBetweenShots;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
-        playerBehaviour._bulletCounter--;
+        playerBehaviour._bulletCounterYellow--;
 
         Destroy(alternativeMuzzleGO, 0.05f);
         Destroy(bullet, bulletLifeTime);

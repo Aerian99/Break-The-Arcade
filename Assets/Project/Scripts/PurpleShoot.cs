@@ -30,7 +30,7 @@ public class PurpleShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 &&
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounterPurple > 0 &&
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
@@ -48,7 +48,7 @@ public class PurpleShoot : MonoBehaviour
         timestamp = Time.time + timeBetweenShots;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
-        playerBehaviour._bulletCounter--;
+        playerBehaviour._bulletCounterPurple--;
 
         Destroy(bullet, bulletLifeTime);
     }

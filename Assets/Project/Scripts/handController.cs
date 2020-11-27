@@ -14,7 +14,7 @@ public class handController : MonoBehaviour
     public Image redGunUI;
 
     private GameObject absorbGun;
-    private int currentPos;
+    public static int currentPos;
 
     private Transform gunSelector;
     void Start()

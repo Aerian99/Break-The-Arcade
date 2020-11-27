@@ -50,7 +50,7 @@ public class RedShoot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounter > 0 &&
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour._bulletCounterShotgun > 0 &&
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
@@ -76,7 +76,7 @@ public class RedShoot : MonoBehaviour
         Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
         rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
         timestamp = Time.time + timeBetweenShots;
-        playerBehaviour._bulletCounter--;
+        playerBehaviour._bulletCounterShotgun--;
 
         shotgunJump();
 
