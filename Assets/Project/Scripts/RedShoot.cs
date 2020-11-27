@@ -59,6 +59,7 @@ public class RedShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
         RotateReloadBullet();
+        Debug.Log(playerAimWeapon.angle);
     }
 
     void Shoot()
@@ -91,9 +92,16 @@ public class RedShoot : MonoBehaviour
 
     void shotgunJump()
     {
-        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30
-            ) // Si el jugador dispara hacia abajo con un angulo determinado,
-            // se realizara un salto con la potencia de la escopeta;
+        if (playerMovement.IsGrounded() && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -90)
+        {
+            player.AddForce(new Vector2(25f, 7f), ForceMode2D.Impulse);
+        }
+        else if (playerMovement.IsGrounded() && playerAimWeapon.angle > -90 && playerAimWeapon.angle < -20)
+        {
+            player.AddForce(new Vector2(-25f, 7f), ForceMode2D.Impulse);
+        }
+
+        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -20) // Si el jugador dispara hacia abajo con un angulo determinado, se realizara un salto con la potencia de la escopeta;
         {
             player.velocity = Vector2.zero;
             player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
