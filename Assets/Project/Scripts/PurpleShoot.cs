@@ -10,6 +10,8 @@ public class PurpleShoot : MonoBehaviour
     private Transform shootPoint;
     public GameObject bulletPrefab;
     private GameObject bullet;
+    public GameObject bulletReloadPrefab;
+    private GameObject bulletReload;
     
     //BULLETS
     public static float bulletDamage;
@@ -49,7 +51,23 @@ public class PurpleShoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
         playerBehaviour._bulletCounter--;
+        
+        ReloadBullet();
 
         Destroy(bullet, bulletLifeTime);
+    }
+    
+    void ReloadBullet()
+    {
+        bulletReload = Instantiate(bulletReloadPrefab, this.transform.position, Quaternion.identity);
+        if (playerAimWeapon.isFacingLeft)
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(6f, 7f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(-6f, 7f), ForceMode2D.Impulse);
+        }
+        Destroy(bulletReload, 1f);
     }
 }

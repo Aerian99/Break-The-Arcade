@@ -21,6 +21,7 @@
             <e p="enemyBulletBehaviour.cs" t="Include" />
             <e p="enemyPatrol.cs" t="Include" />
             <e p="enemyShoot.cs" t="Include" />
+            <e p="FlyingBehaviour.cs" t="Include" />
             <e p="FunctionUpdater.cs" t="Include" />
             <e p="gameHandler.cs" t="Include" />
             <e p="GhostController.cs" t="Include" />
