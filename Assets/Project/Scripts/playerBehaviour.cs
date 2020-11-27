@@ -37,7 +37,7 @@ public class playerBehaviour : MonoBehaviour
         _playerLifes = 5;
         _bulletCounterPurple = 0;
         _bulletCounterYellow = 0;
-        _bulletCounterShotgun = 0;
+        _bulletCounterShotgun = 1000;
         maxcdAberration = 0.1f;
         cdAberration = 0;
         activePostProcessing = false;
@@ -59,9 +59,12 @@ public class playerBehaviour : MonoBehaviour
         lifes.text = "Lifes:  " + _playerLifes;
 
         
-        if(handController.currentPos == 0) bullets.text = "Bullets:  " + _bulletCounterPurple + "/" + MAX_BULLETS_PURPLE;
-        else if (handController.currentPos == 1) bullets.text = "Bullets:  " + _bulletCounterYellow + "/" + MAX_BULLETS_YELLOW;
-        else if (handController.currentPos == 2) bullets.text = "Bullets:  " + _bulletCounterShotgun + "/" + MAX_BULLETS_SHOTGUN;
+        if(handController.currentPos == 0) 
+            bullets.text = "Bullets:  " + _bulletCounterPurple + "/" + MAX_BULLETS_PURPLE;
+        else if (handController.currentPos == 1) 
+            bullets.text = "Bullets:  " + _bulletCounterYellow + "/" + MAX_BULLETS_YELLOW;
+        else if (handController.currentPos == 2) 
+            bullets.text = "Bullets:  " + _bulletCounterShotgun + "/" + MAX_BULLETS_SHOTGUN;
     }
 
     void chromaticAberration()

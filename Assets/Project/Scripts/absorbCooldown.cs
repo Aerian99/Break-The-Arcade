@@ -24,7 +24,7 @@ public class absorbCooldown : MonoBehaviour
         coolFull = false;
         cooldown.fillAmount = 0f;
         incAbsorbSpeed = 1.0f;
-        decAbsorbSpeed = 0.2f;
+        decAbsorbSpeed = 0.3f;
     }
 
     void Update()
