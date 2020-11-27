@@ -23,7 +23,7 @@ TagManager:
   - gunSelector
   - Spikes
   - Bullet Pacman
-  - Wall
+  - greyPlatform
   layers:
   - Default
   - TransparentFX
@@ -37,7 +37,7 @@ TagManager:
   - Bullet
   - Player
   - PostProcessing
-  - Wall
+  - BulletReload
   - 
   - 
   - 

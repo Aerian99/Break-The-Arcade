@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class RedShoot : MonoBehaviour
 {
     private GameObject effect;
+    private Animator anim;
     public ParticleSystem hitEffectPrefab;
     private ParticleSystem shootParticles;
 
@@ -21,24 +23,26 @@ public class RedShoot : MonoBehaviour
     private Transform shootPoint2;
     private Transform shootPoint3;
 
+    public GameObject bulletReloadPrefab;
+    private GameObject bulletReload;
+
     // BULLET
     public static float bulletDamage;
     private float bulletForce = 25f;
     private float bulletLifeTime = 0.40f; // Alcance de la bala
     private float timeBetweenShots = 0.35f;
     private float timestamp;
-    private Vector2 vector2r, vector2l;
+    public Sprite reloadGun1, reloadGun2, reloadGun3;
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
         player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
         muzzle = particlePoint.GetComponent<ParticleSystem>();
-        vector2r = new Vector2(150f, 10f);
-        vector2l = new Vector2(-150f, 10f);
 
         bulletDamage = 5f;
     }
@@ -54,11 +58,13 @@ public class RedShoot : MonoBehaviour
             ScreenShake.shake = 4.5f;
             ScreenShake.canShake = true;
         }
+        RotateReloadBullet();
     }
 
     void Shoot()
     {
         muzzle.Play();
+
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
@@ -72,39 +78,59 @@ public class RedShoot : MonoBehaviour
         rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
         timestamp = Time.time + timeBetweenShots;
         playerBehaviour._bulletCounter--;
+        
+        shotgunJump();
 
-        knockBack();
-
+        ReloadBullet();
+        
         Destroy(bullet, bulletLifeTime);
         Destroy(bullet2, bulletLifeTime);
         Destroy(bullet3, bulletLifeTime);
+        
     }
 
-    void knockBack()
+    void shotgunJump()
     {
-        if (playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()) // CUANDO EL JUGADOR MIRA HACIA LA IZQUIERDA
-        {
-            player.AddForce(vector2r, ForceMode2D.Impulse);
-        }
-        else if (!playerAimWeapon.isFacingLeft && playerMovement.IsGrounded()
-        ) // CUANDO EL JUGADOR MIRA HACIA LA DERECHA
-        {
-            player.AddForce(vector2l, ForceMode2D.Impulse);
-        }
-
-        if (playerAimWeapon.angle > -170 && playerAimWeapon.angle < -90 && playerMovement.IsGrounded())
-        {
-            player.AddForce(new Vector2(vector2r.x, vector2r.y), ForceMode2D.Impulse);
-        }
-        else if (playerAimWeapon.angle > -90 && playerAimWeapon.angle < -10 && playerMovement.IsGrounded())
-        {
-            player.AddForce(new Vector2(vector2l.x, vector2l.y), ForceMode2D.Impulse);
-        }
-
-        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30)
+        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -130 && playerAimWeapon.angle < -30
+            ) // Si el jugador dispara hacia abajo con un angulo determinado,
+            // se realizara un salto con la potencia de la escopeta;
         {
             player.velocity = Vector2.zero;
             player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
+        }
+    }
+
+    void ReloadBullet()
+    {
+        bulletReload = Instantiate(bulletReloadPrefab, this.transform.position, Quaternion.identity);
+        if (playerAimWeapon.isFacingLeft)
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(6f, 7f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(-6f, 7f), ForceMode2D.Impulse);
+        }
+
+        Destroy(bulletReload, 0.6f);
+    }
+
+    void RotateReloadBullet()
+    {
+        if (bulletReload != null)
+        {
+            if (bulletReload.GetComponent<Rigidbody2D>().velocity.y > 0f)
+            {
+                bulletReload.GetComponent<SpriteRenderer>().sprite = reloadGun1;
+            }
+            else if (bulletReload.GetComponent<Rigidbody2D>().velocity.y < 0f)
+            {
+                bulletReload.GetComponent<SpriteRenderer>().sprite = reloadGun2;
+            }
+            else if (bulletReload.GetComponent<Rigidbody2D>().velocity.y == 0f)
+            {
+                bulletReload.GetComponent<SpriteRenderer>().sprite = reloadGun3;
+            }
         }
     }
 }

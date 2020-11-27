@@ -39,6 +39,9 @@ public class handController : MonoBehaviour
         {
             currentPos++;
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) currentPos = 2;
     }
 
     void WeaponSelector()
