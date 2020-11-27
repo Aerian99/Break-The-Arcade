@@ -20,7 +20,12 @@ public class Absorb_Gun : MonoBehaviour
     {
         if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false)
         {
-            playerBehaviour._bulletCounter++;
+            if (handController.currentPos == 0 && playerBehaviour._bulletCounterPurple != playerBehaviour.MAX_BULLETS_PURPLE)
+            { playerBehaviour._bulletCounterPurple++; }
+            else if (handController.currentPos == 1 && playerBehaviour._bulletCounterYellow != playerBehaviour.MAX_BULLETS_YELLOW)
+            { playerBehaviour._bulletCounterYellow++; }
+            else if (handController.currentPos == 2 && playerBehaviour._bulletCounterShotgun != playerBehaviour.MAX_BULLETS_SHOTGUN)
+            { playerBehaviour._bulletCounterShotgun++; }
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "Bullet Pacman")
