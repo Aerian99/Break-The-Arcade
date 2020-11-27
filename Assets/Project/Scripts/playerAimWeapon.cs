@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
 
 public class playerAimWeapon : MonoBehaviour
 {
@@ -64,19 +63,5 @@ public class playerAimWeapon : MonoBehaviour
     {
         Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
         return worldPosition;
-    }
-
-    // CAMERA SHAKE FUNCTION
-    public static void ShakeCamera(float intensidad, float duracion)
-    {
-        Vector3 lastCameraMovement = Vector3.zero;
-        FunctionUpdater.Create(delegate ()
-        {
-            duracion -= Time.unscaledDeltaTime;
-            Vector3 randomMovement = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized * intensidad;
-            Camera.main.transform.position = Camera.main.transform.position - lastCameraMovement + randomMovement;
-            lastCameraMovement = randomMovement;
-            return duracion <= 0f;
-        }, "CAMERA_SHAKE");
     }
 }
