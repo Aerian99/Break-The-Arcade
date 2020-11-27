@@ -114,6 +114,9 @@ MonoBehaviour:
     type: 3}
   alternativeMuzzle: {fileID: 280528036321771607, guid: a786d951cc32aa547801756f7226d1bd,
     type: 3}
+  bulletReloadPrefab: {fileID: 3302647461779056323, guid: 1474c5b89f0a6674a927af316abb767c,
+    type: 3}
+  reloadGun1: {fileID: 0}
 --- !u!114 &1640979142
 MonoBehaviour:
   m_ObjectHideFlags: 0
