@@ -11,9 +11,6 @@ public class playerBehaviour : MonoBehaviour
 
     private Animator animator;
     public static int _playerLifes;
-    public static int _bulletCounterPurple;
-    public static int _bulletCounterYellow;
-    public static int _bulletCounterShotgun;
 
     public static bool activePostProcessing;
     private float cdAberration, maxcdAberration;
@@ -27,23 +24,30 @@ public class playerBehaviour : MonoBehaviour
     private float timer = 0.0f;
     private int seconds;
 
-    public static int MAX_BULLETS_PURPLE;
-    public static int MAX_BULLETS_YELLOW;
-    public static int MAX_BULLETS_SHOTGUN;
+    public static int bulletsPurple, bulletsYellow, bulletsShotgun;
+    public static int MAX_PURPLE_SHOOT, MAX_YELLOW_SHOOT, MAX_SHOTGUN_SHOOT; //maximo de balas que puede tener en el cargador
+    public static bool purpleCanReload, yellowCanReload, shotgunCanReload;
+    public static int reservedAmmoPurple, reservedAmmoYellow, reservedAmmoShotgun; //counter del total que lleva
+    public static int MAX_BULLETS_PURPLE, MAX_BULLETS_YELLOW, MAX_BULLETS_SHOTGUN; //máximo que puede tener en TOTAL
 
     void Start()
     {
         animator = GetComponent<Animator>();
         _playerLifes = 5;
-        _bulletCounterPurple = 0;
-        _bulletCounterYellow = 0;
-        _bulletCounterShotgun = 1000;
         maxcdAberration = 0.1f;
         cdAberration = 0;
         activePostProcessing = false;
+        purpleCanReload = yellowCanReload = shotgunCanReload = false;
+        bulletsPurple = bulletsYellow = bulletsShotgun = 0;
+        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
+        MAX_PURPLE_SHOOT = 10;
+        MAX_YELLOW_SHOOT = 10;
+        MAX_SHOTGUN_SHOOT = 3;
+
         MAX_BULLETS_PURPLE = 30;
         MAX_BULLETS_YELLOW = 20;
         MAX_BULLETS_SHOTGUN = 9;
+
     }
 
     void Update()
@@ -60,11 +64,13 @@ public class playerBehaviour : MonoBehaviour
 
         
         if(handController.currentPos == 0) 
-            bullets.text = "Bullets:  " + _bulletCounterPurple + "/" + MAX_BULLETS_PURPLE;
+            bullets.text = "Bullets:  " + bulletsPurple + "/" + reservedAmmoPurple;
         else if (handController.currentPos == 1) 
-            bullets.text = "Bullets:  " + _bulletCounterYellow + "/" + MAX_BULLETS_YELLOW;
+            bullets.text = "Bullets:  " + bulletsYellow + "/" + reservedAmmoYellow;
         else if (handController.currentPos == 2) 
-            bullets.text = "Bullets:  " + _bulletCounterShotgun + "/" + MAX_BULLETS_SHOTGUN;
+            bullets.text = "Bullets:  " + bulletsShotgun + "/" + reservedAmmoShotgun;
+
+        Reload();
     }
 
     void chromaticAberration()
@@ -79,6 +85,49 @@ public class playerBehaviour : MonoBehaviour
                 activePostProcessing = false;
             }
             cdAberration += Time.deltaTime;
+        }
+    }
+
+    void Reload()
+    {
+        if (handController.currentPos == 0 && bulletsPurple == 0 && Input.GetKey(KeyCode.R))
+        {
+            if (reservedAmmoPurple > MAX_PURPLE_SHOOT)
+            {
+                bulletsPurple += MAX_PURPLE_SHOOT;
+                reservedAmmoPurple -= MAX_PURPLE_SHOOT;
+            }
+            else
+            {
+                bulletsPurple += reservedAmmoPurple;
+                reservedAmmoPurple -= reservedAmmoPurple;
+            }
+        }
+        else if (handController.currentPos == 1 && bulletsYellow == 0 && Input.GetKey(KeyCode.R))
+        {
+            if (reservedAmmoYellow > MAX_YELLOW_SHOOT)
+            {
+                bulletsYellow += MAX_YELLOW_SHOOT;
+                reservedAmmoYellow -= MAX_YELLOW_SHOOT;
+            }
+            else
+            {
+                bulletsYellow += reservedAmmoYellow;
+                reservedAmmoYellow -= reservedAmmoYellow;
+            }
+        }
+        else if (handController.currentPos == 2 && bulletsShotgun == 0 && Input.GetKey(KeyCode.R))
+        {
+            if (reservedAmmoShotgun > MAX_SHOTGUN_SHOOT)
+            {
+                bulletsShotgun += MAX_SHOTGUN_SHOOT;
+                reservedAmmoShotgun -= MAX_SHOTGUN_SHOOT;
+            }
+            else
+            {
+                bulletsShotgun += reservedAmmoShotgun;
+                reservedAmmoShotgun -= reservedAmmoShotgun;
+            }
         }
     }
 }

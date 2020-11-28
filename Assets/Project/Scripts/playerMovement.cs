@@ -71,7 +71,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         // FUNCTIONS
-        Move();
+        Move();      
         Jump();
         Dash();
         SetAnimationState();
@@ -94,7 +94,9 @@ public class playerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
+
     
+
     // This Jump function works with key hold detection. Hold to jump higher.
     void Jump()
     {
