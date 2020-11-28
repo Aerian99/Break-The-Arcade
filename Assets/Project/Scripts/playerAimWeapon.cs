@@ -10,11 +10,13 @@ public class playerAimWeapon : MonoBehaviour
     private Vector3 worldPosition;
     public static bool isFacingLeft;
     public static float angle;
+    
 
     void Start()
     {
         aimPos = GameObject.Find("_aimPos").transform;
         player = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
