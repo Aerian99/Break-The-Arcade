@@ -11,7 +11,9 @@ public class YellowShoot : MonoBehaviour
     public GameObject alternativeMuzzle;
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
-    
+    private float distance;
+    public LineRenderer line;
+    public Transform l_transform;
 
     // BULLET SETTINGS
     public static float bulletDamage;
@@ -24,12 +26,14 @@ public class YellowShoot : MonoBehaviour
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         bulletDamage = 1f;
+        distance = 100;
+        l_transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow > 0 && this.gameObject.activeInHierarchy == true)
+        if (Input.GetButton("Fire1"))
         {
             Shoot();
             SoundManagerScript.PlaySound("yellowGun");
@@ -39,17 +43,14 @@ public class YellowShoot : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject alternativeMuzzleGO = Instantiate(alternativeMuzzle, particlePoint.transform.position, particlePoint.transform.rotation);
-        bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-        timestamp = Time.time + timeBetweenShots;
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
-        playerBehaviour.bulletsYellow--;
+        Debug.Log(l_transform.position);
+        if (Physics2D.Raycast(l_transform.position, transform.right))
+        {
+            RaycastHit2D _hit = Physics2D.Raycast(l_transform.position, transform.right);
+            DrawRay(l_transform.position, _hit.point);
 
-        ReloadBullet();
-        
-        Destroy(alternativeMuzzleGO, 0.05f);
-        Destroy(bullet, bulletLifeTime);
+        }
+        //ReloadBullet();
     }
     void ReloadBullet()
     {
@@ -63,5 +64,12 @@ public class YellowShoot : MonoBehaviour
             bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(-6f, 7f), ForceMode2D.Impulse);
         }
         Destroy(bulletReload, 1f);
+    }
+
+    void DrawRay(Vector2 startPos, Vector2 endPos)
+    {
+        line.SetPosition(0, startPos);
+        line.SetPosition(1, endPos);
+    
     }
 }

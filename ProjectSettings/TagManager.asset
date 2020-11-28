@@ -24,6 +24,8 @@ TagManager:
   - Spikes
   - Bullet Pacman
   - greyPlatform
+  - Wall
+  - LaserGun
   layers:
   - Default
   - TransparentFX
