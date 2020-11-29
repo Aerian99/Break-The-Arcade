@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserShoot : MonoBehaviour
 {
+    //private float distance;
+    public static float damage;
+    private bool startedShooting;
+    
+    // Particle components
     public Camera cam;
     public LineRenderer lineRenderer;
     public Transform firePoint;
@@ -12,11 +16,6 @@ public class LaserShoot : MonoBehaviour
     public GameObject endVFX;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
 
-    //private float distance;
-    public LineRenderer line;
-    public Transform l_transform;
-    public static float damage;
-    private bool startedShooting;
 
     private float nextFrame;
     private float time;
@@ -28,47 +27,58 @@ public class LaserShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        l_transform = GetComponent<Transform>();
         //distance = 100;
         startedShooting = false;
         damage = 3f;
         nextFrame = 0;
         time = 0;
         period = 0.5f;
+        
+        FillLists();
+        DisableLaser();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         //SHOOT
         if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             time = nextFrame;
+            EnableLaser();
+        }
         if (startedShooting && playerBehaviour.bulletsYellow > 0)
         {
-            Shoot();
+            CheckFirstAbsorb();
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
+            UpdateLaser();
         }
-        if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0)
-        {  
+
+        if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
+            playerBehaviour.bulletsYellow > 0)
+        {
             nextFrame += period;
             playerBehaviour.bulletsYellow--;
             SoundManagerScript.PlaySound("yellowGun");
         }
-        else if(time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 && this.gameObject.activeInHierarchy == true && !startedShooting)
+        else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
+                 this.gameObject.activeInHierarchy == true && !startedShooting)
         {
             nextFrame += period;
             startedShooting = true;
             playerBehaviour.bulletsYellow--;
-            Shoot();
             SoundManagerScript.PlaySound("yellowGun");
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
+            CheckFirstAbsorb();
+            //EnableLaser();
         }
 
-        if((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) ||  playerBehaviour.bulletsYellow == 0)
+        if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || playerBehaviour.bulletsYellow == 0)
         {
-            line.enabled = false;
             startedShooting = false;
+            DisableLaser();
         }
 
         //POPUPS
@@ -79,7 +89,7 @@ public class LaserShoot : MonoBehaviour
         }
 
         else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
+                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
         {
             noAmmoText.SetActive(true);
         }
@@ -87,17 +97,18 @@ public class LaserShoot : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    void EnableLaser()
+    void CheckFirstAbsorb()
     {
         if (Absorb_Gun.firstTimeAbsorb1)
         {
             Absorb_Gun.firstTimeAbsorb1 = false;
             Absorb_Gun.ammoFull1 = true;
         }
-
-        line.enabled = true;
-
-        if (Physics2D.Raycast(l_transform.position, transform.right))
+    }
+    void EnableLaser()
+    {
+        lineRenderer.enabled = true;
+        for (int i = 0; i < particles.Count; i++)
         {
             particles[i].Play();
         }
@@ -107,7 +118,7 @@ public class LaserShoot : MonoBehaviour
     {
         Vector2 mousePos = (Vector2) cam.ScreenToWorldPoint(Input.mousePosition);
         lineRenderer.SetPosition(0, (Vector2) firePoint.position);
-        startVFX.transform.position = (Vector2) firePoint.position;
+        startVFX.transform.position = firePoint.position;
         
         lineRenderer.SetPosition(1, mousePos);
 
@@ -118,7 +129,6 @@ public class LaserShoot : MonoBehaviour
         {
             lineRenderer.SetPosition(1, hit.point);
         }
-
         endVFX.transform.position = lineRenderer.GetPosition(1);
     }
 
