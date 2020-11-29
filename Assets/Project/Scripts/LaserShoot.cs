@@ -4,54 +4,161 @@ using UnityEngine;
 
 public class LaserShoot : MonoBehaviour
 {
-
-    private float distance;
-    public LineRenderer line;
-    public Transform l_transform;
+    //private float distance;
     public static float damage;
+    private bool startedShooting;
+    
+    // Particle components
+    public Camera cam;
+    public LineRenderer lineRenderer;
+    public Transform firePoint;
+    public GameObject startVFX;
+    public GameObject endVFX;
+    private List<ParticleSystem> particles = new List<ParticleSystem>();
+
+
+    private float nextFrame;
+    private float time;
+    private float period;
+
+    public GameObject reloadText;
+    public GameObject noAmmoText;
+
     // Start is called before the first frame update
     void Start()
     {
-        l_transform = GetComponent<Transform>();
-        distance = 100;
+        //distance = 100;
+        startedShooting = false;
         damage = 3f;
+        nextFrame = 0;
+        time = 0;
+        period = 0.5f;
+        
+        FillLists();
+        DisableLaser();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        //SHOOT
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Shoot();
+            time = nextFrame;
+            EnableLaser();
         }
-        else
+        if (startedShooting && playerBehaviour.bulletsYellow > 0)
         {
-            line.enabled = false;
+            CheckFirstAbsorb();
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
+            UpdateLaser();
+        }
+
+        if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
+            playerBehaviour.bulletsYellow > 0)
+        {
+            nextFrame += period;
+            playerBehaviour.bulletsYellow--;
+            SoundManagerScript.PlaySound("yellowGun");
+        }
+        else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
+                 this.gameObject.activeInHierarchy == true && !startedShooting)
+        {
+            nextFrame += period;
+            startedShooting = true;
+            playerBehaviour.bulletsYellow--;
+            SoundManagerScript.PlaySound("yellowGun");
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
+            CheckFirstAbsorb();
+            //EnableLaser();
+        }
+
+        if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || playerBehaviour.bulletsYellow == 0)
+        {
+            startedShooting = false;
+            DisableLaser();
+        }
+
+        //POPUPS
+        if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
+            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow > 0)
+        {
+            reloadText.SetActive(true);
+        }
+
+        else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
+                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
+        {
+            noAmmoText.SetActive(true);
+        }
+
+        time += Time.deltaTime;
+    }
+
+    void CheckFirstAbsorb()
+    {
+        if (Absorb_Gun.firstTimeAbsorb1)
+        {
+            Absorb_Gun.firstTimeAbsorb1 = false;
+            Absorb_Gun.ammoFull1 = true;
+        }
+    }
+    void EnableLaser()
+    {
+        lineRenderer.enabled = true;
+        for (int i = 0; i < particles.Count; i++)
+        {
+            particles[i].Play();
         }
     }
 
-    void Shoot()
+    void UpdateLaser()
     {
-        line.enabled = true;
-        if (Physics2D.Raycast(l_transform.position, transform.right))
+        Vector2 mousePos = (Vector2) cam.ScreenToWorldPoint(Input.mousePosition);
+        lineRenderer.SetPosition(0, (Vector2) firePoint.position);
+        startVFX.transform.position = firePoint.position;
+        
+        lineRenderer.SetPosition(1, mousePos);
+
+        Vector2 direction = mousePos - (Vector2) transform.position;
+        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude);
+
+        if (hit && !hit.transform.CompareTag("Player"))
         {
-            RaycastHit2D _hit = Physics2D.Raycast(l_transform.position, transform.right);
-            if (_hit.collider.tag == "Enemy")
-            {
-                droneBehaviour.Laserdamaged = true;
-            }
-            else
-            {
-                droneBehaviour.Laserdamaged = false;
-            }
-            DrawRay(l_transform.position, _hit.point);
+            lineRenderer.SetPosition(1, hit.point);
+        }
+        endVFX.transform.position = lineRenderer.GetPosition(1);
+    }
+
+    void DisableLaser()
+    {
+        lineRenderer.enabled = false;
+        for (int i = 0; i < particles.Count; i++)
+        {
+            particles[i].Stop();
         }
     }
 
-    void DrawRay(Vector2 startPos, Vector2 endPos)
+    void FillLists()
     {
-        line.SetPosition(0, startPos);
-        line.SetPosition(1, endPos);
-
+        for (int i = 0; i < startVFX.transform.childCount; i++)
+        {
+            ParticleSystem ps = startVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                particles.Add(ps);
+            }
+        }
+        
+        for (int i = 0; i < endVFX.transform.childCount; i++)
+        {
+            ParticleSystem ps = endVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                particles.Add(ps);
+            }
+        }
     }
 }

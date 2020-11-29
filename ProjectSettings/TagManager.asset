@@ -27,6 +27,7 @@ TagManager:
   - Wall
   - LaserGun
   - AlienAttack
+  - Triggers
   layers:
   - Default
   - TransparentFX

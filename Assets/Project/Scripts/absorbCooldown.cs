@@ -8,7 +8,7 @@ public class absorbCooldown : MonoBehaviour
 {
     public Image cooldown;
     public TextMeshProUGUI warning;
-    private bool coolingDown;
+    //private bool coolingDown;
     public static bool coolFull;
     private float waitTime;
     private Color _initColor;
@@ -20,7 +20,7 @@ public class absorbCooldown : MonoBehaviour
     {
         _initColor = cooldown.color;
         waitTime = 3.0f;
-        coolingDown = true;
+        //coolingDown = true;
         coolFull = false;
         cooldown.fillAmount = 0f;
         incAbsorbSpeed = 1.0f;
@@ -36,7 +36,7 @@ public class absorbCooldown : MonoBehaviour
         else
         {
             cooldown.fillAmount -= decAbsorbSpeed / waitTime * Time.deltaTime;
-            coolingDown = true;
+            //coolingDown = true;
         }
 
         if (cooldown.fillAmount == 1f)
@@ -47,7 +47,7 @@ public class absorbCooldown : MonoBehaviour
         else if (cooldown.fillAmount == 0f)
         {
             cooldown.color = _initColor;
-            coolingDown = false;
+            //coolingDown = false;
             coolFull = false;
         }
         else if (cooldown.fillAmount > 0.8f && coolFull == false)

@@ -12,7 +12,10 @@ public class PurpleShoot : MonoBehaviour
     private GameObject bullet;
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
-    
+
+    public GameObject reloadText;
+    public GameObject noAmmoText;
+
     //BULLETS
     public static float bulletDamage;
     private float bulletSpeed = 25f; // Speed
@@ -40,11 +43,27 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
         }
-        
-    }
 
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
+           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0)
+        {
+            reloadText.SetActive(true);
+        }
+
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 && playerBehaviour.reservedAmmoPurple == 0 &&
+           this.gameObject.activeInHierarchy == true)
+        {
+            noAmmoText.SetActive(true);
+        }
+
+    }
     void Shoot()
     {
+        if (Absorb_Gun.firstTimeAbsorb0)
+        {
+            Absorb_Gun.firstTimeAbsorb0 = false;
+            Absorb_Gun.ammoFull0 = true;
+        }
         muzzle.Play();
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         timestamp = Time.time + timeBetweenShots;

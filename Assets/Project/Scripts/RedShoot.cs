@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
+using TMPro;
 
 public class RedShoot : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class RedShoot : MonoBehaviour
 
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
+
+    public GameObject reloadText;
+    public GameObject noAmmoText;
 
     // BULLET
     public static float bulletDamage;
@@ -50,7 +54,7 @@ public class RedShoot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-   
+
 
         if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
             this.gameObject.activeInHierarchy == true)
@@ -61,13 +65,28 @@ public class RedShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
 
-        RotateReloadBullet();
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
+            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0)
+        {
+            reloadText.SetActive(true);
+        }
 
-        //Debug.Log(playerAimWeapon.angle);
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
+            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
+        {
+            noAmmoText.SetActive(true);
+        }
+
+        RotateReloadBullet();
     }
 
     void Shoot()
     {
+        if (Absorb_Gun.firstTimeAbsorb2)
+        {
+            Absorb_Gun.firstTimeAbsorb2 = false;
+            Absorb_Gun.ammoFull2 = true;
+        }
         muzzle.Play();
 
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);

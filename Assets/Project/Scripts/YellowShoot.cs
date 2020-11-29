@@ -11,22 +11,22 @@ public class YellowShoot : MonoBehaviour
     public GameObject alternativeMuzzle;
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
-    private float distance;
+    //private float distance;
     public LineRenderer line;
     public Transform l_transform;
 
     // BULLET SETTINGS
     public static float bulletDamage;
-    private float bulletForce = 25f;
+    /*private float bulletForce = 25f;
     private float bulletLifeTime = 0.35f;
-    private float timeBetweenShots = 0.20f;
+    private float timeBetweenShots = 0.20f;*/
     private float timestamp;
     void Start()
     {
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         bulletDamage = 1f;
-        distance = 100;
+        //distance = 100;
         l_transform = GetComponent<Transform>();
     }
 
