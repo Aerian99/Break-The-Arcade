@@ -6,20 +6,21 @@
     <e p="C:\Users\tonim\Documents\Break-The-Arcade" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AlienController.cs" t="Include" />
-        <e p="LaserShoot.cs" t="Include" />
-        <e p="MovingEnemy.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="MainMenuManager.cs" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
             <e p="absorbCooldown.cs" t="Include" />
             <e p="AlienAttack.cs" t="Include" />
+            <e p="AlienBehaviour.cs" t="Include" />
+            <e p="AlienController.cs" t="Include" />
             <e p="AlienMovement.cs" t="Include" />
             <e p="boxMovement.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
+            <e p="CameraScene.cs" t="Include" />
             <e p="cameraShake.cs" t="Include" />
             <e p="camerBehaviour.cs" t="Include" />
+            <e p="CloseDoor.cs" t="Include" />
             <e p="dashCooldown.cs" t="Include" />
             <e p="DataScript.cs" t="Include" />
             <e p="droneBehaviour.cs" t="Include" />
@@ -37,8 +38,11 @@
             <e p="hitDamagePopUp.cs" t="Include" />
             <e p="joystickShoot.cs" t="Include" />
             <e p="landCollision.cs" t="Include" />
+            <e p="LaserShoot.cs" t="Include" />
             <e p="mageMovement.cs" t="Include" />
+            <e p="MovingEnemy.cs" t="Include" />
             <e p="OneSidePlatform.cs" t="Include" />
+            <e p="OpenDoor.cs" t="Include" />
             <e p="particleTrigger.cs" t="Include" />
             <e p="PinkNPC.cs" t="Include" />
             <e p="pivot.cs" t="Include" />
@@ -46,6 +50,7 @@
             <e p="playerAimWeapon.cs" t="Include" />
             <e p="playerBehaviour.cs" t="Include" />
             <e p="playerMovement.cs" t="Include" />
+            <e p="ProtectionBarrierAliens.cs" t="Include" />
             <e p="purpleBulletBehaviour.cs" t="Include" />
             <e p="PurpleShoot.cs" t="Include" />
             <e p="recognizeGun.cs" t="Include" />

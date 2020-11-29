@@ -1,57 +1,96 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserShoot : MonoBehaviour
 {
+    public Camera cam;
+    public LineRenderer lineRenderer;
+    public Transform firePoint;
+    public GameObject startVFX;
+    public GameObject endVFX;
+    private List<ParticleSystem> particles = new List<ParticleSystem>();
 
-    private float distance;
-    public LineRenderer line;
-    public Transform l_transform;
-    public static float damage;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        l_transform = GetComponent<Transform>();
-        distance = 100;
-        damage = 3f;
+        FillLists();
+        DisableLaser();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            EnableLaser();
+        }
+
         if (Input.GetButton("Fire1"))
         {
-            Shoot();
+            UpdateLaser();
         }
-        else
+
+        if (Input.GetButtonUp("Fire1"))
         {
-            line.enabled = false;
+            DisableLaser();
         }
     }
 
-    void Shoot()
+    void EnableLaser()
     {
-        line.enabled = true;
-        if (Physics2D.Raycast(l_transform.position, transform.right))
+        lineRenderer.enabled = true;
+        for (int i = 0; i < particles.Count; i++)
         {
-            RaycastHit2D _hit = Physics2D.Raycast(l_transform.position, transform.right);
-            if (_hit.collider.tag == "Enemy")
-            {
-                droneBehaviour.Laserdamaged = true;
-            }
-            else
-            {
-                droneBehaviour.Laserdamaged = false;
-            }
-            DrawRay(l_transform.position, _hit.point);
+            particles[i].Play();
         }
     }
 
-    void DrawRay(Vector2 startPos, Vector2 endPos)
+    void UpdateLaser()
     {
-        line.SetPosition(0, startPos);
-        line.SetPosition(1, endPos);
+        Vector2 mousePos = (Vector2) cam.ScreenToWorldPoint(Input.mousePosition);
+        lineRenderer.SetPosition(0, (Vector2) firePoint.position);
+        startVFX.transform.position = (Vector2) firePoint.position;
+        
+        lineRenderer.SetPosition(1, mousePos);
 
+        Vector2 direction = mousePos - (Vector2) transform.position;
+        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude);
+
+        if (hit && !hit.transform.CompareTag("Player"))
+        {
+            lineRenderer.SetPosition(1, hit.point);
+        }
+
+        endVFX.transform.position = lineRenderer.GetPosition(1);
+    }
+
+    void DisableLaser()
+    {
+        lineRenderer.enabled = false;
+        for (int i = 0; i < particles.Count; i++)
+        {
+            particles[i].Stop();
+        }
+    }
+
+    void FillLists()
+    {
+        for (int i = 0; i < startVFX.transform.childCount; i++)
+        {
+            ParticleSystem ps = startVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                particles.Add(ps);
+            }
+        }
+        
+        for (int i = 0; i < endVFX.transform.childCount; i++)
+        {
+            ParticleSystem ps = endVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                particles.Add(ps);
+            }
+        }
     }
 }
