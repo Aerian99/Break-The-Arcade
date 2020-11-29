@@ -33,7 +33,7 @@ public class RedShoot : MonoBehaviour
     // BULLET
     public static float bulletDamage;
     private float bulletForce = 25f;
-    private float bulletLifeTime = 0.40f; // Alcance de la bala
+    private float bulletLifeTime = 1.5f; // Alcance de la bala
     private float timeBetweenShots = 0.35f;
     private float timestamp;
     public Sprite reloadGun1, reloadGun2, reloadGun3;

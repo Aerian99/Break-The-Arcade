@@ -15,7 +15,7 @@ public class droneBehaviour : MonoBehaviour
     public static bool canBeAttacked, Laserdamaged;
     private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
-    [HideInInspector] public GameObject[] hitDamagePopUp;
+    [HideInInspector]public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
