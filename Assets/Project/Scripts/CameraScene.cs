@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class CameraScene : MonoBehaviour
 {
-    public static bool changeCameraAlien;
+    public static bool changeCameraAlien, allEnemiesDefeat;
     public GameObject camaraJugador, camaraAlien;
 
     // Start is called before the first frame update
@@ -23,5 +23,10 @@ public class CameraScene : MonoBehaviour
             camaraAlien.SetActive(true);
         }
 
+        if(allEnemiesDefeat)
+        { 
+            camaraJugador.SetActive(true);
+            camaraAlien.SetActive(false);
+        }
     }
 }

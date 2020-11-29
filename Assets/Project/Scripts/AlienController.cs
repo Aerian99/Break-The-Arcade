@@ -6,7 +6,6 @@ public class AlienController : MonoBehaviour
 {
     private float cd, maxCd, speed;
     private bool justActive;
-
     private void Start()
     {
         speed = 2f;
@@ -19,6 +18,11 @@ public class AlienController : MonoBehaviour
         if (cd <= 0)
             Movement();
         cd -= Time.fixedDeltaTime;
+
+        if (this.gameObject.transform.childCount == 0)
+        {
+            CameraScene.allEnemiesDefeat = true;
+        }
     }
 
 
