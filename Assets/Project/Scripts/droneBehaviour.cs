@@ -55,9 +55,9 @@ public class droneBehaviour : MonoBehaviour
             if (Laserdamaged && laserDamagecd <= 0.0f)
             {
                 anim.SetTrigger("hit");
-                actualHealth -= LaserShoot.damage;
-                life.fillAmount -= LaserShoot.damage / maxHealth;
-                popUpDamage(LaserShoot.damage);
+                //actualHealth -= LaserShoot.damage;
+                //life.fillAmount -= LaserShoot.damage / maxHealth;
+                //popUpDamage(LaserShoot.damage);
                 laserDamagecd = laserDamagecdMax;
             }
         }
