@@ -8,7 +8,8 @@ public class Absorb_Gun : MonoBehaviour
     public GameObject arcEffect;
     private Transform arcTransform;
     private GameObject effect;
-    private bool firstTimeAbsorb0, firstTimeAbsorb1, firstTimeAbsorb2, ammoFull0, ammoFull1, ammoFull2;
+    public GameObject noAmmoText;
+    public static bool firstTimeAbsorb0, firstTimeAbsorb1, firstTimeAbsorb2, ammoFull0, ammoFull1, ammoFull2;
 
     void Start()
     {
@@ -32,17 +33,10 @@ public class Absorb_Gun : MonoBehaviour
                 {
                     firstTimeAbsorb0 = false;
                     ammoFull0 = true;
-                }                          
-            }
-            /*else if(!firstTimeAbsorb0)
-            {
-                if (handController.currentPos == 0 && playerBehaviour.bulletsPurple != playerBehaviour.MAX_PURPLE_SHOOT)
-                { playerBehaviour.bulletsPurple++; }
-                else
-                {
-                    ammoFull0 = true;
                 }
-            }*/
+
+                if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+            }
 
             else if (firstTimeAbsorb1 && handController.currentPos == 1)
             {
@@ -53,15 +47,8 @@ public class Absorb_Gun : MonoBehaviour
                     firstTimeAbsorb1 = false;
                     ammoFull1 = true;
                 }
+                if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
             }
-
-            /*else if(!firstTimeAbsorb1)
-            {
-                if (handController.currentPos == 1 && playerBehaviour.bulletsYellow != playerBehaviour.MAX_YELLOW_SHOOT)
-                { playerBehaviour.bulletsYellow++; }
-                else
-                    ammoFull1 = true;
-            }*/
 
             else if (firstTimeAbsorb2 && handController.currentPos == 2)
             {
@@ -72,24 +59,26 @@ public class Absorb_Gun : MonoBehaviour
                     firstTimeAbsorb2 = false;
                     ammoFull2 = true;
                 }
+                if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
             }
-
-            /*else if(!firstTimeAbsorb2)
-            {
-                if (handController.currentPos == 2 && playerBehaviour.bulletsShotgun != playerBehaviour.MAX_SHOTGUN_SHOOT)
-                { playerBehaviour.bulletsShotgun++; }
-                else
-                    ammoFull2 = true;
-            }*/
 
             if (ammoFull0 || ammoFull1 || ammoFull2)
             {
                 if (handController.currentPos == 0 && playerBehaviour.reservedAmmoPurple != playerBehaviour.MAX_BULLETS_PURPLE)
-                { playerBehaviour.reservedAmmoPurple++; }
+                { 
+                    playerBehaviour.reservedAmmoPurple++;
+                    if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                }
                 if (handController.currentPos == 1 && playerBehaviour.reservedAmmoYellow != playerBehaviour.MAX_BULLETS_YELLOW)
-                { playerBehaviour.reservedAmmoYellow++; }
+                { 
+                    playerBehaviour.reservedAmmoYellow++;
+                    if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                }
                 if (handController.currentPos == 2 && playerBehaviour.reservedAmmoShotgun != playerBehaviour.MAX_BULLETS_SHOTGUN)
-                { playerBehaviour.reservedAmmoShotgun++; }
+                { 
+                    playerBehaviour.reservedAmmoShotgun++;
+                    if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                }
 
             }
 
