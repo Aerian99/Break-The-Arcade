@@ -20,8 +20,9 @@ public class playerBehaviour : MonoBehaviour
     public TextMeshProUGUI bullets;
 
     public GameObject deathEffect;
+    public GameObject reloadText;
     
-    private float timer = 0.0f;
+    //private float timer = 0.0f;
     private int seconds;
 
     public static int bulletsPurple, bulletsYellow, bulletsShotgun;
@@ -38,8 +39,8 @@ public class playerBehaviour : MonoBehaviour
         cdAberration = 0;
         activePostProcessing = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
-        bulletsPurple = bulletsYellow = bulletsShotgun = 200;
-        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
+        bulletsPurple = bulletsYellow = bulletsShotgun = 5;
+        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 3;
         MAX_PURPLE_SHOOT = 10;
         MAX_YELLOW_SHOOT = 10;
         MAX_SHOTGUN_SHOOT = 3;
@@ -102,6 +103,8 @@ public class playerBehaviour : MonoBehaviour
                 bulletsPurple += reservedAmmoPurple;
                 reservedAmmoPurple -= reservedAmmoPurple;
             }
+            reloadText.SetActive(false);
+
         }
         else if (handController.currentPos == 1 && bulletsYellow == 0 && Input.GetKey(KeyCode.R))
         {
@@ -115,6 +118,7 @@ public class playerBehaviour : MonoBehaviour
                 bulletsYellow += reservedAmmoYellow;
                 reservedAmmoYellow -= reservedAmmoYellow;
             }
+            reloadText.SetActive(false);
         }
         else if (handController.currentPos == 2 && bulletsShotgun == 0 && Input.GetKey(KeyCode.R))
         {
@@ -128,6 +132,7 @@ public class playerBehaviour : MonoBehaviour
                 bulletsShotgun += reservedAmmoShotgun;
                 reservedAmmoShotgun -= reservedAmmoShotgun;
             }
+            reloadText.SetActive(false);
         }
     }
 }
