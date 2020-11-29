@@ -26,11 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/PostProcessing/Glitch.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/PostProcessing/Glitch.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/LaserMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/LaserMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/ParticleLaser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/ParticleLaser.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/White.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
