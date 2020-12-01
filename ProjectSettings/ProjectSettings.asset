@@ -645,10 +645,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: aa68ca20-a254-45e7-b956-39e840772e7d
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Break-The-Arcade
-  organizationId: unity_z9660bunosnlfg
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

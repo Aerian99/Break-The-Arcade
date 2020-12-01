@@ -86,12 +86,17 @@ public class playerBehaviour : MonoBehaviour
             activePostProcessing = true;
             canBeDamaged = false;
             activeImmunity = false;
+            animator.SetBool("isImmune", true);
         }
         if (!canBeDamaged)
+        { 
             cdImmunity -= Time.deltaTime;
+            
+        }
 
         if (cdImmunity <= 0)
         {
+            animator.SetBool("isImmune", false);
             canBeDamaged = true;
             cdImmunity = maxCdImmunity;
         }
