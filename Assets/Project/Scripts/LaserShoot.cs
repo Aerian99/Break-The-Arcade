@@ -8,7 +8,7 @@ public class LaserShoot : MonoBehaviour
     //private float distance;
     public static float damage;
     private bool startedShooting;
-    
+
     // Particle components
     public Camera cam;
     public LineRenderer lineRenderer;
@@ -16,12 +16,13 @@ public class LaserShoot : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
+    private LayerMask hittableMasK;
 
 
     private float nextFrame;
     private float time;
     private float period;
-    private float canShoot, maxShoot; 
+    private float canShoot, maxShoot;
 
     public GameObject reloadText;
     public GameObject noAmmoText;
@@ -29,6 +30,7 @@ public class LaserShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hittableMasK = LayerMask.GetMask("Platforms");
         //distance = 100;
         startedShooting = false;
         damage = 3f;
@@ -50,12 +52,13 @@ public class LaserShoot : MonoBehaviour
         }
         else
         {
-        //SHOOT
+            //SHOOT
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 time = nextFrame;
                 EnableLaser();
             }
+
             if (startedShooting && playerBehaviour.bulletsYellow > 0)
             {
                 CheckFirstAbsorb();
@@ -115,6 +118,7 @@ public class LaserShoot : MonoBehaviour
             Absorb_Gun.ammoFull1 = true;
         }
     }
+
     void EnableLaser()
     {
         lineRenderer.enabled = true;
@@ -129,20 +133,25 @@ public class LaserShoot : MonoBehaviour
         Vector2 mousePos = (Vector2) cam.ScreenToWorldPoint(Input.mousePosition);
         lineRenderer.SetPosition(0, (Vector2) firePoint.position);
         startVFX.transform.position = firePoint.position;
-        
+
         lineRenderer.SetPosition(1, mousePos);
 
         Vector2 direction = mousePos - (Vector2) transform.position;
-        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude);
-        
-        if (hit && !hit.transform.CompareTag("Player"))
+        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude, hittableMasK);
+
+        if (hit)
         {
-            if (hit.collider.CompareTag("Enemy"))
+            if (!hit.transform.CompareTag("Player"))
             {
-                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+                }
+
+                lineRenderer.SetPosition(1, hit.point);
             }
-            lineRenderer.SetPosition(1, hit.point);
         }
+
         endVFX.transform.position = lineRenderer.GetPosition(1);
     }
 
@@ -165,7 +174,7 @@ public class LaserShoot : MonoBehaviour
                 particles.Add(ps);
             }
         }
-        
+
         for (int i = 0; i < endVFX.transform.childCount; i++)
         {
             ParticleSystem ps = endVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
@@ -184,12 +193,14 @@ public class LaserShoot : MonoBehaviour
             damage = 10f;
             startedShooting = true;
         }
+
         if (startedShooting)
         {
             canShoot -= Time.deltaTime;
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
         }
+
         if (Input.GetKeyUp(KeyCode.Mouse0) && playerBehaviour.bulletsYellow >= 3 && startedShooting && canShoot <= 0)
         {
             startedShooting = false;
@@ -222,7 +233,6 @@ public class LaserShoot : MonoBehaviour
         {
             noAmmoText.SetActive(false);
         }
-
     }
 
 

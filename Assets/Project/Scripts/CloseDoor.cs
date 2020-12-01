@@ -13,10 +13,13 @@ public class CloseDoor : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CameraScene.changeCameraAlien = true;
-        door.GetComponent<Animator>().SetBool("OpenDoor", false);
-        door.GetComponent<Animator>().SetBool("CloseDoor", true);
-        alienController.SetActive(true);
-        Destroy(this.gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            CameraScene.changeCameraAlien = true;
+            door.GetComponent<Animator>().SetBool("OpenDoor", false);
+            door.GetComponent<Animator>().SetBool("CloseDoor", true);
+            alienController.SetActive(true);
+            Destroy(this.gameObject);
+        }
     }
 }
