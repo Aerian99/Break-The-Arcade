@@ -13,8 +13,10 @@ public class playerBehaviour : MonoBehaviour
     public static int _playerLifes;
     public static bool activeImmunity, canBeDamaged; 
 
-    public bool activePostProcessing;
+    [HideInInspector]public bool activePostProcessing;
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
+    private float reloadTime;
+    public static bool isReloading;
     public GameObject postProcessingAberration;
     
     public TextMeshProUGUI lifes;
@@ -43,8 +45,8 @@ public class playerBehaviour : MonoBehaviour
         cdImmunity = maxCdImmunity;
         activePostProcessing = activeImmunity = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
-        bulletsPurple = bulletsYellow = bulletsShotgun = 5;
-        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 3;
+        bulletsPurple = bulletsYellow = bulletsShotgun = 9;
+        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 5;
         MAX_PURPLE_SHOOT = 10;
         MAX_YELLOW_SHOOT = 10;
         MAX_SHOTGUN_SHOOT = 3;
@@ -53,6 +55,8 @@ public class playerBehaviour : MonoBehaviour
         MAX_BULLETS_YELLOW = 20;
         MAX_BULLETS_SHOTGUN = 9;
 
+        reloadTime = 2f;
+        isReloading = false;
     }
 
     void Update()
@@ -76,7 +80,23 @@ public class playerBehaviour : MonoBehaviour
         else if (handController.currentPos == 2) 
             bullets.text = "Bullets:  " + bulletsShotgun + "/" + reservedAmmoShotgun;
 
-        Reload();
+        if (isReloading)
+            return;
+
+        /*if (bulletsPurple <= 0 && Input.GetKey(KeyCode.R))
+        {
+            StartCoroutine(Reload());
+        }
+
+        if (bulletsYellow <= 0 && Input.GetKey(KeyCode.R))
+        {
+            StartCoroutine(Reload());
+        }*/
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            StartCoroutine(Reload());
+        }
     }
     void Immunity()
     {
@@ -116,50 +136,58 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
-    void Reload()
+    IEnumerator Reload()
     {
-        if (handController.currentPos == 0 && bulletsPurple == 0 && Input.GetKey(KeyCode.R))
+        int bulletsNeeded;
+        reloadText.SetActive(false);
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+
+        if (handController.currentPos == 0)
         {
-            if (reservedAmmoPurple > MAX_PURPLE_SHOOT)
+            bulletsNeeded = MAX_PURPLE_SHOOT - bulletsPurple;
+
+            if (reservedAmmoPurple >= bulletsNeeded)
             {
-                bulletsPurple += MAX_PURPLE_SHOOT;
-                reservedAmmoPurple -= MAX_PURPLE_SHOOT;
+                bulletsPurple += bulletsNeeded;
+                reservedAmmoPurple -= bulletsNeeded;
             }
             else
             {
                 bulletsPurple += reservedAmmoPurple;
-                reservedAmmoPurple -= reservedAmmoPurple;
+                reservedAmmoPurple = 0;
             }
-            reloadText.SetActive(false);
-
         }
-        else if (handController.currentPos == 1 && bulletsYellow == 0 && Input.GetKey(KeyCode.R))
+        else if (handController.currentPos == 1)
         {
-            if (reservedAmmoYellow > MAX_YELLOW_SHOOT)
+            bulletsNeeded = MAX_YELLOW_SHOOT - bulletsYellow;
+            
+            if (reservedAmmoYellow >= bulletsNeeded)
             {
-                bulletsYellow += MAX_YELLOW_SHOOT;
-                reservedAmmoYellow -= MAX_YELLOW_SHOOT;
+                bulletsYellow += bulletsNeeded;
+                reservedAmmoYellow -= bulletsNeeded;
             }
             else
             {
                 bulletsYellow += reservedAmmoYellow;
-                reservedAmmoYellow -= reservedAmmoYellow;
+                reservedAmmoYellow -= 0;
             }
-            reloadText.SetActive(false);
         }
-        else if (handController.currentPos == 2 && bulletsShotgun == 0 && Input.GetKey(KeyCode.R))
+        else if (handController.currentPos == 2)
         {
-            if (reservedAmmoShotgun > MAX_SHOTGUN_SHOOT)
+            bulletsNeeded = MAX_SHOTGUN_SHOOT - bulletsShotgun;
+            
+            if (reservedAmmoShotgun >= bulletsNeeded)
             {
-                bulletsShotgun += MAX_SHOTGUN_SHOOT;
-                reservedAmmoShotgun -= MAX_SHOTGUN_SHOOT;
+                bulletsShotgun += bulletsNeeded;
+                reservedAmmoShotgun -= bulletsNeeded;
             }
             else
             {
                 bulletsShotgun += reservedAmmoShotgun;
-                reservedAmmoShotgun -= reservedAmmoShotgun;
+                reservedAmmoShotgun -= 0;
             }
-            reloadText.SetActive(false);
         }
+        isReloading = false;
     }
 }
