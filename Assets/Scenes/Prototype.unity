@@ -14319,7 +14319,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.9752579, y: 3.1132512}
@@ -14564,7 +14564,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.9752579, y: 0.8031597}
@@ -28075,7 +28075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132165217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 136.44315, y: -14.203371, z: -6.7773438}
+  m_LocalPosition: {x: 137.34315, y: -13.703371, z: -6.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1392876}
@@ -29579,9 +29579,9 @@ GameObject:
   - component: {fileID: 1485721134}
   - component: {fileID: 1485721133}
   - component: {fileID: 1485721132}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PixelPerfect (1)
-  m_TagString: Untagged
+  m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29596,7 +29596,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -29624,6 +29624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986a79d292ffdb2459d7a3771a626c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitted: 0
 --- !u!212 &1485721134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35065,7 +35066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628098364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 201.2, y: -1.2, z: 0}
+  m_LocalPosition: {x: 67.8, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1194856140}
@@ -40518,9 +40519,9 @@ GameObject:
   - component: {fileID: 1806788321}
   - component: {fileID: 1806788320}
   - component: {fileID: 1806788319}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PixelPerfect (2)
-  m_TagString: Untagged
+  m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40535,7 +40536,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -40563,6 +40564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986a79d292ffdb2459d7a3771a626c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitted: 0
 --- !u!212 &1806788321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40639,9 +40641,9 @@ GameObject:
   - component: {fileID: 1810494573}
   - component: {fileID: 1810494571}
   - component: {fileID: 1810494572}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PixelPerfect
-  m_TagString: Untagged
+  m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40656,7 +40658,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -40684,6 +40686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986a79d292ffdb2459d7a3771a626c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitted: 0
 --- !u!212 &1810494573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41678,7 +41681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881929158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 136.44315, y: -14.203371, z: -6.7773438}
+  m_LocalPosition: {x: 137.34315, y: -13.703371, z: -6.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1022870986}
@@ -42371,7 +42374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2092997172
 Transform:
   m_ObjectHideFlags: 0

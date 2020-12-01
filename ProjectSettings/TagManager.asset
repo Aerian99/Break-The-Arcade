@@ -28,6 +28,7 @@ TagManager:
   - LaserGun
   - AlienAttack
   - Triggers
+  - AlienWall
   layers:
   - Default
   - TransparentFX
@@ -43,7 +44,7 @@ TagManager:
   - PostProcessing
   - BulletReload
   - HittableObjects
-  - 
+  - AlienPlatform
   - 
   - 
   - 
