@@ -1037,6 +1037,7 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1194598437}
+  laserDamage: 0
 --- !u!114 &140368377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,7 +4112,7 @@ GameObject:
   - component: {fileID: 180858193}
   - component: {fileID: 180858192}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: CloseTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10260,6 +10261,7 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1229566894}
+  laserDamage: 0
 --- !u!114 &514099585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16018,6 +16020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548c2c58b83409649a7ee5b2b5b8bfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activePostProcessing: 0
   postProcessingAberration: {fileID: 257522430}
   lifes: {fileID: 822192393}
   bullets: {fileID: 1794441050}
@@ -16240,7 +16243,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.6054688, y: 0.70016384}
+  m_Offset: {x: 6.6054688, y: 1.374928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16251,7 +16254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 40.93741, y: 2.4003277}
+  m_Size: {x: 40.93741, y: 1.0507994}
   m_EdgeRadius: 0
 --- !u!1 &746171550
 GameObject:
@@ -16677,7 +16680,7 @@ GameObject:
   - component: {fileID: 794554251}
   - component: {fileID: 794554252}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: LeftAlienTrigger
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17362,6 +17365,7 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1000009282}
+  laserDamage: 0
 --- !u!114 &881479203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18887,7 +18891,7 @@ GameObject:
   - component: {fileID: 1153910708}
   - component: {fileID: 1153910707}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: OpenTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20720,7 +20724,7 @@ GameObject:
   - component: {fileID: 1551957279}
   - component: {fileID: 1551957280}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: RightAlienTrigger
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21155,6 +21159,7 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1296100692}
+  laserDamage: 0
 --- !u!114 &1611416096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27086,6 +27091,7 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 327828721}
+  laserDamage: 0
 --- !u!114 &1717023475
 MonoBehaviour:
   m_ObjectHideFlags: 0
