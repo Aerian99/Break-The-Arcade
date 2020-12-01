@@ -10,12 +10,14 @@ public class redBulletBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.gameObject.tag != "Player" 
-        && other.gameObject.tag != "EnemyBullet" 
-        && other.gameObject.tag != "Range" 
-        && other.gameObject.tag != "RedBullet" 
-        && other.gameObject.tag != "NPC"
-        && other.gameObject.tag != "Platform" && other.gameObject.tag != "greyPlatform")
+        if (!other.gameObject.CompareTag("Player")
+            && !other.gameObject.CompareTag("EnemyBullet")
+            && !other.gameObject.CompareTag("Range")
+            && !other.gameObject.CompareTag("RedBullet")
+            && !other.gameObject.CompareTag("NPC")
+            && !other.gameObject.CompareTag("greyPlatform")
+            && !other.gameObject.CompareTag("Triggers")
+            && !other.gameObject.CompareTag("Wall"))
         {
             Destroy(this.gameObject);
             effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
