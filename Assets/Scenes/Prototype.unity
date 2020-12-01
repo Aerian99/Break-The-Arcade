@@ -3052,7 +3052,7 @@ GameObject:
   - component: {fileID: 73897525}
   - component: {fileID: 73897526}
   m_Layer: 8
-  m_Name: Alienx (4)
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3110,6 +3110,8 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1024
+  deathExplosion: {fileID: 4497882538659038865, guid: 0bf40199e0b413a458071e172577cf34,
+    type: 3}
   laserDamage: 0
 --- !u!50 &73897527
 Rigidbody2D:
@@ -9143,7 +9145,7 @@ GameObject:
   - component: {fileID: 223349152}
   - component: {fileID: 223349153}
   m_Layer: 8
-  m_Name: Alienx (3)
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9201,6 +9203,8 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1024
+  deathExplosion: {fileID: 4497882538659038865, guid: 0bf40199e0b413a458071e172577cf34,
+    type: 3}
   laserDamage: 0
 --- !u!50 &223349154
 Rigidbody2D:
@@ -15466,7 +15470,7 @@ GameObject:
   - component: {fileID: 503926610}
   - component: {fileID: 503926611}
   m_Layer: 8
-  m_Name: Alienx (2)
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15524,6 +15528,8 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1024
+  deathExplosion: {fileID: 4497882538659038865, guid: 0bf40199e0b413a458071e172577cf34,
+    type: 3}
   laserDamage: 0
 --- !u!50 &503926612
 Rigidbody2D:
@@ -21355,7 +21361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660711219}
   - component: {fileID: 660711220}
-  m_Layer: 13
+  m_Layer: 8
   m_Name: EntranceUp
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -26564,7 +26570,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.0924225, y: 1.1167111}
+  m_Offset: {x: -0.8065567, y: 0.9601426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -26575,7 +26581,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.571777, y: 4.116973}
+  m_Size: {x: 6.000046, y: 4.43011}
   m_EdgeRadius: 0
 --- !u!1 &792240447
 GameObject:
@@ -28085,7 +28091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132165217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 137.34315, y: -13.703371, z: -6.7773438}
+  m_LocalPosition: {x: 132.08315, y: -13.703371, z: -6.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1392876}
@@ -28543,7 +28549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194856136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 164.1, y: -2.7, z: 0}
+  m_LocalPosition: {x: 158.84, y: -2.7, z: 0}
   m_LocalScale: {x: 3.1309638, y: 3.1309638, z: 3.1309638}
   m_Children:
   - {fileID: 1792803887}
@@ -29590,7 +29596,7 @@ GameObject:
   - component: {fileID: 1485721133}
   - component: {fileID: 1485721132}
   m_Layer: 14
-  m_Name: PixelPerfect (1)
+  m_Name: AlienPlatform
   m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40530,7 +40536,7 @@ GameObject:
   - component: {fileID: 1806788320}
   - component: {fileID: 1806788319}
   m_Layer: 14
-  m_Name: PixelPerfect (2)
+  m_Name: AlienPlatform
   m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40652,7 +40658,7 @@ GameObject:
   - component: {fileID: 1810494571}
   - component: {fileID: 1810494572}
   m_Layer: 14
-  m_Name: PixelPerfect
+  m_Name: AlienPlatform
   m_TagString: AlienWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41163,7 +41169,7 @@ GameObject:
   - component: {fileID: 1849246858}
   - component: {fileID: 1849246859}
   m_Layer: 8
-  m_Name: Alienx (1)
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41221,6 +41227,8 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1024
+  deathExplosion: {fileID: 4497882538659038865, guid: 0bf40199e0b413a458071e172577cf34,
+    type: 3}
   laserDamage: 0
 --- !u!50 &1849246860
 Rigidbody2D:
@@ -41694,7 +41702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881929158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 137.34315, y: -13.703371, z: -6.7773438}
+  m_LocalPosition: {x: 132.08315, y: -13.703371, z: -6.7773438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1022870986}
@@ -42582,7 +42590,7 @@ GameObject:
   - component: {fileID: 876182865865442684}
   - component: {fileID: 876182865865442685}
   m_Layer: 8
-  m_Name: Alienx
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42624,6 +42632,8 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1024
+  deathExplosion: {fileID: 4497882538659038865, guid: 0bf40199e0b413a458071e172577cf34,
+    type: 3}
   laserDamage: 0
 --- !u!95 &876182865865442686
 Animator:
