@@ -24,7 +24,7 @@ public class SceneBehaviour : MonoBehaviour
         IEnumerator PlayAgain(float time)
         {
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene("SampleScene2");
+            SceneManager.LoadScene("Prototype");
         }
 
         void playGameOver()

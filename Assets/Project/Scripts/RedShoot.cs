@@ -53,9 +53,12 @@ public class RedShoot : MonoBehaviour
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
-        shootPoint4 = this.gameObject.transform.GetChild(4).gameObject.transform;
-        shootPoint5 = this.gameObject.transform.GetChild(5).gameObject.transform;
-        shootPoint6 = this.gameObject.transform.GetChild(6).gameObject.transform;
+        if(SceneManager.GetActiveScene().name == "PowerUpScene")
+        { 
+            shootPoint4 = this.gameObject.transform.GetChild(4).gameObject.transform;
+            shootPoint5 = this.gameObject.transform.GetChild(5).gameObject.transform;
+            shootPoint6 = this.gameObject.transform.GetChild(6).gameObject.transform;
+        }
         player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
         muzzle = particlePoint.GetComponent<ParticleSystem>();
 

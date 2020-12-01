@@ -11,9 +11,10 @@ public class playerBehaviour : MonoBehaviour
 
     private Animator animator;
     public static int _playerLifes;
+    public static bool activeImmunity, canBeDamaged; 
 
-    public static bool activePostProcessing;
-    private float cdAberration, maxcdAberration;
+    public bool activePostProcessing;
+    private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
     public GameObject postProcessingAberration;
     
     public TextMeshProUGUI lifes;
@@ -37,7 +38,10 @@ public class playerBehaviour : MonoBehaviour
         _playerLifes = 5;
         maxcdAberration = 0.1f;
         cdAberration = 0;
-        activePostProcessing = false;
+        maxCdImmunity = 2f;
+        canBeDamaged = true;
+        cdImmunity = maxCdImmunity;
+        activePostProcessing = activeImmunity = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
         bulletsPurple = bulletsYellow = bulletsShotgun = 5;
         reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 3;
@@ -60,6 +64,7 @@ public class playerBehaviour : MonoBehaviour
             Destroy(deathEffectGO, 0.5f);
         }
 
+        Immunity();
         chromaticAberration();
         lifes.text = "Lifes:  " + _playerLifes;
 
@@ -73,7 +78,24 @@ public class playerBehaviour : MonoBehaviour
 
         Reload();
     }
+    void Immunity()
+    {
+        if (activeImmunity)
+        {
+            _playerLifes--;
+            activePostProcessing = true;
+            canBeDamaged = false;
+            activeImmunity = false;
+        }
+        if (!canBeDamaged)
+            cdImmunity -= Time.deltaTime;
 
+        if (cdImmunity <= 0)
+        {
+            canBeDamaged = true;
+            cdImmunity = maxCdImmunity;
+        }
+    }
     void chromaticAberration()
     {
         if (activePostProcessing)
