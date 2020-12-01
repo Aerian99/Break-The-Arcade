@@ -170,7 +170,7 @@ public class playerBehaviour : MonoBehaviour
             else
             {
                 bulletsYellow += reservedAmmoYellow;
-                reservedAmmoYellow -= 0;
+                reservedAmmoYellow = 0;
             }
         }
         else if (handController.currentPos == 2)
@@ -185,7 +185,7 @@ public class playerBehaviour : MonoBehaviour
             else
             {
                 bulletsShotgun += reservedAmmoShotgun;
-                reservedAmmoShotgun -= 0;
+                reservedAmmoShotgun = 0;
             }
         }
         isReloading = false;
