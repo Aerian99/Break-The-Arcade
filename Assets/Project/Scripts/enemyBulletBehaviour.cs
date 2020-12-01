@@ -21,7 +21,10 @@ public class enemyBulletBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         if (canExplote)
+        { 
             cdExplote -= Time.fixedDeltaTime;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        }
 
         if (cdExplote <= 0)
         {

@@ -22,7 +22,7 @@ public class Absorb_Gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false)
+        if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false && other.gameObject.tag == "AlienAttack")
         {
 
             if (firstTimeAbsorb0 && handController.currentPos == 0)

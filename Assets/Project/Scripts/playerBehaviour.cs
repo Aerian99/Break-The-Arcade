@@ -13,7 +13,7 @@ public class playerBehaviour : MonoBehaviour
     public static int _playerLifes;
     public static bool activeImmunity, canBeDamaged; 
 
-    public bool activePostProcessing;
+    [HideInInspector]public bool activePostProcessing;
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
     public GameObject postProcessingAberration;
     
