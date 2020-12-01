@@ -27259,6 +27259,7 @@ MonoBehaviour:
   purpleGunUI: {fileID: 598785969}
   yellowGunUI: {fileID: 2066712031}
   redGunUI: {fileID: 1258365719}
+  noAmmoText: {fileID: 1653787284}
 --- !u!1 &863103007
 GameObject:
   m_ObjectHideFlags: 0
