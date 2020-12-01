@@ -13,6 +13,8 @@ public class AlienBehaviour : MonoBehaviour
     private float actualHealth;
     private float maxHealth;
     public Image life;
+    public LayerMask layer;
+    private float cdExplosion, cdMaxExplosion;
 
     [HideInInspector] public bool laserDamage;
     // Start is called before the first frame update
@@ -21,6 +23,8 @@ public class AlienBehaviour : MonoBehaviour
         maxHealth = 15f;
         actualHealth = maxHealth;
         anim = GetComponent<Animator>();
+        cdMaxExplosion = 4f;
+        cdExplosion = cdMaxExplosion;
     }
 
     // Update is called once per frame
@@ -28,8 +32,7 @@ public class AlienBehaviour : MonoBehaviour
     {
         if (actualHealth <= 0)
         {
-            anim.SetBool("dead", true);
-            Destroy(this.gameObject, 0.1f);
+            Falling();
         }
 
         if (laserDamage)
@@ -72,5 +75,25 @@ public class AlienBehaviour : MonoBehaviour
     {
         GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0, 4)], transform.position, Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
+    }
+
+    void Falling()
+    {
+        GetComponentInChildren<AlienAttack>().enabled = false;
+        this.gameObject.transform.parent = null;
+        GetComponent<BoxCollider2D>().isTrigger = false;
+        GetComponent<Rigidbody2D>().gravityScale = 2.0f;
+        if(cdExplosion <= 0.0f)
+        { 
+            bool hasExploted = Physics2D.OverlapCircle(transform.position, 2, layer);
+
+            if(hasExploted)
+            {
+                playerBehaviour.activeImmunity = true;
+            }
+            anim.SetBool("dead", true);
+            Destroy(this.gameObject, 0.1f);
+        }
+        cdExplosion -= Time.deltaTime;
     }
 }

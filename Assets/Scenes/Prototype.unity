@@ -3107,6 +3107,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 338265741}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
   laserDamage: 0
 --- !u!50 &73897527
 Rigidbody2D:
@@ -9195,6 +9198,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1166343294}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
   laserDamage: 0
 --- !u!50 &223349154
 Rigidbody2D:
@@ -15515,6 +15521,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 442630354}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
   laserDamage: 0
 --- !u!50 &503926612
 Rigidbody2D:
@@ -41208,6 +41217,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 1258719943}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
   laserDamage: 0
 --- !u!50 &1849246860
 Rigidbody2D:
@@ -42608,6 +42620,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 9036394983693606006}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
   laserDamage: 0
 --- !u!95 &876182865865442686
 Animator:
