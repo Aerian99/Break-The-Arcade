@@ -29,7 +29,4 @@ public class ProtectionBarrierAliens : MonoBehaviour
         else if (timesHitted > 24)
             Destroy(this.gameObject);
     }
-   
-
-
 }

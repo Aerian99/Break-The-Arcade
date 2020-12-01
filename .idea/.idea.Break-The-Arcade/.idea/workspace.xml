@@ -27,16 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Animations/CloseDoor.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Animations/CloseDoor.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Animations/OpenDoor.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Animations/OpenDoor.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PowerUpScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PowerUpScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Space Inavders.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Space Inavders.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/AlienMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/hitDamagePopUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/dustParticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SuperJumpCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/SpikesBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ResetScene.cs" />
@@ -120,6 +113,8 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
       </list>
     </option>
   </component>

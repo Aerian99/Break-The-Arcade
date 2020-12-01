@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 714218964120665643}
   - component: {fileID: 1978362544686106659}
   - component: {fileID: 3689568291131480260}
-  - component: {fileID: 4257388314608876162}
+  - component: {fileID: 1047573001439708473}
   m_Layer: 0
   m_Name: Bala Space Inavders
   m_TagString: AlienAttack
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3106598935770986460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 132.63, y: 22.09, z: 0}
-  m_LocalScale: {x: 8.984, y: 8.984, z: 8.984}
+  m_LocalScale: {x: 1.086826, y: 1.086826, z: 1.086826}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8b47ea6ea8bf21499b1fa12e909a0ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7ef3d3db96d453408caa158271eb563, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,8 +124,10 @@ MonoBehaviour:
   PlatformLayer:
     serializedVersion: 2
     m_Bits: 16384
---- !u!60 &4257388314608876162
-PolygonCollider2D:
+  deathExplosion: {fileID: 4497882538659038865, guid: 08a2244c9c73fcc4190665abcf69091a,
+    type: 3}
+--- !u!61 &1047573001439708473
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,20 +143,12 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.020428423, y: 0.09044819}
-      - {x: -0.04979705, y: 0.090448186}
-      - {x: -0.049728297, y: 0.009452745}
-      - {x: -0.01851347, y: 0.009327607}
-      - {x: -0.020223776, y: -0.050448194}
-      - {x: 0.009349498, y: -0.051099967}
-      - {x: 0.011099754, y: 0.029510796}
-      - {x: -0.019531617, y: 0.0302242}
-      - {x: -0.019531617, y: 0.0302242}
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+  m_EdgeRadius: 0

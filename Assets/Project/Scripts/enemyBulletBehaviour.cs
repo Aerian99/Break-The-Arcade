@@ -9,6 +9,7 @@ public class enemyBulletBehaviour : MonoBehaviour
     [HideInInspector]public bool exploted;
     private float explosionRange;
     public LayerMask layer, PlatformLayer;
+    public GameObject deathExplosion;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class enemyBulletBehaviour : MonoBehaviour
                 playerBehaviour.activeImmunity = true;
             }
             Destroy(this.gameObject);
+            GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
+            Destroy(explosionGO, 0.7f);
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -63,10 +66,11 @@ public class enemyBulletBehaviour : MonoBehaviour
         && other.gameObject.tag != "NPC" && other.gameObject.tag != "greyPlatform")
         {
             Destroy(this.gameObject);
-        } else if (other.gameObject.tag == "AlienWall")
+        } 
+        else if (other.gameObject.tag == "AlienWall")
         {
+            Debug.Log("Hellow");
             other.GetComponent<ProtectionBarrierAliens>().hitted = true;
-        
         }
     }
 
@@ -77,6 +81,4 @@ public class enemyBulletBehaviour : MonoBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
-
-    
 }
