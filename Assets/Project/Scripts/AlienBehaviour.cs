@@ -9,10 +9,12 @@ public class AlienBehaviour : MonoBehaviour
 {
     private Animator anim;
 
-    [HideInInspector]public GameObject[] hitDamagePopUp;
+    [HideInInspector] public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
+
+    [HideInInspector] public bool laserDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,15 @@ public class AlienBehaviour : MonoBehaviour
         {
             anim.SetBool("dead", true);
             Destroy(this.gameObject, 0.1f);
+        }
+
+        if (laserDamage)
+        {
+            anim.SetTrigger("hit");
+            actualHealth -= LaserShoot.damage;
+            life.fillAmount -= LaserShoot.damage / maxHealth;
+            popUpDamage(LaserShoot.damage);
+            laserDamage = false;
         }
     }
 

@@ -97,7 +97,7 @@ public class PurpleShoot : MonoBehaviour
 
     IEnumerator ShootPower()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (Absorb_Gun.firstTimeAbsorb0)
             {
