@@ -143,8 +143,6 @@ public class LaserShoot : MonoBehaviour
             }
             lineRenderer.SetPosition(1, hit.point);
         }
-        
-        Debug.Log("Hey");
         endVFX.transform.position = lineRenderer.GetPosition(1);
     }
 

@@ -9,9 +9,11 @@ public class enemyBulletBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range")
         {
-            playerBehaviour.activePostProcessing = true;
-            playerBehaviour._playerLifes--;
-            other.GetComponent<Animator>().SetTrigger("hit");
+            if(playerBehaviour.canBeDamaged)
+            { 
+                playerBehaviour.activeImmunity = true;
+                other.GetComponent<Animator>().SetTrigger("hit");
+            }
             Destroy(this.gameObject);
         }
         else if 
