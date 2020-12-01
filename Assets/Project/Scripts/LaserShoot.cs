@@ -62,9 +62,9 @@ public class LaserShoot : MonoBehaviour
             if (startedShooting && playerBehaviour.bulletsYellow > 0)
             {
                 CheckFirstAbsorb();
+                UpdateLaser();
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
-                UpdateLaser();
             }
 
             if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
@@ -77,6 +77,7 @@ public class LaserShoot : MonoBehaviour
             else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
                      this.gameObject.activeInHierarchy == true && !startedShooting)
             {
+                UpdateLaser();
                 nextFrame += period;
                 startedShooting = true;
                 playerBehaviour.bulletsYellow--;
@@ -84,7 +85,6 @@ public class LaserShoot : MonoBehaviour
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
                 CheckFirstAbsorb();
-                //EnableLaser();
             }
 
             if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || playerBehaviour.bulletsYellow == 0)
@@ -143,14 +143,9 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("Enemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
-                if (hit.collider.CompareTag("Enemy"))
-                {
-                    hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
-                }
-
-                lineRenderer.SetPosition(1, hit.point);
+                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
             }
-            else if(time >= nextFrame)
+            else if(hit.collider.CompareTag("Enemy") && time >= nextFrame)
             {
                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
             }

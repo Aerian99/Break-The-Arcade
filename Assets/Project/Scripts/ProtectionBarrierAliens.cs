@@ -6,6 +6,7 @@ public class ProtectionBarrierAliens : MonoBehaviour
 {
 
     private int timesHitted;
+    [HideInInspector]public bool hitted;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,11 @@ public class ProtectionBarrierAliens : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hitted)
+        {
+            timesHitted++;
+            hitted = false;
+        }
         if (timesHitted >= 6 && timesHitted < 12)
             GetComponent<SpriteRenderer>().color = new Color(235,92,0,255);
         else if (timesHitted >= 12 && timesHitted < 18)
@@ -23,11 +29,7 @@ public class ProtectionBarrierAliens : MonoBehaviour
         else if (timesHitted > 24)
             Destroy(this.gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "AlienAttack")
-        {
-            timesHitted++;
-        }
-    }
+   
+
+
 }
