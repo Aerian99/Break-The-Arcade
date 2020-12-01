@@ -28,8 +28,9 @@
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Space Inavders.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Space Inavders.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,6 +117,7 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" />
       </list>
     </option>
   </component>

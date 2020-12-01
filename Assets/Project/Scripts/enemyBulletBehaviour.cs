@@ -10,13 +10,15 @@ public class enemyBulletBehaviour : MonoBehaviour
     private float explosionRange;
     public LayerMask layer, PlatformLayer;
     public GameObject deathExplosion;
+    private Animator animator;
 
     private void Start()
     {
         cdMaxExplote = 1f;
         cdExplote = cdMaxExplote;
-        explosionRange = 2.5f;
+        explosionRange = 1f;
         canExplote = exploted = false;
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -25,6 +27,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         { 
             cdExplote -= Time.fixedDeltaTime;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            animator.SetTrigger("activeExplosion");
         }
 
         if (cdExplote <= 0)
