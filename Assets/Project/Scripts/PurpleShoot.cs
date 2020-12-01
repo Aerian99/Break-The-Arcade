@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PurpleShoot : MonoBehaviour
@@ -19,7 +20,7 @@ public class PurpleShoot : MonoBehaviour
     //BULLETS
     public static float bulletDamage;
     private float bulletSpeed = 25f; // Speed
-    private float bulletLifeTime = 0.40f; // Distance
+    private float bulletLifeTime = 10f; // Distance
     private float timeBetweenShots = 0.30f; // Cadence
     private float timestamp;
 
@@ -35,7 +36,13 @@ public class PurpleShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
+        if (SceneManager.GetActiveScene().name == "PowerUpScene" && Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
+            this.gameObject.activeInHierarchy == true)
+        {
+            StartCoroutine(ShootPower()); //If the scene is PowerUps starts a coroutine to shoot two times in a period of time 0.05 seconds and waste only one bullet
+            playerBehaviour.bulletsPurple--;
+        }
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
             this.gameObject.activeInHierarchy == true)
         {
             Shoot();
@@ -43,13 +50,11 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
         }
-
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0)
         {
             reloadText.SetActive(true);
         }
-
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 && playerBehaviour.reservedAmmoPurple == 0 &&
            this.gameObject.activeInHierarchy == true)
         {
@@ -88,5 +93,32 @@ public class PurpleShoot : MonoBehaviour
             bulletReload.GetComponent<Rigidbody2D>().AddForce(new Vector2(-6f, 7f), ForceMode2D.Impulse);
         }
         Destroy(bulletReload, 1f);
+    }
+
+    IEnumerator ShootPower()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if (Absorb_Gun.firstTimeAbsorb0)
+            {
+                Absorb_Gun.firstTimeAbsorb0 = false;
+                Absorb_Gun.ammoFull0 = true;
+            }
+            muzzle.Play();
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            timestamp = Time.time + timeBetweenShots;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+        
+
+            ReloadBullet();
+
+            Destroy(bullet, bulletLifeTime);
+            SoundManagerScript.PlaySound("purpleGun");
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
+            yield return new WaitForSeconds(0.05f);
+        }
+
     }
 }
