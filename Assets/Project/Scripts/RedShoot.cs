@@ -73,7 +73,7 @@ public class RedShoot : MonoBehaviour
         else
         {
         if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
-            this.gameObject.activeInHierarchy == true)
+            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading)
         {
             Shoot();
             SoundManagerScript.PlaySound("shotgun");
@@ -195,7 +195,7 @@ public class RedShoot : MonoBehaviour
         }
 
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0)
+            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 && !playerBehaviour.isReloading)
         {
             reloadText.SetActive(true);
         }

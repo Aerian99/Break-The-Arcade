@@ -14,6 +14,7 @@ public class handController : MonoBehaviour
     public Image redGunUI;
 
     private GameObject absorbGun;
+    public GameObject noAmmoText;
     public static int currentPos;
 
     private Transform gunSelector;
@@ -34,10 +35,12 @@ public class handController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
             currentPos--;
+            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
             currentPos++;
+            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;

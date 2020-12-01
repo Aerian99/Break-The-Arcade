@@ -43,7 +43,7 @@ public class PurpleShoot : MonoBehaviour
             playerBehaviour.bulletsPurple--;
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
-            this.gameObject.activeInHierarchy == true)
+            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading)
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
@@ -51,7 +51,7 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
-           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0)
+           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0 && !playerBehaviour.isReloading)
         {
             reloadText.SetActive(true);
         }
