@@ -84,7 +84,7 @@ public class enemyShoot : MonoBehaviour
     {
         GameObject bullet;
         Rigidbody2D rb;
-       if(!droneBehaviour.canBeAttacked)
+       if(!droneBehaviour.canBeAttacked && GetComponentInParent<FlyingBehaviour>().inRange)
        {
            SoundManagerScript.PlaySound("EnemyShoot");
             if (Random.Range(0f,100f) <= 35.0f)

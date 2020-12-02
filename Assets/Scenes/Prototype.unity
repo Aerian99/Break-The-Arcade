@@ -27572,6 +27572,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!4 &962157374 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2716620216561370003, guid: e2a949daf9a18624f9020cbef7824e4b,
@@ -35906,6 +35908,34 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
+--- !u!1 &1765031548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 266488118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765031554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765031548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef11b828c30c6f42b2aba64044b080c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  playerRange: 20
+  playerApartRange: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!1 &1782093712
 GameObject:
   m_ObjectHideFlags: 0
@@ -42302,6 +42332,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979189615}
   m_CullTransparentMesh: 0
+--- !u!1 &1981326983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 134879640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1981326989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981326983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef11b828c30c6f42b2aba64044b080c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  playerRange: 20
+  playerApartRange: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!1 &2027943323
 GameObject:
   m_ObjectHideFlags: 0
@@ -42574,6 +42630,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDetecion: {fileID: 792240448}
+--- !u!114 &2079018398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079018390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef11b828c30c6f42b2aba64044b080c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  playerRange: 20
+  playerApartRange: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!1 &2092997171
 GameObject:
   m_ObjectHideFlags: 0
