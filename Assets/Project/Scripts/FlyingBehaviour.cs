@@ -9,7 +9,7 @@ public class FlyingBehaviour : MonoBehaviour
     public float speed, playerRange, playerApartRange;
     public LayerMask playerLayer;
 
-    private bool inRange, maxDistance;
+    [HideInInspector]public bool inRange, maxDistance;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");   
