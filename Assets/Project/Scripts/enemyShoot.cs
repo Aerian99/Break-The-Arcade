@@ -25,10 +25,28 @@ public class enemyShoot : MonoBehaviour
             shootCounter = 3;
         else if (this.gameObject.tag == "RedEnemy")
             shootCounter = 8;
-        bulletSpeed = 15f;
-        cadency = Random.Range(2.0f, 3.5f);
+        
+        if (this.gameObject.tag == "OrangeEnemy")
+        {
+            bulletSpeed = 20f;
+            cadency = 4;
+            startTimeBtwShoots = 0.2f;
+
+        }
+        else if (this.gameObject.tag == "CyanEnemy")
+        {
+            bulletSpeed = 30.0f;
+            cadency = 2;
+            startTimeBtwShoots = 0.7f;
+        }
+        else if (this.gameObject.tag == "RedEnemy")
+        {
+            bulletSpeed = 15f;
+            cadency = 6;
+            startTimeBtwShoots = 0.1f;
+        }
         keepCadency = cadency;
-        startTimeBtwShoots = 0.5f; // Rango aleatorio entre el disparo de los enemigos, así los disparos se independizan según el enemigo.
+       
         timeBtwShoots = startTimeBtwShoots;
     }
 
