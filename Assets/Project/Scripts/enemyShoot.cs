@@ -20,11 +20,11 @@ public class enemyShoot : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         if (this.gameObject.tag == "OrangeEnemy")
-            shootCounter = 5;
-        else if (this.gameObject.tag == "CyanEnemy")
             shootCounter = 3;
+        else if (this.gameObject.tag == "CyanEnemy")
+            shootCounter = 2;
         else if (this.gameObject.tag == "RedEnemy")
-            shootCounter = 8;
+            shootCounter = 4;
         
         if (this.gameObject.tag == "OrangeEnemy")
         {

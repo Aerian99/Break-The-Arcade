@@ -12,7 +12,7 @@ public class droneBehaviour : MonoBehaviour
     private Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
-    public static bool canBeAttacked;
+    public static bool canBeAttacked, activeAttack;
     [HideInInspector]public bool Laserdamaged;
     private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
@@ -31,8 +31,8 @@ public class droneBehaviour : MonoBehaviour
         maxHealth = 15f;
         actualHealth = maxHealth;
         life.fillAmount = actualHealth;
-        boolCounter = 0f;
         boolMaxCounter = 5f;
+        boolCounter = boolMaxCounter;
         anim.enabled = true;
     }
 
@@ -43,15 +43,15 @@ public class droneBehaviour : MonoBehaviour
             anim.SetBool("dead", true);
             Destroy(this.gameObject, 0.1f);
         }
-        if (canBeAttacked)
-            boolCounter -= Time.deltaTime;
+        
 
-        if (boolCounter <= 0f)
-        {
-            boolCounter = boolMaxCounter;
-            canBeAttacked = false;
-        }
         if(canBeAttacked)
+            Attacked();
+        else
+            boolCounter = boolMaxCounter;
+
+
+        if (canBeAttacked)
         { 
             if (Laserdamaged && laserDamagecd <= 0.0f)
             {
@@ -94,6 +94,16 @@ public class droneBehaviour : MonoBehaviour
         }
     }
 
+    void Attacked()
+    {
+        if (boolCounter <= 0f)
+        {
+            canBeAttacked = false;
+        }
+
+        boolCounter -= Time.deltaTime;
+
+    }
     void Hittable()
     {
         if (canBeAttacked)
