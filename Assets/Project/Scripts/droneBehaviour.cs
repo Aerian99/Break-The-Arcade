@@ -12,7 +12,8 @@ public class droneBehaviour : MonoBehaviour
     private Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
-    public static bool canBeAttacked, Laserdamaged;
+    public static bool canBeAttacked;
+    [HideInInspector]public bool Laserdamaged;
     private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
     [HideInInspector]public GameObject[] hitDamagePopUp;
@@ -55,9 +56,9 @@ public class droneBehaviour : MonoBehaviour
             if (Laserdamaged && laserDamagecd <= 0.0f)
             {
                 anim.SetTrigger("hit");
-                //actualHealth -= LaserShoot.damage;
-                //life.fillAmount -= LaserShoot.damage / maxHealth;
-                //popUpDamage(LaserShoot.damage);
+                actualHealth -= LaserShoot.damage;
+                life.fillAmount -= LaserShoot.damage / maxHealth;
+                popUpDamage(LaserShoot.damage);
                 laserDamagecd = laserDamagecdMax;
             }
         }

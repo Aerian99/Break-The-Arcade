@@ -19,7 +19,12 @@ public class enemyShoot : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        shootCounter = 5;
+        if (this.gameObject.tag == "OrangeEnemy")
+            shootCounter = 5;
+        else if (this.gameObject.tag == "CyanEnemy")
+            shootCounter = 3;
+        else if (this.gameObject.tag == "RedEnemy")
+            shootCounter = 8;
         bulletSpeed = 15f;
         cadency = Random.Range(2.0f, 3.5f);
         keepCadency = cadency;
@@ -29,7 +34,7 @@ public class enemyShoot : MonoBehaviour
 
 
     void FixedUpdate()
-    {
+    { 
         cadency -= Time.fixedDeltaTime;
         RotateTowards(target.position);
         if(cadency <=0)
@@ -47,7 +52,12 @@ public class enemyShoot : MonoBehaviour
 
             if (shootCounter == 0)
             {
-                shootCounter = 5;
+                if(this.gameObject.tag == "OrangeEnemy")
+                    shootCounter = 5;
+                else if (this.gameObject.tag == "CyanEnemy")
+                    shootCounter = 3;
+                else if (this.gameObject.tag == "RedEnemy")
+                    shootCounter = 8;
                 cadency = keepCadency;
             }
         }
@@ -59,7 +69,7 @@ public class enemyShoot : MonoBehaviour
        if(!droneBehaviour.canBeAttacked)
        {
            SoundManagerScript.PlaySound("EnemyShoot");
-            if (Random.Range(0f,100f) <= 25)
+            if (Random.Range(0f,100f) <= 35.0f)
             {
                 bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
                 rb = bullet.GetComponent<Rigidbody2D>();

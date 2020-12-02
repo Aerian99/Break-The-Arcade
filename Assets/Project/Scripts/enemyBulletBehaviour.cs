@@ -66,6 +66,9 @@ public class enemyBulletBehaviour : MonoBehaviour
         && other.gameObject.tag != "EnemyBullet"
         && other.gameObject.tag != "Bullet Pacman"
         && other.gameObject.tag != "Range"
+        && other.gameObject.tag != "CyanEnemy"
+        && other.gameObject.tag != "OrangeEnemy"
+        && other.gameObject.tag != "RedEnemy"
         && other.gameObject.tag != "NPC" && other.gameObject.tag != "greyPlatform")
         {
             Destroy(this.gameObject);
