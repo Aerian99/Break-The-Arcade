@@ -141,7 +141,7 @@ public class LaserShoot : MonoBehaviour
 
         if (hit)
         {
-            if (hit.collider.CompareTag("Enemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
+            if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
                  hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
             }

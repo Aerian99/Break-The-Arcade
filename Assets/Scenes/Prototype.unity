@@ -3053,7 +3053,7 @@ GameObject:
   - component: {fileID: 73897526}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9181,7 +9181,7 @@ GameObject:
   - component: {fileID: 223349153}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15577,7 +15577,7 @@ GameObject:
   - component: {fileID: 503926611}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28708,7 +28708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194856136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 158.84, y: -2.7, z: 0}
+  m_LocalPosition: {x: 25.1, y: -3.6, z: 0}
   m_LocalScale: {x: 3.1309638, y: 3.1309638, z: 3.1309638}
   m_Children:
   - {fileID: 1792803887}
@@ -41364,7 +41364,7 @@ GameObject:
   - component: {fileID: 1849246859}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42785,7 +42785,7 @@ GameObject:
   - component: {fileID: 876182865865442685}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
