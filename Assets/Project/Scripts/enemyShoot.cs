@@ -59,7 +59,7 @@ public class enemyShoot : MonoBehaviour
        if(!droneBehaviour.canBeAttacked)
        {
            SoundManagerScript.PlaySound("EnemyShoot");
-            if (Random.Range(0f,100f) <= 10)
+            if (Random.Range(0f,100f) <= 25)
             {
                 bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
                 rb = bullet.GetComponent<Rigidbody2D>();

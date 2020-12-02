@@ -15385,6 +15385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1132165218}
+  cameraAlien: {fileID: 1207449352}
 --- !u!1 &469286416
 GameObject:
   m_ObjectHideFlags: 0
@@ -15807,6 +15808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1132165218}
+  cameraAlien: {fileID: 1207449352}
 --- !u!4 &544790510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4428269335344496222, guid: 7bc20b02af35da844b9d874a1a0cfbed,
@@ -43149,6 +43151,10 @@ PrefabInstance:
       propertyPath: camara
       value: 
       objectReference: {fileID: 1132165218}
+    - target: {fileID: 1640979142, guid: 286fa4c05682ab84fa9c9eda20816133, type: 3}
+      propertyPath: cameraAlien
+      value: 
+      objectReference: {fileID: 1207449352}
     - target: {fileID: 7645115450566651153, guid: 286fa4c05682ab84fa9c9eda20816133,
         type: 3}
       propertyPath: bulletReloadPrefab
