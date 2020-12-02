@@ -29,6 +29,7 @@ TagManager:
   - AlienAttack
   - Triggers
   - AlienWall
+  - AlienEnemy
   layers:
   - Default
   - TransparentFX
