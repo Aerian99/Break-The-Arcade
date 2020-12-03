@@ -16,6 +16,8 @@ public class enemyShoot : MonoBehaviour
     private float startTimeBtwShoots;
     private float cadency;
     private int shootCounter;
+    public float playerRange;
+    public LayerMask playerLayer;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -84,10 +86,17 @@ public class enemyShoot : MonoBehaviour
     {
         GameObject bullet;
         Rigidbody2D rb;
-       if(!droneBehaviour.canBeAttacked && GetComponentInParent<FlyingBehaviour>().inRange)
-       {
-           SoundManagerScript.PlaySound("EnemyShoot");
-            if (Random.Range(0f,100f) <= 35.0f)
+        bool canShoot = false;
+        bool inRange = false;
+        if (gameObject.GetComponentInParent<FlyingBehaviour>() != null)
+        { 
+             canShoot = gameObject.GetComponentInParent<FlyingBehaviour>().inRange;
+        }
+
+        if (!droneBehaviour.canBeAttacked && canShoot)
+        {
+            SoundManagerScript.PlaySound("EnemyShoot");
+            if (Random.Range(0f, 100f) <= 35.0f)
             {
                 bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
                 rb = bullet.GetComponent<Rigidbody2D>();
@@ -98,6 +107,25 @@ public class enemyShoot : MonoBehaviour
                 rb = bullet.GetComponent<Rigidbody2D>();
             }
             rb.AddForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+        }
+        else if (gameObject.GetComponentInParent<FlyingBehaviour>() == null)
+        {
+            inRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
+            if (inRange) { 
+            SoundManagerScript.PlaySound("EnemyShoot");
+            if (Random.Range(0f, 100f) <= 35.0f)
+            {
+                bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
+                rb = bullet.GetComponent<Rigidbody2D>();
+            }
+            else
+            {
+                bullet = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+                rb = bullet.GetComponent<Rigidbody2D>();
+            }
+            rb.AddForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            }
+
         }
     }
     private void RotateTowards(Vector2 target) // funcion para rotar mirando al player

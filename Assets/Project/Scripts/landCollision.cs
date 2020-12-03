@@ -22,7 +22,7 @@ public class landCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Platform")
+        if (other.gameObject.tag == "Platform" || other.gameObject.tag == "greyPlatform")
         {
             landGameObject = Instantiate(landEffect, this.transform.position, landEffect.transform.rotation);
             SoundManagerScript.PlaySound("landing");
