@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,5 +32,10 @@ public class AlienAttack : MonoBehaviour
         GameObject rb;
         rb = Instantiate(bullet, this.transform.position, this.transform.rotation);
         rb.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -force), ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
     }
 }

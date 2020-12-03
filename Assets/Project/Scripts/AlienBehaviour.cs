@@ -99,6 +99,7 @@ public class AlienBehaviour : MonoBehaviour
             Destroy(this.gameObject, 0.1f);
             GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
             Destroy(explosionGO, 0.7f);
+            //SoundManagerScript.PlaySound("alienExplosion");
         }
 
         cdExplosion -= Time.deltaTime;

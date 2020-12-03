@@ -83,7 +83,7 @@ public class playerBehaviour : MonoBehaviour
         if (isReloading)
             return;
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(Reload());
         }
@@ -101,7 +101,6 @@ public class playerBehaviour : MonoBehaviour
         if (!canBeDamaged)
         { 
             cdImmunity -= Time.deltaTime;
-            
         }
 
         if (cdImmunity <= 0)
