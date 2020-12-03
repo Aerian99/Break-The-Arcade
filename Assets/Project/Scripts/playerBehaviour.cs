@@ -83,7 +83,10 @@ public class playerBehaviour : MonoBehaviour
         if (isReloading)
             return;
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && 
+            (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT ||
+            handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT ||
+            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT))
         {
             StartCoroutine(Reload());
         }

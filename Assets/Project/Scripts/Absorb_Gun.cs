@@ -88,7 +88,8 @@ public class Absorb_Gun : MonoBehaviour
 
         else if (other.gameObject.tag == "Bullet Pacman")
         {
-            droneBehaviour.canBeAttacked = true;        
+            // droneBehaviour.canBeAttacked = true;
+            droneBehaviour.beHaunted = true;      
         }
 
     }

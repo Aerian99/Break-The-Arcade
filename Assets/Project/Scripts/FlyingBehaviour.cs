@@ -18,11 +18,19 @@ public class FlyingBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        inRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer); //Dibuja un circulo para ver la distancia y pone el bool en true si esta en esa distancia
-        maxDistance = Physics2D.OverlapCircle(transform.position, playerApartRange, playerLayer);
-        if (inRange && !maxDistance)
-        { 
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime);
+        if (!droneBehaviour.beHaunted)
+        {
+            inRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer); //Dibuja un circulo para ver la distancia y pone el bool en true si esta en esa distancia
+            maxDistance = Physics2D.OverlapCircle(transform.position, playerApartRange, playerLayer);
+            if (inRange && !maxDistance)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime);
+            }
+        }
+        else
+        {
+             transform.position = Vector3.MoveTowards(transform.position, (player.transform.position) * -1, speed * Time.fixedDeltaTime);
+            
         }
     }
 

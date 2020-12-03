@@ -12,7 +12,7 @@ public class droneBehaviour : MonoBehaviour
     private Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
-    public static bool canBeAttacked, activeAttack;
+    public static bool canBeAttacked, activeAttack, beHaunted;
     [HideInInspector]public bool Laserdamaged;
     private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
@@ -20,7 +20,8 @@ public class droneBehaviour : MonoBehaviour
     private float actualHealth;
     private float maxHealth;
     public Image life;
-
+    public GameObject bullet;
+  
     public void Awake()
     {
         laserDamagecdMax = 0.5f;
@@ -34,6 +35,7 @@ public class droneBehaviour : MonoBehaviour
         boolMaxCounter = 5f;
         boolCounter = boolMaxCounter;
         anim.enabled = true;
+        canBeAttacked = true;
     }
 
     public void Update()
@@ -44,8 +46,7 @@ public class droneBehaviour : MonoBehaviour
             Destroy(this.gameObject, 0.1f);
         }
         
-
-        if(canBeAttacked)
+       /* if(canBeAttacked)
             Attacked();
         else
             boolCounter = boolMaxCounter;
@@ -61,9 +62,23 @@ public class droneBehaviour : MonoBehaviour
                 popUpDamage(LaserShoot.damage);
                 laserDamagecd = laserDamagecdMax;
             }
-        }
+        }*/
         laserDamagecd -= Time.deltaTime;
-        Hittable();
+        EscapeAnim();
+
+        if (beHaunted)
+        {     
+            Escape();
+            bullet.SetActive(false);
+        }
+        else
+        {
+            boolCounter = boolMaxCounter;
+            bullet.SetActive(true);
+        }
+
+
+        Debug.Log(boolCounter);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -104,9 +119,9 @@ public class droneBehaviour : MonoBehaviour
         boolCounter -= Time.deltaTime;
 
     }
-    void Hittable()
+    void EscapeAnim()
     {
-        if (canBeAttacked)
+        if (beHaunted)
         {
             anim.SetBool("hittable", true);
         }
@@ -119,5 +134,17 @@ public class droneBehaviour : MonoBehaviour
     {
         GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0,4)], transform.position, Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
+    }
+
+    void Escape()
+    {
+        if (boolCounter <= 0f)
+        {
+        
+            beHaunted = false;
+
+        }
+
+        boolCounter -= Time.deltaTime;
     }
 }
