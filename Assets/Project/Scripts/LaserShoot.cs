@@ -57,7 +57,6 @@ public class LaserShoot : MonoBehaviour
             {
                 time = nextFrame;
                 EnableLaser();
-                SoundManagerScript.audioSrc.volume = 0.1f;
                 endVFX.SetActive(true);
             }
 
@@ -67,7 +66,6 @@ public class LaserShoot : MonoBehaviour
                 UpdateLaser();
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
-                SoundManagerScript.audioSrc.volume = 0.1f;
             }
 
             if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
@@ -76,7 +74,6 @@ public class LaserShoot : MonoBehaviour
                 nextFrame += period;
                 playerBehaviour.bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
-                SoundManagerScript.audioSrc.volume = 0.1f;
             }
             else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
                      this.gameObject.activeInHierarchy == true && !startedShooting && !playerBehaviour.isReloading)
@@ -86,7 +83,6 @@ public class LaserShoot : MonoBehaviour
                 startedShooting = true;
                 playerBehaviour.bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
-                SoundManagerScript.audioSrc.volume = 0.1f;
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
                 CheckFirstAbsorb();
@@ -96,8 +92,6 @@ public class LaserShoot : MonoBehaviour
             {
                 startedShooting = false;
                 DisableLaser();
-                SoundManagerScript.audioSrc.Stop();
-                SoundManagerScript.audioSrc.volume = 1f;
             }
 
             //POPUPS
