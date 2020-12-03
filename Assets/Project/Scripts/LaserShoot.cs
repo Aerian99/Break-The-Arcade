@@ -57,6 +57,7 @@ public class LaserShoot : MonoBehaviour
             {
                 time = nextFrame;
                 EnableLaser();
+                SoundManagerScript.audioSrc.volume = 0.1f;
             }
 
             if (startedShooting && playerBehaviour.bulletsYellow > 0)
@@ -65,6 +66,7 @@ public class LaserShoot : MonoBehaviour
                 UpdateLaser();
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
+                SoundManagerScript.audioSrc.volume = 0.1f;
             }
 
             if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
@@ -73,6 +75,7 @@ public class LaserShoot : MonoBehaviour
                 nextFrame += period;
                 playerBehaviour.bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
+                SoundManagerScript.audioSrc.volume = 0.1f;
             }
             else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
                      this.gameObject.activeInHierarchy == true && !startedShooting && !playerBehaviour.isReloading)
@@ -82,6 +85,7 @@ public class LaserShoot : MonoBehaviour
                 startedShooting = true;
                 playerBehaviour.bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
+                SoundManagerScript.audioSrc.volume = 0.1f;
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
                 CheckFirstAbsorb();
@@ -91,6 +95,8 @@ public class LaserShoot : MonoBehaviour
             {
                 startedShooting = false;
                 DisableLaser();
+                SoundManagerScript.audioSrc.Stop();
+                SoundManagerScript.audioSrc.volume = 1f;
             }
 
             //POPUPS
@@ -143,9 +149,13 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
-                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
             }
-            else if(hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy" && time >= nextFrame)
+            else if (hit.collider.CompareTag("AlienEnemy") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+            }
+            else if ((hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy") && time >= nextFrame)
             {
                 hit.collider.GetComponent<droneBehaviour>().Laserdamaged = true;
             }
@@ -227,7 +237,7 @@ public class LaserShoot : MonoBehaviour
 
         if (playerBehaviour.bulletsYellow < 3 && playerBehaviour.reservedAmmoYellow + playerBehaviour.bulletsYellow < 3)
         {
-            noAmmoText.SetActive(true);
+            //noAmmoText.SetActive(true);
         }
         else
         {

@@ -26,7 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/yellowGun.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/yellowGun.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/yellowGun.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/yellowGun.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +64,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/hitDamagePopUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/reloadScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SceneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/OneSidePlatform.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,7 +102,6 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/landCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ResetScene.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SceneBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SpikesBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/spikeTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/yellowBulletBehaviour.cs" />
@@ -98,21 +109,23 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyPatrol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
       </list>
     </option>
@@ -130,6 +143,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -289,10 +303,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605204000609" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1605049110233">
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606953240890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605049110233" />
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606953240890" />
+    <state x="638" y="122" width="644" height="795" key="find.popup" timestamp="1606953287910">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="638" y="122" width="644" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606953287910" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1606952594067">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606952594067" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605458295923">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
