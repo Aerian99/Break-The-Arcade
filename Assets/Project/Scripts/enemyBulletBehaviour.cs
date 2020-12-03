@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class enemyBulletBehaviour : MonoBehaviour
@@ -92,5 +93,14 @@ public class enemyBulletBehaviour : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 0;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerBehaviour.activeImmunity = true;
+            Destroy(this.gameObject);
+            GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
+            Destroy(explosionGO, 0.7f);
+            SoundManagerScript.PlaySound("alienExplosion");
+        }
     }
 }

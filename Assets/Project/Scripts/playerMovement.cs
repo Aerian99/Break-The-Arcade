@@ -45,6 +45,9 @@ public class playerMovement : MonoBehaviour
 
     // Other variables
     public static float movX;
+    
+    // Audio
+    public AudioSource aud;
 
     void Start()
     {
@@ -83,15 +86,26 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             movX = -1;
+            if(!aud.isPlaying && IsGrounded())
+            {
+                // ... play them.
+                aud.Play();
+            }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
             movX = 1;
+            if(!aud.isPlaying && IsGrounded())
+            {
+                // ... play them.
+                aud.Play();
+            }
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            aud.Stop();
         }
     }
 
