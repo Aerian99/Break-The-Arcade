@@ -69,7 +69,9 @@ public class enemyBulletBehaviour : MonoBehaviour
         && other.gameObject.tag != "CyanEnemy"
         && other.gameObject.tag != "OrangeEnemy"
         && other.gameObject.tag != "RedEnemy"
-        && other.gameObject.tag != "NPC" && other.gameObject.tag != "greyPlatform")
+        && other.gameObject.tag != "NPC" 
+        && other.gameObject.tag != "greyPlatform"
+        && other.gameObject.tag != "Triggers")
         {
             Destroy(this.gameObject);
         } 
