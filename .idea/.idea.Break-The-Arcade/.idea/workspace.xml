@@ -26,10 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/doorSounds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/doorSoundsAndEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/doorSounds.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/doorSoundsAndEffects.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/redGhost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/redGhost.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,6 @@
         <option value="$PROJECT_DIR$/Assets/redRobotPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyPatrol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
@@ -126,6 +124,7 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/doorSoundsAndEffects.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" />
       </list>
     </option>
   </component>
@@ -190,7 +189,7 @@
       <workItem from="1606083446167" duration="1964000" />
       <workItem from="1606482880535" duration="13000" />
       <workItem from="1606495047380" duration="3006000" />
-      <workItem from="1606996147159" duration="3392000" />
+      <workItem from="1606996147159" duration="5775000" />
     </task>
     <servers />
   </component>
