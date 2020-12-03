@@ -25,7 +25,6 @@ public class playerBehaviour : MonoBehaviour
     public GameObject deathEffect;
     public GameObject reloadText;
     
-    //private float timer = 0.0f;
     private int seconds;
 
     public static int bulletsPurple, bulletsYellow, bulletsShotgun;
@@ -57,6 +56,7 @@ public class playerBehaviour : MonoBehaviour
 
         reloadTime = 2f;
         isReloading = false;
+        reloadText.SetActive(false);
     }
 
     void Update()
@@ -82,16 +82,6 @@ public class playerBehaviour : MonoBehaviour
 
         if (isReloading)
             return;
-
-        /*if (bulletsPurple <= 0 && Input.GetKey(KeyCode.R))
-        {
-            StartCoroutine(Reload());
-        }
-
-        if (bulletsYellow <= 0 && Input.GetKey(KeyCode.R))
-        {
-            StartCoroutine(Reload());
-        }*/
 
         if (Input.GetKey(KeyCode.R))
         {
