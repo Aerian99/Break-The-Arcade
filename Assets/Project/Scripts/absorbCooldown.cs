@@ -29,7 +29,7 @@ public class absorbCooldown : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire2") && coolFull == false)
+        if (Input.GetButton("Fire2") && coolFull == false && !playerBehaviour.isReloading)
         {
             cooldown.fillAmount += incAbsorbSpeed / waitTime * Time.deltaTime;
         }

@@ -52,9 +52,9 @@ public class droneBehaviour : MonoBehaviour
             boolCounter = boolMaxCounter;
 
 
-        if (canBeAttacked)
-        { 
-            if (Laserdamaged && laserDamagecd <= 0.0f)
+        
+            */
+        if (Laserdamaged && laserDamagecd <= 0.0f)
             {
                 anim.SetTrigger("hit");
                 actualHealth -= LaserShoot.damage;
@@ -62,7 +62,7 @@ public class droneBehaviour : MonoBehaviour
                 popUpDamage(LaserShoot.damage);
                 laserDamagecd = laserDamagecdMax;
             }
-        }*/
+        
         laserDamagecd -= Time.deltaTime;
         EscapeAnim();
 
@@ -78,13 +78,12 @@ public class droneBehaviour : MonoBehaviour
         }
 
 
-        Debug.Log(boolCounter);
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(canBeAttacked)
-        { 
+        
             if (other.gameObject.tag == "PurpleBullet")
             {
                 anim.SetTrigger("hit");
@@ -106,7 +105,7 @@ public class droneBehaviour : MonoBehaviour
                 life.fillAmount -= RedShoot.bulletDamage / maxHealth;
                 popUpDamage(RedShoot.bulletDamage);
             }
-        }
+        
     }
 
     void Attacked()
@@ -140,9 +139,7 @@ public class droneBehaviour : MonoBehaviour
     {
         if (boolCounter <= 0f)
         {
-        
             beHaunted = false;
-
         }
 
         boolCounter -= Time.deltaTime;

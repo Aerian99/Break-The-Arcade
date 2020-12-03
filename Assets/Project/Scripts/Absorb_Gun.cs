@@ -22,9 +22,8 @@ public class Absorb_Gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "EnemyBullet" && absorbCooldown.coolFull == false && other.gameObject.tag == "AlienAttack")
+        if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack")  && absorbCooldown.coolFull == false )
         {
-
             if (firstTimeAbsorb0 && handController.currentPos == 0)
             {
                 if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)

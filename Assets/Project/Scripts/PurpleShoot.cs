@@ -58,7 +58,7 @@ public class PurpleShoot : MonoBehaviour
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 && playerBehaviour.reservedAmmoPurple == 0 &&
            this.gameObject.activeInHierarchy == true)
         {
-            //noAmmoText.SetActive(true);
+            noAmmoText.SetActive(true);
         }
 
     }

@@ -16,7 +16,7 @@ public class LaserShoot : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
-    private LayerMask hittableMasK;
+    private LayerMask hittableMasK, hittableMask2;
 
 
     private float nextFrame;
@@ -104,7 +104,7 @@ public class LaserShoot : MonoBehaviour
             else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
                      this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
             {
-                //noAmmoText.SetActive(true);
+                noAmmoText.SetActive(true);
             }
 
             time += Time.deltaTime;
@@ -153,6 +153,7 @@ public class LaserShoot : MonoBehaviour
             }
             else if ((hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy") && time >= nextFrame)
             {
+                Debug.Log('y');
                 hit.collider.GetComponent<droneBehaviour>().Laserdamaged = true;
             }
             lineRenderer.SetPosition(1, hit.point);
@@ -234,7 +235,7 @@ public class LaserShoot : MonoBehaviour
 
         if (playerBehaviour.bulletsYellow < 3 && playerBehaviour.reservedAmmoYellow + playerBehaviour.bulletsYellow < 3)
         {
-            //noAmmoText.SetActive(true);
+            noAmmoText.SetActive(true);
         }
         else
         {

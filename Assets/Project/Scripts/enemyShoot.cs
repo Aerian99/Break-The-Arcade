@@ -49,10 +49,10 @@ public class enemyShoot : MonoBehaviour
         {
             shootCounter = 2; //added
             bulletSpeed = 8f;
-            cadency = 1;
+            cadency = 0;
         }
 
-        keepCadency = cadency;
+        keepCadency = 1;
 
         timeBtwShoots = startTimeBtwShoots;
     }
@@ -67,17 +67,12 @@ public class enemyShoot : MonoBehaviour
         }
         if (cadency <= 0)
         {
-            if (timeBtwShoots <= 0)
-            {
+            
                 //ShootPlayer();
                 redShoot();
                 shootCounter--;
-                timeBtwShoots = startTimeBtwShoots;
-            }
-            else
-            {
-                timeBtwShoots -= Time.deltaTime;
-            }
+                cadency = keepCadency;
+           
 
             /*if (shootCounter == 0)
             {
@@ -152,10 +147,28 @@ public class enemyShoot : MonoBehaviour
 
     void redShoot()
     {
-        SoundManagerScript.PlaySound("EnemyShoot");
         // UP 
         GameObject bulletUP;
         Rigidbody2D rbUP;
+        if (GetComponentInParent<FlyingBehaviour>().inRange && this.gameObject.tag == "CyanEnemy")
+        {
+            if (Random.Range(0f, 100f) <= 10.0f)
+            {
+                GameObject rb = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
+                Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
+                r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+            }
+            else
+            {
+                GameObject rb = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+                Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
+                r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+            }
+
+        }
+        if(GetComponentInParent<FlyingBehaviour>().inRange)
+        { 
+            SoundManagerScript.PlaySound("EnemyShoot");
         if (Random.Range(0f, 100f) <= 10.0f)
         {
             bulletUP = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
@@ -205,7 +218,7 @@ public class enemyShoot : MonoBehaviour
         // LEFT DOWN
         GameObject bulletLeftDOWN;
         Rigidbody2D rbLeftDOWN;
-        if (Random.Range(0f, 100f) <= 30.0f)
+        if (Random.Range(0f, 100f) <= 10.0f)
         {
             bulletLeftDOWN = Instantiate(enemyBulletAttack, leftDOWN.transform.position, leftDOWN.transform.localRotation);
             rbLeftDOWN = bulletLeftDOWN.GetComponent<Rigidbody2D>();
@@ -221,7 +234,7 @@ public class enemyShoot : MonoBehaviour
         // DOWN
         GameObject bulletDOWN;
         Rigidbody2D rbDOWN;
-        if (Random.Range(0f, 100f) <= 30.0f)
+        if (Random.Range(0f, 100f) <= 10.0f)
         {
             bulletDOWN = Instantiate(enemyBulletAttack, down.transform.position, down.transform.localRotation);
             rbDOWN = bulletDOWN.GetComponent<Rigidbody2D>();
@@ -238,7 +251,7 @@ public class enemyShoot : MonoBehaviour
         // RIGHT DOWN
         GameObject bulletRightDOWN;
         Rigidbody2D rbRightDOWN;
-        if (Random.Range(0f, 100f) <= 50.0f)
+        if (Random.Range(0f, 100f) <= 10.0f)
         {
             bulletRightDOWN = Instantiate(enemyBulletAttack, rightDOWN.transform.position, rightDOWN.transform.localRotation);
             rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
@@ -253,7 +266,7 @@ public class enemyShoot : MonoBehaviour
         // RIGHT
         GameObject bulletRight;
         Rigidbody2D rbRight;
-        if (Random.Range(0f, 100f) <= 40.0f)
+        if (Random.Range(0f, 100f) <= 10.0f)
         {
             bulletRight = Instantiate(enemyBulletAttack, right.transform.position, right.transform.localRotation);
             rbRight = bulletRight.GetComponent<Rigidbody2D>();
@@ -279,6 +292,7 @@ public class enemyShoot : MonoBehaviour
             rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
             rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
         }
-        
+        }
+
     }
 }
