@@ -1258,7 +1258,7 @@ GameObject:
   - component: {fileID: 246585201}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7386,7 +7386,7 @@ GameObject:
   - component: {fileID: 435935465}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13218,6 +13218,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7843277954731009111, guid: 766ddd25a3c11084eb9898d26c139374,
+        type: 3}
+      propertyPath: m_TagString
+      value: CyanEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8457730362450370192, guid: 766ddd25a3c11084eb9898d26c139374,
         type: 3}
       propertyPath: m_Enabled
@@ -18655,7 +18660,7 @@ GameObject:
   - component: {fileID: 670570979}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19084,6 +19089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+        type: 3}
+      propertyPath: m_TagString
+      value: OrangeEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1dcca9676be434ea2849e92bfb86d0, type: 3}
@@ -19738,7 +19748,7 @@ GameObject:
   - component: {fileID: 879549831}
   m_Layer: 0
   m_Name: SpaceInvanders
-  m_TagString: Untagged
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20063,6 +20073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
+        type: 3}
+      propertyPath: m_TagString
+      value: OrangeEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1dcca9676be434ea2849e92bfb86d0, type: 3}
@@ -25377,7 +25392,7 @@ GameObject:
   - component: {fileID: 1111474334}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26537,7 +26552,7 @@ GameObject:
   - component: {fileID: 1266418370}
   m_Layer: 8
   m_Name: Alien
-  m_TagString: Enemy
+  m_TagString: AlienEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27190,6 +27205,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1999826631166950924, guid: ee7d47f84e63f6f44baf078384aff647,
+        type: 3}
+      propertyPath: m_TagString
+      value: OrangeEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950927, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_Enabled
@@ -27304,6 +27324,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!1001 &1389416295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40566,6 +40588,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1999826631166950924, guid: ee7d47f84e63f6f44baf078384aff647,
+        type: 3}
+      propertyPath: m_TagString
+      value: OrangeEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950927, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_Enabled
@@ -40680,6 +40707,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  inRange: 0
+  maxDistance: 0
 --- !u!1 &2088159888
 GameObject:
   m_ObjectHideFlags: 0

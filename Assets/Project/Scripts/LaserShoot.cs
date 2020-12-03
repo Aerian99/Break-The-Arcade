@@ -143,9 +143,13 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
-                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
             }
-            else if(hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy" && time >= nextFrame)
+            else if (hit.collider.CompareTag("AlienEnemy") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
+            }
+            else if ((hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy") && time >= nextFrame)
             {
                 hit.collider.GetComponent<droneBehaviour>().Laserdamaged = true;
             }
