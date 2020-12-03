@@ -32,6 +32,7 @@ TagManager:
   - OrangeEnemy
   - CyanEnemy
   - RedEnemy
+  - AlienEnemy
   layers:
   - Default
   - TransparentFX
@@ -71,6 +72,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2263954501
+    locked: 0
+  - name: Enemy
+    uniqueID: 1633482351
     locked: 0
   - name: Bullet
     uniqueID: 2105085085
