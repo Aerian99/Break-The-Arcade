@@ -14,7 +14,10 @@ public class SoundManagerScript : MonoBehaviour
         gameOver,
         EnemyShoot,
         noAmmo,
-        alienExplosion;
+        alienExplosion,
+        openDoor,
+        closeDoor,
+        footStep;
 
     public static AudioSource audioSrc;
 
@@ -31,6 +34,9 @@ public class SoundManagerScript : MonoBehaviour
         EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
         noAmmo = Resources.Load<AudioClip>("noAmmo");
         alienExplosion = Resources.Load<AudioClip>("alienExplosion");
+        openDoor = Resources.Load<AudioClip>("openDoor");
+        closeDoor = Resources.Load<AudioClip>("closeDoor");
+        footStep = Resources.Load<AudioClip>("footStep");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -73,6 +79,15 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "alienExplosion":
                 audioSrc.PlayOneShot(alienExplosion);
+                break;
+            case "openDoor":
+                audioSrc.PlayOneShot(openDoor);
+                break;
+            case "closeDoor":
+                audioSrc.PlayOneShot(closeDoor);
+                break;
+            case "footStep":
+                audioSrc.PlayOneShot(footStep);
                 break;
 
             default:

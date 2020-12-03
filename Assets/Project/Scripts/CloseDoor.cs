@@ -16,8 +16,6 @@ public class CloseDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             CameraScene.changeCameraAlien = true;
-            door.GetComponent<Animator>().SetBool("OpenDoor", false);
-            door.GetComponent<Animator>().SetBool("CloseDoor", true);
             alienController.SetActive(true);
             Destroy(this.gameObject);
         }
