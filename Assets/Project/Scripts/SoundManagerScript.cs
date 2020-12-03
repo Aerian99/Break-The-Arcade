@@ -12,9 +12,10 @@ public class SoundManagerScript : MonoBehaviour
         dashSound,
         platformJump,
         gameOver,
-        EnemyShoot;
+        EnemyShoot,
+        noAmmo;
 
-    static AudioSource audioSrc;
+    public static AudioSource audioSrc;
 
     void Start()
     {
@@ -27,15 +28,12 @@ public class SoundManagerScript : MonoBehaviour
         platformJump = Resources.Load<AudioClip>("platformJump");
         gameOver = Resources.Load<AudioClip>("gameOver");
         EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
+        noAmmo = Resources.Load<AudioClip>("noAmmo");
 
 
         audioSrc = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     public static void PlaySound(string clip)
     {
@@ -67,6 +65,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "EnemyShoot":
                 audioSrc.PlayOneShot(EnemyShoot);
+                break;
+            case "noAmmo":
+                audioSrc.PlayOneShot(noAmmo);
                 break;
 
             default:
