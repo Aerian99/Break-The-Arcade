@@ -17,6 +17,7 @@ public class reloadScript : MonoBehaviour
         timer = 0f;
         waitTime = 2f;
         fill.fillAmount = 0f;
+        fill.enabled = false;
         perTimer.enabled = false;
     }
 
@@ -29,7 +30,7 @@ public class reloadScript : MonoBehaviour
             perTimer.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && !playerBehaviour.isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && playerBehaviour.isReloading)
         {
             if (playerBehaviour.reservedAmmoPurple != 0 && handController.currentPos == 0)
             {

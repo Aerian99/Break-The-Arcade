@@ -90,7 +90,7 @@ public class RedShoot : MonoBehaviour
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
             this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
         {
-            noAmmoText.SetActive(true);
+            //noAmmoText.SetActive(true);
         }
         
         RotateReloadBullet();

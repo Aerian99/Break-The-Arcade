@@ -58,6 +58,7 @@ public class LaserShoot : MonoBehaviour
                 time = nextFrame;
                 EnableLaser();
                 SoundManagerScript.audioSrc.volume = 0.1f;
+                endVFX.SetActive(true);
             }
 
             if (startedShooting && playerBehaviour.bulletsYellow > 0)
@@ -109,7 +110,7 @@ public class LaserShoot : MonoBehaviour
             else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
                      this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
             {
-                noAmmoText.SetActive(true);
+                //noAmmoText.SetActive(true);
             }
 
             time += Time.deltaTime;
@@ -131,6 +132,7 @@ public class LaserShoot : MonoBehaviour
         for (int i = 0; i < particles.Count; i++)
         {
             particles[i].Play();
+            endVFX.SetActive(true);
         }
     }
 
@@ -167,6 +169,7 @@ public class LaserShoot : MonoBehaviour
         for (int i = 0; i < particles.Count; i++)
         {
             particles[i].Stop();
+            endVFX.SetActive(false);
         }
     }
 

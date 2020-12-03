@@ -35,7 +35,7 @@ public class handController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
             currentPos--;
-            //if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+           // if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {

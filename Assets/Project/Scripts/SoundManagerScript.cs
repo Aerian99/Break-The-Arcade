@@ -13,7 +13,8 @@ public class SoundManagerScript : MonoBehaviour
         platformJump,
         gameOver,
         EnemyShoot,
-        noAmmo;
+        noAmmo,
+        alienExplosion;
 
     public static AudioSource audioSrc;
 
@@ -29,6 +30,7 @@ public class SoundManagerScript : MonoBehaviour
         gameOver = Resources.Load<AudioClip>("gameOver");
         EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
         noAmmo = Resources.Load<AudioClip>("noAmmo");
+        alienExplosion = Resources.Load<AudioClip>("alienExplosion");
 
 
         audioSrc = GetComponent<AudioSource>();
@@ -68,6 +70,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "noAmmo":
                 audioSrc.PlayOneShot(noAmmo);
+                break;
+            case "alienExplosion":
+                audioSrc.PlayOneShot(alienExplosion);
                 break;
 
             default:
