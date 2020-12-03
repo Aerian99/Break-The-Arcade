@@ -35,12 +35,12 @@ public class handController : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
             currentPos--;
-           // if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
         {
             currentPos++;
-            //if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;
@@ -94,7 +94,7 @@ public class handController : MonoBehaviour
 
 
         // ABSORB GUN ZONE
-        if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false)
+        if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false && !playerBehaviour.isReloading)
         {
             absorbGun.SetActive(true);
             purpleGun.SetActive(false);

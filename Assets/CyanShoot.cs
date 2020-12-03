@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShootOrange : MonoBehaviour
+public class CyanShoot : MonoBehaviour
 {
     // COMPONENTES
     private Transform target;
@@ -20,12 +20,12 @@ public class EnemyShootOrange : MonoBehaviour
     public LayerMask playerLayer;
 
     // ShootPoint transforms
-    public Transform /*leftUP, left, leftDOWN, down, */rightDOWN, right, rightUP;
+    public Transform /*leftUP, left, leftDOWN, down, */left;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        if (this.gameObject.tag == "OrangeEnemy")
+        if (this.gameObject.tag == "CyanEnemy")
         {
             shootCounter = 3;
             bulletSpeed = 8f;
@@ -33,7 +33,7 @@ public class EnemyShootOrange : MonoBehaviour
             startTimeBtwShoots = 1f;
         }
 
-        keepCadency = 2;
+        keepCadency = 1;
 
         timeBtwShoots = startTimeBtwShoots;
     }
@@ -41,8 +41,9 @@ public class EnemyShootOrange : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(cadency);
         cadency -= Time.fixedDeltaTime;
-        if (!this.gameObject.CompareTag("OrangeEnemy"))
+        if (!this.gameObject.CompareTag("CyanEnemy"))
         {
             RotateTowards(target.position);
         }
@@ -115,31 +116,18 @@ public class EnemyShootOrange : MonoBehaviour
 
     void orangeShoot()
     {
-        if(GetComponentInParent<FlyingBehaviour>().inRange)
-        { 
+        if (GetComponentInParent<FlyingBehaviour>().inRange)
+        {
+          
             SoundManagerScript.PlaySound("EnemyShoot");
             // UP 
 
             // RIGHT DOWN
             GameObject bulletRightDOWN;
             Rigidbody2D rbRightDOWN;
-            bulletRightDOWN = Instantiate(enemyBullet, rightDOWN.transform.position, rightDOWN.transform.localRotation);
+            bulletRightDOWN = Instantiate(enemyBullet, left.transform.position, left.transform.localRotation);
             rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
-            rbRightDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-
-            // RIGHT
-            GameObject bulletRight;
-            Rigidbody2D rbRight;
-            bulletRight = Instantiate(enemyBullet, right.transform.position, right.transform.localRotation);
-            rbRight = bulletRight.GetComponent<Rigidbody2D>();
-            rbRight.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-
-            // RIGHT UP
-            GameObject bulletRightUP;
-            Rigidbody2D rbRightUP;
-            bulletRightUP = Instantiate(enemyBullet, rightUP.transform.position, rightUP.transform.localRotation);
-            rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
-            rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+            rbRightDOWN.AddForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
         }
 
     }

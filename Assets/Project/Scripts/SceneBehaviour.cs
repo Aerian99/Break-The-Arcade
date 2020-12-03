@@ -20,6 +20,10 @@ public class SceneBehaviour : MonoBehaviour
         {
             StartCoroutine(PlayAgain(0.8f));
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
         IEnumerator PlayAgain(float time)
         {
