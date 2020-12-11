@@ -154,11 +154,15 @@ MonoBehaviour:
   - {fileID: 2486929531630475369, guid: 75b0889aa7ea9c3468ddc28586462eef, type: 3}
   - {fileID: 4385679127829853040, guid: 4c703b72abb97ea4db32dbbb13f06252, type: 3}
   - {fileID: 1521631119292433382, guid: 386a1ae72d966a745a64bdd0212e491a, type: 3}
+  - {fileID: 6186689464725789861, guid: 69233cb76ca572f46b2fcafb3939403b, type: 3}
+  - {fileID: 6186689464725789861, guid: 69233cb76ca572f46b2fcafb3939403b, type: 3}
   topRooms:
   - {fileID: 1876350201069680367, guid: 08210accbb6257043b5a00532f039cca, type: 3}
   - {fileID: 1521631119292433382, guid: 386a1ae72d966a745a64bdd0212e491a, type: 3}
   - {fileID: 8866664455737074663, guid: 5e6f88032190e4548a332bae1b21a87b, type: 3}
   - {fileID: 5430482226048936392, guid: 5ece7f440f4061343a3ea2be508a8e98, type: 3}
+  - {fileID: 6186689464725789861, guid: 69233cb76ca572f46b2fcafb3939403b, type: 3}
+  - {fileID: 6186689464725789861, guid: 69233cb76ca572f46b2fcafb3939403b, type: 3}
   leftRooms:
   - {fileID: 7412586647262163699, guid: 6bb449ffffa7be745b3b4938784eee58, type: 3}
   - {fileID: 7633070246758546276, guid: 4de449df818231043a927c3bb1a355f3, type: 3}
@@ -281,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EntryRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976477227822198178, guid: 8eab322e4bd15584eb4c55c49f475d2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3106618687434983912, guid: 8eab322e4bd15584eb4c55c49f475d2d,
         type: 3}
