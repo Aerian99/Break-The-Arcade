@@ -33,6 +33,8 @@ TagManager:
   - CyanEnemy
   - RedEnemy
   - AlienEnemy
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -49,8 +51,8 @@ TagManager:
   - BulletReload
   - HittableObjects
   - AlienPlatform
-  - 
-  - 
+  - Room
+  - SpawnPoint
   - 
   - 
   - 
