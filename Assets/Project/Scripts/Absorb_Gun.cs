@@ -27,7 +27,10 @@ public class Absorb_Gun : MonoBehaviour
             if (firstTimeAbsorb0 && handController.currentPos == 0)
             {
                 if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
-                { playerBehaviour.bulletsPurple++; }
+                { 
+                    playerBehaviour.bulletsPurple++;
+                    SoundManagerScript.PlaySound("absorbSound");
+                }
                 else
                 {
                     firstTimeAbsorb0 = false;
@@ -40,7 +43,10 @@ public class Absorb_Gun : MonoBehaviour
             else if (firstTimeAbsorb1 && handController.currentPos == 1)
             {
                 if (handController.currentPos == 1 && playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT)
-                { playerBehaviour.bulletsYellow++; }
+                { 
+                    playerBehaviour.bulletsYellow++;
+                    SoundManagerScript.PlaySound("absorbSound");
+                }
                 else
                 {
                     firstTimeAbsorb1 = false;
@@ -52,7 +58,10 @@ public class Absorb_Gun : MonoBehaviour
             else if (firstTimeAbsorb2 && handController.currentPos == 2)
             {
                 if (handController.currentPos == 2 && playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)
-                { playerBehaviour.bulletsShotgun++; }
+                { 
+                    playerBehaviour.bulletsShotgun++;
+                    SoundManagerScript.PlaySound("absorbSound");
+                }
                 else
                 {
                     firstTimeAbsorb2 = false;
@@ -67,16 +76,19 @@ public class Absorb_Gun : MonoBehaviour
                 { 
                     playerBehaviour.reservedAmmoPurple++;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                    SoundManagerScript.PlaySound("absorbSound");
                 }
                 if (handController.currentPos == 1 && playerBehaviour.reservedAmmoYellow != playerBehaviour.MAX_BULLETS_YELLOW)
                 { 
                     playerBehaviour.reservedAmmoYellow++;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                    SoundManagerScript.PlaySound("absorbSound");
                 }
                 if (handController.currentPos == 2 && playerBehaviour.reservedAmmoShotgun != playerBehaviour.MAX_BULLETS_SHOTGUN)
                 { 
                     playerBehaviour.reservedAmmoShotgun++;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+                    SoundManagerScript.PlaySound("absorbSound");
                 }
 
             }
