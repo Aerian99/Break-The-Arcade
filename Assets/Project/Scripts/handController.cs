@@ -17,6 +17,8 @@ public class handController : MonoBehaviour
     public GameObject noAmmoText;
     public static int currentPos;
 
+    public AudioSource audsrc;
+
     private Transform gunSelector;
     void Start()
     {
@@ -100,7 +102,11 @@ public class handController : MonoBehaviour
             purpleGun.SetActive(false);
             yellowGun.SetActive(false);
             redGun.SetActive(false);
-
+            if (!audsrc.isPlaying)
+            {
+                audsrc.Play();
+            }
+            
         }
         else if (currentPos == 0)
         {
@@ -130,6 +136,11 @@ public class handController : MonoBehaviour
         else if (currentPos == -1)
         {
             currentPos = 2;
+        }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            audsrc.Stop();
         }
     }
 }
