@@ -153,7 +153,6 @@ public class LaserShoot : MonoBehaviour
             }
             else if ((hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy") && time >= nextFrame)
             {
-                Debug.Log('y');
                 hit.collider.GetComponent<droneBehaviour>().Laserdamaged = true;
             }
             lineRenderer.SetPosition(1, hit.point);

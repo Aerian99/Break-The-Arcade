@@ -7,10 +7,18 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CyanShoot.cs" t="Include" />
+        <e p="Destroyer.cs" t="Include" />
         <e p="doorSoundsAndEffects.cs" t="Include" />
         <e p="PowerupHealth.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="MainMenuManager.cs" t="Include" />
+          <e p="ProceduralGeneration" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="AddRoom.cs" t="Include" />
+              <e p="RoomSpawner.cs" t="Include" />
+              <e p="RoomTemplates.cs" t="Include" />
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
             <e p="absorbCooldown.cs" t="Include" />

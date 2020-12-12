@@ -26,9 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/ParticleLaser.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/ParticleLaser.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/redBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/redBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/Bullet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/Bullet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +121,6 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/doorSounds.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
@@ -125,6 +132,7 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
       </list>
     </option>
   </component>
