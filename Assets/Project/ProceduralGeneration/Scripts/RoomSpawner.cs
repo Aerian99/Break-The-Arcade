@@ -12,7 +12,7 @@ public class RoomSpawner : MonoBehaviour
 
 
     private RoomTemplates templates;
-    int roomNum;
+    int roomNum, roomSelection;
     public bool spawned;
 
     public float waitTime;
@@ -23,7 +23,7 @@ public class RoomSpawner : MonoBehaviour
         Destroy(gameObject, waitTime);
         spawned = false;
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn",0.5f);
+        Invoke("Spawn",0.3f);
     }
    
 
@@ -32,15 +32,13 @@ public class RoomSpawner : MonoBehaviour
         { 
             if (openingDirection == 1)
             {
-                roomNum = Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[roomNum], transform.position, templates.bottomRooms[roomNum].transform.rotation);
-
+                    roomNum = Random.Range(0, templates.bottomRooms.Length);
+                    Instantiate(templates.bottomRooms[roomNum], transform.position, templates.bottomRooms[roomNum].transform.rotation);
             }
             else if (openingDirection == 2)
             {
-                roomNum = Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[roomNum], transform.position, templates.topRooms[roomNum].transform.rotation);
-
+                    roomNum = Random.Range(0, templates.topRooms.Length);
+                    Instantiate(templates.topRooms[roomNum], transform.position, templates.topRooms[roomNum].transform.rotation);
             }
             else if (openingDirection == 3)
             {
