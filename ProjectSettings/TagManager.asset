@@ -35,6 +35,7 @@ TagManager:
   - AlienEnemy
   - SpawnPoint
   - Rooms
+  - absorbZone
   layers:
   - Default
   - TransparentFX
