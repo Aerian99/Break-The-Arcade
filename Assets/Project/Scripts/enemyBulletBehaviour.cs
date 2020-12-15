@@ -93,7 +93,11 @@ public class enemyBulletBehaviour : MonoBehaviour
         {
             absorbed = true;
             Destroy(this.gameObject, 0.1f); // Destruimos la bala en función del tiempo que tarda en absorber, para ahorrar problemas.
-            
+        }
+
+        if (other.gameObject.CompareTag("AbsorbGun"))
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -111,14 +115,6 @@ public class enemyBulletBehaviour : MonoBehaviour
             GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
             Destroy(explosionGO, 0.7f);
             SoundManagerScript.PlaySound("alienExplosion");
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (absorbed)
-        {
-            SoundManagerScript.PlaySound("absorbBlip");
         }
     }
 }
