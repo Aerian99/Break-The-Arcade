@@ -16076,7 +16076,7 @@ PrefabInstance:
     - target: {fileID: 1999826631166950924, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1999826631166950926, guid: ee7d47f84e63f6f44baf078384aff647,
         type: 3}
@@ -16815,7 +16815,7 @@ PrefabInstance:
     - target: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6144638873485585630, guid: 5f1dcca9676be434ea2849e92bfb86d0,
         type: 3}
@@ -57193,6 +57193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: absorbGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415591083614275795, guid: bd4f4951e4fe0a6419d118f800d505a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7112693599840338884, guid: bd4f4951e4fe0a6419d118f800d505a0,
         type: 3}
