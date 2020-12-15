@@ -18,7 +18,8 @@ public class SoundManagerScript : MonoBehaviour
         openDoor,
         closeDoor,
         footStep,
-        absorbSound;
+        absorbSound,
+        absorbBlip;
 
     public static AudioSource audioSrc;
 
@@ -39,7 +40,7 @@ public class SoundManagerScript : MonoBehaviour
         closeDoor = Resources.Load<AudioClip>("closeDoor");
         footStep = Resources.Load<AudioClip>("footStep");
         absorbSound = Resources.Load<AudioClip>("absorbSound");
-
+        absorbBlip = Resources.Load<AudioClip>("absorbBlip");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -93,6 +94,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "absorbSound":
                 audioSrc.PlayOneShot(absorbSound);
+                break;
+            case "absorbBlip":
+                audioSrc.PlayOneShot(absorbBlip);
                 break;
             default:
                 break;
