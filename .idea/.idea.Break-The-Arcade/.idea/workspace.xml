@@ -26,9 +26,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Materials/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Materials/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Enemigo.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala Enemigo.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala perfecta.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/Enemy Bullets/Bala perfecta.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/absorbGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Weapons/absorbGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/Absorb_Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/Absorb_Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/AbsorbGlow.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/AbsorbGlow.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/Bullet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/Bullet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/PerfectBullet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/PerfectBullet.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/UISettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/SceneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/magneticEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/FlyingBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/doorSoundsAndEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/TextMesh Pro/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
@@ -114,7 +125,6 @@
         <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/doorSounds.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" />
@@ -125,6 +135,9 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/Absorb_Gun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/magneticEffect.cs" />
       </list>
     </option>
   </component>
@@ -192,6 +205,7 @@
       <workItem from="1606996147159" duration="5775000" />
       <workItem from="1607257487451" duration="225000" />
       <workItem from="1607708827811" duration="727000" />
+      <workItem from="1607984222688" duration="4263000" />
     </task>
     <servers />
   </component>

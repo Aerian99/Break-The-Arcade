@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Absorb_Gun : MonoBehaviour
 {
     private EdgeCollider2D arcCollider;
-    public GameObject arcEffect;
-    private Transform arcTransform;
     private GameObject effect;
     public GameObject noAmmoText;
     public static bool firstTimeAbsorb0, firstTimeAbsorb1, firstTimeAbsorb2, ammoFull0, ammoFull1, ammoFull2;
@@ -14,16 +13,17 @@ public class Absorb_Gun : MonoBehaviour
     void Start()
     {
         arcCollider = GetComponent<EdgeCollider2D>();
-        arcTransform = transform.GetChild(0).transform;
         firstTimeAbsorb0 = firstTimeAbsorb1 = firstTimeAbsorb2 = true;
         ammoFull0 = ammoFull1= ammoFull2 = false;
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack")  && absorbCooldown.coolFull == false )
+        if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack")  && absorbCooldown.coolFull == false)
         {
+            // ABSORB MAGNET EFFECT
+
+            // CONTADOR DE BALAS
             if (firstTimeAbsorb0 && handController.currentPos == 0)
             {
                 if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
@@ -90,18 +90,13 @@ public class Absorb_Gun : MonoBehaviour
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
                     SoundManagerScript.PlaySound("absorbSound");
                 }
-
             }
-
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
-
-
         else if (other.gameObject.tag == "Bullet Pacman")
         {
             // droneBehaviour.canBeAttacked = true;
             droneBehaviour.beHaunted = true;      
         }
-
     }
 }
