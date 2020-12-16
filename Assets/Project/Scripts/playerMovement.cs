@@ -21,7 +21,9 @@ public class playerMovement : MonoBehaviour
 
     // Particles
     private ParticleSystem p_JumpParticle;
-    private ParticleSystem p_JumpParticle2;
+    private ParticleSystem p_FallParticle;
+    private ParticleSystem p_RunParticleLeft;
+    private ParticleSystem p_RunParticleRight;
 
     // Movement
     private float moveSpeed;
@@ -45,7 +47,7 @@ public class playerMovement : MonoBehaviour
 
     // Other variables
     public static float movX;
-    
+
     // Audio
     public AudioSource aud;
 
@@ -57,8 +59,11 @@ public class playerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         p_sprite = GetComponent<SpriteRenderer>();
         p_collider = GetComponent<BoxCollider2D>();
+
         p_JumpParticle = this.transform.GetChild(0).GetComponent<ParticleSystem>();
-        p_JumpParticle2 = this.transform.GetChild(1).GetComponent<ParticleSystem>();
+        p_FallParticle = this.transform.GetChild(1).GetComponent<ParticleSystem>();
+        p_RunParticleLeft = this.transform.GetChild(2).GetComponent<ParticleSystem>();
+        p_RunParticleRight = this.transform.GetChild(3).GetComponent<ParticleSystem>();
 
         platformsLayerMask = copyLayerMask;
 
@@ -74,7 +79,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         // FUNCTIONS
-        Move();      
+        Move();
         Jump();
         Dash();
         SetAnimationState();
@@ -86,20 +91,28 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             movX = -1;
-            if(!aud.isPlaying && IsGrounded())
+            if (!aud.isPlaying && IsGrounded())
             {
-                // ... play them.
                 aud.Play();
+            }
+
+            if (IsGrounded())
+            {
+                p_RunParticleLeft.Play();
             }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
             movX = 1;
-            if(!aud.isPlaying && IsGrounded())
+            if (!aud.isPlaying && IsGrounded())
             {
-                // ... play them.
                 aud.Play();
+            }
+
+            if (IsGrounded())
+            {
+                p_RunParticleRight.Play();
             }
         }
         else
@@ -109,12 +122,10 @@ public class playerMovement : MonoBehaviour
         }
     }
 
-    
-
     // This Jump function works with key hold detection. Hold to jump higher.
     void Jump()
     {
-        if (IsGrounded() == true && Input.GetKeyDown(KeyCode.Space) && !landCollision.groundSuperJump)
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && !landCollision.groundSuperJump)
         {
             SoundManagerScript.PlaySound("jump");
             isJumping = true;
@@ -122,7 +133,7 @@ public class playerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        if (Input.GetKey(KeyCode.Space) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -140,10 +151,10 @@ public class playerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-        
+
         if (rb.velocity.y > -1f)
         {
-            p_JumpParticle2.Play();
+            p_FallParticle.Play();
         }
     }
 
@@ -176,9 +187,10 @@ public class playerMovement : MonoBehaviour
         }
 
         if (!canDash)
-        { 
+        {
             dashCooldown -= Time.deltaTime;
         }
+
         if (dashCooldown <= 0)
         {
             canDash = true;
@@ -186,8 +198,8 @@ public class playerMovement : MonoBehaviour
             dashCooldown = 3f;
             dashImage.GetComponent<Animator>().SetTrigger("ready");
         }
-        
-        dashImage.fillAmount += 1.0f / 3.0f  * Time.deltaTime;
+
+        dashImage.fillAmount += 1.0f / 3.0f * Time.deltaTime;
     }
 
     public static bool IsGrounded()
@@ -230,5 +242,4 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isFalling", false);
         }
     }
-
 }

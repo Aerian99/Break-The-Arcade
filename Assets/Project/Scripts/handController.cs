@@ -18,6 +18,7 @@ public class handController : MonoBehaviour
     public static int currentPos;
 
     private Transform gunSelector;
+
     void Start()
     {
         purpleGun = transform.GetChild(0).gameObject;
@@ -31,16 +32,22 @@ public class handController : MonoBehaviour
     void Update()
     {
         WeaponSelector();
-
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Rueda arriba
         {
             currentPos--;
-            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+            if (noAmmoText.activeInHierarchy)
+            {
+                noAmmoText.SetActive(false);
+            }
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Rueda abajo
         {
             currentPos++;
-            if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
+            if (noAmmoText.activeInHierarchy)
+            {
+                noAmmoText.SetActive(false);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;
@@ -60,7 +67,8 @@ public class handController : MonoBehaviour
             redGunUI.color = new Color(redGunUI.color.r, redGunUI.color.g, redGunUI.color.b, 0.3176471f);
 
             // GUN SELECTOR
-            gunSelector.position = new Vector3(purpleGunUI.transform.position.x, purpleGunUI.transform.position.y + 0.02f, purpleGunUI.transform.position.z);
+            gunSelector.position = new Vector3(purpleGunUI.transform.position.x,
+                purpleGunUI.transform.position.y + 0.02f, purpleGunUI.transform.position.z);
         }
         else if (currentPos == 1)
         {
@@ -71,9 +79,10 @@ public class handController : MonoBehaviour
             purpleGunUI.color = new Color(purpleGunUI.color.r, purpleGunUI.color.g, purpleGunUI.color.b, 0.3176471f);
             yellowGunUI.color = new Color(yellowGunUI.color.r, yellowGunUI.color.g, yellowGunUI.color.b, 1f);
             redGunUI.color = new Color(redGunUI.color.r, redGunUI.color.g, redGunUI.color.b, 0.3176471f);
-            
+
             // GUN SELECTOR
-            gunSelector.position = new Vector3(yellowGunUI.transform.position.x, yellowGunUI.transform.position.y + 0.02f, yellowGunUI.transform.position.z);
+            gunSelector.position = new Vector3(yellowGunUI.transform.position.x,
+                yellowGunUI.transform.position.y + 0.02f, yellowGunUI.transform.position.z);
         }
 
         else if (currentPos == 2)
@@ -86,12 +95,11 @@ public class handController : MonoBehaviour
             purpleGunUI.color = new Color(purpleGunUI.color.r, purpleGunUI.color.g, purpleGunUI.color.b, 0.3176471f);
             yellowGunUI.color = new Color(yellowGunUI.color.r, yellowGunUI.color.g, yellowGunUI.color.b, 0.3176471f);
             redGunUI.color = new Color(redGunUI.color.r, redGunUI.color.g, redGunUI.color.b, 1f);
-            
+
             // GUN SELECTOR
-            gunSelector.position = new Vector3(redGunUI.transform.position.x, redGunUI.transform.position.y + 0.04f, redGunUI.transform.position.z);
+            gunSelector.position = new Vector3(redGunUI.transform.position.x, redGunUI.transform.position.y + 0.04f,
+                redGunUI.transform.position.z);
         }
-
-
 
         // ABSORB GUN ZONE
         if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false && !playerBehaviour.isReloading)
@@ -100,11 +108,6 @@ public class handController : MonoBehaviour
             purpleGun.SetActive(false);
             yellowGun.SetActive(false);
             redGun.SetActive(false);
-            /*if (!audsrc.isPlaying)
-            {
-                audsrc.Play();
-            }*/
-            
         }
         else if (currentPos == 0)
         {
@@ -127,6 +130,7 @@ public class handController : MonoBehaviour
             yellowGun.SetActive(false);
             redGun.SetActive(true);
         }
+
         if (currentPos == 3)
         {
             currentPos = 0;
@@ -135,12 +139,5 @@ public class handController : MonoBehaviour
         {
             currentPos = 2;
         }
-
-        /*if (Input.GetButtonUp("Fire2"))
-        {
-            audsrc.Stop();
-        }*/
     }
 }
-
-
