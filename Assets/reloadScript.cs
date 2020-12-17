@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class reloadScript : MonoBehaviour
 {
-    private float timer;
+    public float timer;
     private float waitTime;
     public Image fill;
     public TextMeshProUGUI perTimer;
+    private playerBehaviour p_behaviourScript;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class reloadScript : MonoBehaviour
         fill.fillAmount = 0f;
         fill.enabled = false;
         perTimer.enabled = false;
+        p_behaviourScript = GetComponent<playerBehaviour>();
     }
 
     // Update is called once per frame
@@ -55,7 +57,6 @@ public class reloadScript : MonoBehaviour
                 fill.fillAmount = 0f;
             }
         }
-
         ReloadCountdown();
     }
 

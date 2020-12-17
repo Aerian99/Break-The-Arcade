@@ -11,7 +11,9 @@ public class playerBehaviour : MonoBehaviour
 
     private Animator animator;
     public static int _playerLifes;
-    public static bool activeImmunity, canBeDamaged; 
+    public static bool activeImmunity, canBeDamaged;
+
+    private reloadScript reloadScript;
 
     [HideInInspector]public bool activePostProcessing;
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
@@ -23,7 +25,7 @@ public class playerBehaviour : MonoBehaviour
     public TextMeshProUGUI bullets;
 
     public GameObject deathEffect;
-    public GameObject reloadText;
+    private GameObject reloadText;
     
     private int seconds;
 
@@ -35,6 +37,7 @@ public class playerBehaviour : MonoBehaviour
 
     void Start()
     {
+        reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
         _playerLifes = 5;
         maxcdAberration = 0.1f;
@@ -57,21 +60,22 @@ public class playerBehaviour : MonoBehaviour
         reloadTime = 2f;
         isReloading = false;
         reloadText.SetActive(false);
+        reloadScript = GetComponent<reloadScript>();
     }
 
     void Update()
     {
+        resetReload();
         if (_playerLifes <= 0)
         {
             Destroy(this.gameObject);
             GameObject deathEffectGO = Instantiate(deathEffect, this.transform.position, Quaternion.identity);
             Destroy(deathEffectGO, 0.5f);
         }
-
+        
         Immunity();
         chromaticAberration();
         lifes.text = "Lifes:  " + _playerLifes;
-
         
         if(handController.currentPos == 0) 
             bullets.text = "Bullets:  " + bulletsPurple + "/" + reservedAmmoPurple;
@@ -181,5 +185,27 @@ public class playerBehaviour : MonoBehaviour
             }
         }
         isReloading = false;
+    }
+
+    void resetReload() // Esta función previene que no acabe la recarga si cambias de arma si estás recargando.
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && isReloading) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
+        {
+            reloadScript.fill.fillAmount = 0f;
+            reloadScript.fill.enabled = false;
+            reloadScript.perTimer.enabled = false;
+            reloadScript.timer = 0f;
+            StopAllCoroutines();
+            isReloading = false;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && isReloading) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
+        {
+            reloadScript.fill.fillAmount = 0f;
+            reloadScript.fill.enabled = false;
+            reloadScript.perTimer.enabled = false;
+            reloadScript.timer = 0f;
+            StopAllCoroutines();
+            isReloading = false;
+        }
     }
 }

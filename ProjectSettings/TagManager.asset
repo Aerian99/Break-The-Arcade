@@ -35,6 +35,7 @@ TagManager:
   - AlienEnemy
   - SpawnPoint
   - Rooms
+  - absorbZone
   - Camera1
   - Camera2
   layers:

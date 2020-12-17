@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PerfectBullet
-  m_Shader: {fileID: -6465566751694194690, guid: bde5eee6b6e6915478bafe1c030df5d5,
+  m_Name: RedBulletPlayer
+  m_Shader: {fileID: -6465566751694194690, guid: fd7feee29be5b4f439e40808e4055fb9,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -21,13 +21,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emission:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 18a4b7ab266410248b1a339293c2ac28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 32f46372f6227594a905b12ba7dca6c8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_B4CBF959: {r: 1.4980392, g: 0.015686275, b: 0, a: 0}
+    - Color_1A4B3E39: {r: 8.47419, g: 0, b: 0, a: 0}
