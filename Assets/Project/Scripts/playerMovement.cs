@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
 {
     // System components
     public static LayerMask platformsLayerMask;
-    [HideInInspector] public LayerMask copyLayerMask;
+    public LayerMask copyLayerMask;
 
     GhostController ghostController;
 
@@ -43,8 +43,6 @@ public class playerMovement : MonoBehaviour
     private bool isDashing;
     private bool canDash;
     public Image dashImage;
-    public GameObject postProcessing;
-
     // Other variables
     public static float movX;
 
@@ -53,7 +51,6 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        postProcessing.SetActive(false);
         ghostController = GetComponent<GhostController>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -162,7 +159,6 @@ public class playerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0 && canDash)
         {
-            postProcessing.SetActive(true);
             SoundManagerScript.PlaySound("dash");
             isDashing = true;
             CurrentDashTimer = StartDashTimer;
@@ -182,7 +178,6 @@ public class playerMovement : MonoBehaviour
             {
                 isDashing = false;
                 ghostController.enabled = false;
-                postProcessing.SetActive(false);
             }
         }
 
