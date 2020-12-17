@@ -6,9 +6,8 @@ public class CameraSwitch : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         { 
-            Debug.Log("Hola");
             CameraManagment.changeCameras(new Vector3(transform.position.x + 5, transform.position.y + 5, transform.position.z - 1));
         }
 

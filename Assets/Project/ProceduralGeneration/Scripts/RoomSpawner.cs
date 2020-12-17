@@ -61,12 +61,13 @@ public class RoomSpawner : MonoBehaviour
     {
         if(collision.CompareTag("SpawnPoint"))
         {
-            if (collision.GetComponent<RoomSpawner>().spawned == false && spawned == false)
-            {
-                Vector3 temp = new Vector3(transform.position.x + 5, transform.position.y + 5, transform.position.z);
-                Instantiate(templates.closedRooms, temp, Quaternion.identity);
-                Destroy(gameObject);
-            }
+           
+                if (collision.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+                {
+                    Vector3 temp = new Vector3(transform.position.x + 5, transform.position.y + 5, transform.position.z);
+                    Instantiate(templates.closedRooms, temp, Quaternion.identity);
+                    Destroy(gameObject);
+                }
             spawned = true;
         }
     }
