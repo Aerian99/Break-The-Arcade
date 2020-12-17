@@ -35,6 +35,8 @@ TagManager:
   - AlienEnemy
   - SpawnPoint
   - Rooms
+  - Camera1
+  - Camera2
   layers:
   - Default
   - TransparentFX
