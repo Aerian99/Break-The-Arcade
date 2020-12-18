@@ -36,8 +36,8 @@ TagManager:
   - SpawnPoint
   - Rooms
   - absorbZone
-  - Camera1
   - Camera2
+  - Camera1
   layers:
   - Default
   - TransparentFX
@@ -56,7 +56,7 @@ TagManager:
   - AlienPlatform
   - Room
   - SpawnPoint
-  - 
+  - Triggers
   - 
   - 
   - 

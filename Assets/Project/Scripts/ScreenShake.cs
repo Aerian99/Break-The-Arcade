@@ -8,7 +8,7 @@ public class ScreenShake : MonoBehaviour
 {
     private float cdShake, maxCdShake;
     public static bool canShake;
-    public CinemachineVirtualCamera camara, cameraAlien;
+    public CinemachineVirtualCamera camara/*, cameraAlien*/;
     public static float shake;
 
 
@@ -27,10 +27,10 @@ public class ScreenShake : MonoBehaviour
         {
             if(camara.isActiveAndEnabled)
                 camara.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            else
+            /*else
             {
                 cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            }
+            }*/
             if (cdShake >= maxCdShake)
             {
                 canShake = false;
@@ -42,10 +42,10 @@ public class ScreenShake : MonoBehaviour
         {
             if (camara.isActiveAndEnabled)
                 camara.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            else
+            /*else
             {
                 cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            }
+            }*/
         }
 
     }
