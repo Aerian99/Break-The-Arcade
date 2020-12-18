@@ -14,7 +14,7 @@ public class CameraManagment : MonoBehaviour
     {
         justActivated = false;
         maxCd = 0.5f;
-        cd = 0;
+        cd = maxCd;
         cam1 = GameObject.FindGameObjectWithTag("Camera1");
         cam2 = GameObject.FindGameObjectWithTag("Camera2");
         cam1.SetActive(true);
@@ -24,7 +24,6 @@ public class CameraManagment : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(cd);
         if (cam1.activeInHierarchy)
         {
             isActivecam1 = true;
