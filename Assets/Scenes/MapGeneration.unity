@@ -148,6 +148,11 @@ PrefabInstance:
       propertyPath: bullets
       value: 
       objectReference: {fileID: 1000284973}
+    - target: {fileID: 9031425252162527069, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9031425252162527070, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_Layer
@@ -157,6 +162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425252261454575, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031425252291690217, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -296,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 9031425253701463742, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463743, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -317,6 +327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425253718317092, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee25312c1f9aab47a75999773644a8d, type: 3}
@@ -693,6 +708,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2493025050413200785, guid: d1e1e3742e9dea24296a2c4122c3a9b5,
+        type: 3}
+      propertyPath: m_Transitions.m_BlendHint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4617481316079136406, guid: d1e1e3742e9dea24296a2c4122c3a9b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -706,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 4617481316079136406, guid: d1e1e3742e9dea24296a2c4122c3a9b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4617481316079136406, guid: d1e1e3742e9dea24296a2c4122c3a9b5,
         type: 3}
@@ -1078,7 +1098,7 @@ PrefabInstance:
     - target: {fileID: 7039571696918518592, guid: 4ac490f6cd3a8b54eb03b13b1c963087,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7197854264943607562, guid: 4ac490f6cd3a8b54eb03b13b1c963087,
         type: 3}
@@ -1537,7 +1557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939126172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -89.556854, y: -4.8033705, z: 2.2226562}
+  m_LocalPosition: {x: -89.556854, y: -4.8033705, z: -0.77734375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1898527007}
@@ -1651,10 +1671,10 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.8
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2771,7 +2791,7 @@ PrefabInstance:
     - target: {fileID: 846026067609690400, guid: e5a3b3e160454ad42b4f65a3297df4a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 846026067609690400, guid: e5a3b3e160454ad42b4f65a3297df4a7,
         type: 3}
@@ -2827,6 +2847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Camera1
+      objectReference: {fileID: 0}
+    - target: {fileID: 846026067609690407, guid: e5a3b3e160454ad42b4f65a3297df4a7,
+        type: 3}
+      propertyPath: m_Transitions.m_BlendHint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5a3b3e160454ad42b4f65a3297df4a7, type: 3}
@@ -3482,7 +3507,7 @@ PrefabInstance:
     - target: {fileID: 4247538164047018774, guid: 0245329c6c4095840aae783518b9473e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7029507641870379120, guid: 0245329c6c4095840aae783518b9473e,
         type: 3}
