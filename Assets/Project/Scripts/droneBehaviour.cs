@@ -21,12 +21,15 @@ public class droneBehaviour : MonoBehaviour
     private float maxHealth;
     public Image life;
     public GameObject bullet;
+    float fade;
+    Material mat;
   
     public void Awake()
     {
         laserDamagecdMax = 0.5f;
         laserDamagecd = laserDamagecdMax;
         playerCharacter = GameObject.FindWithTag("Player").transform;
+        mat = GetComponent<SpriteRenderer>().material;
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         maxHealth = 15f;
@@ -36,16 +39,17 @@ public class droneBehaviour : MonoBehaviour
         boolCounter = boolMaxCounter;
         anim.enabled = true;
         canBeAttacked = true;
+        fade = 1;
     }
 
     public void Update()
     {
         if (actualHealth <= 0)
         {
-            anim.SetBool("dead", true);
-            Destroy(this.gameObject, 0.1f);
+            Dead();
         }
-        
+        else
+        {
        /* if(canBeAttacked)
             Attacked();
         else
@@ -77,10 +81,19 @@ public class droneBehaviour : MonoBehaviour
             bullet.SetActive(true);
         }
 
-
+        }
     }
 
-
+    void Dead()
+    {
+        gameObject.GetComponent<FlyingBehaviour>().enabled = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        gameObject.GetComponent<Collider2D>().enabled = false;
+            fade -= Time.deltaTime;
+            mat.SetFloat("_Fade", fade);
+        if(fade <= 0)
+            Destroy(gameObject);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         
