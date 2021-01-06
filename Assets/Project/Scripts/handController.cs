@@ -19,6 +19,8 @@ public class handController : MonoBehaviour
 
     private Transform gunSelector;
 
+    public GameObject purpleReloaderUI, yellowReloaderUI, redReloaderUI;
+
     void Start()
     {
         purpleGun = transform.GetChild(0).gameObject;
@@ -26,6 +28,9 @@ public class handController : MonoBehaviour
         yellowGun = transform.GetChild(2).gameObject;
         redGun = transform.GetChild(3).gameObject;
         gunSelector = GameObject.FindWithTag("gunSelector").transform;
+       /* purpleReloaderUI = GameObject.Find("purpleReloaderUI");
+        yellowReloaderUI = GameObject.Find("yellowReloaderUI");
+        redReloaderUI = GameObject.Find("redReloaderUI");*/
         currentPos = 0;
     }
 
@@ -69,6 +74,12 @@ public class handController : MonoBehaviour
             // GUN SELECTOR
             gunSelector.position = new Vector3(purpleGunUI.transform.position.x,
                 purpleGunUI.transform.position.y + 0.02f, purpleGunUI.transform.position.z);
+            
+            // RELOADER UI
+            purpleReloaderUI.SetActive(true);
+            yellowReloaderUI.SetActive(false);
+            redReloaderUI.SetActive(false);
+            
         }
         else if (currentPos == 1)
         {
@@ -83,6 +94,11 @@ public class handController : MonoBehaviour
             // GUN SELECTOR
             gunSelector.position = new Vector3(yellowGunUI.transform.position.x,
                 yellowGunUI.transform.position.y + 0.02f, yellowGunUI.transform.position.z);
+            
+            // RELOADER UI
+            purpleReloaderUI.SetActive(false);
+            yellowReloaderUI.SetActive(true);
+            redReloaderUI.SetActive(false);
         }
 
         else if (currentPos == 2)
@@ -99,6 +115,11 @@ public class handController : MonoBehaviour
             // GUN SELECTOR
             gunSelector.position = new Vector3(redGunUI.transform.position.x, redGunUI.transform.position.y + 0.04f,
                 redGunUI.transform.position.z);
+            
+            // RELOADER UI
+            purpleReloaderUI.SetActive(false);
+            yellowReloaderUI.SetActive(false);
+            redReloaderUI.SetActive(true);
         }
 
         // ABSORB GUN ZONE
