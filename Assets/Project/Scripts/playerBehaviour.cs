@@ -53,7 +53,7 @@ public class playerBehaviour : MonoBehaviour
         MAX_YELLOW_SHOOT = 10;
         MAX_SHOTGUN_SHOOT = 3;
 
-        MAX_BULLETS_PURPLE = 30;
+        MAX_BULLETS_PURPLE = 15;
         MAX_BULLETS_YELLOW = 20;
         MAX_BULLETS_SHOTGUN = 9;
 
