@@ -9521,7 +9521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 0}
-  cameraAlien: {fileID: 0}
+  camara2: {fileID: 0}
 --- !u!1 &9031425252067355308
 GameObject:
   m_ObjectHideFlags: 0
@@ -9864,6 +9864,9 @@ MonoBehaviour:
   yellowGunUI: {fileID: 0}
   redGunUI: {fileID: 0}
   noAmmoText: {fileID: 9031425253124139747}
+  purpleReloaderUI: {fileID: 0}
+  yellowReloaderUI: {fileID: 0}
+  redReloaderUI: {fileID: 0}
 --- !u!1 &9031425252316000307
 GameObject:
   m_ObjectHideFlags: 0
@@ -10019,7 +10022,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9031425252392873347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.699999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.010342373, y: 0.010342373, z: 0.010342373}
   m_Children: []
   m_Father: {fileID: 9031425253718317092}
@@ -34051,7 +34054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 0}
-  cameraAlien: {fileID: 0}
+  camara2: {fileID: 0}
 --- !u!1 &9031425253124139747
 GameObject:
   m_ObjectHideFlags: 0
@@ -34079,7 +34082,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9031425253124139747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.699999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.013178888, y: 0.013178888, z: 0.013178888}
   m_Children: []
   m_Father: {fileID: 9031425253718317092}
@@ -34269,7 +34272,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9031425253701463743}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.1309638, y: 3.1309638, z: 3.1309638}
   m_Children:
@@ -34367,7 +34370,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9031425253701463743}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -34416,7 +34419,6 @@ MonoBehaviour:
     m_Bits: 256
   p_sprite: {fileID: 0}
   dashImage: {fileID: 0}
-  postProcessing: {fileID: 0}
   aud: {fileID: 0}
 --- !u!114 &9031425252051455018
 MonoBehaviour:
@@ -34433,7 +34435,10 @@ MonoBehaviour:
   activePostProcessing: 0
   postProcessingAberration: {fileID: 0}
   lifes: {fileID: 0}
-  bullets: {fileID: 0}
+  purpleBulletsCounter: {fileID: 0}
+  yellowBulletsCounter: {fileID: 0}
+  redBulletsCounter: {fileID: 0}
+  healthBarFill: {fileID: 0}
   deathEffect: {fileID: 7789471876716411603, guid: ad9bc398b7dc97a41a4acf39a8534d6e,
     type: 3}
 --- !u!114 &9031425253701463737
@@ -34492,7 +34497,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9031425253718317093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.31939048, y: 0.31939048, z: 0.31939048}
   m_Children:
   - {fileID: 9031425252162527069}

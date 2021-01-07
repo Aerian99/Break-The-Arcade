@@ -5,12 +5,14 @@ using System.Security.Cryptography;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class playerBehaviour : MonoBehaviour
 {
 
     private Animator animator;
     public static int _playerLifes;
+    private int _maxLifes;
     public static bool activeImmunity, canBeDamaged;
 
     private reloadScript reloadScript;
@@ -25,6 +27,8 @@ public class playerBehaviour : MonoBehaviour
     public TextMeshProUGUI purpleBulletsCounter;
     public TextMeshProUGUI yellowBulletsCounter;
     public TextMeshProUGUI redBulletsCounter;
+
+    public Image healthBarFill;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -41,7 +45,8 @@ public class playerBehaviour : MonoBehaviour
     {
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _playerLifes = 5;
+        _maxLifes = 100;
+        _playerLifes = _maxLifes;
         maxcdAberration = 0.1f;
         cdAberration = 0;
         maxCdImmunity = 2f;
@@ -101,7 +106,8 @@ public class playerBehaviour : MonoBehaviour
     {
         if (activeImmunity)
         {
-            _playerLifes--;
+            _playerLifes -= 20;
+            healthBarFill.fillAmount = _playerLifes / 100f;
             activePostProcessing = true;
             canBeDamaged = false;
             activeImmunity = false;
