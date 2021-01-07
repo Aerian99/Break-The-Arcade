@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -12826,6 +12826,18 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &598237401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636317662, guid: b915b1d990c91a64f855663d74cb8fcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7614279703712835983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &598785969 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7614279703237858878, guid: b915b1d990c91a64f855663d74cb8fcd,
@@ -25375,6 +25387,11 @@ PrefabInstance:
       propertyPath: redBulletsCounter
       value: 
       objectReference: {fileID: 1788766050}
+    - target: {fileID: 9031425252051455018, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: healthBarFill
+      value: 
+      objectReference: {fileID: 598237401}
     - target: {fileID: 9031425252291690217, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: purpleGunUI
@@ -25493,6 +25510,11 @@ PrefabInstance:
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425253701463742, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463743, guid: 8ee25312c1f9aab47a75999773644a8d,
