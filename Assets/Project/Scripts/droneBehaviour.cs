@@ -13,17 +13,19 @@ public class droneBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator anim;
     public static bool canBeAttacked, activeAttack, beHaunted;
-    [HideInInspector]public bool Laserdamaged;
+    [HideInInspector] public bool Laserdamaged;
     private float boolCounter, boolMaxCounter, laserDamagecd, laserDamagecdMax;
 
-    [HideInInspector]public GameObject[] hitDamagePopUp;
+    [HideInInspector] public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
     public GameObject bullet;
+
+    [HideInInspector]public bool isDying;
     float fade;
     Material mat;
-  
+
     public void Awake()
     {
         laserDamagecdMax = 0.5f;
@@ -40,6 +42,7 @@ public class droneBehaviour : MonoBehaviour
         anim.enabled = true;
         canBeAttacked = true;
         fade = 1;
+        isDying = false;
     }
 
     public void Update()
@@ -50,15 +53,11 @@ public class droneBehaviour : MonoBehaviour
         }
         else
         {
-       /* if(canBeAttacked)
-            Attacked();
-        else
-            boolCounter = boolMaxCounter;
-
-
-        
-            */
-        if (Laserdamaged && laserDamagecd <= 0.0f)
+            /* if(canBeAttacked)
+                 Attacked();
+             else
+                 boolCounter = boolMaxCounter; */
+            if (Laserdamaged && laserDamagecd <= 0.0f)
             {
                 anim.SetTrigger("hit");
                 actualHealth -= LaserShoot.damage;
@@ -66,59 +65,58 @@ public class droneBehaviour : MonoBehaviour
                 popUpDamage(LaserShoot.damage);
                 laserDamagecd = laserDamagecdMax;
             }
-        
-        laserDamagecd -= Time.deltaTime;
-        EscapeAnim();
 
-        if (beHaunted)
-        {     
-            Escape();
-            bullet.SetActive(false);
-        }
-        else
-        {
-            boolCounter = boolMaxCounter;
-            bullet.SetActive(true);
-        }
+            laserDamagecd -= Time.deltaTime;
+            EscapeAnim();
 
+            if (beHaunted)
+            {
+                Escape();
+                bullet.SetActive(false);
+            }
+            else
+            {
+                boolCounter = boolMaxCounter;
+                bullet.SetActive(true);
+            }
         }
     }
 
     void Dead()
     {
+        isDying = true;
         gameObject.GetComponent<FlyingBehaviour>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         gameObject.GetComponent<Collider2D>().enabled = false;
-            fade -= Time.deltaTime;
-            mat.SetFloat("_Fade", fade);
-        if(fade <= 0)
+        fade -= Time.deltaTime;
+        mat.SetFloat("_Fade", fade);
+        if (fade <= 0)
             Destroy(gameObject);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        
-            if (other.gameObject.tag == "PurpleBullet")
-            {
-                anim.SetTrigger("hit");
-                actualHealth -= PurpleShoot.bulletDamage;
-                life.fillAmount -= PurpleShoot.bulletDamage / maxHealth;
-                popUpDamage(PurpleShoot.bulletDamage);
-            }
-            else if (other.gameObject.tag == "YellowBullet")
-            {
-                anim.SetTrigger("hit");
-                actualHealth -= YellowShoot.bulletDamage;
-                life.fillAmount -= YellowShoot.bulletDamage / maxHealth;
-                popUpDamage(YellowShoot.bulletDamage);
-            }
-            else if (other.gameObject.tag == "RedBullet")
-            {
-                anim.SetTrigger("hit");
-                actualHealth -= RedShoot.bulletDamage;
-                life.fillAmount -= RedShoot.bulletDamage / maxHealth;
-                popUpDamage(RedShoot.bulletDamage);
-            }
-        
+        if (other.gameObject.tag == "PurpleBullet")
+        {
+            anim.SetTrigger("hit");
+            actualHealth -= PurpleShoot.bulletDamage;
+            life.fillAmount -= PurpleShoot.bulletDamage / maxHealth;
+            popUpDamage(PurpleShoot.bulletDamage);
+        }
+        else if (other.gameObject.tag == "YellowBullet")
+        {
+            anim.SetTrigger("hit");
+            actualHealth -= YellowShoot.bulletDamage;
+            life.fillAmount -= YellowShoot.bulletDamage / maxHealth;
+            popUpDamage(YellowShoot.bulletDamage);
+        }
+        else if (other.gameObject.tag == "RedBullet")
+        {
+            anim.SetTrigger("hit");
+            actualHealth -= RedShoot.bulletDamage;
+            life.fillAmount -= RedShoot.bulletDamage / maxHealth;
+            popUpDamage(RedShoot.bulletDamage);
+        }
     }
 
     void Attacked()
@@ -129,8 +127,8 @@ public class droneBehaviour : MonoBehaviour
         }
 
         boolCounter -= Time.deltaTime;
-
     }
+
     void EscapeAnim()
     {
         if (beHaunted)
@@ -142,9 +140,10 @@ public class droneBehaviour : MonoBehaviour
             anim.SetBool("hittable", false);
         }
     }
+
     void popUpDamage(float hitdamage)
     {
-        GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0,4)], transform.position, Quaternion.identity);
+        GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0, 4)], transform.position, Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 
