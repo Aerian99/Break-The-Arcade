@@ -147,151 +147,154 @@ public class enemyShoot : MonoBehaviour
 
     void redShoot()
     {
-        // UP 
-        GameObject bulletUP;
-        Rigidbody2D rbUP;
-        if (GetComponentInParent<FlyingBehaviour>().inRange && this.gameObject.tag == "CyanEnemy")
+        if (!this.GetComponentInParent<droneBehaviour>().isDying)
         {
-            if (Random.Range(0f, 100f) <= 10.0f)
+            // UP 
+            GameObject bulletUP;
+            Rigidbody2D rbUP;
+            if (GetComponentInParent<FlyingBehaviour>().inRange && this.gameObject.tag == "CyanEnemy")
             {
-                GameObject rb = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
-                Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
-                r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    GameObject rb = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
+                    Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
+                    r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    GameObject rb = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+                    Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
+                    r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+                }
+
             }
-            else
-            {
-                GameObject rb = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
-                Rigidbody2D r = rb.GetComponent<Rigidbody2D>();
-                r.AddRelativeForce(this.transform.position * bulletSpeed, ForceMode2D.Impulse);
+            if(GetComponentInParent<FlyingBehaviour>().inRange)
+            { 
+                SoundManagerScript.PlaySound("EnemyShoot");
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletUP = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
+                    rbUP = bulletUP.GetComponent<Rigidbody2D>();
+                    rbUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+
+                else
+                {
+                    bulletUP = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
+                    rbUP = bulletUP.GetComponent<Rigidbody2D>();
+                    rbUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+
+                }
+        
+                // LEFT UP
+                GameObject bulletLeftUP;
+                Rigidbody2D rbLeftUP;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletLeftUP = Instantiate(enemyBulletAttack, leftUP.transform.position, leftUP.transform.localRotation);
+                    rbLeftUP = bulletLeftUP.GetComponent<Rigidbody2D>();
+                    rbLeftUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+
+                else {
+                    bulletLeftUP = Instantiate(enemyBullet, leftUP.transform.position, leftUP.transform.localRotation);
+                    rbLeftUP = bulletLeftUP.GetComponent<Rigidbody2D>();
+                    rbLeftUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+        
+                // LEFT 
+                GameObject bulletLeft;
+                Rigidbody2D rbLeft;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletLeft = Instantiate(enemyBulletAttack, left.transform.position, left.transform.localRotation);
+                    rbLeft = bulletLeft.GetComponent<Rigidbody2D>();
+                    rbLeft.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+                else {
+                    bulletLeft = Instantiate(enemyBullet, left.transform.position, left.transform.localRotation);
+                    rbLeft = bulletLeft.GetComponent<Rigidbody2D>();
+                    rbLeft.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+        
+                // LEFT DOWN
+                GameObject bulletLeftDOWN;
+                Rigidbody2D rbLeftDOWN;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletLeftDOWN = Instantiate(enemyBulletAttack, leftDOWN.transform.position, leftDOWN.transform.localRotation);
+                    rbLeftDOWN = bulletLeftDOWN.GetComponent<Rigidbody2D>();
+                    rbLeftDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+
+                else
+                {
+                    bulletLeftDOWN = Instantiate(enemyBullet, leftDOWN.transform.position, leftDOWN.transform.localRotation);
+                    rbLeftDOWN = bulletLeftDOWN.GetComponent<Rigidbody2D>();
+                    rbLeftDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+                // DOWN
+                GameObject bulletDOWN;
+                Rigidbody2D rbDOWN;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletDOWN = Instantiate(enemyBulletAttack, down.transform.position, down.transform.localRotation);
+                    rbDOWN = bulletDOWN.GetComponent<Rigidbody2D>();
+                    rbDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+
+                else
+                {
+                    bulletDOWN = Instantiate(enemyBullet, down.transform.position, down.transform.localRotation);
+                    rbDOWN = bulletDOWN.GetComponent<Rigidbody2D>();
+                    rbDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+        
+                // RIGHT DOWN
+                GameObject bulletRightDOWN;
+                Rigidbody2D rbRightDOWN;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletRightDOWN = Instantiate(enemyBulletAttack, rightDOWN.transform.position, rightDOWN.transform.localRotation);
+                    rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
+                    rbRightDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+                else {
+                    bulletRightDOWN = Instantiate(enemyBullet, rightDOWN.transform.position, rightDOWN.transform.localRotation);
+                    rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
+                    rbRightDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+        
+                // RIGHT
+                GameObject bulletRight;
+                Rigidbody2D rbRight;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletRight = Instantiate(enemyBulletAttack, right.transform.position, right.transform.localRotation);
+                    rbRight = bulletRight.GetComponent<Rigidbody2D>();
+                    rbRight.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+                else {
+                    bulletRight = Instantiate(enemyBullet, right.transform.position, right.transform.localRotation);
+                    rbRight = bulletRight.GetComponent<Rigidbody2D>();
+                    rbRight.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+        
+                // RIGHT UP
+                GameObject bulletRightUP;
+                Rigidbody2D rbRightUP;
+                if (Random.Range(0f, 100f) <= 10.0f)
+                {
+                    bulletRightUP = Instantiate(enemyBulletAttack, rightUP.transform.position, rightUP.transform.localRotation);
+                    rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
+                    rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
+                else {
+                    bulletRightUP = Instantiate(enemyBullet, rightUP.transform.position, rightUP.transform.localRotation);
+                    rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
+                    rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
+                }
             }
-
-        }
-        if(GetComponentInParent<FlyingBehaviour>().inRange)
-        { 
-            SoundManagerScript.PlaySound("EnemyShoot");
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletUP = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
-            rbUP = bulletUP.GetComponent<Rigidbody2D>();
-            rbUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-            bulletUP = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
-            rbUP = bulletUP.GetComponent<Rigidbody2D>();
-            rbUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-
-        }
-        
-        // LEFT UP
-        GameObject bulletLeftUP;
-        Rigidbody2D rbLeftUP;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletLeftUP = Instantiate(enemyBulletAttack, leftUP.transform.position, leftUP.transform.localRotation);
-            rbLeftUP = bulletLeftUP.GetComponent<Rigidbody2D>();
-            rbLeftUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-
-        else {
-            bulletLeftUP = Instantiate(enemyBullet, leftUP.transform.position, leftUP.transform.localRotation);
-            rbLeftUP = bulletLeftUP.GetComponent<Rigidbody2D>();
-            rbLeftUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        
-        // LEFT 
-        GameObject bulletLeft;
-        Rigidbody2D rbLeft;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletLeft = Instantiate(enemyBulletAttack, left.transform.position, left.transform.localRotation);
-            rbLeft = bulletLeft.GetComponent<Rigidbody2D>();
-            rbLeft.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        else {
-            bulletLeft = Instantiate(enemyBullet, left.transform.position, left.transform.localRotation);
-            rbLeft = bulletLeft.GetComponent<Rigidbody2D>();
-            rbLeft.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        
-        // LEFT DOWN
-        GameObject bulletLeftDOWN;
-        Rigidbody2D rbLeftDOWN;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletLeftDOWN = Instantiate(enemyBulletAttack, leftDOWN.transform.position, leftDOWN.transform.localRotation);
-            rbLeftDOWN = bulletLeftDOWN.GetComponent<Rigidbody2D>();
-            rbLeftDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-            bulletLeftDOWN = Instantiate(enemyBullet, leftDOWN.transform.position, leftDOWN.transform.localRotation);
-            rbLeftDOWN = bulletLeftDOWN.GetComponent<Rigidbody2D>();
-            rbLeftDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        // DOWN
-        GameObject bulletDOWN;
-        Rigidbody2D rbDOWN;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletDOWN = Instantiate(enemyBulletAttack, down.transform.position, down.transform.localRotation);
-            rbDOWN = bulletDOWN.GetComponent<Rigidbody2D>();
-            rbDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-
-        else
-        {
-            bulletDOWN = Instantiate(enemyBullet, down.transform.position, down.transform.localRotation);
-            rbDOWN = bulletDOWN.GetComponent<Rigidbody2D>();
-            rbDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        
-        // RIGHT DOWN
-        GameObject bulletRightDOWN;
-        Rigidbody2D rbRightDOWN;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletRightDOWN = Instantiate(enemyBulletAttack, rightDOWN.transform.position, rightDOWN.transform.localRotation);
-            rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
-            rbRightDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        else {
-            bulletRightDOWN = Instantiate(enemyBullet, rightDOWN.transform.position, rightDOWN.transform.localRotation);
-            rbRightDOWN = bulletRightDOWN.GetComponent<Rigidbody2D>();
-            rbRightDOWN.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        
-        // RIGHT
-        GameObject bulletRight;
-        Rigidbody2D rbRight;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletRight = Instantiate(enemyBulletAttack, right.transform.position, right.transform.localRotation);
-            rbRight = bulletRight.GetComponent<Rigidbody2D>();
-            rbRight.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        else {
-            bulletRight = Instantiate(enemyBullet, right.transform.position, right.transform.localRotation);
-            rbRight = bulletRight.GetComponent<Rigidbody2D>();
-            rbRight.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        
-        // RIGHT UP
-        GameObject bulletRightUP;
-        Rigidbody2D rbRightUP;
-        if (Random.Range(0f, 100f) <= 10.0f)
-        {
-            bulletRightUP = Instantiate(enemyBulletAttack, rightUP.transform.position, rightUP.transform.localRotation);
-            rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
-            rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
-        else {
-            bulletRightUP = Instantiate(enemyBullet, rightUP.transform.position, rightUP.transform.localRotation);
-            rbRightUP = bulletRightUP.GetComponent<Rigidbody2D>();
-            rbRightUP.AddRelativeForce(this.transform.up * bulletSpeed, ForceMode2D.Impulse);
-        }
         }
 
     }

@@ -26,15 +26,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/hitDamage.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/hitDamage.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/hitDamage2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/hitDamage2.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/purpleBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Bullets/purpleBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Fonts/ThaleahFat SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Fonts/ThaleahFat SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/redGhost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Enemies/redGhost/redGhost.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purple/purpleHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purple/purpleHit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/red/redHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/red/redHit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/Level/LevelPacman.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/PurpleBulletParticles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/PurpleBulletParticles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/RedBulletParticles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/RedBulletParticles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/RedBulletPlayer.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/RedBulletPlayer.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapGeneration.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapGeneration.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/reloadScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/reloadScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +85,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/gameHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/cameraShake.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/TextMesh Pro/Shaders/TMP_SDF.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/hitDamagePopUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,7 +121,6 @@
         <option value="$PROJECT_DIR$/Assets/enemyPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/YellowShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" />
@@ -127,7 +132,6 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/OpenDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/CloseDoor.cs" />
         <option value="$PROJECT_DIR$/Assets/doorSoundsAndEffects.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SceneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/Absorb_Gun.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/LaserShoot.cs" />
@@ -135,12 +139,14 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/magneticEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/redGunReloader.cs" />
         <option value="$PROJECT_DIR$/Assets/purpleGunReloader.cs" />
         <option value="$PROJECT_DIR$/Assets/yellowGunReloader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -215,6 +221,7 @@
       <workItem from="1609752857630" duration="2874000" />
       <workItem from="1609885479115" duration="6197000" />
       <workItem from="1609969808928" duration="5965000" />
+      <workItem from="1610017240759" duration="7531000" />
     </task>
     <servers />
   </component>

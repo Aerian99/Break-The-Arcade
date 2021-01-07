@@ -180,6 +180,9 @@ MonoBehaviour:
   - {fileID: 1017683624646179571, guid: e9082b380063c874e8b7069d4748c7e8, type: 3}
   - {fileID: 1017683624646179571, guid: f3759b8fcefa5df4aba5d27b52d15898, type: 3}
   life: {fileID: 7678537624655374081}
+  bullet: {fileID: 0}
+  isDying: 0
+  canvasDelete: {fileID: 7678537624597384541}
 --- !u!114 &1759258681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +678,7 @@ MonoBehaviour:
     type: 3}
   enemyBulletAttack: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
     type: 3}
+  startTimeBtwShoots: 0
   playerRange: 20
   playerLayer:
     serializedVersion: 2

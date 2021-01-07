@@ -31,7 +31,8 @@ public class reloadScript : MonoBehaviour
             perTimer.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && playerBehaviour.isReloading)
+        
+        if (Input.GetKeyDown(KeyCode.R)) // FALTA PONER OTRA CONDICIÓN PARA QUE SOLO SE ACTIVE CUANDO RECARGA, PERO AL SER UN ENUMERATOR DA UN ERROR
         {
             if (playerBehaviour.reservedAmmoPurple != 0 && handController.currentPos == 0)
             {

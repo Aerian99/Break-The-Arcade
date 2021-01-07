@@ -22,7 +22,9 @@ public class playerBehaviour : MonoBehaviour
     public GameObject postProcessingAberration;
     
     public TextMeshProUGUI lifes;
-    public TextMeshProUGUI bullets;
+    public TextMeshProUGUI purpleBulletsCounter;
+    public TextMeshProUGUI yellowBulletsCounter;
+    public TextMeshProUGUI redBulletsCounter;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -78,11 +80,11 @@ public class playerBehaviour : MonoBehaviour
         lifes.text = "Lifes:  " + _playerLifes;
         
         if(handController.currentPos == 0) 
-            bullets.text = "Bullets:  " + bulletsPurple + "/" + reservedAmmoPurple;
+            purpleBulletsCounter.text = "" + reservedAmmoPurple;
         else if (handController.currentPos == 1) 
-            bullets.text = "Bullets:  " + bulletsYellow + "/" + reservedAmmoYellow;
+            yellowBulletsCounter.text = "" + reservedAmmoYellow;
         else if (handController.currentPos == 2) 
-            bullets.text = "Bullets:  " + bulletsShotgun + "/" + reservedAmmoShotgun;
+            redBulletsCounter.text = "" + reservedAmmoShotgun;
 
         if (isReloading)
             return;
