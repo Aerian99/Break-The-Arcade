@@ -196,6 +196,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1429337685469344035, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80c9b26950dfc4b44bf0e7d9bddadaee, type: 2}
     - target: {fileID: 1679550835025180378, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: camara
@@ -206,6 +211,21 @@ PrefabInstance:
       propertyPath: camara2
       value: 
       objectReference: {fileID: 1700653105}
+    - target: {fileID: 6110055571622223944, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923cc07159e68ab499e1c5f96b069ce5, type: 2}
+    - target: {fileID: 8104882081872694962, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923cc07159e68ab499e1c5f96b069ce5, type: 2}
+    - target: {fileID: 9031425252023130484, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ee056a55f3fbb448a4fc24a4494540, type: 2}
     - target: {fileID: 9031425252051455018, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: lifes
@@ -296,6 +316,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9031425252552577329, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ced9dd3645a9e14ea113bb939b2eb8c, type: 2}
+    - target: {fileID: 9031425252667551676, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4ee056a55f3fbb448a4fc24a4494540, type: 2}
     - target: {fileID: 9031425252697098244, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: camara
@@ -331,6 +361,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 939126178}
+    - target: {fileID: 9031425252986070087, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ced9dd3645a9e14ea113bb939b2eb8c, type: 2}
     - target: {fileID: 9031425253124139746, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -11842,6 +11877,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7614279703653834896, guid: b915b1d990c91a64f855663d74cb8fcd,
+        type: 3}
+      propertyPath: absorbZone
+      value: 
+      objectReference: {fileID: 2064625754}
+    - target: {fileID: 7614279703653834896, guid: b915b1d990c91a64f855663d74cb8fcd,
+        type: 3}
+      propertyPath: redAbsorbZone
+      value: 
+      objectReference: {fileID: 2100000, guid: 90bd9daf3e7154f4a90c8e6f218b4f40, type: 2}
+    - target: {fileID: 7614279703653834896, guid: b915b1d990c91a64f855663d74cb8fcd,
+        type: 3}
+      propertyPath: defaultAbsorbZone
+      value: 
+      objectReference: {fileID: 2100000, guid: 80c9b26950dfc4b44bf0e7d9bddadaee, type: 2}
+    - target: {fileID: 7614279703653834896, guid: b915b1d990c91a64f855663d74cb8fcd,
+        type: 3}
+      propertyPath: orangeAbsorbZone
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a398094a6ae28e49a6f730764a8270e, type: 2}
     - target: {fileID: 7614279703653834898, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_Camera
@@ -11910,7 +11965,7 @@ PrefabInstance:
     - target: {fileID: 7614279703742842565, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b915b1d990c91a64f855663d74cb8fcd, type: 3}
@@ -11971,6 +12026,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.7303963, y: 6.832329}
   m_EdgeRadius: 0
+--- !u!1 &2064625754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4030143906040885965, guid: 8ee25312c1f9aab47a75999773644a8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 147209813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2073882181
 PrefabInstance:
   m_ObjectHideFlags: 0

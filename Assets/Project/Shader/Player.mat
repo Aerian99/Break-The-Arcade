@@ -31,3 +31,4 @@ Material:
     m_Floats: []
     m_Colors:
     - Color_639D7A91: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0, g: 1.2422895, b: 2.1185474, a: 0}
