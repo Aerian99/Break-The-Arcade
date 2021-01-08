@@ -67,7 +67,7 @@ public class playerMovement : MonoBehaviour
         moveSpeed = 8.5f;
         jumpForce = 16.5f;
         jumpTime = 0.13f;
-        dashForce = 25f;
+        dashForce = 50f;
         StartDashTimer = 0.1f;
         dashCooldown = 0f;
         ghostController.enabled = false;

@@ -14,7 +14,12 @@ public class absorbCooldown : MonoBehaviour
     private Color _initColor;
     private float incAbsorbSpeed;
     private float decAbsorbSpeed;
+
+    public GameObject absorbZone;
     
+    public Material defaultAbsorbZone;
+    public Material orangeAbsorbZone;
+    public Material redAbsorbZone;
 
     void Start()
     {
@@ -50,8 +55,17 @@ public class absorbCooldown : MonoBehaviour
             //coolingDown = false;
             coolFull = false;
         }
+        else if (cooldown.fillAmount < 0.3f && coolFull == false)
+        {
+            absorbZone.GetComponent<SpriteRenderer>().material = defaultAbsorbZone;
+        }
+        else if (cooldown.fillAmount > 0.3f && cooldown.fillAmount < 0.8f && coolFull == false)
+        {
+            absorbZone.GetComponent<SpriteRenderer>().material = orangeAbsorbZone;
+        }
         else if (cooldown.fillAmount > 0.8f && coolFull == false)
         {
+            absorbZone.GetComponent<SpriteRenderer>().material = redAbsorbZone;
             warning.gameObject.SetActive(true);
         }
         else
