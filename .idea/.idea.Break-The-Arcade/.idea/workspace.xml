@@ -26,8 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/UI/-----UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/UI/-----UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/ProceduralGeneration/Prefabs/Prefabs3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +130,6 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/SoundManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/enemyBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/magneticEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/redGunReloader.cs" />
         <option value="$PROJECT_DIR$/Assets/purpleGunReloader.cs" />
         <option value="$PROJECT_DIR$/Assets/yellowGunReloader.cs" />
@@ -135,6 +137,8 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/droneBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/reloadScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
       </list>
     </option>
   </component>
@@ -210,6 +214,7 @@
       <workItem from="1609885479115" duration="6197000" />
       <workItem from="1609969808928" duration="5965000" />
       <workItem from="1610017240759" duration="8838000" />
+      <workItem from="1610120388852" duration="2233000" />
     </task>
     <servers />
   </component>
