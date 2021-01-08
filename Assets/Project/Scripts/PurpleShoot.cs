@@ -47,7 +47,7 @@ public class PurpleShoot : MonoBehaviour
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
-            ScreenShake.shake = 1.5f;
+            ScreenShake.shake = 0.5f;
             ScreenShake.canShake = true;
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
