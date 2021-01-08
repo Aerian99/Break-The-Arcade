@@ -23,7 +23,6 @@ public class playerBehaviour : MonoBehaviour
     public static bool isReloading;
     public GameObject postProcessingAberration;
     
-    public TextMeshProUGUI lifes;
     public TextMeshProUGUI purpleBulletsCounter;
     public TextMeshProUGUI yellowBulletsCounter;
     public TextMeshProUGUI redBulletsCounter;
@@ -82,8 +81,7 @@ public class playerBehaviour : MonoBehaviour
         
         Immunity();
         chromaticAberration();
-        lifes.text = "Lifes:  " + _playerLifes;
-        
+
         if(handController.currentPos == 0) 
             purpleBulletsCounter.text = "" + reservedAmmoPurple;
         else if (handController.currentPos == 1) 
