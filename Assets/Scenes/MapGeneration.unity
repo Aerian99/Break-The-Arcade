@@ -790,8 +790,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 483687030}
+  - component: {fileID: 483687031}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -811,6 +812,24 @@ Transform:
   m_Father: {fileID: 901234576}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483687031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483687029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69204bf69d3bb84499ebe88d0a964ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBulletAttack: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
+    type: 3}
+  enemyBullet: {fileID: 9100151811133454632, guid: 25baf25fa7366ae4bb194336d62ca6ab,
+    type: 3}
+  onArea: 0
+  startTimeBtwShoots: 1.5
 --- !u!1 &528801210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7614279703466344632, guid: b915b1d990c91a64f855663d74cb8fcd,
@@ -3920,36 +3939,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 223845281}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &901234575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4146784200079130822, guid: 73442b9279d6b714ea3123891dcb131f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2073882181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &901234576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4146784200079130817, guid: 73442b9279d6b714ea3123891dcb131f,
     type: 3}
   m_PrefabInstance: {fileID: 2073882181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &901234582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901234575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c69204bf69d3bb84499ebe88d0a964ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBulletAttack: {fileID: 8965085211382963812, guid: 09c894aef048c25488cdb59a6b829da7,
-    type: 3}
-  enemyBullet: {fileID: 9100151811133454632, guid: 25baf25fa7366ae4bb194336d62ca6ab,
-    type: 3}
-  onArea: 0
-  startTimeBtwShoots: 2
 --- !u!1 &922807195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,7 +3989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60efc13496eaf024aba019eea7292b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 901234575}
+  enemy: {fileID: 483687029}
 --- !u!61 &922807198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10702,7 +10697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1
+  m_FrequencyGain: 0.3
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1368761652
 GameObject:
@@ -11087,7 +11082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1
+  m_FrequencyGain: 0.3
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &1655296558
 PrefabInstance:
