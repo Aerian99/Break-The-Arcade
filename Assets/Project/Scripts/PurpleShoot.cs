@@ -115,7 +115,7 @@ public class PurpleShoot : MonoBehaviour
 
             Destroy(bullet, bulletLifeTime);
             SoundManagerScript.PlaySound("purpleGun");
-            ScreenShake.shake = 1.5f;
+            ScreenShake.shake = 0.2f;
             ScreenShake.canShake = true;
             yield return new WaitForSeconds(0.05f);
         }

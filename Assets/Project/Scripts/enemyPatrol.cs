@@ -26,7 +26,7 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         vecDir = new Vector2(180, 0f);
-        canvasGO = gameObject.transform.GetChild(1).gameObject;
+        //canvasGO = gameObject.transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -42,10 +42,12 @@ public class enemyPatrol : MonoBehaviour
         if (movingRight == true)
         {
             rb.velocity = Vector2.right * patrolSpeed;
+            anim.SetBool("isRunning", true);
         }
         else
         {
             rb.velocity = Vector2.left * patrolSpeed;
+            anim.SetBool("isRunning", true);
         }
     }
 
@@ -56,15 +58,21 @@ public class enemyPatrol : MonoBehaviour
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
-                canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
+                //canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = false;
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
+                //canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
         }
+    }
+
+    public bool getMovingRight()
+    {
+        return movingRight;
+    
     }
 }

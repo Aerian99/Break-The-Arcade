@@ -204,7 +204,7 @@ public class LaserShoot : MonoBehaviour
         if (startedShooting)
         {
             canShoot -= Time.deltaTime;
-            ScreenShake.shake = 1.5f;
+            ScreenShake.shake = 0.2f;
             ScreenShake.canShake = true;
         }
 
