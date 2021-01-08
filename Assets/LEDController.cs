@@ -13,7 +13,6 @@ public class LEDController : MonoBehaviour
     {
         intensity = Mathf.Pow(2, 1.2f);
     }
-
     void Update()
     {
         if (timeLeft <= Time.deltaTime)
