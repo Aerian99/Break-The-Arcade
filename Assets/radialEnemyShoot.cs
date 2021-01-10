@@ -15,7 +15,7 @@ public class radialEnemyShoot : MonoBehaviour
     [Header("Private Variables")] 
     private Vector3 startPoint;
     private const float radius = 1f;
-    float fireRate = 1.5f;
+    float fireRate = 1f;
     private float lastShot = 0.0f;
     void Update()
     {
