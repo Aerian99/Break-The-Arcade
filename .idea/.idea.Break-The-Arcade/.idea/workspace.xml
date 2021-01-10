@@ -25,7 +25,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="63495c98-6c8d-4458-a81f-402ff80f3461" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/ProceduralGeneration/Prefabs/Prefabs3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/AbsorbGlow.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/AbsorbGlow.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/Ghost.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/Ghost.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/Player.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/bordes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/bordes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MapGeneration.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MapGeneration.unity" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Break-The-Arcade/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purple/purpleHit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Player/Hit/purple/purpleHit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/CursorScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/CursorScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Shader/bordes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Shader/bordes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Sprites/UI/dashImage.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Sprites/UI/dashImage.anim" afterDir="false" />
+>>>>>>> Stashed changes
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,8 +134,6 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/purpleBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/redBulletBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/ProtectionBarrierAliens.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/AlienAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/doorSounds.cs" />
@@ -133,6 +156,9 @@
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/handController.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/absorbCooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/Project/Scripts/playerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/PurpleShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/RedShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Project/Scripts/CursorScript.cs" />
       </list>
     </option>
   </component>
@@ -209,6 +235,7 @@
       <workItem from="1609969808928" duration="5965000" />
       <workItem from="1610017240759" duration="8838000" />
       <workItem from="1610120388852" duration="2233000" />
+      <workItem from="1610274872101" duration="378000" />
     </task>
     <servers />
   </component>
