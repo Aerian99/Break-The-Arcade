@@ -127,10 +127,8 @@ public class playerBehaviour : MonoBehaviour
     {
         if (activePostProcessing)
         {
-            postProcessingAberration.SetActive(true);
             if (cdAberration > maxcdAberration)
             {
-                postProcessingAberration.SetActive(false);
                 cdAberration = 0;
                 activePostProcessing = false;
             }

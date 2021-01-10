@@ -124,6 +124,7 @@
           </e>
         </e>
         <e p="purpleGunReloader.cs" t="Include" />
+        <e p="radialEnemyShoot.cs" t="Include" />
         <e p="redGunReloader.cs" t="Include" />
         <e p="reloadScript.cs" t="Include" />
         <e p="yellowGunReloader.cs" t="Include" />
