@@ -50,7 +50,6 @@ public class handController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
         else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;
         else if (Input.GetKeyDown(KeyCode.Alpha3)) currentPos = 2;
-        Debug.Log(currentPos);
         WeaponSelector();
     }
 

@@ -16,6 +16,6 @@ public class CursorScript : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
         
-        //transform.rotation = new Quaternion(0,0, 5f * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0,0, 50f * Time.deltaTime);
     }
 }
