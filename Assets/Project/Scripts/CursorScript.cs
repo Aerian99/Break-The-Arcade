@@ -1,13 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
-    public Texture2D cursor;
     void Start()
     {
-        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.visible = false;
     }
 
+    private void Update()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = mousePos;
+        
+        //transform.rotation = new Quaternion(0,0, 5f * Time.deltaTime);
+    }
 }
