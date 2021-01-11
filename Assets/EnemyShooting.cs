@@ -10,17 +10,20 @@ public class EnemyShooting : MonoBehaviour
     public GameObject enemyBulletAttack, enemyBullet;
     private float bulletSpeed;
 
-   [HideInInspector] public bool onArea = false;
+    [HideInInspector] public bool onArea = false;
     private float cadency; private int shootCounter; private float keepCadency;
     private float timeBtwShoots;
     public float startTimeBtwShoots;
+
+    public List<GameObject> firePoints;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         shootCounter = 2; //added
-        bulletSpeed = 2.5f;
+        bulletSpeed = 15f;
         cadency = 0;
-        keepCadency = 1;
+        keepCadency = 5;
         startTimeBtwShoots = 2f;
         timeBtwShoots = startTimeBtwShoots;
     }
@@ -32,29 +35,37 @@ public class EnemyShooting : MonoBehaviour
         {
             if (cadency <= 0)
             {
-                GameObject bullet;
-                Rigidbody2D rb;
-
-                SoundManagerScript.PlaySound("EnemyShoot");
-                if (Random.Range(0f, 100f) <= 35.0f)
-                {
-                    bullet = Instantiate(enemyBulletAttack, this.transform.position, this.transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                }
-                else
-                {
-                    bullet = Instantiate(enemyBullet, this.transform.position, this.transform.rotation);
-                    rb = bullet.GetComponent<Rigidbody2D>();
-                }
-                target = GameObject.FindGameObjectWithTag("Player").transform;  
-                rb.AddForce(-target.position * bulletSpeed, ForceMode2D.Impulse);
-                shootCounter--;
+                StartCoroutine(Shooting());
                 cadency = keepCadency;
             }
             else
-            {
                 cadency -= Time.fixedDeltaTime;
-            }
+
         }
+    }
+
+
+    IEnumerator Shooting()
+    {
+        GameObject bullet;
+        Rigidbody2D rb;
+        Vector2 moveDirection;
+        moveDirection = (target.transform.position - transform.position).normalized * bulletSpeed;
+        SoundManagerScript.PlaySound("EnemyShoot");
+        if (Random.Range(0f, 100f) <= 35.0f)
+        {
+            bullet = Instantiate(enemyBulletAttack, firePoints[0].transform.position, firePoints[0].transform.localRotation);
+            rb = bullet.GetComponent<Rigidbody2D>();
+        }
+        else
+        {
+
+            bullet = Instantiate(enemyBullet, firePoints[0].transform.position, firePoints[0].transform.localRotation);
+            rb = bullet.GetComponent<Rigidbody2D>();
+        }
+
+        rb.AddForce(bullet.transform.right * bulletSpeed, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(2f);
+
     }
 }
