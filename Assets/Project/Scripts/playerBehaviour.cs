@@ -46,9 +46,9 @@ public class playerBehaviour : MonoBehaviour
     {
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _maxLifes = 100f;
+        _maxLifes = 1f;
         _playerLifes = _maxLifes;
-        hurtSpeed = 0.0005f;
+        hurtSpeed = 0.001f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
         maxCdImmunity = 2f;

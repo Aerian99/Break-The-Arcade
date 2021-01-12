@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HealthBarWhite
-  m_Shader: {fileID: -6465566751694194690, guid: fd7feee29be5b4f439e40808e4055fb9,
+  m_Name: healthbarWhiteFIll
+  m_Shader: {fileID: -6465566751694194690, guid: d4b4343e572800d4f84308ba7dd960ed,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_1A4B3E39: {r: 0.9911022, g: 0.730461, b: 0.75294244, a: 0}
+    - Color_1A4B3E39: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
