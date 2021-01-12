@@ -73,7 +73,7 @@ public class playerMovement : MonoBehaviour
         dashForce = 50f;
         StartDashTimer = 0.1f;
         dashCooldown = 0f;
-        maxCdTime = 0.05f;
+        maxCdTime = 0.1f;
         cdTime = maxCdTime;
         stopTimer = false;
         ghostController.enabled = false;
