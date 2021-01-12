@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bordes
-  m_Shader: {fileID: -6465566751694194690, guid: e50601c264ac4564c8924b0c7eb7e444,
+  m_Name: HealthBarWhite
+  m_Shader: {fileID: -6465566751694194690, guid: fd7feee29be5b4f439e40808e4055fb9,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,13 +21,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emission:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7e09229dd6d0b08429a86577e51530f0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7e09229dd6d0b08429a86577e51530f0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1.7948227, g: 1.3453274, b: 0.74086016, a: 1}
+    - Color_1A4B3E39: {r: 0.9911022, g: 0.730461, b: 0.75294244, a: 0}

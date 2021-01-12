@@ -11,39 +11,47 @@ public class radialEnemyShoot : MonoBehaviour
     public int numBullets;
     public float bulletSpeed;
     public GameObject bulletPrefab;
+    public int burstSpeed;
     
     [Header("Private Variables")] 
     private Vector3 startPoint;
     private const float radius = 1f;
     float fireRate = 1f;
     private float lastShot = 0.0f;
-    void Update()
+
+    private void Start()
     {
-        if (Time.time > fireRate + lastShot) // Simple fire rate
-        {
-            startPoint = transform.position;
-            spawnBullets(numBullets);
-            lastShot = Time.time;
-        }
+        StartCoroutine(Shooting());
     }
 
-    private void spawnBullets(int _numBullets)
+    
+
+    IEnumerator Shooting()
     {
-        float angleStep = 360f / _numBullets;
-        float angle = 0f;
-
-        for (int i = 0; i <= _numBullets - 1; i++)
+        while (true)
         {
-            float bulletDirXPosition = startPoint.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
-            float bulletDirYPosition = startPoint.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
-            
-            Vector3 bulletVector = new Vector3(bulletDirXPosition,bulletDirYPosition, 0);
-            Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
+            startPoint = transform.position;
+            float angleStep = 360f / numBullets;
+            float angle = 0f;
 
-            GameObject bulletGO = Instantiate(bulletPrefab, startPoint, quaternion.identity);
-            bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
+            for (int y = 0; y < burstSpeed; y++)
+            {
+                for (int i = 0; i <= numBullets - 1; i++)
+                {
+                    float bulletDirXPosition = startPoint.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+                    float bulletDirYPosition = startPoint.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
 
-            angle += angleStep;
+                    Vector3 bulletVector = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
+                    Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
+
+                    GameObject bulletGO = Instantiate(bulletPrefab, startPoint, quaternion.identity);
+                    bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
+                    Destroy(bulletGO, 2f);
+                    angle += angleStep;
+                }
+                yield return new WaitForSeconds(0.4f);
+            }
+            yield return new WaitForSeconds(5);
         }
     }
 }

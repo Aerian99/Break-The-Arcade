@@ -83,7 +83,7 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "greyPlatform"
          && other.gameObject.tag != "Triggers")
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         else if (other.gameObject.tag == "AlienWall")
         {
