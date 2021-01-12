@@ -430,12 +430,12 @@ PrefabInstance:
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9.28
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -24821,6 +24821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1435567924}
   - component: {fileID: 1435567925}
+  - component: {fileID: 1435567926}
   m_Layer: 8
   m_Name: Platform 1
   m_TagString: Platform
@@ -24877,6 +24878,18 @@ EdgeCollider2D:
   - {x: 0.8622826, y: 1.769139}
   - {x: 0.8700017, y: 1.2366948}
   - {x: 0.7105605, y: 1.0642691}
+--- !u!114 &1435567926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435567923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4a1a9dc475e3041853e458ed1c69c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1438201712
 GameObject:
   m_ObjectHideFlags: 0
