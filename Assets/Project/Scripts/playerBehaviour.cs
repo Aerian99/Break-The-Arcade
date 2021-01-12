@@ -11,8 +11,8 @@ public class playerBehaviour : MonoBehaviour
 {
 
     private Animator animator;
-    public static int _playerLifes;
-    private int _maxLifes;
+    public static float _playerLifes;
+    private float _maxLifes;
     public static bool activeImmunity, canBeDamaged;
 
     private reloadScript reloadScript;
@@ -28,6 +28,8 @@ public class playerBehaviour : MonoBehaviour
     public TextMeshProUGUI redBulletsCounter;
 
     public Image healthBarFill;
+    public Image healthBarWhiteFill;
+    private float hurtSpeed;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -44,8 +46,9 @@ public class playerBehaviour : MonoBehaviour
     {
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _maxLifes = 100;
+        _maxLifes = 100f;
         _playerLifes = _maxLifes;
+        hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
         maxCdImmunity = 2f;
@@ -72,6 +75,7 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         resetReload();
+        healthBarEffect();
         if (_playerLifes <= 0)
         {
             Destroy(this.gameObject);
@@ -105,7 +109,6 @@ public class playerBehaviour : MonoBehaviour
         if (activeImmunity)
         {
             _playerLifes -= 20;
-            healthBarFill.fillAmount = _playerLifes / 100f;
             activePostProcessing = true;
             canBeDamaged = false;
             activeImmunity = false;
@@ -210,6 +213,20 @@ public class playerBehaviour : MonoBehaviour
             reloadScript.timer = 0f;
             StopAllCoroutines();
             isReloading = false;
+        }
+    }
+
+    void healthBarEffect()
+    {
+        healthBarFill.fillAmount = _playerLifes / _maxLifes;
+
+        if (healthBarWhiteFill.fillAmount > healthBarFill.fillAmount)
+        {
+            healthBarWhiteFill.fillAmount -= hurtSpeed;
+        }
+        else
+        {
+            healthBarWhiteFill.fillAmount = healthBarFill.fillAmount;
         }
     }
 }
