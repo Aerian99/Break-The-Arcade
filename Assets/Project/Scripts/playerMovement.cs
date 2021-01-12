@@ -268,7 +268,7 @@ public class playerMovement : MonoBehaviour
             //    CurrentDashTimer -= Time.deltaTime;
 
             //}
-            rb.velocity = new Vector2(positionToDash.x * dashForce, (positionToDash.y * dashForce) / 1.4f);
+            rb.velocity = new Vector2(positionToDash.x * dashForce, (positionToDash.y * dashForce));
             CurrentDashTimer -= Time.deltaTime;
 
             if (CurrentDashTimer <= 0)
