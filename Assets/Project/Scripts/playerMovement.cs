@@ -33,16 +33,19 @@ public class playerMovement : MonoBehaviour
     private bool isJumping;
     private float jumpTimeCounter;
     private float jumpTime;
+    private float cdTime, maxCdTime;
 
     // Dash
     private float dashForce;
+    Vector2 positionToDash;
     private float StartDashTimer;
     private float CurrentDashTimer;
     private float DashDirection;
-    private float dashCooldown;
+    [HideInInspector] public float dashCooldown;
     private bool isDashing;
-    private bool canDash;
+    [HideInInspector] public bool dashUp, dashDiagonal, canDash, stopTimer;
     public Image dashImage;
+    Vector2 mousePos;
     // Other variables
     public static float movX;
 
@@ -70,20 +73,28 @@ public class playerMovement : MonoBehaviour
         dashForce = 50f;
         StartDashTimer = 0.1f;
         dashCooldown = 0f;
+        maxCdTime = 0.05f;
+        cdTime = maxCdTime;
+        stopTimer = false;
         ghostController.enabled = false;
     }
 
     void Update()
     {
         // FUNCTIONS
-        Move();
-        Jump();
-        Dash();
-        SetAnimationState();
+        if(!stopTimer)
+        { 
+            Move();
+            Jump();
+            Dash();
+            SetAnimationState();
+        }
+        stopTime();
     }
 
     void Move()
     {
+
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
@@ -112,11 +123,12 @@ public class playerMovement : MonoBehaviour
                 p_RunParticleRight.Play();
             }
         }
-        else
+        else if (IsGrounded())
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             aud.Stop();
         }
+
     }
 
     // This Jump function works with key hold detection. Hold to jump higher.
@@ -157,27 +169,114 @@ public class playerMovement : MonoBehaviour
 
     void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0 && canDash)
+
+        //if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) && canDash)
+        //{
+        //    SoundManagerScript.PlaySound("dash");
+        //    isDashing = true;
+        //    CurrentDashTimer = StartDashTimer;
+        //    rb.velocity = Vector2.zero;
+        //    DashDirection = 1;
+        //    ghostController.enabled = true;
+        //    canDash = false;
+        //    dashForce = 30f;
+        //    dashImage.fillAmount = 0f;
+        //    dashDiagonal = true;
+        //}
+        //else if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && canDash)
+        //{
+        //    SoundManagerScript.PlaySound("dash");
+        //    isDashing = true;
+        //    CurrentDashTimer = StartDashTimer;
+        //    rb.velocity = Vector2.zero;
+        //    DashDirection = -1;
+        //    ghostController.enabled = true;
+        //    canDash = false;
+        //    dashForce = 30f;
+        //    dashImage.fillAmount = 0f;
+        //    dashDiagonal = true;
+        //}
+        //else if(Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) && canDash)
+        //{
+        //    SoundManagerScript.PlaySound("dash");
+        //    isDashing = true;
+        //    CurrentDashTimer = StartDashTimer;
+        //    rb.velocity = Vector2.zero;
+        //    DashDirection = 1;
+        //    ghostController.enabled = true;
+        //    canDash = false;
+        //    dashImage.fillAmount = 0f;
+        //    dashForce = 30f;
+        //    dashUp = true;
+        //}
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
-            SoundManagerScript.PlaySound("dash");
-            isDashing = true;
-            CurrentDashTimer = StartDashTimer;
-            rb.velocity = Vector2.zero;
-            DashDirection = (int) movX;
-            ghostController.enabled = true;
-            canDash = false;
-            dashImage.fillAmount = 0f;
+            stopTimer = true;
+            if (isDashing)
+            {
+                rb.velocity = Vector3.zero;
+                Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                positionToDash.x = mouse.x - transform.position.x;
+                positionToDash.y = mouse.y - transform.position.y;
+                positionToDash = positionToDash.normalized;
+                Debug.Log(positionToDash);
+                CurrentDashTimer = StartDashTimer;
+                ghostController.enabled = true;
+                canDash = false;
+                dashForce = 30f;
+                dashImage.fillAmount = 0f;
+                SoundManagerScript.PlaySound("dash");
+            }
+            else
+            {
+                Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                positionToDash.x = mouse.x - transform.position.x;
+                positionToDash.y = mouse.y - transform.position.y;
+                positionToDash = positionToDash.normalized;
+                Debug.Log(positionToDash);
+                isDashing = true;
+                CurrentDashTimer = StartDashTimer;
+                ghostController.enabled = true;
+                canDash = false;
+                dashForce = 30f;
+                dashImage.fillAmount = 0f;
+                SoundManagerScript.PlaySound("dash");
+            }
+
         }
 
         if (isDashing)
         {
-            rb.velocity = transform.right * DashDirection * dashForce;
+            //if(dashUp)
+            //{
+            //    rb.velocity = transform.up * DashDirection * dashForce;
+            //    CurrentDashTimer -= Time.deltaTime;
+
+            //}else if(dashDiagonal)
+            //{
+            //    Vector2 diagonal;
+            //    if (DashDirection == -1)
+            //    {
+            //         diagonal = transform.up + -transform.right;
+            //    }
+            //    else
+            //    {
+            //         diagonal = transform.up + transform.right;
+            //    }
+
+            //    rb.velocity = diagonal * dashForce;
+            //    CurrentDashTimer -= Time.deltaTime;
+
+            //}
+            rb.velocity = positionToDash * dashForce;
             CurrentDashTimer -= Time.deltaTime;
 
             if (CurrentDashTimer <= 0)
             {
                 isDashing = false;
                 ghostController.enabled = false;
+                dashUp = false;
+                dashDiagonal = false;
             }
         }
 
@@ -197,6 +296,25 @@ public class playerMovement : MonoBehaviour
         dashImage.fillAmount += 1.0f / 3.0f * Time.deltaTime;
     }
 
+    void stopTime()
+    {
+        if(stopTimer)
+        {
+            Time.timeScale = 0f;
+            cdTime -= Time.unscaledDeltaTime;
+        }
+        else
+        {
+            
+        }
+        if(cdTime <= 0)
+        {
+            Time.timeScale = 1f;
+            cdTime = maxCdTime;
+            stopTimer = false;
+        }
+
+    }
     public static bool IsGrounded()
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(p_collider.bounds.center, p_collider.bounds.size, 0f,
