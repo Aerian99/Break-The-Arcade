@@ -38,6 +38,7 @@ TagManager:
   - absorbZone
   - Camera2
   - Camera1
+  - PlatformController
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class VanishPlatform : MonoBehaviour
     bool startDissapear = false;
     bool reloadingTime = false;
     float cd, maxCd, cdReloading, maxCdReloading;
+    public GameObject[] activePlatforms;
 
     private void Start()
     {
@@ -18,45 +19,15 @@ public class VanishPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(startDissapear)
+        if(startDissapear && !GameObject.FindGameObjectWithTag("PlatformController").GetComponent<PlatformController>().alreadyCalculating)
         {
-            cd -= Time.deltaTime;
-            for (int i = 0; i < this.transform.childCount; i++)
-            {
-                transform.GetChild(i).GetComponent<Animator>().SetBool("PlayFade", true);
-                transform.GetChild(i).GetComponent<Animator>().SetBool("IsOver", false);
-            }
-
-            if(cd <= 0)
-            {
-                for (int i = 0; i < this.transform.childCount; i++)
-                {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("PlayFade", false);
-                }
-                cd = maxCd;
-                startDissapear = false;
-                gameObject.GetComponent<EdgeCollider2D>().enabled = false;
-                reloadingTime = true;
-            }
+            GameObject.FindGameObjectWithTag("PlatformController").GetComponent<PlatformController>().controlPlatform(activePlatforms);
         }
-
-        if(reloadingTime)
+        else if(GameObject.FindGameObjectWithTag("PlatformController").GetComponent<PlatformController>().alreadyCalculating)
         {
-            cdReloading -= Time.deltaTime;
-
-            if(cdReloading <= 0)
-            {
-                cdReloading = maxCdReloading;
-                reloadingTime = false;
-                gameObject.GetComponent<EdgeCollider2D>().enabled = true;
-                for (int i = 0; i < this.transform.childCount; i++)
-                {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("IsOver", true);
-                }
-            }
-
-
+            startDissapear = false;
         }
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
