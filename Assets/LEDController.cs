@@ -11,7 +11,7 @@ public class LEDController : MonoBehaviour
 
     private void Start()
     {
-        intensity = Mathf.Pow(2, 1.2f);
+        intensity = Mathf.Pow(2, 0.3f);
     }
     void Update()
     {
