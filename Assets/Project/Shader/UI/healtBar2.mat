@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dashUI
+  m_Name: healtBar2
   m_Shader: {fileID: -6465566751694194690, guid: ef5e119979aa27746820a2dc0e164e89,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -31,4 +31,4 @@ Material:
     m_Floats: []
     m_Colors:
     - Color_639D7A91: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.1552862, g: 0.90953344, b: 1.3421164, a: 0}
+    - _Color: {r: 0.08482358, g: 1.3642459, b: 0, a: 0}
