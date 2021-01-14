@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class enemyPatrol : MonoBehaviour
 {
-    private float patrolSpeed;
+    [HideInInspector]public float patrolSpeed;
     private float patrolDistance;
     private Rigidbody2D rb;
     private GameObject canvasGO;
@@ -41,36 +41,39 @@ public class enemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(patrolSpeed);
         float dist = Vector3.Distance(player.transform.position, transform.position);
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
         changeDirection();
         triggerDetection();
-        
-        if (Time.time > NextTimeToFire)
-        {
-            if (dist < 8f)
+        if(!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
+        { 
+            if (Time.time > NextTimeToFire)
             {
-                if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
+                if (dist < 8f)
                 {
-                    Debug.Log("DERECHA");
-                    Shoot();
-                    patrolSpeed = 0f;
-                    rb.velocity = Vector2.zero;
-                    anim.SetBool("isRunning", false);
-                }
+                    if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
+                    {
+                        Debug.Log("DERECHA");
+                        Shoot();
+                        patrolSpeed = 0f;
+                        rb.velocity = Vector2.zero;
+                        anim.SetBool("isRunning", false);
+                    }
 
-                if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
-                {
-                    Debug.Log("IZQUIERDA");
-                    Shoot();
-                    patrolSpeed = 0f;
-                    rb.velocity = Vector2.zero;
-                    anim.SetBool("isRunning", false);
+                    if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
+                    {
+                        Debug.Log("IZQUIERDA");
+                        Shoot();
+                        patrolSpeed = 0f;
+                        rb.velocity = Vector2.zero;
+                        anim.SetBool("isRunning", false);
+                    }
                 }
-            }
-            else
-            {
-                patrolSpeed = 2f; 
+                else
+                {
+                    patrolSpeed = 2f; 
+                }
             }
         }
     }

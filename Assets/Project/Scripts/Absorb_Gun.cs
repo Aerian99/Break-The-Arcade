@@ -19,7 +19,7 @@ public class Absorb_Gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack")  && absorbCooldown.coolFull == false)
+        if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack" || other.gameObject.tag == "Bullet Pacman")  && absorbCooldown.coolFull == false)
         {
             // ABSORB MAGNET EFFECT
 
@@ -92,11 +92,6 @@ public class Absorb_Gun : MonoBehaviour
                 }
             }
             //Destroy(other.gameObject);
-        }
-        else if (other.gameObject.tag == "Bullet Pacman")
-        {
-            // droneBehaviour.canBeAttacked = true;
-            droneBehaviour.beHaunted = true;      
         }
     }
 }
