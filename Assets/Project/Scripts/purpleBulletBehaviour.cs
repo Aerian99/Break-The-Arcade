@@ -12,7 +12,6 @@ public class purpleBulletBehaviour : MonoBehaviour {
           && !other.gameObject.CompareTag("EnemyBullet")
           && !other.gameObject.CompareTag("Range")
           && !other.gameObject.CompareTag("PurpleBullet")
-          && !other.gameObject.CompareTag("NPC")
           && !other.gameObject.CompareTag("greyPlatform")
           && !other.gameObject.CompareTag("Triggers")
           && !other.gameObject.CompareTag("Wall") && !other.gameObject.CompareTag("AlienWall") && !other.gameObject.CompareTag("AlienAttack"))

@@ -21,11 +21,11 @@ public class GameController : MonoBehaviour
     {
         if(activatedAbsorb)
         {
-            Debug.Log(cdAbsorb);
             robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
             for (int i = 0; i < robotPatrols.Length; i++)
             {
                 robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 6f;
+                robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", true);
             }
 
             if (cdAbsorb <= 0)
@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour
         robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
         for (int i = 0; i < robotPatrols.Length; i++)
         {
+            robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", false);
             robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 2f;
         }
 
