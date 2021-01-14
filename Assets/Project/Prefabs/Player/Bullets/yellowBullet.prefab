@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3372851317498006073}
   - component: {fileID: 8109300600509008125}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,9 +150,9 @@ GameObject:
   - component: {fileID: 234473880941987810}
   - component: {fileID: 8309790038902184914}
   - component: {fileID: 1185259519973987480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: yellowBullet
-  m_TagString: YellowBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,8 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be725f9f853e01e4f890c6a20603503c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffectPrefab: {fileID: 5394566744571616057, guid: 27ebbda424e7f8540bcc3aff029d9e19,
-    type: 3}
   hitEffect: {fileID: 8377408501486123291, guid: 47a1175d01165f04a9c4a985fb5edf3f,
     type: 3}
 --- !u!61 &1185259519973987480

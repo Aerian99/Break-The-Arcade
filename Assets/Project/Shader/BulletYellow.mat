@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bordes
-  m_Shader: {fileID: -6465566751694194690, guid: e50601c264ac4564c8924b0c7eb7e444,
+  m_Name: BulletYellow
+  m_Shader: {fileID: -6465566751694194690, guid: d4b4343e572800d4f84308ba7dd960ed,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1.7425212, g: 0.6359697, b: 0.8346651, a: 1}
+    - Color_1A4B3E39: {r: 1.4980392, g: 1.3647059, b: 0, a: 0}

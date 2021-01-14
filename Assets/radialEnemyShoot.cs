@@ -7,14 +7,12 @@ using Vector3 = UnityEngine.Vector3;
 
 public class radialEnemyShoot : MonoBehaviour
 {
-    [Header("Bullet Settings")] 
-    public int numBullets;
+    [Header("Bullet Settings")] public int numBullets;
     public float bulletSpeed;
     public GameObject bulletPrefab;
     public int burstSpeed;
-    
-    [Header("Private Variables")] 
-    private Vector3 startPoint;
+
+    [Header("Private Variables")] private Vector3 startPoint;
     private const float radius = 1f;
     float fireRate = 1f;
     private float lastShot = 0.0f;
@@ -24,7 +22,6 @@ public class radialEnemyShoot : MonoBehaviour
         StartCoroutine(Shooting());
     }
 
-    
 
     IEnumerator Shooting()
     {
@@ -46,11 +43,14 @@ public class radialEnemyShoot : MonoBehaviour
 
                     GameObject bulletGO = Instantiate(bulletPrefab, startPoint, quaternion.identity);
                     bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
+                    bulletGO.transform.rotation = UnityEngine.Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
                     Destroy(bulletGO, 2f);
                     angle += angleStep;
                 }
+
                 yield return new WaitForSeconds(0.4f);
             }
+
             yield return new WaitForSeconds(5);
         }
     }

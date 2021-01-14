@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bullet
+  m_Name: BulletRed
   m_Shader: {fileID: -6465566751694194690, guid: d4b4343e572800d4f84308ba7dd960ed,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_1A4B3E39: {r: 1.4980392, g: 1.3647059, b: 0, a: 0}
+    - Color_1A4B3E39: {r: 2, g: 0, b: 0.01862812, a: 0}
