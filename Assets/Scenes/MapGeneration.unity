@@ -2555,6 +2555,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 428050275873865749, guid: f38d8a269961fec4ab26cbc29bb6bc87,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 428050275873865754, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32615,7 +32620,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.002492465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -32626,7 +32631,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.18}
+  m_Size: {x: 0.16, y: 0.18498494}
   m_EdgeRadius: 0
 --- !u!50 &1297488194
 Rigidbody2D:
@@ -32648,7 +32653,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1297488195
 Animator:
   serializedVersion: 3
@@ -32727,7 +32732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297488191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.481685, y: 1.01, z: 0}
+  m_LocalPosition: {x: 8.481685, y: 0.594, z: 0}
   m_LocalScale: {x: 7.258299, y: 7.258299, z: 7.258299}
   m_Children:
   - {fileID: 2078489592}
