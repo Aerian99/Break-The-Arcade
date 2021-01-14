@@ -66,7 +66,7 @@ public class enemyBulletBehaviour : MonoBehaviour
                 playerBehaviour.activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
             }
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         else if
         (other.gameObject.tag != "Enemy"

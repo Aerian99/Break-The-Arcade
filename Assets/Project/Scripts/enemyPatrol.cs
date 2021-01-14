@@ -19,6 +19,13 @@ public class enemyPatrol : MonoBehaviour
 
     private RaycastHit2D groundInfo;
 
+    public GameObject bulletPrefab;
+    private float FireRate = 0.5f;
+    private float NextTimeToFire = 1f;
+    private float shootForce = 15f;
+
+    private GameObject player;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +33,7 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         vecDir = new Vector2(180, 0f);
-        //canvasGO = gameObject.transform.GetChild(1).gameObject;
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -35,16 +42,32 @@ public class enemyPatrol : MonoBehaviour
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
         changeDirection();
         triggerDetection();
+
+        if (Time.time > NextTimeToFire)
+        {
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            if (dist < 9f)
+            {
+                Shoot();
+                patrolSpeed = 0f;
+                rb.velocity = Vector2.zero;
+                anim.SetBool("isRunning", false);
+            }
+            else
+            {
+                patrolSpeed = 2f;
+            }
+        }
     }
 
     void changeDirection()
     {
-        if (movingRight == true)
+        if (movingRight == true && patrolSpeed != 0)
         {
             rb.velocity = Vector2.right * patrolSpeed;
             anim.SetBool("isRunning", true);
         }
-        else
+        else if (movingRight == false && patrolSpeed != 0)
         {
             rb.velocity = Vector2.left * patrolSpeed;
             anim.SetBool("isRunning", true);
@@ -73,6 +96,20 @@ public class enemyPatrol : MonoBehaviour
     public bool getMovingRight()
     {
         return movingRight;
-    
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            anim.SetTrigger("hit");
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
+        NextTimeToFire = Time.time + FireRate;
     }
 }
