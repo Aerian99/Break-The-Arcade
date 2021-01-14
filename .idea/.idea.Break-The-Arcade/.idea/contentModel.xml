@@ -18,6 +18,7 @@
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
+        <e p="PlatformController.cs" t="Include" />
         <e p="PowerupHealth.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="MainMenuManager.cs" t="Include" />
