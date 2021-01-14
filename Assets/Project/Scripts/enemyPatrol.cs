@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
@@ -21,12 +20,14 @@ public class enemyPatrol : MonoBehaviour
     private RaycastHit2D groundInfo2;
     private RaycastHit2D groundInfo3;
 
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab, bulletPacman;
     private float FireRate = 0.5f;
     private float NextTimeToFire = 1f;
     private float shootForce = 15f;
 
     private GameObject player;
+
+    GameObject bulletGO;
 
     private void Start()
     {
@@ -122,7 +123,16 @@ public class enemyPatrol : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        int rand = Random.Range(0,100);
+
+        if(rand < 30)
+        {
+            bulletGO = Instantiate(bulletPacman, this.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        }
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
     }
