@@ -19,7 +19,7 @@ public class PurpleShoot : MonoBehaviour
 
     //BULLETS
     public static float bulletDamage;
-    private float bulletSpeed = 40f; // Speed
+    private float bulletSpeed = 50f; // Speed
     private float bulletLifeTime = 10f; // Distance
     private float timeBetweenShots = 0.30f; // Cadence
     private float timestamp;
@@ -119,6 +119,5 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.canShake = true;
             yield return new WaitForSeconds(0.05f);
         }
-
     }
 }

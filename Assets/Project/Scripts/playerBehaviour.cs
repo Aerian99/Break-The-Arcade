@@ -11,7 +11,7 @@ public class playerBehaviour : MonoBehaviour
 {
 
     private Animator animator;
-    public static float _playerLifes;
+    public static int _playerLifes;
     private float _maxLifes;
     public static bool activeImmunity, canBeDamaged;
 
@@ -30,6 +30,10 @@ public class playerBehaviour : MonoBehaviour
     public Image healthBarFill;
     public Image healthBarWhiteFill;
     private float hurtSpeed;
+    
+    // HEALTHBAR SETTINGS
+    public GameObject defaultBar;
+    public Sprite[] healthbarimages;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -47,7 +51,8 @@ public class playerBehaviour : MonoBehaviour
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
-        _playerLifes = _maxLifes;
+        //_playerLifes = _maxLifes;
+        _playerLifes = 6;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
@@ -75,7 +80,9 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         resetReload();
-        healthBarEffect();
+        //healthBarEffect();
+        healthBarPixel();
+        
         if (_playerLifes <= 0)
         {
             Destroy(this.gameObject);
@@ -108,7 +115,7 @@ public class playerBehaviour : MonoBehaviour
     {
         if (activeImmunity)
         {
-            _playerLifes -= 20;
+            _playerLifes -= 1;
             activePostProcessing = true;
             canBeDamaged = false;
             activeImmunity = false;
@@ -227,6 +234,17 @@ public class playerBehaviour : MonoBehaviour
         else
         {
             healthBarWhiteFill.fillAmount = healthBarFill.fillAmount;
+        }
+    }
+
+    void healthBarPixel()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (_playerLifes == i)
+            {
+                defaultBar.GetComponent<Image>().sprite = healthbarimages[i];
+            }
         }
     }
 }
