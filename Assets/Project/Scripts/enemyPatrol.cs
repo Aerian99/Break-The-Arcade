@@ -26,6 +26,11 @@ public class enemyPatrol : MonoBehaviour
     private float shootForce = 15f;
 
     private GameObject player;
+    
+    private float lifes;
+    [HideInInspector] public bool isDying;
+    float fade;
+    public Material mat;
 
     GameObject bulletGO;
 
@@ -36,6 +41,10 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
+        
+        lifes = 50f;
+        fade = 1;
+        isDying = false;
     }
 
     // Update is called once per frame
@@ -75,6 +84,11 @@ public class enemyPatrol : MonoBehaviour
                     patrolSpeed = 2f; 
                 }
             }
+        }
+        
+        if (lifes < 0f)
+        {
+            Dead();
         }
     }
 
@@ -120,7 +134,7 @@ public class enemyPatrol : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            anim.SetTrigger("hit");
+            lifes -= 10f;
         }
     }
 
@@ -138,5 +152,22 @@ public class enemyPatrol : MonoBehaviour
         }
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
+    }
+    
+    void Dead()
+    {
+        mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
+        this.GetComponent<SpriteRenderer>().material = mat;
+        isDying = true;
+        this.GetComponent<Rigidbody2D>().isKinematic = true;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        fade -= Time.deltaTime;
+        mat.SetFloat("_Fade", fade);
+        
+        if (fade <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
