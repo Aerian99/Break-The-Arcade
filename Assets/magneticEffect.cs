@@ -21,6 +21,10 @@ public class magneticEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == "Bullet Pacman")
+        {
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().ActivateEnemyStates();
+        }
         if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "Bullet Pacman" || other.gameObject.tag == "AlienAttack") && absorbCooldown.coolFull == false)
         {
             SoundManagerScript.PlaySound("absorbSound"); // Reproducimos el sonido de absorber al entrar en el trigger de absorción (magneticZone).

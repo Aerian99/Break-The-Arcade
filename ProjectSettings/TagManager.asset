@@ -13,9 +13,7 @@ TagManager:
   - Range
   - RedBullet
   - PurpleBullet
-  - NPC
   - YellowBullet
-  - JumpPlatform
   - PlayerCenterPivot
   - footTrigger
   - Potion
@@ -29,16 +27,14 @@ TagManager:
   - AlienAttack
   - Triggers
   - AlienWall
-  - OrangeEnemy
-  - CyanEnemy
-  - RedEnemy
   - AlienEnemy
-  - SpawnPoint
   - Rooms
   - absorbZone
   - Camera2
   - Camera1
   - PlatformController
+  - RobotPatrol
+  - gameController
   layers:
   - Default
   - TransparentFX
