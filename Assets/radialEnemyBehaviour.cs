@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class radialEnemyBehaviour : MonoBehaviour
@@ -8,14 +9,13 @@ public class radialEnemyBehaviour : MonoBehaviour
     private float lifes;
     [HideInInspector] public bool isDying;
     float fade;
-    Material mat;
-
+    public Material mat;
     void Start()
     {
         lifes = 50f;
-        mat = GetComponent<SpriteRenderer>().material;
         fade = 1;
         isDying = false;
+        
     }
 
     // Update is called once per frame
@@ -34,13 +34,10 @@ public class radialEnemyBehaviour : MonoBehaviour
             lifes -= 10f;
         }
     }
-
-    void getDamage(float dmg)
-    {
-    }
-
     void Dead()
     {
+        mat.SetColor("_Color", new Color(0.9960784f, 0.8f, 0.05490196f));
+        this.GetComponent<SpriteRenderer>().material = mat;
         isDying = true;
         //gameObject.GetComponent<FlyingBehaviour>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
