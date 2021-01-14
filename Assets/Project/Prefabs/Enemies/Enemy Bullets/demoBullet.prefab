@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2527527516554239710}
   - component: {fileID: 2010890316752631530}
   - component: {fileID: 8961503755092371817}
+  - component: {fileID: 8931617684628174774}
   m_Layer: 0
   m_Name: demoBullet
   m_TagString: EnemyBullet
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68c2864162291434995ceeadf1c8b679, type: 3}
-  m_Color: {r: 1, g: 0.9470248, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.94509804, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,3 +131,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08933958, y: 0.090071335}
   m_EdgeRadius: 0
+--- !u!114 &8931617684628174774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510735618960470853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a25f3595369724c88de5796214831a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exploted: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  PlatformLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  deathExplosion: {fileID: 0}
