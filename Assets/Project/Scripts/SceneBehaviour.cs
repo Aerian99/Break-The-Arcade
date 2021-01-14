@@ -39,7 +39,7 @@ public class SceneBehaviour : MonoBehaviour
         IEnumerator PlayAgain(float time)
         {
             yield return new WaitForSeconds(time);
-            SceneManager.LoadScene("Prototype");
+            SceneManager.LoadScene("MapGeneration");
         }
 
         void playGameOver()
