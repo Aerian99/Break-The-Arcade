@@ -52,7 +52,7 @@ public class radialEnemyShoot : MonoBehaviour
                         bulletGO = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
                     }
                     bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
-                    bulletGO.transform.rotation = UnityEngine.Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
+                    bulletGO.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
                     Destroy(bulletGO, 2f);
                     angle += angleStep;
                 }
