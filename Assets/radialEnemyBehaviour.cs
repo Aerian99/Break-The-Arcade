@@ -10,21 +10,26 @@ public class radialEnemyBehaviour : MonoBehaviour
     [HideInInspector] public bool isDying;
     float fade;
     public Material mat;
+
     void Start()
     {
         lifes = 50f;
         fade = 1;
         isDying = false;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lifes < 0f)
+        if (lifes <= 0f)
         {
             gameObject.GetComponent<radialEnemyShoot>().enabled = false;
-            Dead();
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            this.GetComponent<Animator>().SetBool("dead", true);
+            Destroy(gameObject);
+            //Dead();
         }
     }
 
@@ -35,7 +40,7 @@ public class radialEnemyBehaviour : MonoBehaviour
             //lifes -= 10f;
         }
     }
-    void Dead()
+    /*void Dead()
     {
         mat.SetColor("_Color", new Color(0.9960784f, 0.8f, 0.05490196f));
         this.GetComponent<SpriteRenderer>().material = mat;
@@ -48,5 +53,7 @@ public class radialEnemyBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
+
+  
 }
