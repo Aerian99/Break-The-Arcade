@@ -8,25 +8,34 @@ public class LEDController : MonoBehaviour
     Color targetColor;
     public Material material;
     float intensity;
+    public GameObject TilemapBordes;
 
-    private void Start()
-    {
-        intensity = Mathf.Pow(2, 0.3f);
-    }
     void Update()
     {
-        if (timeLeft <= Time.deltaTime)
+        if (ScreenShake.canShake)
         {
-            material.color = targetColor;
-
+            intensity = 0f;
             targetColor = new Color(Random.value * intensity, Random.value * intensity, Random.value * intensity);
-            timeLeft = 2.0f;
+            material.color = targetColor;
         }
-        else
+        else 
         {
+            intensity = Mathf.Pow(2, 1.2f);
+        
+            if (timeLeft <= Time.deltaTime)
+            {
+                material.color = targetColor;
 
-            material.color = Color.Lerp(material.color, targetColor, Time.deltaTime / timeLeft);
-            timeLeft -= Time.deltaTime;
+                targetColor = new Color(Random.value * intensity, Random.value * intensity, Random.value * intensity);
+                timeLeft = 2.0f;
+            }
+            else
+            {
+
+                material.color = Color.Lerp(material.color, targetColor, Time.deltaTime / timeLeft);
+                timeLeft -= Time.deltaTime;
+            }
         }
+
     }
 }
