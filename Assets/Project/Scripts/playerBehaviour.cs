@@ -239,7 +239,7 @@ public class playerBehaviour : MonoBehaviour
 
     void healthBarPixel()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i <= 6; i++)
         {
             if (_playerLifes == i)
             {

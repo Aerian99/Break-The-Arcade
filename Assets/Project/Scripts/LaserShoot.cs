@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,8 @@ public class LaserShoot : MonoBehaviour
 
     public GameObject reloadText;
     public GameObject noAmmoText;
+    
+    public GameObject hitDamagePopUp;
 
     // Start is called before the first frame update
     void Start()
@@ -145,7 +148,7 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("RobotPatrol") || hit.collider.CompareTag("Enemy"))
             {
-                Debug.Log("YES");
+                popUpDamage(1f);
             }
             if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
@@ -245,11 +248,15 @@ public class LaserShoot : MonoBehaviour
             noAmmoText.SetActive(false);
         }
     }
-
-
+    
     IEnumerator EraseLaser()
     {
         yield return new WaitForSeconds(0.5f);
         DisableLaser();
+    }
+    void popUpDamage(float hitdamage)
+    {
+        GameObject dmg = Instantiate(hitDamagePopUp, transform.position, Quaternion.identity);
+        dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 }

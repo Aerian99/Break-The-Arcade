@@ -763,6 +763,12 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 939126178}
+    - target: {fileID: 9031425252945918268, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: hitDamagePopUp
+      value: 
+      objectReference: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
+        type: 3}
     - target: {fileID: 9031425252986070087, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2247,6 +2253,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &358730457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2389,6 +2396,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &362245379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2427,6 +2435,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 52079c79c4c863441ac30761a704102d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 52079c79c4c863441ac30761a704102d, type: 2}
+  - {fileID: 7400000, guid: 92d6fcf941c96ac40b8473749a48f912, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3193,6 +3202,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &739006152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32404,6 +32414,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1237667768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031425252392873347, guid: 8ee25312c1f9aab47a75999773644a8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 147209813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239039163
 GameObject:
   m_ObjectHideFlags: 0
@@ -54221,6 +54237,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704080888}
     m_Modifications:
+    - target: {fileID: 2139695244731412152, guid: 854803d8ac768c64db3a2bbd3205a7a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2139695245497715722, guid: 854803d8ac768c64db3a2bbd3205a7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54291,6 +54312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RobotPatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139695245497715824, guid: 854803d8ac768c64db3a2bbd3205a7a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854803d8ac768c64db3a2bbd3205a7a5, type: 3}
