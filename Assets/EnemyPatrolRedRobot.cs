@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
-public class enemyPatrol : MonoBehaviour
+public class EnemyPatrolRedRobot : MonoBehaviour
 {
-    [HideInInspector]public float patrolSpeed;
+    [HideInInspector] public float patrolSpeed;
     private float patrolDistance;
     private Rigidbody2D rb;
     private GameObject canvasGO;
@@ -20,13 +19,13 @@ public class enemyPatrol : MonoBehaviour
     private RaycastHit2D groundInfo2;
     private RaycastHit2D groundInfo3;
 
-    public GameObject bulletPrefab, bulletPacman;
-    private float FireRate = 0.5f;
-    private float NextTimeToFire = 1f;
-    private float shootForce = 15f;
+    public GameObject bulletPrefab;
+    private float FireRate = 2.5f;
+    private float NextTimeToFire = 2f;
+    private float shootForce = 10f;
 
     private GameObject player;
-    
+
     private float lifes;
     [HideInInspector] public bool isDying;
     float fade;
@@ -41,7 +40,7 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        
+
         lifes = 50f;
         fade = 1;
         isDying = false;
@@ -50,43 +49,19 @@ public class enemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
         changeDirection();
         triggerDetection();
-        if(!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
-        { 
+        if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
+        {
             if (Time.time > NextTimeToFire)
             {
-                if (dist < 8f)
-                {
-                    this.GetComponent<Rigidbody2D>().isKinematic = true;
-                    if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
-                    {
-                        Debug.Log("DERECHA");
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                        anim.SetBool("isRunning", false);
-                    }
-
-                    if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
-                    {
-                        Debug.Log("IZQUIERDA");
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                        anim.SetBool("isRunning", false);
-                    }
-                }
-                else
-                {
-                    patrolSpeed = 2f; 
-                    this.GetComponent<Rigidbody2D>().isKinematic = false;
-                }
+                Shoot();
+                patrolSpeed = 2f;
             }
+
         }
-        
+
         if (lifes < 0f)
         {
             anim.SetBool("isRunning", false);
@@ -140,20 +115,12 @@ public class enemyPatrol : MonoBehaviour
 
     void Shoot()
     {
-        int rand = Random.Range(0,100);
 
-        if(rand < 30)
-        {
-            bulletGO = Instantiate(bulletPacman, this.transform.position, Quaternion.identity);
-        }
-        else
-        {
-            bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
-        }
-        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
+        bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.up * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
     }
-    
+
     void Dead()
     {
         mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
@@ -164,10 +131,11 @@ public class enemyPatrol : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
         fade -= Time.deltaTime;
         mat.SetFloat("_Fade", fade);
-        
+
         if (fade <= 0)
         {
             Destroy(gameObject);
         }
     }
 }
+
