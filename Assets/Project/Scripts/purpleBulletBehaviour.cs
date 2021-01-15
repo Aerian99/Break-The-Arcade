@@ -19,7 +19,8 @@ public class purpleBulletBehaviour : MonoBehaviour {
           && !other.gameObject.CompareTag("Triggers")
           && !other.gameObject.CompareTag("Wall") 
           && !other.gameObject.CompareTag("AlienWall") 
-          && !other.gameObject.CompareTag("AlienAttack"))
+          && !other.gameObject.CompareTag("AlienAttack")
+          && !other.gameObject.CompareTag("Bullet Pacman"))
         {
             Destroy (this.gameObject);
             effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;

@@ -10,6 +10,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     [HideInInspector] public bool isDying;
     float fade;
     public Material mat;
+    public GameObject explosionEffect;
 
     void Start()
     {
@@ -27,9 +28,11 @@ public class radialEnemyBehaviour : MonoBehaviour
             gameObject.GetComponent<radialEnemyShoot>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
-            this.GetComponent<Animator>().SetBool("dead", true);
-            Destroy(gameObject);
             //Dead();
+            GameObject explosionGO = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(explosionGO, 1.6f);
+            Destroy(this.gameObject);
+            
         }
     }
 
@@ -54,6 +57,5 @@ public class radialEnemyBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }*/
-
-  
+    
 }
