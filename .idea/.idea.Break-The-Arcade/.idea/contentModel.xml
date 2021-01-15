@@ -14,6 +14,7 @@
         <e p="Destroyer.cs" t="Include" />
         <e p="doorSoundsAndEffects.cs" t="Include" />
         <e p="enemyAttack.cs" t="Include" />
+        <e p="EnemyPatrolRedRobot.cs" t="Include" />
         <e p="EnemyShooting.cs" t="Include" />
         <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />

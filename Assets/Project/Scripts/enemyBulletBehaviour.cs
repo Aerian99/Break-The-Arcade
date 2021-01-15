@@ -82,7 +82,8 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "NPC"
          && other.gameObject.tag != "greyPlatform"
          && other.gameObject.tag != "Triggers"
-         && other.gameObject.tag != "RobotPatrol")
+         && other.gameObject.tag != "RobotPatrol"
+         && other.gameObject.tag != "Bullet")
         {
             Destroy(this.gameObject);
         }

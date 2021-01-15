@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
@@ -10,16 +11,65 @@ public class GrenadeShoot : MonoBehaviour
     private const float radius = 1f;
     public float bulletSpeed;
     public GameObject bulletPrefab;
-    // Start is called before the first frame update
+    private bool absorbed;
+    
+    
     void Start()
     {
         Destroy(this.gameObject, 1.5f);
+        absorbed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
+        {
+            if (playerBehaviour.canBeDamaged)
+            {
+                playerBehaviour.activeImmunity = true;
+                other.GetComponent<Animator>().SetTrigger("hit");
+            }
+            Destroy(this.gameObject);
+        }
+        else if
+        (other.gameObject.tag != "Enemy"
+         && other.gameObject.tag != "PurpleBullet"
+         && other.gameObject.tag != "YellowBullet"
+         && other.gameObject.tag != "RedBullet"
+         && other.gameObject.tag != "EnemyBullet"
+         && other.gameObject.tag != "Bullet Pacman"
+         && other.gameObject.tag != "Range"
+         && other.gameObject.tag != "CyanEnemy"
+         && other.gameObject.tag != "OrangeEnemy"
+         && other.gameObject.tag != "RedEnemy"
+         && other.gameObject.tag != "NPC"
+         && other.gameObject.tag != "greyPlatform"
+         && other.gameObject.tag != "Triggers"
+         && other.gameObject.tag != "RobotPatrol"
+         && other.gameObject.tag != "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (other.gameObject.tag == "AlienWall")
+        {
+            other.GetComponent<ProtectionBarrierAliens>().hitted = true;
+        }
+        if (other.gameObject.CompareTag("absorbZone")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
+        {
+            absorbed = true;
+            Destroy(this.gameObject, 0.1f); // Destruimos la bala en función del tiempo que tarda en absorber, para ahorrar problemas.
+        }
+
+        if (other.gameObject.CompareTag("AbsorbGun"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnDestroy()
