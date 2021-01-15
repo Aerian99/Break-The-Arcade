@@ -32434,6 +32434,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1175250294}
   - component: {fileID: 1175250293}
+  - component: {fileID: 1175250296}
+  - component: {fileID: 1175250295}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -32505,6 +32507,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175250295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175250292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7151ca974b0cba840bee1a72c0cbdd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1175250296
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175250292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1237667768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9031425252392873347, guid: 8ee25312c1f9aab47a75999773644a8d,
@@ -54451,7 +54491,7 @@ PrefabInstance:
     - target: {fileID: 7614279702148924364, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.9491
+      value: 205.94907
       objectReference: {fileID: 0}
     - target: {fileID: 7614279702688529897, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
