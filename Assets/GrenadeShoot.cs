@@ -39,18 +39,9 @@ public class GrenadeShoot : MonoBehaviour
                 Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
 
                 GameObject bulletGO = Instantiate(bulletPrefab, startPoint, quaternion.identity);
+                bulletGO.transform.rotation = UnityEngine.Quaternion.AngleAxis(angle, Vector3.forward);
                 bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
                 angle += angleStep;
             }
-       
-
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("Platform"))
-    //    {
-            
-    //    }
-    //}
 }

@@ -6,6 +6,7 @@ public class PowerUp : MonoBehaviour
 {
     public Sprite health, ammo, inmunity;
     int randomObject;
+    public GameObject reloadText;
 
     private void Start()
     {
@@ -31,11 +32,17 @@ public class PowerUp : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+            if (reloadText.activeSelf == true)
+            {
+                reloadText.SetActive(false);
+            }
+
             if (randomObject == 1) //health
             {
-                if(playerBehaviour._playerLifes< 6)
+                if (playerBehaviour._playerLifes < 6)
+                {
                     playerBehaviour._playerLifes += 1;
-                Debug.Log("Health");
+                }
                 Debug.Log(playerBehaviour._playerLifes);
             }
             else if (randomObject == 2) //ammo
@@ -76,12 +83,11 @@ public class PowerUp : MonoBehaviour
                         }
                     }
                 }
-                Debug.Log("Ammo");
             }
             else if (randomObject == 3)// inmunity
             {
                 playerBehaviour.activeImmunity = true;
-                Debug.Log("Inmm");
+                playerBehaviour._playerLifes++;
             }
             Destroy(this.gameObject);
         }
