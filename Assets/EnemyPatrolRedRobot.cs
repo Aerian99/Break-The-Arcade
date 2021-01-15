@@ -115,8 +115,7 @@ public class EnemyPatrolRedRobot : MonoBehaviour
 
     void Shoot()
     {
-
-        bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        bulletGO = Instantiate(bulletPrefab, this.transform.position, transform.rotation);
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.up * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
     }
