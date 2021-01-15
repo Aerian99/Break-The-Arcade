@@ -6,6 +6,7 @@ using UnityEngine;
 public class redBulletBehaviour : MonoBehaviour
 {
     private GameObject effect;
+    private float bulletForce = 10f;
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
@@ -26,10 +27,18 @@ public class redBulletBehaviour : MonoBehaviour
             Destroy(this.gameObject);
             effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
         }
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("RobotPatrol"))
+        
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            popUpDamage(1f);
+            other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
         }
+        if (other.gameObject.CompareTag("RobotPatrol"))
+        {
+            other.gameObject.GetComponent<enemyPatrol>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
+        }
+        
         Destroy(effect, 0.5f); // Eliminamos la explosión de la bala.
     }
     

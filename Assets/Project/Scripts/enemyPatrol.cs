@@ -27,7 +27,7 @@ public class enemyPatrol : MonoBehaviour
 
     private GameObject player;
     
-    private float lifes;
+    public float lifes;
     [HideInInspector] public bool isDying;
     float fade;
     public Material mat;
@@ -50,7 +50,6 @@ public class enemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(patrolSpeed);
         float dist = Vector3.Distance(player.transform.position, transform.position);
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
         changeDirection();

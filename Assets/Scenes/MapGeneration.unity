@@ -3179,7 +3179,12 @@ PrefabInstance:
     - target: {fileID: 428050275873865749, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 428050275873865749, guid: f38d8a269961fec4ab26cbc29bb6bc87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 428050275873865754, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
@@ -3194,7 +3199,7 @@ PrefabInstance:
     - target: {fileID: 428050275873865754, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 428050275873865754, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
@@ -54163,7 +54168,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bulletPacman
       value: 
-      objectReference: {fileID: 2960310769449781454, guid: 8f9307fb6cc9b2d4890354f4972e70bf,
+      objectReference: {fileID: 6510735618960470853, guid: cdd3e01b4df30194faeab5243f056ffd,
         type: 3}
     - target: {fileID: 2139695245497715824, guid: 854803d8ac768c64db3a2bbd3205a7a5,
         type: 3}

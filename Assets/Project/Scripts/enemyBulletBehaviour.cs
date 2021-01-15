@@ -81,9 +81,10 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "RedEnemy"
          && other.gameObject.tag != "NPC"
          && other.gameObject.tag != "greyPlatform"
-         && other.gameObject.tag != "Triggers")
+         && other.gameObject.tag != "Triggers"
+         && other.gameObject.tag != "RobotPatrol")
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         else if (other.gameObject.tag == "AlienWall")
         {

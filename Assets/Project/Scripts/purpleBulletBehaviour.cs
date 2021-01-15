@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class purpleBulletBehaviour : MonoBehaviour {
     private GameObject effect;
+    private float bulletForce = 5f;
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
@@ -20,7 +21,16 @@ public class purpleBulletBehaviour : MonoBehaviour {
         {
             Destroy (this.gameObject);
             effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
-            popUpDamage(1f);
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
+        }
+        if (other.gameObject.CompareTag("RobotPatrol"))
+        {
+            other.gameObject.GetComponent<enemyPatrol>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
         }
 
         Destroy (effect, 0.5f); // Eliminamos la explosión de la bala.

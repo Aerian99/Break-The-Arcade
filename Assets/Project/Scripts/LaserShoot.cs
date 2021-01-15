@@ -29,6 +29,7 @@ public class LaserShoot : MonoBehaviour
     public GameObject noAmmoText;
     
     public GameObject hitDamagePopUp;
+    private float bulletForce = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -146,10 +147,17 @@ public class LaserShoot : MonoBehaviour
 
         if (hit)
         {
-            if (hit.collider.CompareTag("RobotPatrol") || hit.collider.CompareTag("Enemy"))
+            if (hit.collider.CompareTag("Enemy") && time >= nextFrame)
             {
-                popUpDamage(1f);
+                hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+                popUpDamage(bulletForce, hit);
             }
+            if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<enemyPatrol>().lifes -= bulletForce;
+                popUpDamage(bulletForce, hit);
+            }
+            
             if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {
                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
@@ -254,9 +262,9 @@ public class LaserShoot : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         DisableLaser();
     }
-    void popUpDamage(float hitdamage)
+    void popUpDamage(float hitdamage, RaycastHit2D hit2D)
     {
-        GameObject dmg = Instantiate(hitDamagePopUp, transform.position, Quaternion.identity);
+        GameObject dmg = Instantiate(hitDamagePopUp, new Vector3(hit2D.collider.transform.position.x, hit2D.collider.transform.position.y, -0.15f), Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 }

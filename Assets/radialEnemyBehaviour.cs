@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class radialEnemyBehaviour : MonoBehaviour
 {
-    private float lifes;
+    public float lifes;
     [HideInInspector] public bool isDying;
     float fade;
     public Material mat;
@@ -23,6 +23,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (lifes < 0f)
         {
+            gameObject.GetComponent<radialEnemyShoot>().enabled = false;
             Dead();
         }
     }
@@ -31,7 +32,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            lifes -= 10f;
+            //lifes -= 10f;
         }
     }
     void Dead()
@@ -39,7 +40,6 @@ public class radialEnemyBehaviour : MonoBehaviour
         mat.SetColor("_Color", new Color(0.9960784f, 0.8f, 0.05490196f));
         this.GetComponent<SpriteRenderer>().material = mat;
         isDying = true;
-        //gameObject.GetComponent<FlyingBehaviour>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         gameObject.GetComponent<Collider2D>().enabled = false;
         fade -= Time.deltaTime;
