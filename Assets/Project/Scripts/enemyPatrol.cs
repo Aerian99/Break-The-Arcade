@@ -61,6 +61,7 @@ public class enemyPatrol : MonoBehaviour
             {
                 if (dist < 8f)
                 {
+                    this.GetComponent<Rigidbody2D>().isKinematic = true;
                     if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
                     {
                         Debug.Log("DERECHA");
@@ -82,12 +83,14 @@ public class enemyPatrol : MonoBehaviour
                 else
                 {
                     patrolSpeed = 2f; 
+                    this.GetComponent<Rigidbody2D>().isKinematic = false;
                 }
             }
         }
         
         if (lifes < 0f)
         {
+            anim.SetBool("isRunning", false);
             Dead();
         }
     }
@@ -113,13 +116,11 @@ public class enemyPatrol : MonoBehaviour
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
-                //canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = false;
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                //canvasGO.transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
         }

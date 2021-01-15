@@ -135,3 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffectPrefab: {fileID: 7889928976846493079, guid: e32566cee8c6ae74abfe1d14de6d6e9e,
     type: 3}
+  hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
+    type: 3}

@@ -15,20 +15,18 @@
         <e p="doorSoundsAndEffects.cs" t="Include" />
         <e p="enemyAttack.cs" t="Include" />
         <e p="EnemyShooting.cs" t="Include" />
+        <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
-        <e p="PowerupHealth.cs" t="Include" />
+        <e p="PowerUp.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="MainMenuManager.cs" t="Include" />
           <e p="ProceduralGeneration" t="Include">
             <e p="Scripts" t="Include">
-              <e p="AddRoom.cs" t="Include" />
               <e p="CameraManagment.cs" t="Include" />
-              <e p="RoomSpawner.cs" t="Include" />
-              <e p="RoomTemplates.cs" t="Include" />
             </e>
           </e>
           <e p="Scripts" t="Include">

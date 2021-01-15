@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class purpleBulletBehaviour : MonoBehaviour {
     private GameObject effect;
     public ParticleSystem hitEffectPrefab;
+    public GameObject hitDamagePopUp;
 
     void OnTriggerEnter2D (Collider2D other) {
 
@@ -18,6 +20,7 @@ public class purpleBulletBehaviour : MonoBehaviour {
         {
             Destroy (this.gameObject);
             effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+            popUpDamage(1f);
         }
 
         Destroy (effect, 0.5f); // Eliminamos la explosión de la bala.
@@ -26,5 +29,11 @@ public class purpleBulletBehaviour : MonoBehaviour {
     void OnDestroy () {
         effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
         Destroy (effect, 0.5f);
+    }
+    
+    void popUpDamage(float hitdamage)
+    {
+        GameObject dmg = Instantiate(hitDamagePopUp, transform.position, Quaternion.identity);
+        dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 }
