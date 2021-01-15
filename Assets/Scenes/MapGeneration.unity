@@ -2257,6 +2257,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &358730457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2399,6 +2400,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &362245379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2437,6 +2439,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 52079c79c4c863441ac30761a704102d, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 52079c79c4c863441ac30761a704102d, type: 2}
+  - {fileID: 7400000, guid: 92d6fcf941c96ac40b8473749a48f912, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3103,6 +3106,7 @@ MonoBehaviour:
   ammo: {fileID: -1803420068931504301, guid: 6642f718e63b53549a7472b96c5f1cfc, type: 3}
   inmunity: {fileID: -1232036199622600660, guid: 6642f718e63b53549a7472b96c5f1cfc,
     type: 3}
+  reloadText: {fileID: 1237667768}
 --- !u!61 &739006152
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32284,6 +32288,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1237667768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031425252392873347, guid: 8ee25312c1f9aab47a75999773644a8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 147209813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239039163
 GameObject:
   m_ObjectHideFlags: 0
