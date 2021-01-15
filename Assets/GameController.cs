@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     float cdAbsorb, maxcdAbsorb;
     [HideInInspector]public bool activatedAbsorb;
-    GameObject[] robotPatrols;
+    GameObject[] robotPatrols, radialEnemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +21,13 @@ public class GameController : MonoBehaviour
     {
         if(activatedAbsorb)
         {
+            radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");
             robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
             for (int i = 0; i < robotPatrols.Length; i++)
             {
                 robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 6f;
                 robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", true);
+                radialEnemies[i].GetComponent<Animator>().SetBool("disabled", true);
             }
 
             if (cdAbsorb <= 0)
@@ -43,9 +45,11 @@ public class GameController : MonoBehaviour
 
     void deactivateEnemyStates()
     {
+        radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");
         robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
         for (int i = 0; i < robotPatrols.Length; i++)
         {
+            radialEnemies[i].GetComponent<Animator>().SetBool("disabled", false);
             robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", false);
             robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 2f;
         }

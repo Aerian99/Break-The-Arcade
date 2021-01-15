@@ -7,9 +7,10 @@ public class PowerUp : MonoBehaviour
     public Sprite health, ammo, inmunity;
     int randomObject;
     public GameObject reloadText;
-
+    Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     private void Start()
     {
+        _interpolator.ToMax();
         randomObject = Random.Range(1, 4);
         if (randomObject == 1) //health
         {
@@ -23,6 +24,18 @@ public class PowerUp : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().sprite = inmunity;
         }
+    }
+
+    private void Update()
+    {
+        _interpolator.Update(Time.deltaTime);
+
+        if(_interpolator.IsMaxPrecise)
+            _interpolator.ToMin();
+        else if (_interpolator.IsMinPrecise)
+            _interpolator.ToMax();
+
+        this.transform.position = 2 * Vector3.up * _interpolator.Value + Vector3.down;
     }
 
     // Start is called before the first frame update

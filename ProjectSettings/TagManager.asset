@@ -35,6 +35,7 @@ TagManager:
   - PlatformController
   - RobotPatrol
   - gameController
+  - AnimationLight
   layers:
   - Default
   - TransparentFX
