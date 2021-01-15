@@ -2783,7 +2783,7 @@ PrefabInstance:
     - target: {fileID: 4146784200079130822, guid: 73442b9279d6b714ea3123891dcb131f,
         type: 3}
       propertyPath: m_TagString
-      value: RobotPatrol
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 49394635, guid: 73442b9279d6b714ea3123891dcb131f, type: 3}
@@ -3319,6 +3319,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704080888}
     m_Modifications:
+    - target: {fileID: 741874894, guid: f38d8a269961fec4ab26cbc29bb6bc87, type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,
+        type: 3}
     - target: {fileID: 428050275873865748, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
       propertyPath: burstSpeed
@@ -44954,6 +44959,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704080888}
     m_Modifications:
+    - target: {fileID: 741874894, guid: f38d8a269961fec4ab26cbc29bb6bc87, type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,
+        type: 3}
     - target: {fileID: 428050275873865748, guid: f38d8a269961fec4ab26cbc29bb6bc87,
         type: 3}
       propertyPath: burstSpeed
@@ -68798,7 +68808,7 @@ PrefabInstance:
     - target: {fileID: 7614279702148924364, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.9491
+      value: 205.94907
       objectReference: {fileID: 0}
     - target: {fileID: 7614279702688529897, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
