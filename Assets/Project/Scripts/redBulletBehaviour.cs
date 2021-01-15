@@ -25,8 +25,11 @@ public class redBulletBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
             effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+        }
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("RobotPatrol"))
+        {
             popUpDamage(1f);
-        } 
+        }
         Destroy(effect, 0.5f); // Eliminamos la explosión de la bala.
     }
     

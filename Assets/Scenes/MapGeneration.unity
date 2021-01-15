@@ -763,6 +763,12 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 939126178}
+    - target: {fileID: 9031425252945918268, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: hitDamagePopUp
+      value: 
+      objectReference: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
+        type: 3}
     - target: {fileID: 9031425252986070087, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -54093,6 +54099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704080888}
     m_Modifications:
+    - target: {fileID: 2139695244731412152, guid: 854803d8ac768c64db3a2bbd3205a7a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2139695245497715722, guid: 854803d8ac768c64db3a2bbd3205a7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54163,6 +54174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RobotPatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139695245497715824, guid: 854803d8ac768c64db3a2bbd3205a7a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854803d8ac768c64db3a2bbd3205a7a5, type: 3}
