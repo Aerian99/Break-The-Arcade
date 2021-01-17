@@ -21,8 +21,7 @@ public class playerBehaviour : MonoBehaviour
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
     public float reloadTime;
     public static bool isReloading;
-    public GameObject postProcessingAberration;
-    
+
     public TextMeshProUGUI purpleBulletsCounter;
     public TextMeshProUGUI yellowBulletsCounter;
     public TextMeshProUGUI redBulletsCounter;
@@ -33,7 +32,7 @@ public class playerBehaviour : MonoBehaviour
     
     // HEALTHBAR SETTINGS
     public GameObject defaultBar;
-    public Sprite[] healthbarimages;
+   [HideInInspector] public Sprite[] healthbarimages;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -115,6 +114,7 @@ public class playerBehaviour : MonoBehaviour
     {
         if (activeImmunity)
         {
+            SoundManagerScript.PlaySound("hurt");
             _playerLifes -= 1;
             activePostProcessing = true;
             canBeDamaged = false;
