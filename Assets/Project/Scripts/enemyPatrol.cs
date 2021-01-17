@@ -63,7 +63,6 @@ public class enemyPatrol : MonoBehaviour
                     this.GetComponent<Rigidbody2D>().isKinematic = true;
                     if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
                     {
-                        Debug.Log("DERECHA");
                         Shoot();
                         patrolSpeed = 0f;
                         rb.velocity = Vector2.zero;
@@ -72,7 +71,6 @@ public class enemyPatrol : MonoBehaviour
 
                     if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
                     {
-                        Debug.Log("IZQUIERDA");
                         Shoot();
                         patrolSpeed = 0f;
                         rb.velocity = Vector2.zero;
@@ -90,6 +88,7 @@ public class enemyPatrol : MonoBehaviour
         if (lifes < 0f)
         {
             anim.SetBool("isRunning", false);
+            anim.SetBool("isDead", true);
             Dead();
         }
     }

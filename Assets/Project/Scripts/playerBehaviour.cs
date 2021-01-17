@@ -19,7 +19,7 @@ public class playerBehaviour : MonoBehaviour
 
     [HideInInspector]public bool activePostProcessing;
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
-    private float reloadTime;
+    public float reloadTime;
     public static bool isReloading;
     public GameObject postProcessingAberration;
     
@@ -71,7 +71,7 @@ public class playerBehaviour : MonoBehaviour
         MAX_BULLETS_YELLOW = 20;
         MAX_BULLETS_SHOTGUN = 9;
 
-        reloadTime = 2f;
+        reloadTime = 1f;
         isReloading = false;
         reloadText.SetActive(false);
         reloadScript = GetComponent<reloadScript>();

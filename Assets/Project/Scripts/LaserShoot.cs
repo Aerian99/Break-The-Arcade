@@ -30,6 +30,8 @@ public class LaserShoot : MonoBehaviour
     
     public GameObject hitDamagePopUp;
     private float bulletForce = 5f;
+    
+    public GameObject cursor;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,7 @@ public class LaserShoot : MonoBehaviour
         damage = 3f;
         nextFrame = 0;
         time = 0;
-        period = 0.5f;
+        period = 0.1f;
         maxShoot = 1f;
         canShoot = maxShoot;
         FillLists();
@@ -70,6 +72,7 @@ public class LaserShoot : MonoBehaviour
                 UpdateLaser();
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
+                cursor.GetComponent<Animator>().SetTrigger("click");
             }
 
             if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&

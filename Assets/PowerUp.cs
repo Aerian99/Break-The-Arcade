@@ -56,7 +56,6 @@ public class PowerUp : MonoBehaviour
                 {
                     playerBehaviour._playerLifes += 1;
                 }
-                Debug.Log(playerBehaviour._playerLifes);
             }
             else if (randomObject == 2) //ammo
             {

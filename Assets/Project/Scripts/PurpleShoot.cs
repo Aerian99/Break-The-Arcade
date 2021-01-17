@@ -24,6 +24,8 @@ public class PurpleShoot : MonoBehaviour
     private float timeBetweenShots = 0.30f; // Cadence
     private float timestamp;
 
+    public GameObject cursor;
+
 
     void Start()
     {
@@ -49,6 +51,7 @@ public class PurpleShoot : MonoBehaviour
             SoundManagerScript.PlaySound("purpleGun");
             ScreenShake.shake = 0.5f;
             ScreenShake.canShake = true;
+            cursor.GetComponent<Animator>().SetTrigger("click");
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0 && !playerBehaviour.isReloading)

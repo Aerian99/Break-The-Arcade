@@ -38,7 +38,7 @@ public class reloadScript : MonoBehaviour
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = 2f;
+                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
 
@@ -46,7 +46,7 @@ public class reloadScript : MonoBehaviour
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = 2f;
+                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
 
@@ -54,7 +54,7 @@ public class reloadScript : MonoBehaviour
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = 2f;
+                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
         }
@@ -66,7 +66,7 @@ public class reloadScript : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            fill.fillAmount += 1.0f / waitTime * Time.deltaTime;
+            fill.fillAmount += 1.0f / this.GetComponent<playerBehaviour>().reloadTime * Time.deltaTime;
             perTimer.text = (int) (fill.fillAmount * 100) + "%";
         }
     }

@@ -30,7 +30,6 @@ public class radialEnemyBehaviour : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
             GameObject explosionGO = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(explosionGO, 1.6f);
             Destroy(this.gameObject);
             
         }
@@ -43,19 +42,4 @@ public class radialEnemyBehaviour : MonoBehaviour
             //lifes -= 10f;
         }
     }
-    /*void Dead()
-    {
-        mat.SetColor("_Color", new Color(0.9960784f, 0.8f, 0.05490196f));
-        this.GetComponent<SpriteRenderer>().material = mat;
-        isDying = true;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-        gameObject.GetComponent<Collider2D>().enabled = false;
-        fade -= Time.deltaTime;
-        mat.SetFloat("_Fade", fade);
-        if (fade <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }*/
-    
 }

@@ -46,6 +46,7 @@ public class RedShoot : MonoBehaviour
     private float timestamp;
     public Sprite reloadGun1, reloadGun2, reloadGun3;
 
+    public GameObject cursor;
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -79,6 +80,7 @@ public class RedShoot : MonoBehaviour
             SoundManagerScript.PlaySound("shotgun");
             ScreenShake.shake = 4.5f;
             ScreenShake.canShake = true;
+            cursor.GetComponent<Animator>().SetTrigger("click");
         }
 
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&

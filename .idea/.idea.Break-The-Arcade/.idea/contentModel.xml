@@ -16,6 +16,7 @@
         <e p="enemyAttack.cs" t="Include" />
         <e p="EnemyPatrolRedRobot.cs" t="Include" />
         <e p="EnemyShooting.cs" t="Include" />
+        <e p="explosionEffect.cs" t="Include" />
         <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
@@ -60,6 +61,7 @@
             <e p="handController.cs" t="Include" />
             <e p="handPivot.cs" t="Include" />
             <e p="hitDamagePopUp.cs" t="Include" />
+            <e p="Interpolator.cs" t="Include" />
             <e p="joystickShoot.cs" t="Include" />
             <e p="landCollision.cs" t="Include" />
             <e p="LaserShoot.cs" t="Include" />
