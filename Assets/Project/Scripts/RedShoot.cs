@@ -35,6 +35,9 @@ public class RedShoot : MonoBehaviour
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
 
+    public bool powerUpGreen;
+    public bool powerUpBlue;
+
     public GameObject reloadText;
     public GameObject noAmmoText;
 
@@ -54,12 +57,8 @@ public class RedShoot : MonoBehaviour
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         shootPoint2 = this.gameObject.transform.GetChild(2).gameObject.transform;
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
-        if(SceneManager.GetActiveScene().name == "PowerUpScene")
-        { 
-            shootPoint4 = this.gameObject.transform.GetChild(4).gameObject.transform;
-            shootPoint5 = this.gameObject.transform.GetChild(5).gameObject.transform;
-            shootPoint6 = this.gameObject.transform.GetChild(6).gameObject.transform;
-        }
+        shootPoint4 = this.gameObject.transform.GetChild(4).gameObject.transform;
+        shootPoint5 = this.gameObject.transform.GetChild(5).gameObject.transform;
         player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
         muzzle = particlePoint.GetComponent<ParticleSystem>();
 
@@ -107,29 +106,109 @@ public class RedShoot : MonoBehaviour
             Absorb_Gun.ammoFull2 = true;
         }
         muzzle.Play();
+        if(powerUpGreen)
+        {
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
 
-        bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
+            bullet2 = Instantiate(bulletPrefab, shootPoint2.position, shootPoint2.rotation);
+            Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
+            rb2.AddForce(shootPoint2.right * bulletForce, ForceMode2D.Impulse);
 
-        bullet2 = Instantiate(bulletPrefab, shootPoint2.position, shootPoint2.rotation);
-        Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
-        rb2.AddForce(shootPoint2.right * bulletForce, ForceMode2D.Impulse);
+            bullet3 = Instantiate(bulletPrefab, shootPoint3.position, shootPoint3.rotation);
+            Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
+            rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
 
-        bullet3 = Instantiate(bulletPrefab, shootPoint3.position, shootPoint3.rotation);
-        Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
-        rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
-        timestamp = Time.time + timeBetweenShots;
+            bullet4 = Instantiate(bulletPrefab, shootPoint4.position, shootPoint.rotation);
+            Rigidbody2D rb4 = bullet4.GetComponent<Rigidbody2D>();
+            rb4.AddForce(shootPoint4.right * bulletForce, ForceMode2D.Impulse);
+
+            bullet5 = Instantiate(bulletPrefab, shootPoint5.position, shootPoint.rotation);
+            Rigidbody2D rb5 = bullet5.GetComponent<Rigidbody2D>();
+            rb5.AddForce(shootPoint5.right * bulletForce, ForceMode2D.Impulse);
+            timestamp = Time.time + timeBetweenShots;
+            playerBehaviour.bulletsShotgun--;
+            shotgunJump();
+
+            ReloadBullet();
+
+            Destroy(bullet, bulletLifeTime);
+            Destroy(bullet2, bulletLifeTime);
+            Destroy(bullet3, bulletLifeTime);
+            Destroy(bullet4, bulletLifeTime);
+            Destroy(bullet5, bulletLifeTime);
+
+        }
+        else if(powerUpBlue)
+        {
+            StartCoroutine(ShootBlue());
+        }
+        else
+        {
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
+
+            bullet2 = Instantiate(bulletPrefab, shootPoint2.position, shootPoint2.rotation);
+            Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
+            rb2.AddForce(shootPoint2.right * bulletForce, ForceMode2D.Impulse);
+
+            bullet3 = Instantiate(bulletPrefab, shootPoint3.position, shootPoint3.rotation);
+            Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
+            rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
+            timestamp = Time.time + timeBetweenShots;
+            playerBehaviour.bulletsShotgun--;
+            shotgunJump();
+
+            ReloadBullet();
+            Destroy(bullet, bulletLifeTime);
+            Destroy(bullet2, bulletLifeTime);
+            Destroy(bullet3, bulletLifeTime);
+        }
+       
+    }
+
+    IEnumerator ShootBlue()
+    {
         playerBehaviour.bulletsShotgun--;
+       
+        for (int i = 0; i < 2; i++)
+        {
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletForce, ForceMode2D.Impulse);
 
-        shotgunJump();
+            bullet2 = Instantiate(bulletPrefab, shootPoint2.position, shootPoint2.rotation);
+            Rigidbody2D rb2 = bullet2.GetComponent<Rigidbody2D>();
+            rb2.AddForce(shootPoint2.right * bulletForce, ForceMode2D.Impulse);
 
-        ReloadBullet();
-        
-        Destroy(bullet, bulletLifeTime);
-        Destroy(bullet2, bulletLifeTime);
-        Destroy(bullet3, bulletLifeTime);
-        
+            bullet3 = Instantiate(bulletPrefab, shootPoint3.position, shootPoint3.rotation);
+            Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
+            rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
+
+            bullet4 = Instantiate(bulletPrefab, shootPoint4.position, shootPoint.rotation);
+            Rigidbody2D rb4 = bullet4.GetComponent<Rigidbody2D>();
+            rb4.AddForce(shootPoint4.right * bulletForce, ForceMode2D.Impulse);
+
+            bullet5 = Instantiate(bulletPrefab, shootPoint5.position, shootPoint.rotation);
+            Rigidbody2D rb5 = bullet5.GetComponent<Rigidbody2D>();
+            rb5.AddForce(shootPoint5.right * bulletForce, ForceMode2D.Impulse);
+            timestamp = Time.time + timeBetweenShots;
+
+            ReloadBullet();
+            shotgunJump();
+            Destroy(bullet, bulletLifeTime);
+            Destroy(bullet2, bulletLifeTime);
+            Destroy(bullet3, bulletLifeTime);
+            Destroy(bullet4, bulletLifeTime);
+            Destroy(bullet5, bulletLifeTime);
+            yield return new WaitForSeconds(0.3f);
+        }
+
+       
+
+        yield return new WaitForSeconds(0);
     }
 
     void shotgunJump()
