@@ -155,6 +155,11 @@ public class LaserShoot : MonoBehaviour
                 hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
                 popUpDamage(bulletForce, hit);
             }
+            if (hit.collider.CompareTag("Tower") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<TowerBehaviour>().lifes -= bulletForce;
+                popUpDamage(bulletForce, hit);
+            }
             if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
             {
                 hit.collider.GetComponent<enemyPatrol>().lifes -= bulletForce;

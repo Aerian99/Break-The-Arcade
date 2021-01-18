@@ -45,6 +45,7 @@ public class GrenadeShoot : MonoBehaviour
          && other.gameObject.tag != "EnemyBullet"
          && other.gameObject.tag != "Bullet Pacman"
          && other.gameObject.tag != "Range"
+         && other.gameObject.tag != "Tower"
          && other.gameObject.tag != "CyanEnemy"
          && other.gameObject.tag != "OrangeEnemy"
          && other.gameObject.tag != "RedEnemy"

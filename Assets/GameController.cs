@@ -27,9 +27,12 @@ public class GameController : MonoBehaviour
             {
                 robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 6f;
                 robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", true);
+               
+            }
+            for (int i = 0; i < radialEnemies.Length; i++)
+            {
                 radialEnemies[i].GetComponent<Animator>().SetBool("disabled", true);
             }
-
             if (cdAbsorb <= 0)
             {
                 cdAbsorb = maxcdAbsorb;
@@ -49,9 +52,14 @@ public class GameController : MonoBehaviour
         robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
         for (int i = 0; i < robotPatrols.Length; i++)
         {
-            radialEnemies[i].GetComponent<Animator>().SetBool("disabled", false);
+            
             robotPatrols[i].GetComponent<Animator>().SetBool("absorbed", false);
             robotPatrols[i].GetComponent<enemyPatrol>().patrolSpeed = 2f;
+        }
+
+        for (int i = 0; i < radialEnemies.Length; i++)
+        {
+            radialEnemies[i].GetComponent<Animator>().SetBool("disabled", false);
         }
 
     }

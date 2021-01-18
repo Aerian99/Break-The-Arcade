@@ -30,6 +30,11 @@ public class purpleBulletBehaviour : MonoBehaviour {
             other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
             popUpDamage(bulletForce);
         }
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            other.gameObject.GetComponent<TowerBehaviour>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
+        }
         if (other.gameObject.CompareTag("RobotPatrol"))
         {
             other.gameObject.GetComponent<enemyPatrol>().lifes -= bulletForce;

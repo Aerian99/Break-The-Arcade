@@ -47,11 +47,6 @@ public class towerShoot : MonoBehaviour
             }
 
         }
-
-        if (lifes < 0f)
-        {
-            Dead();
-        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -72,19 +67,19 @@ public class towerShoot : MonoBehaviour
 
     void Dead()
     {
-        mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
-        this.GetComponent<SpriteRenderer>().material = mat;
-        isDying = true;
-        this.GetComponent<Rigidbody2D>().isKinematic = true;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-        gameObject.GetComponent<Collider2D>().enabled = false;
-        fade -= Time.deltaTime;
-        mat.SetFloat("_Fade", fade);
+        //mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
+        //this.GetComponent<SpriteRenderer>().material = mat;
+        //isDying = true;
+        //this.GetComponent<Rigidbody2D>().isKinematic = true;
+        //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        //gameObject.GetComponent<Collider2D>().enabled = false;
+        //fade -= Time.deltaTime;
+        //mat.SetFloat("_Fade", fade);
 
-        if (fade <= 0)
-        {
+        //if (fade <= 0)
+        //{
             Destroy(gameObject);
-        }
+        //}
     }
 }
 
