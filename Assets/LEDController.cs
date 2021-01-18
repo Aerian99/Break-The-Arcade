@@ -8,8 +8,8 @@ public class LEDController : MonoBehaviour
     Color targetColor;
     public Material material;
     float intensity;
-    public GameObject TilemapBordes;
-
+    public static bool isTreasureRoom = false;
+    bool justExitTreasure = false;
     void Update()
     {
         if (ScreenShake.canShake)
@@ -18,22 +18,45 @@ public class LEDController : MonoBehaviour
             targetColor = new Color(Random.value * intensity, Random.value * intensity, Random.value * intensity);
             material.color = targetColor;
         }
-        else 
+        else
         {
-            intensity = Mathf.Pow(2, 1.2f);
-        
-            if (timeLeft <= Time.deltaTime)
+            if (isTreasureRoom)
             {
-                material.color = targetColor;
-
-                targetColor = new Color(Random.value * intensity, Random.value * intensity, Random.value * intensity);
-                timeLeft = 2.0f;
+                intensity = Mathf.Pow(2, 1.5f);
+                if (timeLeft <= Time.deltaTime)
+                {
+                    material.color = targetColor;
+                    targetColor = new Color(1 * intensity, 0.92f * intensity, 0.016f * intensity);
+                    timeLeft = 2.0f;
+                    justExitTreasure = true;
+                }
+                else
+                {
+                    material.color = Color.Lerp(material.color, targetColor, Time.deltaTime / timeLeft);
+                    timeLeft -= Time.deltaTime;
+                }
             }
             else
             {
+                if (justExitTreasure)
+                {
+                    timeLeft = Time.deltaTime;
+                    justExitTreasure = false;
+                }
 
-                material.color = Color.Lerp(material.color, targetColor, Time.deltaTime / timeLeft);
-                timeLeft -= Time.deltaTime;
+                intensity = Mathf.Pow(2, 1.0f);
+
+                if (timeLeft <= Time.deltaTime)
+                {
+                    material.color = targetColor;
+                    targetColor = new Color(Random.value * intensity, Random.value * intensity, Random.value * intensity);
+                    timeLeft = 2.0f;
+                }
+                else
+                {
+                    material.color = Color.Lerp(material.color, targetColor, Time.deltaTime / timeLeft);
+                    timeLeft -= Time.deltaTime;
+                }
             }
         }
 

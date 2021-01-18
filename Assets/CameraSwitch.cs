@@ -10,6 +10,7 @@ public class CameraSwitch : MonoBehaviour
     public GameObject focoR, focoG, focoB;
     Vector3 firstPosR, firstPosG, firstPosB;
     float t;
+    public bool treasureRoom;
 
     private void Start()
     {
@@ -21,6 +22,10 @@ public class CameraSwitch : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (treasureRoom)
+            {
+                LEDController.isTreasureRoom = true;
+            }
             if (!nextRoom)
             {
                 firstPosR = focoR.transform.position;
@@ -39,6 +44,7 @@ public class CameraSwitch : MonoBehaviour
                 focoG.transform.position = Vector3.Lerp(posFocoG, firstPosG, t);
                 focoB.transform.position = Vector3.Lerp(posFocoB, firstPosB, t);
                 nextRoom = false;
+                LEDController.isTreasureRoom = false;
             }
         }
 
