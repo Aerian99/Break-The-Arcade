@@ -13,8 +13,12 @@ public class PowerUpArmas : MonoBehaviour
     {
         _interpolator.ToMax();
         randomArma = Random.Range(0, armas.Count);
-        Debug.Log(randomArma);
-        GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+        if(randomArma == 4)
+            GetComponent<SpriteRenderer>().sprite = armas[6];
+        else if(randomArma == 5)
+            GetComponent<SpriteRenderer>().sprite = armas[7];
+        else
+            GetComponent<SpriteRenderer>().sprite = armas[randomArma];
     }
 
     // Update is called once per frame
@@ -39,9 +43,15 @@ public class PowerUpArmas : MonoBehaviour
             {
                 //Basic Weapon Green
                 case 0:
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().greenPowerUp = true;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bluePowerUp = false;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     break;
                 //Basic Weapon Blue
                 case 1:
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bluePowerUp = true;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().greenPowerUp = false;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     break;
                 //Laser Weapon Green
                 case 2:

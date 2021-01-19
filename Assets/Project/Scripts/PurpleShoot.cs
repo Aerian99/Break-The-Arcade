@@ -17,6 +17,8 @@ public class PurpleShoot : MonoBehaviour
     public GameObject reloadText;
     public GameObject noAmmoText;
 
+     public bool greenPowerUp, bluePowerUp;
+
     //BULLETS
     public static float bulletDamage;
     private float bulletSpeed = 50f; // Speed
@@ -29,6 +31,7 @@ public class PurpleShoot : MonoBehaviour
 
     void Start()
     {
+        greenPowerUp = bluePowerUp = false;
         particlePoint = this.gameObject.transform.GetChild(0).gameObject;
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
@@ -72,18 +75,69 @@ public class PurpleShoot : MonoBehaviour
             Absorb_Gun.firstTimeAbsorb0 = false;
             Absorb_Gun.ammoFull0 = true;
         }
-        muzzle.Play();
-        bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-        timestamp = Time.time + timeBetweenShots;
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+        if (greenPowerUp)
+        {
+            StartCoroutine(shootGreenPowerUp());
+        }
+        else if (bluePowerUp)
+        {
+            StartCoroutine(shootBluePowerUp());
+        }
+        else
+        {
+            muzzle.Play();
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            timestamp = Time.time + timeBetweenShots;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+            playerBehaviour.bulletsPurple--;
+            ReloadBullet();
+
+            Destroy(bullet, bulletLifeTime);
+        }
+    }
+
+    IEnumerator shootGreenPowerUp()
+    {
         playerBehaviour.bulletsPurple--;
-        
-        ReloadBullet();
+
+        for (int i = 0; i < 2; i++)
+        {
+            muzzle.Play();
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            timestamp = Time.time + timeBetweenShots;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+            ReloadBullet();
+            yield return new WaitForSeconds(0.05f);
+        }
+
 
         Destroy(bullet, bulletLifeTime);
+
+        yield return new WaitForSeconds(0);
     }
-    
+
+    IEnumerator shootBluePowerUp()
+    {
+        playerBehaviour.bulletsPurple--;
+
+        for (int i = 0; i < 5; i++)
+        {
+            muzzle.Play();
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            timestamp = Time.time + timeBetweenShots;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+            ReloadBullet();
+            yield return new WaitForSeconds(0.025f);
+        }
+
+
+        Destroy(bullet, bulletLifeTime);
+
+        yield return new WaitForSeconds(0);
+    }
     void ReloadBullet()
     {
         bulletReload = Instantiate(bulletReloadPrefab, this.transform.position, Quaternion.identity);
@@ -112,7 +166,7 @@ public class PurpleShoot : MonoBehaviour
             timestamp = Time.time + timeBetweenShots;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
-        
+
 
             ReloadBullet();
 
