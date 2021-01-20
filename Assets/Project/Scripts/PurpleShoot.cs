@@ -23,7 +23,7 @@ public class PurpleShoot : MonoBehaviour
     public static float bulletDamage;
     private float bulletSpeed = 50f; // Speed
     private float bulletLifeTime = 10f; // Distance
-    private float timeBetweenShots = 0.30f; // Cadence
+    private float timeBetweenShots = 0.20f; // Cadence
     private float timestamp;
 
     public GameObject cursor;
@@ -77,10 +77,20 @@ public class PurpleShoot : MonoBehaviour
         }
         if (greenPowerUp)
         {
-            StartCoroutine(shootGreenPowerUp());
+            timeBetweenShots = 0.10f;
+            muzzle.Play();
+            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            timestamp = Time.time + timeBetweenShots;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
+            playerBehaviour.bulletsPurple--;
+            ReloadBullet();
+
+            Destroy(bullet, bulletLifeTime);
         }
         else if (bluePowerUp)
         {
+            timeBetweenShots = 0.10f;
             StartCoroutine(shootBluePowerUp());
         }
         else
@@ -97,27 +107,6 @@ public class PurpleShoot : MonoBehaviour
         }
     }
 
-    IEnumerator shootGreenPowerUp()
-    {
-        playerBehaviour.bulletsPurple--;
-
-        for (int i = 0; i < 2; i++)
-        {
-            muzzle.Play();
-            bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-            timestamp = Time.time + timeBetweenShots;
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
-            ReloadBullet();
-            yield return new WaitForSeconds(0.05f);
-        }
-
-
-        Destroy(bullet, bulletLifeTime);
-
-        yield return new WaitForSeconds(0);
-    }
-
     IEnumerator shootBluePowerUp()
     {
         playerBehaviour.bulletsPurple--;
@@ -130,7 +119,7 @@ public class PurpleShoot : MonoBehaviour
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
             ReloadBullet();
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSeconds(0.02f);
         }
 
 
