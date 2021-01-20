@@ -6,11 +6,14 @@ public class AlienController : MonoBehaviour
 {
     private float cd, maxCd, speed;
     private bool justActive;
+    public GameObject[] spriteEnemies;
+    int tempSize;
     private void Start()
     {
         speed = 2f;
         maxCd = 1f;
         cd = maxCd;
+        tempSize = spriteEnemies.Length;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -22,6 +25,11 @@ public class AlienController : MonoBehaviour
         if (this.gameObject.transform.childCount == 0)
         {
             CameraScene.allEnemiesDefeat = true;
+        }
+        if (tempSize > this.gameObject.transform.childCount)
+        {
+            spriteEnemies[tempSize - 1].SetActive(false);
+            tempSize--;
         }
     }
 
