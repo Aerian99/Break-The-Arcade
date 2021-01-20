@@ -12,7 +12,7 @@ public class PowerUpArmas : MonoBehaviour
     void Start()
     {
         _interpolator.ToMax();
-        randomArma = Random.Range(0, armas.Count);
+        randomArma = Random.Range(0, 6);
         if(randomArma == 4)
             GetComponent<SpriteRenderer>().sprite = armas[6];
         else if(randomArma == 5)
@@ -55,23 +55,27 @@ public class PowerUpArmas : MonoBehaviour
                     break;
                 //Laser Weapon Green
                 case 2:
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<LaserShoot>().bulletForce = 8;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 1 * 4.5f, 0));
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     break;
                 //Laser Weapon Blue
                 case 3:
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<LaserShoot>().bulletForce = 15;
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 0, 1 * 4.5f));
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     break;
                 //Shotgun Weapon Green
                 case 4:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpGreen = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpBlue = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
-                    Debug.Log("Escopeta ve");
                     break;
                 //Shotgun Weapon Blue
                 case 5:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpBlue = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpGreen = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
-                    Debug.Log("Escopeta ro");
                     break;
                 default:
                     break;

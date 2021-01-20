@@ -29,7 +29,7 @@ public class LaserShoot : MonoBehaviour
     public GameObject noAmmoText;
     
     public GameObject hitDamagePopUp;
-    private float bulletForce = 5f;
+    [HideInInspector]public float bulletForce = 5f;
     
     public GameObject cursor;
 
