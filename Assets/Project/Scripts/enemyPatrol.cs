@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class enemyPatrol : MonoBehaviour
 {
-    [HideInInspector]public float patrolSpeed;
+    [HideInInspector] public float patrolSpeed;
     private float patrolDistance;
     private Rigidbody2D rb;
     private GameObject canvasGO;
@@ -13,6 +13,7 @@ public class enemyPatrol : MonoBehaviour
     private bool movingRight = true;
     public Transform groundDetecion;
     private Animator anim;
+    private LayerMask platformLayer;
 
     private Vector2 vecDir;
 
@@ -26,7 +27,7 @@ public class enemyPatrol : MonoBehaviour
     private float shootForce = 15f;
 
     private GameObject player;
-    
+
     public float lifes;
     [HideInInspector] public bool isDying;
     float fade;
@@ -41,7 +42,8 @@ public class enemyPatrol : MonoBehaviour
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        
+        platformLayer = LayerMask.NameToLayer("Platforms");
+
         lifes = 50f;
         fade = 1;
         isDying = false;
@@ -54,8 +56,8 @@ public class enemyPatrol : MonoBehaviour
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
         changeDirection();
         triggerDetection();
-        if(!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
-        { 
+        if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
+        {
             if (Time.time > NextTimeToFire)
             {
                 if (dist < 8f)
@@ -79,12 +81,12 @@ public class enemyPatrol : MonoBehaviour
                 }
                 else
                 {
-                    patrolSpeed = 2f; 
+                    patrolSpeed = 2f;
                     this.GetComponent<Rigidbody2D>().isKinematic = false;
                 }
             }
         }
-        
+
         if (lifes < 0f)
         {
             anim.SetBool("isRunning", false);
@@ -139,9 +141,9 @@ public class enemyPatrol : MonoBehaviour
 
     void Shoot()
     {
-        int rand = Random.Range(0,100);
+        int rand = Random.Range(0, 100);
 
-        if(rand < 30)
+        if (rand < 30)
         {
             bulletGO = Instantiate(bulletPacman, this.transform.position, Quaternion.identity);
         }
@@ -149,10 +151,11 @@ public class enemyPatrol : MonoBehaviour
         {
             bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
         }
+
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
     }
-    
+
     void Dead()
     {
         mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
@@ -163,7 +166,7 @@ public class enemyPatrol : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
         fade -= Time.deltaTime;
         mat.SetFloat("_Fade", fade);
-        
+
         if (fade <= 0)
         {
             Destroy(gameObject);

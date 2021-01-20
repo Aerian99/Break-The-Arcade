@@ -24,6 +24,7 @@
         <e p="ParabolEnemy.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
         <e p="PowerUp.cs" t="Include" />
+        <e p="PowerUpArmas.cs" t="Include" />
         <e p="Project" t="Include">
           <e p="MainMenuManager.cs" t="Include" />
           <e p="ProceduralGeneration" t="Include">
@@ -38,6 +39,7 @@
             <e p="AlienBehaviour.cs" t="Include" />
             <e p="AlienController.cs" t="Include" />
             <e p="AlienMovement.cs" t="Include" />
+            <e p="BossPhaseBehaviour.cs" t="Include" />
             <e p="boxMovement.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
             <e p="CameraScene.cs" t="Include" />
@@ -135,7 +137,10 @@
         <e p="radialEnemyShoot.cs" t="Include" />
         <e p="redGunReloader.cs" t="Include" />
         <e p="reloadScript.cs" t="Include" />
+        <e p="SpaceInvadersTrigger.cs" t="Include" />
+        <e p="TowerBehaviour.cs" t="Include" />
         <e p="towerShoot.cs" t="Include" />
+        <e p="triggerZone_1.cs" t="Include" />
         <e p="VanishPlatform.cs" t="Include" />
         <e p="yellowGunReloader.cs" t="Include" />
       </e>

@@ -15,6 +15,6 @@ public class hitDamagePopUp : MonoBehaviour
 
     public void Die()
     {
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
