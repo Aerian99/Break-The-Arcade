@@ -19,7 +19,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 250;
+        speed = 750;
         EnemyRB = GetComponent<Rigidbody2D>();
         health = maxHealth = 1000;
         phase = Phases.INITPHASE;
@@ -100,19 +100,21 @@ public class BossPhaseBehaviour : MonoBehaviour
                 //Shoot
 
 
-
+                yield return new WaitForSeconds(5);
             }else if(phase == Phases.PHASE2)
             {
-                speed = 500f;
+                speed = 1000;
                 //Shoot
 
-
-            }else if(phase == Phases.PHASE3)
+                yield return new WaitForSeconds(2.5f);
+            }
+            else if(phase == Phases.PHASE3)
             {
                 //Shoot
-                speed = 1000f;
+                //Shoot
+                speed = 1250;
 
-
+                yield return new WaitForSeconds(1.5f);
             }
 
         }
