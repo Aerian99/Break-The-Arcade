@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bordes
-  m_Shader: {fileID: -6465566751694194690, guid: e50601c264ac4564c8924b0c7eb7e444,
+  m_Name: KillThemAll
+  m_Shader: {fileID: -6465566751694194690, guid: f36fb4d97fedbd249821ffbad964af93,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1.5736607, g: 1.429897, b: 0.642075, a: 1}
+    - Color_86658F71: {r: 1.0580297, g: 0, b: 0.75488627, a: 0}
