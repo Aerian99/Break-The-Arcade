@@ -32,7 +32,7 @@ public class playerBehaviour : MonoBehaviour
     
     // HEALTHBAR SETTINGS
     public GameObject defaultBar;
-   [HideInInspector] public Sprite[] healthbarimages;
+    public Sprite[] healthbarimages;
 
     public GameObject deathEffect;
     private GameObject reloadText;
@@ -51,7 +51,7 @@ public class playerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
         //_playerLifes = _maxLifes;
-        _playerLifes = 6;
+        _playerLifes = 3;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
@@ -221,6 +221,7 @@ public class playerBehaviour : MonoBehaviour
             StopAllCoroutines();
             isReloading = false;
         }
+        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 
     void healthBarEffect()
@@ -239,7 +240,7 @@ public class playerBehaviour : MonoBehaviour
 
     void healthBarPixel()
     {
-        for (int i = 0; i <= 6; i++)
+        for (int i = 0; i <= 3; i++)
         {
             if (_playerLifes == i)
             {

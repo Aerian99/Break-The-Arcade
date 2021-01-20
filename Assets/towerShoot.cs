@@ -62,7 +62,6 @@ public class towerShoot : MonoBehaviour
         bulletGO = Instantiate(bulletPrefab, firePoint.position, transform.rotation);
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.up * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
-        Debug.Log("HELLOW");
     }
 
     void Dead()
