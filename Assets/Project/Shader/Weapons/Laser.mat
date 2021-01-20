@@ -25,5 +25,7 @@ Material:
     - Vector1_4F772239: 30
     - Vector1_E3592CE4: 10
     m_Colors:
+    - Color_: {r: 6.964404, g: 4.72487, b: 0, a: 1}
     - Color_7CC594E: {r: 6.8831816, g: 4.684888, b: 0, a: 1}
     - Vector2_DA5E38AA: {r: 4, g: 0, b: 0, a: 0}
+    - _Color: {r: 5.2164755, g: 4.397134, b: 0, a: 1}
