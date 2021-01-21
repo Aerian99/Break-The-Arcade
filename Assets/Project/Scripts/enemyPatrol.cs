@@ -92,6 +92,7 @@ public class enemyPatrol : MonoBehaviour
             anim.SetBool("isRunning", false);
             anim.SetBool("isDead", true);
             Dead();
+            //SoundManagerScript.PlaySound("robotDeath");
         }
     }
 

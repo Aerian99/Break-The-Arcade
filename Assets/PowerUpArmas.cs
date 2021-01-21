@@ -10,7 +10,13 @@ public class PowerUpArmas : MonoBehaviour
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     Vector3 _position;
 
-    public GameObject defaultGun, laserGun, shootGun;
+    [HideInInspector]public GameObject defaultGun, laserGun, shootGun;
+    public GameObject defaultGunBullet, shootGunBullet;
+    public Sprite defaultBulletGreen, defaultBulletBlue, shootGunBulletGreen, shootGunBulletBlue;
+    public Material defaultMatGreenBullet, defaultMatBlueBullet, shootGunMatGreenBullet, shootGunMatBlueBullet;
+    public ParticleSystem defaultGreenHit, defaultBlueHit, shootGunGreenHit, shootGunBlueHit;  
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,9 @@ public class PowerUpArmas : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = armas[7];
         else
             GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+        
+        // RESETEAMOS LOS SPRITES Y LAS POWERUPS
+        
     }
 
     // Update is called once per frame
@@ -50,48 +59,91 @@ public class PowerUpArmas : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().greenPowerUp = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bluePowerUp = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
                     defaultGun.GetComponent<Image>().sprite = armas[randomArma];
+                    defaultGunBullet.GetComponent<SpriteRenderer>().sprite = defaultBulletGreen;
+                    defaultGunBullet.GetComponent<SpriteRenderer>().material = defaultMatGreenBullet;
+                    defaultGunBullet.GetComponent<purpleBulletBehaviour>().hitEffectPrefab = defaultGreenHit;
                     break;
+                
                 //Basic Weapon Blue
                 case 1:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bluePowerUp = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().greenPowerUp = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
                     defaultGun.GetComponent<Image>().sprite = armas[randomArma];
+                    defaultGunBullet.GetComponent<SpriteRenderer>().sprite = defaultBulletBlue;
+                    defaultGunBullet.GetComponent<SpriteRenderer>().material = defaultMatBlueBullet;
+                    defaultGunBullet.GetComponent<purpleBulletBehaviour>().hitEffectPrefab = defaultBlueHit;
                     break;
+                
                 //Laser Weapon Green
                 case 2:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<LaserShoot>().bulletForce = 8;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 1 * 4.5f, 0));
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    // START VFX
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(1).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(1).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+                    // END VFX
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(2).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+                    
                     laserGun.GetComponent<Image>().sprite = armas[randomArma];
                     break;
+                
                 //Laser Weapon Blue
                 case 3:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<LaserShoot>().bulletForce = 15;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 0, 1 * 4.5f));
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    
+                    // START VFX
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(1).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(1).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+                    // END VFX
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(2).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
+                        .GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+                    
                     laserGun.GetComponent<Image>().sprite = armas[randomArma];
                     break;
+                
                 //Shotgun Weapon Green
                 case 4:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpGreen = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpBlue = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
                     shootGun.GetComponent<Image>().sprite = armas[randomArma];
+                    shootGunBullet.GetComponent<SpriteRenderer>().sprite = shootGunBulletGreen;
+                    shootGunBullet.GetComponent<SpriteRenderer>().material = shootGunMatGreenBullet;
+                    shootGunBullet.GetComponent<redBulletBehaviour>().hitEffectPrefab = shootGunGreenHit;
                     break;
+                
                 //Shotgun Weapon Blue
                 case 5:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpBlue = true;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpGreen = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<SpriteRenderer>().sprite = armas[randomArma];
+                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
                     shootGun.GetComponent<Image>().sprite = armas[randomArma];
+                    shootGunBullet.GetComponent<SpriteRenderer>().sprite = shootGunBulletBlue;
+                    shootGunBullet.GetComponent<SpriteRenderer>().material = shootGunMatBlueBullet;
+                    shootGunBullet.GetComponent<redBulletBehaviour>().hitEffectPrefab = shootGunBlueHit;
                     break;
                 default:
                     break;
             }
             Destroy(gameObject);
-
         }
     }
 }

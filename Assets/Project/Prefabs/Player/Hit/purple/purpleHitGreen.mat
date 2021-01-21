@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 326f60c8acfa18449ab67614b3dcb8b7,
+  m_Name: purpleHitGreen
+  m_Shader: {fileID: -6465566751694194690, guid: ef5e119979aa27746820a2dc0e164e89,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -21,12 +21,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fe0a1a2dc849bdd4abae5ac091c68738, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Fade: -0.003716867
-    - _Scale: 20
+    - _emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
     m_Colors:
-    - Color_81FB96CE: {r: 0.0051208856, g: 0.0358462, b: 0.3174949, a: 1}
-    - _Color: {r: 0.1294118, g: 0.5921569, b: 0.8039216, a: 1}
+    - Color_639D7A91: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.9474042, g: 11.984314, b: 0.43921584, a: 0}

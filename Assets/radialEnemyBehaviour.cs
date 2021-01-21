@@ -31,15 +31,15 @@ public class radialEnemyBehaviour : MonoBehaviour
             //Dead();
             GameObject explosionGO = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            
+            SoundManagerScript.PlaySound("radialEnemyDeath");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
         {
-            //lifes -= 10f;
+            //SoundManagerScript.PlaySound("radialEnemyHurt");
         }
     }
 }

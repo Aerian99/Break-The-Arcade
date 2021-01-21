@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8984649988707077970}
   - component: {fileID: 7736592705857734469}
   m_Layer: 0
-  m_Name: purpleHit
+  m_Name: purpleHitGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.25490198, g: 0.07450981, b: 0.52156866, a: 1}
-      maxColor: {r: 0.5411765, g: 0, b: 1, a: 1}
+      minColor: {r: 0.7316972, g: 0.9150943, b: 0.4963955, a: 1}
+      maxColor: {r: 0.1127305, g: 1, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4767,7 +4767,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b13e911e2c84d1479cd2be7ec09a9b1, type: 2}
+  - {fileID: 2100000, guid: 22b0737d5f1c0524ba1a6ee9f59c533f, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

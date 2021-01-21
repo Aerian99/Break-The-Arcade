@@ -20,6 +20,7 @@ public class radialEnemyShoot : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Shooting());
+        SoundManagerScript.PlaySound("radialShoot");
     }
 
 

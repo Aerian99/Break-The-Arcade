@@ -926,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 9031425252027712178, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9031425252027712190, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -1045,6 +1045,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9031425252231014492, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a02bafa33779c640affd1104bcce77e, type: 2}
     - target: {fileID: 9031425252261454560, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_Layer
@@ -1095,6 +1100,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9031425252509091627, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ff8bd592a0f86441a988d0e3c8bc5ff, type: 2}
     - target: {fileID: 9031425252552577329, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4864,6 +4874,23 @@ MonoBehaviour:
   defaultGun: {fileID: 860573590}
   laserGun: {fileID: 1395369953}
   shootGun: {fileID: 2071436716}
+  defaultGunBullet: {fileID: 360201818050159677, guid: 1428134fe8d95b44c97c5fad6bd6de06,
+    type: 3}
+  shootGunBullet: {fileID: 5986094977469769210, guid: 93bb4e9270d485243a211c5ae2f91a56,
+    type: 3}
+  defaultBulletGreen: {fileID: 21300000, guid: ed98b0167082e8b4f8989b9865739e22, type: 3}
+  defaultBulletBlue: {fileID: 21300000, guid: 4dae7264953e9c949b8bb2467a220b19, type: 3}
+  shootGunBulletGreen: {fileID: 21300000, guid: ba29cbbd7b1f73e499d31a595b55e9c8,
+    type: 3}
+  shootGunBulletBlue: {fileID: 21300000, guid: 4a5134b832ed0be43b22306a93b79e02, type: 3}
+  defaultMatGreenBullet: {fileID: 2100000, guid: 554e6b0f5b6b58b40b70f4b52d2abcfb,
+    type: 2}
+  defaultMatBlueBullet: {fileID: 2100000, guid: 96bc25deda9fb3a408865cc853473015,
+    type: 2}
+  shootGunMatGreenBullet: {fileID: 2100000, guid: b0d79951c3514914485ba203a1ea3d20,
+    type: 2}
+  shootGunMatBlueBullet: {fileID: 2100000, guid: d818f8ec82c2ea2468e8107003ed828f,
+    type: 2}
 --- !u!4 &518224395
 Transform:
   m_ObjectHideFlags: 0

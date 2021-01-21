@@ -21,7 +21,11 @@ public class SoundManagerScript : MonoBehaviour
         absorbSound,
         absorbBlip,
         hurt,
-        powerup;
+        powerup,
+        radialEnemyHurt,
+        radialEnemyDeath,
+        robotDeath,
+        radialShoot;
 
     public static AudioSource audioSrc;
 
@@ -45,6 +49,10 @@ public class SoundManagerScript : MonoBehaviour
         absorbBlip = Resources.Load<AudioClip>("absorbBlip");
         hurt = Resources.Load<AudioClip>("hurt");
         powerup = Resources.Load<AudioClip>("powerup");
+        radialEnemyHurt = Resources.Load<AudioClip>("radialEnemyHurt");
+        radialEnemyDeath = Resources.Load<AudioClip>("radialEnemyDeath");
+        robotDeath = Resources.Load<AudioClip>("robotDeath");
+        radialShoot = Resources.Load<AudioClip>("radialShoot");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -107,6 +115,18 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "powerup":
                 audioSrc.PlayOneShot(powerup);
+                break;
+            case "radialEnemyHurt":
+                audioSrc.PlayOneShot(radialEnemyHurt);
+                break;
+            case "radialEnemyDeath":
+                audioSrc.PlayOneShot(radialEnemyDeath);
+                break;
+            case "robotDeath":
+                audioSrc.PlayOneShot(robotDeath);
+                break;
+            case "radialShoot":
+                audioSrc.PlayOneShot(radialShoot);
                 break;
             default:
                 break;

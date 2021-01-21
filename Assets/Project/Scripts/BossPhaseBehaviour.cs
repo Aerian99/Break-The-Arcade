@@ -173,8 +173,7 @@ public class BossPhaseBehaviour : MonoBehaviour
 
             Vector3 bulletVector = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
             Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
-
-            Debug.Log(bulletMoveDirection);
+            
             bulletGO = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
 
             bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
