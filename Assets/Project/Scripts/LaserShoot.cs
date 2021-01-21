@@ -165,6 +165,10 @@ public class LaserShoot : MonoBehaviour
                 hit.collider.GetComponent<enemyPatrol>().lifes -= bulletForce;
                 popUpDamage(bulletForce, hit);
             }
+            if (hit.collider.CompareTag("Barriles") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<barrilScript>().lifes--;
+            }
             
             if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
             {

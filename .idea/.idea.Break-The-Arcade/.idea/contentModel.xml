@@ -8,6 +8,8 @@
       <e p="Assets" t="Include">
         <e p="ActivateDash.cs" t="Include" />
         <e p="ActivateEnemy.cs" t="Include" />
+        <e p="ammoBoxScript.cs" t="Include" />
+        <e p="barrilScript.cs" t="Include" />
         <e p="BullerParabola.cs" t="Include" />
         <e p="CameraSwitch.cs" t="Include" />
         <e p="CyanShoot.cs" t="Include" />

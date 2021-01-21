@@ -125,9 +125,6 @@ public class SoundManagerScript : MonoBehaviour
             case "robotDeath":
                 audioSrc.PlayOneShot(robotDeath);
                 break;
-            case "radialShoot":
-                audioSrc.PlayOneShot(radialShoot);
-                break;
             default:
                 break;
         }

@@ -221,7 +221,6 @@ public class playerBehaviour : MonoBehaviour
             StopAllCoroutines();
             isReloading = false;
         }
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
     }
 
     void healthBarEffect()
