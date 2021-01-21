@@ -29287,6 +29287,9 @@ MonoBehaviour:
   endVFX: {fileID: 9031425252067355308}
   reloadText: {fileID: 9031425252392873347}
   noAmmoText: {fileID: 9031425253124139747}
+  hitDamagePopUp: {fileID: 0}
+  bulletForce: 5
+  cursor: {fileID: 0}
 --- !u!1 &9031425252986070105
 GameObject:
   m_ObjectHideFlags: 0
@@ -34418,6 +34421,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   p_sprite: {fileID: 0}
+  dashCooldown: 0
+  dashUp: 0
+  dashDiagonal: 0
+  canDash: 0
+  stopTimer: 0
   dashImage: {fileID: 0}
   aud: {fileID: 0}
 --- !u!114 &9031425252051455018
@@ -34433,12 +34441,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePostProcessing: 0
-  postProcessingAberration: {fileID: 0}
-  lifes: {fileID: 0}
+  reloadTime: 0
   purpleBulletsCounter: {fileID: 0}
   yellowBulletsCounter: {fileID: 0}
   redBulletsCounter: {fileID: 0}
   healthBarFill: {fileID: 0}
+  healthBarWhiteFill: {fileID: 0}
+  defaultBar: {fileID: 0}
+  healthbarimages: []
   deathEffect: {fileID: 7789471876716411603, guid: ad9bc398b7dc97a41a4acf39a8534d6e,
     type: 3}
 --- !u!114 &9031425253701463737
