@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bordes
-  m_Shader: {fileID: -6465566751694194690, guid: e50601c264ac4564c8924b0c7eb7e444,
+  m_Name: alienMat
+  m_Shader: {fileID: -6465566751694194690, guid: dcefe9ca6be2b7240a0ad94e0257efa7,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.6773801, g: 0.16087021, b: 0.37302083, a: 0.44380414}
+    - Color_956B2B2E: {r: 4.237095, g: 0.13310245, b: 2.4180279, a: 0}
