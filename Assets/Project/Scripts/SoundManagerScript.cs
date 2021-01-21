@@ -20,7 +20,8 @@ public class SoundManagerScript : MonoBehaviour
         footStep,
         absorbSound,
         absorbBlip,
-        hurt;
+        hurt,
+        powerup;
 
     public static AudioSource audioSrc;
 
@@ -43,6 +44,7 @@ public class SoundManagerScript : MonoBehaviour
         absorbSound = Resources.Load<AudioClip>("absorbSound");
         absorbBlip = Resources.Load<AudioClip>("absorbBlip");
         hurt = Resources.Load<AudioClip>("hurt");
+        powerup = Resources.Load<AudioClip>("powerup");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -102,6 +104,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "hurt":
                 audioSrc.PlayOneShot(hurt);
+                break;
+            case "powerup":
+                audioSrc.PlayOneShot(powerup);
                 break;
             default:
                 break;

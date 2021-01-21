@@ -42,6 +42,7 @@ public class PowerUpArmas : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            SoundManagerScript.PlaySound("powerup");
             switch (randomArma)
             {
                 //Basic Weapon Green
