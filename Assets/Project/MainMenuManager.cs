@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("MapGeneration");
     }
 
     public void Exit()
