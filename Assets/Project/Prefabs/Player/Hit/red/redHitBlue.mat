@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: purpleHitBlue
+  m_Name: redHitBlue
   m_Shader: {fileID: -6465566751694194690, guid: ef5e119979aa27746820a2dc0e164e89,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA

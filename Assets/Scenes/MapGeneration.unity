@@ -4891,6 +4891,14 @@ MonoBehaviour:
     type: 2}
   shootGunMatBlueBullet: {fileID: 2100000, guid: d818f8ec82c2ea2468e8107003ed828f,
     type: 2}
+  defaultGreenHit: {fileID: 8984649988707077970, guid: 38f7fbc6541759049a9704da3f346809,
+    type: 3}
+  defaultBlueHit: {fileID: 8984649988707077970, guid: d61283bcdf11d8d4094a7f48b2f0a20a,
+    type: 3}
+  shootGunGreenHit: {fileID: 7889928976846493079, guid: bf5d62607a9d4c741887e71e16964558,
+    type: 3}
+  shootGunBlueHit: {fileID: 7889928976846493079, guid: b8b15e0e4fc8eeb42b750aeff4d20e92,
+    type: 3}
 --- !u!4 &518224395
 Transform:
   m_ObjectHideFlags: 0
@@ -128673,7 +128681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1805693977
 Transform:
   m_ObjectHideFlags: 0
