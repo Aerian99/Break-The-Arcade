@@ -71035,7 +71035,7 @@ PrefabInstance:
     - target: {fileID: 3094068644960924118, guid: 39843037b9ac5004fad5e7d862d05bf7,
         type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3094068644960924121, guid: 39843037b9ac5004fad5e7d862d05bf7,
         type: 3}
@@ -74408,7 +74408,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.8854966, y: -1.3882275}
+  m_Offset: {x: -5.765273, y: -1.3882275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -74419,7 +74419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 36.314236, y: 19.879848}
+  m_Size: {x: 38.07377, y: 19.879848}
   m_EdgeRadius: 0
 --- !u!1 &1273315813
 GameObject:
@@ -136754,7 +136754,7 @@ PrefabInstance:
     - target: {fileID: 7614279702148924364, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.9491
+      value: 205.94907
       objectReference: {fileID: 0}
     - target: {fileID: 7614279702557666386, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
