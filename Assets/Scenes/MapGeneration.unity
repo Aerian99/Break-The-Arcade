@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 6426048}
   m_Layer: 8
   m_Name: RCollider (27)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 30528325}
   m_Layer: 8
   m_Name: RCollider (14)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 130170333}
   m_Layer: 8
   m_Name: RCollider (24)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1624,6 +1624,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425253701463740, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425253701463740, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031425253701463740, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463742, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -2316,7 +2331,7 @@ GameObject:
   - component: {fileID: 217789342}
   m_Layer: 8
   m_Name: RCollider (22)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4709,7 +4724,7 @@ GameObject:
   - component: {fileID: 373306617}
   m_Layer: 8
   m_Name: RCollider (12)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4798,7 +4813,7 @@ GameObject:
   - component: {fileID: 408709386}
   m_Layer: 8
   m_Name: RCollider (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6011,7 +6026,7 @@ GameObject:
   - component: {fileID: 591093244}
   m_Layer: 8
   m_Name: RCollider (30)
-  m_TagString: Wall
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6250,7 +6265,7 @@ GameObject:
   - component: {fileID: 641693988}
   m_Layer: 8
   m_Name: RCollider (19)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6616,7 +6631,7 @@ GameObject:
   - component: {fileID: 685555522}
   m_Layer: 8
   m_Name: RCollider (16)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7331,7 +7346,7 @@ GameObject:
   - component: {fileID: 783980403}
   m_Layer: 14
   m_Name: RCollider (31)
-  m_TagString: Wall
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7744,7 +7759,7 @@ GameObject:
   - component: {fileID: 822334928}
   m_Layer: 8
   m_Name: RCollider (21)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69729,7 +69744,7 @@ GameObject:
   - component: {fileID: 860583055}
   m_Layer: 8
   m_Name: RCollider (23)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71347,7 +71362,7 @@ GameObject:
   - component: {fileID: 1058398900}
   m_Layer: 8
   m_Name: RCollider (11)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72215,7 +72230,7 @@ GameObject:
   - component: {fileID: 1155994598}
   m_Layer: 8
   m_Name: RCollider (13)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74438,7 +74453,7 @@ GameObject:
   - component: {fileID: 1273315815}
   m_Layer: 8
   m_Name: RCollider (25)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126941,7 +126956,7 @@ GameObject:
   - component: {fileID: 1349066911}
   m_Layer: 14
   m_Name: RCollider (29)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128009,7 +128024,7 @@ GameObject:
   - component: {fileID: 1436414187}
   m_Layer: 8
   m_Name: RCollider (26)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128271,7 +128286,7 @@ GameObject:
   - component: {fileID: 1497152685}
   m_Layer: 8
   m_Name: RCollider (17)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129428,7 +129443,7 @@ GameObject:
   - component: {fileID: 1592195785}
   m_Layer: 8
   m_Name: RCollider (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129882,7 +129897,7 @@ GameObject:
   - component: {fileID: 1630859175}
   m_Layer: 8
   m_Name: RCollider (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131090,7 +131105,7 @@ GameObject:
   - component: {fileID: 1724612935}
   m_Layer: 8
   m_Name: RCollider (18)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131147,7 +131162,7 @@ GameObject:
   - component: {fileID: 1719380999}
   m_Layer: 8
   m_Name: RCollider (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131686,7 +131701,7 @@ GameObject:
   - component: {fileID: 1773157301}
   m_Layer: 8
   m_Name: RCollider (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131800,7 +131815,7 @@ GameObject:
   - component: {fileID: 1788182897}
   m_Layer: 8
   m_Name: RCollider (8)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131857,7 +131872,7 @@ GameObject:
   - component: {fileID: 1790210318}
   m_Layer: 8
   m_Name: RCollider (10)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132104,7 +132119,7 @@ GameObject:
   - component: {fileID: 1805959119}
   m_Layer: 8
   m_Name: RCollider (28)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133946,7 +133961,7 @@ GameObject:
   - component: {fileID: 1898628195}
   m_Layer: 8
   m_Name: RCollider (20)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134406,7 +134421,7 @@ GameObject:
   - component: {fileID: 1950386724}
   m_Layer: 8
   m_Name: RCollider (15)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134463,7 +134478,7 @@ GameObject:
   - component: {fileID: 1959768525}
   m_Layer: 8
   m_Name: RCollider (9)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135067,7 +135082,7 @@ GameObject:
   - component: {fileID: 2036618823}
   m_Layer: 8
   m_Name: RCollider (7)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135329,7 +135344,7 @@ GameObject:
   - component: {fileID: 2055528670}
   m_Layer: 8
   m_Name: RCollider (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136511,7 +136526,7 @@ GameObject:
   - component: {fileID: 2135627531}
   m_Layer: 8
   m_Name: RCollider
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136765,7 +136780,7 @@ PrefabInstance:
     - target: {fileID: 7614279702148924364, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.94907
+      value: 205.9491
       objectReference: {fileID: 0}
     - target: {fileID: 7614279702557666386, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}

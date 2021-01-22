@@ -11,7 +11,8 @@ public class PowerUp : MonoBehaviour
     private void Start()
     {
         _interpolator.ToMax();
-        randomObject = Random.Range(1, 4);
+        randomObject = 3;
+        //randomObject = Random.Range(1, 4);
         if (randomObject == 1) //health
         {
             this.GetComponent<SpriteRenderer>().sprite = health;
@@ -98,8 +99,8 @@ public class PowerUp : MonoBehaviour
             }
             else if (randomObject == 3)// inmunity
             {
-                playerBehaviour.activeImmunity = true;
-                playerBehaviour._playerLifes++;
+                playerBehaviour.activePowerUp = true;
+                SoundManagerScript.PlaySound("powerup");
             }
             Destroy(this.gameObject);
         }
