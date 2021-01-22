@@ -13,12 +13,12 @@ public class playerBehaviour : MonoBehaviour
     private Animator animator;
     public static int _playerLifes;
     private float _maxLifes;
-    public static bool activeImmunity, canBeDamaged;
+    public static bool activeImmunity, canBeDamaged, canBeDamagedPowerup, activePowerUp;
 
     private reloadScript reloadScript;
 
     [HideInInspector]public bool activePostProcessing;
-    private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity;
+    private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity, cdPowerup, maxCdPowerup;
     public float reloadTime;
     public static bool isReloading;
 
@@ -56,9 +56,11 @@ public class playerBehaviour : MonoBehaviour
         maxcdAberration = 0.1f;
         cdAberration = 0;
         maxCdImmunity = 2f;
-        canBeDamaged = true;
+        maxCdPowerup = 4f;
+        canBeDamaged = canBeDamagedPowerup = true;
         cdImmunity = maxCdImmunity;
-        activePostProcessing = activeImmunity = false;
+        cdPowerup = maxCdPowerup;
+        activePostProcessing = activeImmunity = activePowerUp = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
         bulletsPurple = bulletsYellow = bulletsShotgun = 0;
         reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
@@ -90,6 +92,7 @@ public class playerBehaviour : MonoBehaviour
         }
         
         Immunity();
+        PowerUp();
         chromaticAberration();
 
         if(handController.currentPos == 0) 
@@ -131,6 +134,28 @@ public class playerBehaviour : MonoBehaviour
             animator.SetBool("isImmune", false);
             canBeDamaged = true;
             cdImmunity = maxCdImmunity;
+        }
+    }
+
+    void PowerUp()
+    {
+        if (activePowerUp)
+        {
+            activePostProcessing = true;
+            canBeDamagedPowerup = false;
+            activePowerUp = false;
+            animator.SetBool("hasPowerup", true);
+        }
+        if (!canBeDamagedPowerup)
+        {
+            cdPowerup -= Time.deltaTime;
+        }
+
+        if (cdPowerup <= 0)
+        {
+            animator.SetBool("hasPowerup", false);
+            canBeDamagedPowerup = true;
+            cdPowerup = maxCdImmunity;
         }
     }
     void chromaticAberration()
@@ -250,7 +275,7 @@ public class playerBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("RobotPatrol") || collision.gameObject.CompareTag("Enemy"))
+        if ((collision.gameObject.CompareTag("RobotPatrol") || collision.gameObject.CompareTag("Enemy")) && !activePowerUp)
         {
             activeImmunity = true;
         }

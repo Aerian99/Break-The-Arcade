@@ -61,7 +61,7 @@ public class enemyBulletBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
         {
-            if (playerBehaviour.canBeDamaged)
+            if (playerBehaviour.canBeDamaged && playerBehaviour.canBeDamagedPowerup)
             {
                 playerBehaviour.activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
