@@ -66,7 +66,7 @@ public class enemyBulletBehaviour : MonoBehaviour
                 playerBehaviour.activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
             }
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // Se destruye al tocar al jugador.
         }
         else if
         (other.gameObject.tag != "Enemy"
@@ -87,7 +87,7 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "Bullet"
           && other.gameObject.tag != "Wall")
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject); 
         }
         else if (other.gameObject.tag == "AlienWall")
         {
@@ -102,6 +102,11 @@ public class enemyBulletBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("AbsorbGun"))
         {
             Destroy(this.gameObject);
+        }
+
+        if (other.gameObject.tag == "Platform")
+        {
+            Destroy(this.gameObject); 
         }
     }
 

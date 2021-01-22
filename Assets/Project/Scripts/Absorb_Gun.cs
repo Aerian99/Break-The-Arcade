@@ -22,11 +22,9 @@ public class Absorb_Gun : MonoBehaviour
         if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack" || other.gameObject.tag == "Bullet Pacman")  && absorbCooldown.coolFull == false)
         {
             // ABSORB MAGNET EFFECT
-            Debug.Log("HE ENTRAO");
             // CONTADOR DE BALAS
             if (firstTimeAbsorb0 && handController.currentPos == 0)
             {
-                Debug.Log("ESTOY FIRST ABSORB");
                 if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
                 {
                     playerBehaviour.bulletsPurple += 5;
@@ -73,7 +71,7 @@ public class Absorb_Gun : MonoBehaviour
 
             if (ammoFull0 || ammoFull1 || ammoFull2)
             {
-                Debug.Log("NO ESTOY");
+                Debug.Log("ESTOY LLENO");
                 if (handController.currentPos == 0 && playerBehaviour.reservedAmmoPurple < playerBehaviour.MAX_BULLETS_PURPLE)
                 {
                     playerBehaviour.reservedAmmoPurple +=5;
