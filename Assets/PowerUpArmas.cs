@@ -20,6 +20,7 @@ public class PowerUpArmas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         _interpolator.ToMax();
         randomArma = Random.Range(0, 6);
         if(randomArma == 4)
@@ -28,9 +29,12 @@ public class PowerUpArmas : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = armas[7];
         else
             GetComponent<SpriteRenderer>().sprite = armas[randomArma];
-        
+
         // RESETEAMOS LOS SPRITES Y LAS POWERUPS
-        
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().greenPowerUp = false;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bluePowerUp = false;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpGreen = false;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().powerUpBlue = false;
     }
 
     // Update is called once per frame
