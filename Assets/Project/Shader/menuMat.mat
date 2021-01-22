@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: 326f60c8acfa18449ab67614b3dcb8b7,
+  m_Name: menuMat
+  m_Shader: {fileID: -6465566751694194690, guid: 7ce8a99a72387804caf1234ce8674bff,
     type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,13 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fe0a1a2dc849bdd4abae5ac091c68738, type: 3}
+    - _Emission:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Fade: -0.0129595585
-    - _Scale: 20
+    m_Floats: []
     m_Colors:
-    - Color_81FB96CE: {r: 0.0051208856, g: 0.0358462, b: 0.3174949, a: 1}
-    - _Color: {r: 0.1294118, g: 0.5921569, b: 0.8039216, a: 1}
+    - Color_F23AAF94: {r: 0, g: 0, b: 0, a: 0}
