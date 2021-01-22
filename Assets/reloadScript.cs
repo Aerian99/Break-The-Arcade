@@ -32,7 +32,10 @@ public class reloadScript : MonoBehaviour
         }
 
         
-        if (Input.GetKeyDown(KeyCode.R)) // FALTA PONER OTRA CONDICIÓN PARA QUE SOLO SE ACTIVE CUANDO RECARGA, PERO AL SER UN ENUMERATOR DA UN ERROR
+        if (Input.GetKeyDown(KeyCode.R) &&
+            (handController.currentPos == 0 && playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT ||
+            handController.currentPos == 1 && playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT ||
+            handController.currentPos == 2 && playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)) // FALTA PONER OTRA CONDICIÓN PARA QUE SOLO SE ACTIVE CUANDO RECARGA, PERO AL SER UN ENUMERATOR DA UN ERROR
         {
             if (playerBehaviour.reservedAmmoPurple != 0 && handController.currentPos == 0)
             {
