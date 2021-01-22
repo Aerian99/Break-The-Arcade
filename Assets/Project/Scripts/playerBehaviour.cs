@@ -61,7 +61,7 @@ public class playerBehaviour : MonoBehaviour
         activePostProcessing = activeImmunity = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
         bulletsPurple = bulletsYellow = bulletsShotgun = 0;
-        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 200;
+        reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
         MAX_PURPLE_SHOOT = 15;
         MAX_YELLOW_SHOOT = 10;
         MAX_SHOTGUN_SHOOT = 3;

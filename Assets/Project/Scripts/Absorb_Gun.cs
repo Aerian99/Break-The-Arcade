@@ -22,13 +22,14 @@ public class Absorb_Gun : MonoBehaviour
         if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "AlienAttack" || other.gameObject.tag == "Bullet Pacman")  && absorbCooldown.coolFull == false)
         {
             // ABSORB MAGNET EFFECT
-
+            Debug.Log("HE ENTRAO");
             // CONTADOR DE BALAS
             if (firstTimeAbsorb0 && handController.currentPos == 0)
             {
+                Debug.Log("ESTOY FIRST ABSORB");
                 if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
-                { 
-                    playerBehaviour.bulletsPurple++;
+                {
+                    playerBehaviour.bulletsPurple += 5;
                     SoundManagerScript.PlaySound("absorbSound");
                 }
                 else
@@ -44,7 +45,7 @@ public class Absorb_Gun : MonoBehaviour
             {
                 if (handController.currentPos == 1 && playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT)
                 { 
-                    playerBehaviour.bulletsYellow++;
+                    playerBehaviour.bulletsYellow += 3;
                     SoundManagerScript.PlaySound("absorbSound");
                 }
                 else
@@ -59,7 +60,7 @@ public class Absorb_Gun : MonoBehaviour
             {
                 if (handController.currentPos == 2 && playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)
                 { 
-                    playerBehaviour.bulletsShotgun++;
+                    playerBehaviour.bulletsShotgun +=2;
                     SoundManagerScript.PlaySound("absorbSound");
                 }
                 else
@@ -72,25 +73,36 @@ public class Absorb_Gun : MonoBehaviour
 
             if (ammoFull0 || ammoFull1 || ammoFull2)
             {
-                if (handController.currentPos == 0 && playerBehaviour.reservedAmmoPurple != playerBehaviour.MAX_BULLETS_PURPLE)
-                { 
-                    playerBehaviour.reservedAmmoPurple++;
+                Debug.Log("NO ESTOY");
+                if (handController.currentPos == 0 && playerBehaviour.reservedAmmoPurple < playerBehaviour.MAX_BULLETS_PURPLE)
+                {
+                    playerBehaviour.reservedAmmoPurple +=5;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
                     SoundManagerScript.PlaySound("absorbSound");
                 }
-                if (handController.currentPos == 1 && playerBehaviour.reservedAmmoYellow != playerBehaviour.MAX_BULLETS_YELLOW)
-                { 
-                    playerBehaviour.reservedAmmoYellow++;
+                if (handController.currentPos == 1 && playerBehaviour.reservedAmmoYellow < playerBehaviour.MAX_BULLETS_YELLOW)
+                {
+                    playerBehaviour.reservedAmmoYellow +=3;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
                     SoundManagerScript.PlaySound("absorbSound");
                 }
-                if (handController.currentPos == 2 && playerBehaviour.reservedAmmoShotgun != playerBehaviour.MAX_BULLETS_SHOTGUN)
-                { 
-                    playerBehaviour.reservedAmmoShotgun++;
+                if (handController.currentPos == 2 && playerBehaviour.reservedAmmoShotgun < playerBehaviour.MAX_BULLETS_SHOTGUN)
+                {
+                    playerBehaviour.reservedAmmoShotgun +=2;
                     if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
                     SoundManagerScript.PlaySound("absorbSound");
                 }
             }
+            /*else
+            {
+                if (handController.currentPos == 0)
+                    playerBehaviour.bulletsPurple += 5;
+                if (handController.currentPos == 1)
+                    playerBehaviour.bulletsPurple += 3;
+                if (handController.currentPos == 2)
+                    playerBehaviour.bulletsPurple += 1;
+
+            }*/
             //Destroy(other.gameObject);
         }
     }

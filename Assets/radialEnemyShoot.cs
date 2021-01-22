@@ -50,7 +50,7 @@ public class radialEnemyShoot : MonoBehaviour
 
                         Vector3 bulletVector = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
                         Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
-                        if (random < 30)
+                        if (random < 15)
                         {
                             bulletGO = Instantiate(bulletPacman, startPoint, Quaternion.identity);
                         }
