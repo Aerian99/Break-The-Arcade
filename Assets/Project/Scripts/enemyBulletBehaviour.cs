@@ -76,6 +76,7 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "EnemyBullet"
          && other.gameObject.tag != "Bullet Pacman"
          && other.gameObject.tag != "Range"
+         && other.gameObject.tag != "AlienEnemy"
          && other.gameObject.tag != "CyanEnemy"
          && other.gameObject.tag != "OrangeEnemy"
          && other.gameObject.tag != "RedEnemy"
