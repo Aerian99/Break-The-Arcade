@@ -112,7 +112,7 @@ public class BossPhaseBehaviour : MonoBehaviour
                 if (rand == 0)
                 {
                     anim.SetBool("Attack", true);
-                    ShootRadial(30, 10f, 1500);
+                    ShootRadial(30, 10f, 20);
                 }
                 else
                 {
@@ -131,7 +131,7 @@ public class BossPhaseBehaviour : MonoBehaviour
 
                 if (rand == 0)
                 {
-                    StartCoroutine(ShootRadial(30, 10f, 1500, 2));
+                    StartCoroutine(ShootRadial(30, 10f, 20, 2));
                 }
                 else
                 {
@@ -147,7 +147,7 @@ public class BossPhaseBehaviour : MonoBehaviour
                 //Shoot
                 if (rand == 0)
                 {
-                    StartCoroutine(ShootRadial(30, 10f, 1500, 3));
+                    StartCoroutine(ShootRadial(30, 10f, 20, 3));
                 }
                 else
                 {
@@ -219,7 +219,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     {
         bulletGO = Instantiate(bulletGrenade, firePoint.position, transform.rotation);
         bulletGO.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
-        bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 15000;
+        bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 20;
         bulletGO.GetComponent<GrenadeShoot>().numBullets = 16;
     }
     IEnumerator ShootGrenade(int nIterations)
@@ -230,7 +230,7 @@ public class BossPhaseBehaviour : MonoBehaviour
         {
             bulletGO = Instantiate(bulletGrenade, firePoint.position, transform.rotation);
             bulletGO.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
-            bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 15000;
+            bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 20;
             bulletGO.GetComponent<GrenadeShoot>().numBullets = 16;
             yield return new WaitForSeconds(0.5f);
         }

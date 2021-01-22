@@ -60,7 +60,7 @@ public class enemyPatrol : MonoBehaviour
         {
             if (Time.time > NextTimeToFire)
             {
-                if (dist < 8f)
+                if (dist < 13f)
                 {
                     this.GetComponent<Rigidbody2D>().isKinematic = true;
                     if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)

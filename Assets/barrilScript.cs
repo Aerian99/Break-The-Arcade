@@ -8,10 +8,10 @@ using Random = UnityEngine.Random;
 public class barrilScript : MonoBehaviour
 {
     public int lifes;
-    public GameObject ammoBox;
+    public GameObject []lootBoxes;
     void Start()
     {
-        lifes = 3;
+        lifes = 2;
     }
 
     // Update is called once per frame
@@ -45,7 +45,7 @@ public class barrilScript : MonoBehaviour
         int randomNumber = Random.Range(0, 2);
         if (randomNumber == 0)
         {
-            Instantiate(ammoBox, this.transform.position, Quaternion.identity);
+            Instantiate(lootBoxes[(Random.Range(0, lootBoxes.Length))], this.transform.position, Quaternion.identity);
         }
         Destroy(this.gameObject);
     }
