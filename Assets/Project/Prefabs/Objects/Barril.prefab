@@ -138,7 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 0
-  ammoBox: {fileID: 1417248772201850844, guid: 0da782b92d47dcf4796d38882d37e8b3, type: 3}
+  lootBoxes:
+  - {fileID: 1417248772201850844, guid: a5fc81fd638dc5848a41e09f9d30698c, type: 3}
+  - {fileID: 1417248772201850844, guid: 0da782b92d47dcf4796d38882d37e8b3, type: 3}
 --- !u!70 &3094068644960924119
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
