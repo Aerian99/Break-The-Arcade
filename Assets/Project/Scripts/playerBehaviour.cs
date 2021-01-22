@@ -34,7 +34,7 @@ public class playerBehaviour : MonoBehaviour
     public GameObject defaultBar;
     public Sprite[] healthbarimages;
 
-    public GameObject deathEffect;
+    public GameObject deathEffect, noAmmoText;
     private GameObject reloadText;
     
     private int seconds;
@@ -254,6 +254,10 @@ public class playerBehaviour : MonoBehaviour
         {
             activeImmunity = true;
         }
-
+        if (collision.gameObject.CompareTag("Ammo"))
+        {
+            if (noAmmoText.activeInHierarchy)
+                noAmmoText.SetActive(false);
+        }
     }
 }
