@@ -1344,6 +1344,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3490670856213605726, guid: 6bb57ad2518b73346a902655502e764c,
         type: 3}
+    - target: {fileID: 9031425252051455018, guid: 8ee25312c1f9aab47a75999773644a8d,
+        type: 3}
+      propertyPath: noAmmoText
+      value: 
+      objectReference: {fileID: 1447112310}
     - target: {fileID: 9031425252162527068, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_FillAmount
@@ -1553,7 +1558,7 @@ PrefabInstance:
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.88
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -128115,6 +128120,12 @@ Transform:
   m_Father: {fileID: 401144915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1447112310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031425253124139747, guid: 8ee25312c1f9aab47a75999773644a8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 147209813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477273052
 GameObject:
   m_ObjectHideFlags: 0
