@@ -38,6 +38,7 @@ TagManager:
   - Tower
   - Barriles
   - Ammo
+  - Boss
   layers:
   - Default
   - TransparentFX

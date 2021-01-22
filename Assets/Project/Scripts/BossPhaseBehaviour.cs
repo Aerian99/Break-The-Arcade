@@ -14,6 +14,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     public float dirX = 1, DIRy = 0.25f;
     public float circleRadius;
     SpriteRenderer renderer;
+    public GameObject sliderHealth;
     Animator anim;
     enum Phases { INITPHASE, PHASE2, PHASE3 }
     Phases phase;
@@ -28,6 +29,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sliderHealth = GameObject.Find("HealthbarAlternative");
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         speed = 750;
@@ -40,7 +42,9 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (health >= 0)
+        {
+            Movement();
         if (health < maxHealth / 4)
         {
             phase = Phases.PHASE3;
@@ -52,6 +56,14 @@ public class BossPhaseBehaviour : MonoBehaviour
         else
         {
             phase = Phases.INITPHASE;
+        }
+
+
+        }
+        else
+        {
+            anim.SetBool("dead", true);
+            Destroy(gameObject, 1.8f);
         }
     }
 

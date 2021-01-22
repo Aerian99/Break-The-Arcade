@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class purpleBulletBehaviour : MonoBehaviour {
     private GameObject effect;
@@ -28,6 +29,13 @@ public class purpleBulletBehaviour : MonoBehaviour {
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+            popUpDamage(bulletForce);
+        }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            other.gameObject.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
+            float slider = bulletForce / other.gameObject.GetComponent<BossPhaseBehaviour>().maxHealth;
+            other.gameObject.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
             popUpDamage(bulletForce);
         }
         if (other.gameObject.CompareTag("Tower"))
