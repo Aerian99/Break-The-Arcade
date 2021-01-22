@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class AlienBehaviour : MonoBehaviour
 {
     private Animator anim;
-
+    public GameObject triggerZone;
     [HideInInspector] public GameObject[] hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
@@ -95,7 +95,7 @@ public class AlienBehaviour : MonoBehaviour
             {
                 playerBehaviour.activeImmunity = true;
             }
-
+           
             Destroy(this.gameObject, 0.1f);
             GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
             Destroy(explosionGO, 0.7f);
@@ -106,6 +106,10 @@ public class AlienBehaviour : MonoBehaviour
         canvas.enabled = false;
     }
 
+    private void OnDestroy()
+    {
+        triggerZone.GetComponent<triggerZone_1>().radialEnemy--;
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (actualHealth <= 0)

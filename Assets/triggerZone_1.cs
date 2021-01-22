@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class triggerZone_1 : MonoBehaviour
 {
-    private int radialEnemy;
+    public int radialEnemy;
     private int robotEnemy, tower, alien;
 
     public GameObject[] doors;
@@ -13,10 +13,20 @@ public class triggerZone_1 : MonoBehaviour
     public GameObject[] enemies;
     public Vector3[] positions;
 
+    public bool isAlien;
+    public GameObject alienCon;
+
     // Start is called before the first frame update
     void Start()
     {
-        radialEnemy = enemies.Length;
+        if(isAlien)
+        {
+            radialEnemy = 4;
+        }
+        else
+        {
+            radialEnemy = enemies.Length;
+        }
         for (int i = 0; i < doors.Length; i++)
         {
             doors[i].GetComponent<BoxCollider2D>().enabled = false;
@@ -43,9 +53,16 @@ public class triggerZone_1 : MonoBehaviour
         {
             if(!hasPassedLevel)
             { 
-                for (int i = 0; i < enemies.Length; i++)
+                if(!isAlien)
+                { 
+                    for (int i = 0; i < enemies.Length; i++)
+                    {
+                        Instantiate(enemies[i], positions[i], Quaternion.identity);
+                    }
+                }
+                else
                 {
-                    Instantiate(enemies[i], positions[i], Quaternion.identity);
+                    alienCon.SetActive(true);
                 }
                 if (radialEnemy > 0)
                 {
