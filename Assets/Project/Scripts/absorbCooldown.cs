@@ -44,12 +44,12 @@ public class absorbCooldown : MonoBehaviour
             //coolingDown = true;
         }
 
-        if (cooldown.fillAmount == 1f)
+        if (cooldown.fillAmount >= 1f)
         {
             cooldown.color = new Color(255, 0, 0);
             coolFull = true;
         }
-        else if (cooldown.fillAmount == 0f)
+        else if (cooldown.fillAmount <= 0f)
         {
             cooldown.color = _initColor;
             //coolingDown = false;

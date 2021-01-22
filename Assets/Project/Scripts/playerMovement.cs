@@ -67,7 +67,7 @@ public class playerMovement : MonoBehaviour
 
         platformsLayerMask = copyLayerMask;
 
-        moveSpeed = 8.5f;
+        moveSpeed = 12f;
         jumpForce = 16.5f;
         jumpTime = 0.13f;
         dashForce = 50f;

@@ -170,7 +170,7 @@ public class enemyPatrol : MonoBehaviour
 
         if (fade <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

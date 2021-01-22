@@ -20,6 +20,7 @@ public class PowerUpArmas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         _interpolator.ToMax();
         randomArma = Random.Range(0, 6);
         if (randomArma == 4)
