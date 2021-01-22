@@ -14,6 +14,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     public float dirX = 1, DIRy = 0.25f;
     public float circleRadius;
     SpriteRenderer renderer;
+    Animator anim;
     enum Phases { INITPHASE, PHASE2, PHASE3 }
     Phases phase;
     public int health, maxHealth;
@@ -27,6 +28,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         speed = 750;
         EnemyRB = GetComponent<Rigidbody2D>();
@@ -105,15 +107,16 @@ public class BossPhaseBehaviour : MonoBehaviour
         {
             if (phase == Phases.INITPHASE)
             {
-                renderer.color = Color.green;
                 int rand = Random.Range(0,2);
 
                 if (rand == 0)
                 {
+                    anim.SetBool("Attack", true);
                     ShootRadial(30, 10f, 1500);
                 }
                 else
                 {
+                    anim.SetBool("Attack", true);
                     ShootGrenade();
                 }
 
@@ -161,11 +164,10 @@ public class BossPhaseBehaviour : MonoBehaviour
 
     void ShootRadial(int numBullets, float radius, int bulletSpeed)
     {
-
+        
         startPoint = transform.position;
         float angleStep = 360f / numBullets;
         float angle = 0f;
-
         for (int i = 0; i <= numBullets - 1; i++)
         {
             float bulletDirXPosition = startPoint.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
@@ -185,7 +187,8 @@ public class BossPhaseBehaviour : MonoBehaviour
 
     IEnumerator ShootRadial(int numBullets, float radius, int bulletSpeed, int nIterations)
     {
-
+        anim.SetBool("AttackHard", true);
+        yield return new WaitForSeconds(1f);
         startPoint = transform.position;
         float angleStep = 360f / numBullets;
         float angle = 0f;
@@ -221,6 +224,8 @@ public class BossPhaseBehaviour : MonoBehaviour
     }
     IEnumerator ShootGrenade(int nIterations)
     {
+        anim.SetBool("AttackHard", true);
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < nIterations; i++)
         {
             bulletGO = Instantiate(bulletGrenade, firePoint.position, transform.rotation);
