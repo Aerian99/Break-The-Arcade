@@ -10,11 +10,11 @@ public class PowerUpArmas : MonoBehaviour
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     Vector3 _position;
 
-    [HideInInspector] public GameObject defaultGun, laserGun, shootGun;
-    public GameObject defaultGunBullet, shootGunBullet;
-    public Sprite defaultBulletStandard, defaultBulletGreen, defaultBulletBlue, shootGunBulletStandard,shootGunBulletGreen, shootGunBulletBlue;
-    public Material defaultMatStandard, defaultMatGreenBullet, defaultMatBlueBullet, shootGunMatStandard,shootGunMatGreenBullet, shootGunMatBlueBullet;
-    public ParticleSystem defaultStandardHit, defaultGreenHit, defaultBlueHit, shootGunStandardHit, shootGunGreenHit, shootGunBlueHit;
+    [HideInInspector]public GameObject defaultGun, laserGun, shootGun;
+    [HideInInspector]public GameObject defaultGunBullet, shootGunBullet;
+    [HideInInspector]public Sprite defaultBulletStandard, defaultBulletGreen, defaultBulletBlue, shootGunBulletStandard,shootGunBulletGreen, shootGunBulletBlue;
+    [HideInInspector]public Material defaultMatStandard, defaultMatGreenBullet, defaultMatBlueBullet, shootGunMatStandard,shootGunMatGreenBullet, shootGunMatBlueBullet;
+    [HideInInspector]public ParticleSystem defaultStandardHit, defaultGreenHit, defaultBlueHit, shootGunStandardHit, shootGunGreenHit, shootGunBlueHit;
 
 
     // Start is called before the first frame update
