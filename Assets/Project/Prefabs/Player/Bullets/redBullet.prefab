@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0d79951c3514914485ba203a1ea3d20, type: 2}
+  - {fileID: 2100000, guid: 3cce2948d8a4e5e45ba3aca9ccbff6e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ba29cbbd7b1f73e499d31a595b55e9c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32f46372f6227594a905b12ba7dca6c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6023e3815963b43b219f726318e0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffectPrefab: {fileID: 7889928976846493079, guid: bf5d62607a9d4c741887e71e16964558,
+  hitEffectPrefab: {fileID: 7889928976846493079, guid: e32566cee8c6ae74abfe1d14de6d6e9e,
     type: 3}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
     type: 3}
