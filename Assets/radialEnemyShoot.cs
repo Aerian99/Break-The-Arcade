@@ -9,6 +9,7 @@ public class radialEnemyShoot : MonoBehaviour
     public float bulletSpeed;
     public GameObject bulletPrefab, bulletPacman;
     public int burstSpeed;
+    private float random, randomBtw;
 
     [Header("Private Variables")] private Vector3 startPoint;
     private const float radius = 1f;
@@ -19,6 +20,8 @@ public class radialEnemyShoot : MonoBehaviour
 
     private void Start()
     {
+        random = Random.Range(0,2f);
+        randomBtw = Random.Range(2, 4f);
         StartCoroutine(Shooting());
         SoundManagerScript.PlaySound("radialShoot");
     }
@@ -26,6 +29,7 @@ public class radialEnemyShoot : MonoBehaviour
 
     IEnumerator Shooting()
     {
+        yield return new WaitForSeconds(random);
         while (true)
         {
             if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
@@ -63,7 +67,7 @@ public class radialEnemyShoot : MonoBehaviour
                     yield return new WaitForSeconds(0.4f);
                 }
 
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(randomBtw);
             }
             yield return new WaitForSeconds(0);
         }
