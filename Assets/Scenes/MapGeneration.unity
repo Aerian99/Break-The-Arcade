@@ -1548,12 +1548,12 @@ PrefabInstance:
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.3
+      value: 97.14
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 9031425253701463739, guid: 8ee25312c1f9aab47a75999773644a8d,
         type: 3}
@@ -5675,22 +5675,32 @@ MonoBehaviour:
     type: 3}
   shootGunBullet: {fileID: 5986094977469769210, guid: 93bb4e9270d485243a211c5ae2f91a56,
     type: 3}
+  defaultBulletStandard: {fileID: 21300000, guid: 10c81a5b321ade14498618621acca3a4,
+    type: 3}
   defaultBulletGreen: {fileID: 21300000, guid: ed98b0167082e8b4f8989b9865739e22, type: 3}
   defaultBulletBlue: {fileID: 21300000, guid: 4dae7264953e9c949b8bb2467a220b19, type: 3}
+  shootGunBulletStandard: {fileID: 21300000, guid: 32f46372f6227594a905b12ba7dca6c8,
+    type: 3}
   shootGunBulletGreen: {fileID: 21300000, guid: ba29cbbd7b1f73e499d31a595b55e9c8,
     type: 3}
   shootGunBulletBlue: {fileID: 21300000, guid: 4a5134b832ed0be43b22306a93b79e02, type: 3}
+  defaultMatStandard: {fileID: 2100000, guid: dda2ec6e3c7205042bbf4e3f9bf91522, type: 2}
   defaultMatGreenBullet: {fileID: 2100000, guid: 554e6b0f5b6b58b40b70f4b52d2abcfb,
     type: 2}
   defaultMatBlueBullet: {fileID: 2100000, guid: 96bc25deda9fb3a408865cc853473015,
     type: 2}
+  shootGunMatStandard: {fileID: 2100000, guid: 3cce2948d8a4e5e45ba3aca9ccbff6e9, type: 2}
   shootGunMatGreenBullet: {fileID: 2100000, guid: b0d79951c3514914485ba203a1ea3d20,
     type: 2}
   shootGunMatBlueBullet: {fileID: 2100000, guid: d818f8ec82c2ea2468e8107003ed828f,
     type: 2}
+  defaultStandardHit: {fileID: 8984649988707077970, guid: 713bc9bd6451d8a459cf8890f79f3f8d,
+    type: 3}
   defaultGreenHit: {fileID: 8984649988707077970, guid: 38f7fbc6541759049a9704da3f346809,
     type: 3}
   defaultBlueHit: {fileID: 8984649988707077970, guid: d61283bcdf11d8d4094a7f48b2f0a20a,
+    type: 3}
+  shootGunStandardHit: {fileID: 7889928976846493079, guid: e32566cee8c6ae74abfe1d14de6d6e9e,
     type: 3}
   shootGunGreenHit: {fileID: 7889928976846493079, guid: bf5d62607a9d4c741887e71e16964558,
     type: 3}
@@ -136723,7 +136733,7 @@ PrefabInstance:
     - target: {fileID: 7614279702148924364, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.94907
+      value: 205.9491
       objectReference: {fileID: 0}
     - target: {fileID: 7614279702557666386, guid: b915b1d990c91a64f855663d74cb8fcd,
         type: 3}
