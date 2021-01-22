@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7541272558622887265}
   - component: {fileID: 1403630141148062212}
   - component: {fileID: 1086015493670851298}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BasicEnemyBullet 1
   m_TagString: Bullet Pacman
   m_Icon: {fileID: 0}
