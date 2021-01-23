@@ -24,7 +24,7 @@ public class AlienController : MonoBehaviour
 
         if (this.gameObject.transform.childCount == 0)
         {
-            CameraScene.allEnemiesDefeat = true;
+            SpaceInvadersTrigger.hasPassedLvl = true;
         }
         if (tempSize > this.gameObject.transform.childCount)
         {

@@ -9,31 +9,34 @@ public class CameraBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(firstTime)
-        { 
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            camBoss.SetActive(true);
-            firstTime = false;
-        }
-        else
+        if (collision.CompareTag("Player"))
         {
-            cam1.SetActive(true);
-            cam2.SetActive(false);
-            camBoss.SetActive(true);
-            firstTime = true;
+            if (firstTime)
+            {
+                cam1.SetActive(false);
+                cam2.SetActive(false);
+                cam3.SetActive(false);
+                camBoss.SetActive(true);
+                firstTime = false;
+            }
+            else
+            {
+                cam1.SetActive(true);
+                cam2.SetActive(false);
+                camBoss.SetActive(true);
+                firstTime = true;
+            }
         }
     }
 }

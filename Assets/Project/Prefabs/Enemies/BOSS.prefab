@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905292812650321845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.147, y: -0.291, z: 0}
+  m_LocalPosition: {x: -0.147, y: -0.398, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3905292812795133812}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3905292812795133818}
   - component: {fileID: 3905292812795133817}
   - component: {fileID: -549539030938868362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BOSS
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905292812795133814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.974, y: -29.037, z: -610.6474}
+  m_LocalPosition: {x: 81.974, y: -29.037, z: 0}
   m_LocalScale: {x: 8.910466, y: 8.910466, z: 8.910466}
   m_Children:
   - {fileID: 3905292813412296758}
@@ -145,6 +145,8 @@ MonoBehaviour:
   dirX: 1
   DIRy: 0.25
   circleRadius: 0.2
+  imageBoss: {fileID: 0}
+  lifeBoss: {fileID: 0}
   sliderHealth: {fileID: 0}
   health: 0
   maxHealth: 0
@@ -239,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905292813412296759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.249, y: 0, z: 0}
+  m_LocalPosition: {x: 0.283, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3905292812795133812}
@@ -269,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905292813531639188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.066, y: 0.322, z: 0}
+  m_LocalPosition: {x: -0.066, y: 0.365, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3905292812795133812}
@@ -299,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3905292813773695969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.496, z: 0}
+  m_LocalPosition: {x: -0.155, y: -0.363, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3905292812795133812}

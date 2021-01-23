@@ -12,8 +12,10 @@ public class BossPhaseBehaviour : MonoBehaviour
     public LayerMask groundLayer;
     private bool facingRight = true, groundTouch, roofTouch, rightTouch;
     public float dirX = 1, DIRy = 0.25f;
-    public float circleRadius;
+    public float circleRadius = 0.01f;
     SpriteRenderer renderer;
+    public GameObject imageBoss;
+    public GameObject lifeBoss;
     public GameObject sliderHealth;
     Animator anim;
     enum Phases { INITPHASE, PHASE2, PHASE3 }
@@ -30,6 +32,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     void Start()
     {
         sliderHealth = GameObject.Find("HealthbarAlternative");
+        imageBoss = GameObject.Find("ImageBoss");
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         speed = 750;
@@ -45,23 +48,24 @@ public class BossPhaseBehaviour : MonoBehaviour
         if (health >= 0)
         {
             Movement();
-        if (health < maxHealth / 4)
-        {
-            phase = Phases.PHASE3;
-        }
-        else if (health < maxHealth / 2)
-        {
-            phase = Phases.PHASE2;
-        }
-        else
-        {
-            phase = Phases.INITPHASE;
-        }
-
-
+            if (health < maxHealth / 4)
+            {
+                phase = Phases.PHASE3;
+            }
+            else if (health < maxHealth / 2)
+            {
+                phase = Phases.PHASE2;
+            }
+            else
+            {
+                phase = Phases.INITPHASE;
+            }
         }
         else
         {
+            imageBoss.SetActive(false);
+            sliderHealth.SetActive(false);
+            EnemyRB.velocity = new Vector2(0, 0);
             anim.SetBool("dead", true);
             Destroy(gameObject, 1.8f);
         }

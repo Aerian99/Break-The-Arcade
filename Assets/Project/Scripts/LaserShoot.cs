@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LaserShoot : MonoBehaviour
 {
@@ -155,9 +156,11 @@ public class LaserShoot : MonoBehaviour
                 hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
                 popUpDamage(bulletForce, hit);
             }
-            if (hit.collider.CompareTag("Tower") && time >= nextFrame)
+            if (hit.transform.tag == "Boss" && time >= nextFrame)
             {
-                hit.collider.GetComponent<TowerBehaviour>().lifes -= bulletForce;
+                hit.collider.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
+                float slider = bulletForce / hit.collider.GetComponent<BossPhaseBehaviour>().maxHealth;
+                hit.collider.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
                 popUpDamage(bulletForce, hit);
             }
             if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
@@ -169,18 +172,15 @@ public class LaserShoot : MonoBehaviour
             {
                 hit.collider.GetComponent<barrilScript>().lifes--;
             }
-            
-            if (hit.collider.CompareTag("AlienEnemy") && SceneManager.GetActiveScene().name == "PowerUpScene")
+            if (hit.collider.CompareTag("Tower") && time >= nextFrame)
+            {
+                hit.transform.GetComponent<TowerBehaviour>().lifes -= bulletForce;
+                popUpDamage(bulletForce, hit);
+            }
+            if (hit.transform.CompareTag("AlienEnemy") && time >= nextFrame)
             {
                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
-            }
-            else if (hit.collider.CompareTag("AlienEnemy") && time >= nextFrame)
-            {
-                hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
-            }
-            else if ((hit.collider.tag == "CyanEnemy" || hit.collider.tag == "OrangeEnemy" || hit.collider.tag == "RedEnemy") && time >= nextFrame)
-            {
-                hit.collider.GetComponent<droneBehaviour>().Laserdamaged = true;
+                popUpDamage(bulletForce, hit);
             }
             lineRenderer.SetPosition(1, hit.point);
         }
