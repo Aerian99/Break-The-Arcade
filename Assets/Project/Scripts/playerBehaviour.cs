@@ -51,7 +51,7 @@ public class playerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
         //_playerLifes = _maxLifes;
-        _playerLifes = 300;
+        _playerLifes = 3;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
@@ -86,9 +86,11 @@ public class playerBehaviour : MonoBehaviour
         
         if (_playerLifes <= 0)
         {
-            Destroy(this.gameObject);
+            SoundManagerScript.PlaySound("gameOver");
             GameObject deathEffectGO = Instantiate(deathEffect, this.transform.position, Quaternion.identity);
             Destroy(deathEffectGO, 0.5f);
+            GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().isDead = true;
+            Destroy(this.gameObject);
         }
         
         Immunity();
@@ -139,7 +141,6 @@ public class playerBehaviour : MonoBehaviour
 
     void PowerUp()
     {
-        Debug.Log(cdPowerup);
         if (activePowerUp)
         {
             activePostProcessing = true;
