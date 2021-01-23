@@ -7,12 +7,12 @@ public class PowerUp : MonoBehaviour
     public Sprite health, ammo, inmunity;
     int randomObject;
     public GameObject reloadText;
+    public bool pHealth, pAmmo, pInmunity;
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     private void Start()
     {
         _interpolator.ToMax();
-        randomObject = 3;
-        //randomObject = Random.Range(1, 4);
+        randomObject = Random.Range(1, 4);
         if (randomObject == 1) //health
         {
             this.GetComponent<SpriteRenderer>().sprite = health;
@@ -43,6 +43,13 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         int tempAmmo = 0;
+        if (pHealth)
+            randomObject = 1;
+        if (pAmmo)
+            randomObject = 2;
+        if (pInmunity)
+            randomObject = 3;
+
 
         if (collision.CompareTag("Player"))
         {
