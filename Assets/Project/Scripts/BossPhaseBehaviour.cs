@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class BossPhaseBehaviour : MonoBehaviour
 {
-    public GameObject bulletPrefab, bulletGrenade;
+    public GameObject bulletPrefab, bulletGrenade, light1, light2, light3;
     private float speed;
     Rigidbody2D EnemyRB;
     GameObject bulletGO;
@@ -31,6 +32,9 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        light1 = GameObject.Find("LightBoss1");
+        light2 = GameObject.Find("LightBoss2");
+        light3 = GameObject.Find("LightBoss3");
         sliderHealth = GameObject.Find("HealthbarAlternative");
         imageBoss = GameObject.Find("ImageBoss");
         anim = GetComponent<Animator>();
@@ -50,10 +54,16 @@ public class BossPhaseBehaviour : MonoBehaviour
             Movement();
             if (health < maxHealth / 4)
             {
+                light1.GetComponent<Light2D>().color = new Color(1f,0,0);
+                light2.GetComponent<Light2D>().color = new Color(1f,0,0);
+                light3.GetComponent<Light2D>().color = new Color(1f,0,0);
                 phase = Phases.PHASE3;
             }
             else if (health < maxHealth / 2)
             {
+                light1.GetComponent<Light2D>().color = new Color(1f,0.352f,0f);
+                light2.GetComponent<Light2D>().color = new Color(1f, 0.352f, 0f);
+                light3.GetComponent<Light2D>().color = new Color(1f, 0.352f, 0f);
                 phase = Phases.PHASE2;
             }
             else
@@ -119,7 +129,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     }
     IEnumerator shootBehaviour()
     {
-        while (true)
+        while (health > 0)
         {
             if (phase == Phases.INITPHASE)
             {

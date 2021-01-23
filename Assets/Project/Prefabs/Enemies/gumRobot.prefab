@@ -200,9 +200,9 @@ MonoBehaviour:
   platformLayer:
     serializedVersion: 2
     m_Bits: 256
-  bulletPrefab: {fileID: 6510735618960470853, guid: b5c551c15ee7a9a4789c343e0ea44501,
+  bulletPrefab: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
     type: 3}
-  bulletPacman: {fileID: 6510735618960470853, guid: cdd3e01b4df30194faeab5243f056ffd,
+  bulletPacman: {fileID: 2960310769449781454, guid: 8f9307fb6cc9b2d4890354f4972e70bf,
     type: 3}
   lifes: 0
   isDying: 0
