@@ -93,17 +93,14 @@ public class enemyBulletBehaviour : MonoBehaviour
         {
             other.GetComponent<ProtectionBarrierAliens>().hitted = true;
         }
-        if (other.gameObject.CompareTag("absorbZone")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
+        if (other.gameObject.CompareTag("absorbZone"))
         {
             absorbed = true;
-            Destroy(this.gameObject, 0.1f); // Destruimos la bala en función del tiempo que tarda en absorber, para ahorrar problemas.
         }
-
-        if (other.gameObject.CompareTag("AbsorbGun"))
+        if (other.gameObject.CompareTag("absorbPoint") && !other.gameObject.CompareTag("AbsorbGun")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
         {
             Destroy(this.gameObject);
         }
-
         if (other.gameObject.tag == "Platform")
         {
             Destroy(this.gameObject); 

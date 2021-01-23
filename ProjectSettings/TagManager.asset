@@ -39,6 +39,8 @@ TagManager:
   - Barriles
   - Ammo
   - Boss
+  - SpawnPoint
+  - absorbPoint
   layers:
   - Default
   - TransparentFX

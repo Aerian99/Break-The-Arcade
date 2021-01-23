@@ -9,10 +9,13 @@
         <e p="ActivateDash.cs" t="Include" />
         <e p="ActivateEnemy.cs" t="Include" />
         <e p="ammoBoxScript.cs" t="Include" />
+        <e p="AttackHard.cs" t="Include" />
         <e p="barrilScript.cs" t="Include" />
         <e p="BullerParabola.cs" t="Include" />
+        <e p="CameraBoss.cs" t="Include" />
         <e p="CameraSwitch.cs" t="Include" />
         <e p="CyanShoot.cs" t="Include" />
+        <e p="DeathMenu.cs" t="Include" />
         <e p="Destroyer.cs" t="Include" />
         <e p="DissableCollider.cs" t="Include" />
         <e p="doorSoundsAndEffects.cs" t="Include" />
@@ -26,6 +29,7 @@
         <e p="magneticEffect.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
+        <e p="PlaySceneManager.cs" t="Include" />
         <e p="PowerUp.cs" t="Include" />
         <e p="PowerUpArmas.cs" t="Include" />
         <e p="Project" t="Include">
@@ -141,9 +145,11 @@
         <e p="redGunReloader.cs" t="Include" />
         <e p="reloadScript.cs" t="Include" />
         <e p="SpaceInvadersTrigger.cs" t="Include" />
+        <e p="SpawnBoss.cs" t="Include" />
         <e p="TowerBehaviour.cs" t="Include" />
         <e p="towerShoot.cs" t="Include" />
         <e p="triggerZone_1.cs" t="Include" />
+        <e p="tutorialTrigger.cs" t="Include" />
         <e p="VanishPlatform.cs" t="Include" />
         <e p="yellowGunReloader.cs" t="Include" />
       </e>

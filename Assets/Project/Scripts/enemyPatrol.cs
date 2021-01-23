@@ -44,7 +44,7 @@ public class enemyPatrol : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
 
-        lifes = 50f;
+        lifes = 10f;
         fade = 1;
         isDying = false;
     }

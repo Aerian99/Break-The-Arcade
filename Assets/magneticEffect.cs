@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class magneticEffect : MonoBehaviour
 {
+    private void Update()
+    {
+        
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -14,7 +18,7 @@ public class magneticEffect : MonoBehaviour
             other.transform.position = Vector3.MoveTowards(other.transform.position, this.transform.parent.position, Time.deltaTime * 10f);
             if (other.gameObject.transform.localScale.x > 0 && other.gameObject.transform.localScale.y > 0)
             {
-                other.gameObject.transform.localScale -= new Vector3(1f, 1f, 0f);
+                other.gameObject.transform.localScale -= new Vector3(2.5f, 2.5f, 0f);
             }
         }
     }

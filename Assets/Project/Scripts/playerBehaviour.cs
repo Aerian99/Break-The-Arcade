@@ -110,10 +110,14 @@ public class playerBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && 
             (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT ||
             handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT ||
-            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT))
+            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT) || 
+            (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0|| 
+             handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0||
+             handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoShotgun > 0))
         {
             StartCoroutine(Reload());
         }
+        
     }
     void Immunity()
     {
