@@ -13,13 +13,14 @@ public class triggerZone_1 : MonoBehaviour
     public GameObject[] enemies;
     public Vector3[] positions;
 
-    public bool isAlien;
+    public bool isAlien, hasEnteredAlready;
     public GameObject alienCon;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(isAlien)
+        hasEnteredAlready = false;
+        if (isAlien)
         {
             radialEnemy = 4;
         }
@@ -44,6 +45,8 @@ public class triggerZone_1 : MonoBehaviour
                 doors[i].GetComponent<Animator>().SetBool("hasPassed", false);
                 doors[i].GetComponent<BoxCollider2D>().enabled = false;
             }
+
+            Destroy(this.gameObject);
         }
     }
 
@@ -53,12 +56,13 @@ public class triggerZone_1 : MonoBehaviour
         {
             if(!hasPassedLevel)
             { 
-                if(!isAlien)
+                if(!isAlien && !hasEnteredAlready)
                 { 
                     for (int i = 0; i < enemies.Length; i++)
                     {
                         Instantiate(enemies[i], positions[i], Quaternion.identity);
                     }
+                    hasEnteredAlready = true;
                 }
                 else
                 {

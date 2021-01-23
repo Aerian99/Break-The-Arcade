@@ -139,6 +139,7 @@ public class playerBehaviour : MonoBehaviour
 
     void PowerUp()
     {
+        Debug.Log(cdPowerup);
         if (activePowerUp)
         {
             activePostProcessing = true;
@@ -155,7 +156,7 @@ public class playerBehaviour : MonoBehaviour
         {
             animator.SetBool("hasPowerup", false);
             canBeDamagedPowerup = true;
-            cdPowerup = maxCdImmunity;
+            cdPowerup = maxCdPowerup;
         }
     }
     void chromaticAberration()
@@ -283,6 +284,8 @@ public class playerBehaviour : MonoBehaviour
         {
             if (noAmmoText.activeInHierarchy)
                 noAmmoText.SetActive(false);
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
         }
     }
 }
