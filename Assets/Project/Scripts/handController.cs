@@ -14,7 +14,7 @@ public class handController : MonoBehaviour
     public Image redGunUI;
 
     private GameObject absorbGun;
-    public GameObject noAmmoText;
+    public GameObject noAmmoText, reloadText;
     public static int currentPos;
     
 
@@ -38,6 +38,8 @@ public class handController : MonoBehaviour
             {
                 noAmmoText.SetActive(false);
             }
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Rueda abajo
         {
@@ -46,10 +48,27 @@ public class handController : MonoBehaviour
             {
                 noAmmoText.SetActive(false);
             }
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1)) currentPos = 0;
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) currentPos = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) currentPos = 2;
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentPos = 0;
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentPos = 1;
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentPos = 2;
+            if (reloadText.activeInHierarchy)
+                reloadText.SetActive(false);
+        }
         WeaponSelector();
     }
 
