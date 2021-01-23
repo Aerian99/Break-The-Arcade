@@ -13,7 +13,7 @@ public class enemyPatrol : MonoBehaviour
     private bool movingRight = true;
     public Transform groundDetecion;
     private Animator anim;
-    private LayerMask platformLayer;
+    public LayerMask platformLayer;
 
     private Vector2 vecDir;
 
@@ -37,12 +37,12 @@ public class enemyPatrol : MonoBehaviour
 
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         patrolSpeed = 2f;
         patrolDistance = 1f;
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
-        platformLayer = LayerMask.NameToLayer("Platforms");
 
         lifes = 50f;
         fade = 1;
@@ -53,7 +53,7 @@ public class enemyPatrol : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(player.transform.position, transform.position);
-        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance);
+        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance, platformLayer);
         changeDirection();
         triggerDetection();
         if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)

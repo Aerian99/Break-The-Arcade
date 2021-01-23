@@ -9,8 +9,7 @@ public class SpawnBoss : MonoBehaviour
     public GameObject imageBoss;
     public GameObject lifeBoss;
     public Vector3 m_position;
-    public GameObject audio;
-    public AudioClip musica;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +27,8 @@ public class SpawnBoss : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            audio.GetComponent<AudioSource>().clip = musica;
+            
+            SoundManagerScript.PlaySound("BossMusic");
             imageBoss.SetActive(true);
             lifeBoss.SetActive(true);
             Instantiate(boss, m_position, Quaternion.identity);

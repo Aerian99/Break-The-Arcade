@@ -25,7 +25,8 @@ public class SoundManagerScript : MonoBehaviour
         radialEnemyHurt,
         radialEnemyDeath,
         robotDeath,
-        radialShoot;
+        radialShoot, 
+        bossMusic;
 
     public static AudioSource audioSrc;
 
@@ -53,6 +54,7 @@ public class SoundManagerScript : MonoBehaviour
         radialEnemyDeath = Resources.Load<AudioClip>("radialEnemyDeath");
         robotDeath = Resources.Load<AudioClip>("robotDeath");
         radialShoot = Resources.Load<AudioClip>("radialShoot");
+        bossMusic = Resources.Load<AudioClip>("BossMusic");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -124,6 +126,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "robotDeath":
                 audioSrc.PlayOneShot(robotDeath);
+                break;
+            case "BossMusic":
+                audioSrc.PlayOneShot(bossMusic);
                 break;
             default:
                 break;
