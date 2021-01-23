@@ -10,15 +10,16 @@ public class DeathMenu : MonoBehaviour
     void Start()
     {
         StartCoroutine(GoMenu());
+        SoundManagerScript.PlaySound("gameOverSong");
     }
 
     IEnumerator GoMenu()
-    {
-        
-        yield return new WaitForSeconds(3);
+    {   
+        yield return new WaitForSeconds(4);
         anim.SetBool("fadeIn", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("MainMenu");
+        SoundManagerScript.StopSound("gameOverSong");
 
     }
 }
