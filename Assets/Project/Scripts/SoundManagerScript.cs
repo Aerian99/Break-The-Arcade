@@ -26,9 +26,11 @@ public class SoundManagerScript : MonoBehaviour
         radialEnemyDeath,
         patrolEnemyDeath,
         radialShoot,
-        bossMusic,
+        bossMusic1,
+        bossMusic2,
         gameOverSong,
-        dropSound;
+        dropSound,
+        coinSound;
 
     public static AudioSource audioSrc;
 
@@ -56,10 +58,13 @@ public class SoundManagerScript : MonoBehaviour
         radialEnemyDeath = Resources.Load<AudioClip>("radialEnemyDeath");
         patrolEnemyDeath = Resources.Load<AudioClip>("patrolEnemyDeath");
         radialShoot = Resources.Load<AudioClip>("radialShoot");
-        bossMusic = Resources.Load<AudioClip>("BossMusic");
+        bossMusic1 = Resources.Load<AudioClip>("lvl1");
+        bossMusic2 = Resources.Load<AudioClip>("lvl2");
         gameOverSong = Resources.Load<AudioClip>("sadChiptune");
         dropSound = Resources.Load<AudioClip>("dropSound");
+        coinSound = Resources.Load<AudioClip>("coin2");
         audioSrc = GetComponent<AudioSource>();
+        
     }
 
 
@@ -130,14 +135,20 @@ public class SoundManagerScript : MonoBehaviour
             case "patrolEnemyDeath":
                 audioSrc.PlayOneShot(patrolEnemyDeath);
                 break;
-            case "BossMusic":
-                audioSrc.PlayOneShot(bossMusic);
+            case "BossMusic1":
+                audioSrc.PlayOneShot(bossMusic1);
+                break;
+            case "BossMusic2":
+                audioSrc.PlayOneShot(bossMusic2);
                 break;
             case "gameOverSong":
                 audioSrc.PlayOneShot(gameOverSong);
                 break;
             case "dropSound":
                 audioSrc.PlayOneShot(dropSound);
+                break;
+            case "coin":
+                audioSrc.PlayOneShot(coinSound);
                 break;
             default:
                 break;
