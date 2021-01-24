@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4511559216621106889}
   - component: {fileID: 7630021760492000596}
   - component: {fileID: 5357319086760526767}
-  - component: {fileID: 3751406147317182460}
   - component: {fileID: 4328130873422631132}
+  - component: {fileID: 7271392958916566777}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -125,33 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &3751406147317182460
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817029468433906420}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d76d6e6e9ac0536479175419b50dfa38, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.14, y: 0.16}
-    newSize: {x: 0.14, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.16}
-  m_EdgeRadius: 0
+  m_Constraints: 0
 --- !u!114 &4328130873422631132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +138,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcccdfedd0c17b94b8576d51f45350c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &7271392958916566777
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817029468433906420}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
