@@ -13,9 +13,13 @@ public class collisionGround : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Platform")
+            Destroy(gameObject);
+    }
 
     // Update is called once per frame
-   
+
 
 }
