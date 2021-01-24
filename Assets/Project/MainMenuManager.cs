@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
         playButton.SetActive(true);
         ExitButton.SetActive(true);
         text.SetActive(false);
+        SoundManagerScript.PlaySound("coin");
         GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
     }
     public void Play()
