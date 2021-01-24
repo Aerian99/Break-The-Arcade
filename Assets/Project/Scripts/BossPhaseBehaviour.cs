@@ -73,6 +73,7 @@ public class BossPhaseBehaviour : MonoBehaviour
         }
         else
         {
+            GameObject.Find("CoinSpawner").GetComponent<CoinWinBoss>().coinSpawner = true;
             imageBoss.SetActive(false);
             sliderHealth.SetActive(false);
             EnemyRB.velocity = new Vector2(0, 0);
