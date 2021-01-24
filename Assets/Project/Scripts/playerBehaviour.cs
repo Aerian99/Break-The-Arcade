@@ -68,9 +68,9 @@ public class playerBehaviour : MonoBehaviour
         MAX_YELLOW_SHOOT = 10;
         MAX_SHOTGUN_SHOOT = 3;
 
-        MAX_BULLETS_PURPLE = 15;
-        MAX_BULLETS_YELLOW = 20;
-        MAX_BULLETS_SHOTGUN = 9;
+        MAX_BULLETS_PURPLE = 45;
+        MAX_BULLETS_YELLOW = 40;
+        MAX_BULLETS_SHOTGUN = 15;
 
         reloadTime = 1f;
         isReloading = false;
@@ -228,7 +228,7 @@ public class playerBehaviour : MonoBehaviour
                 reservedAmmoShotgun = 0;
             }
         }
-        yield return new WaitForSeconds(reloadTime);
+         yield return new WaitForSeconds(reloadTime);
         isReloading = false;
     }
 
