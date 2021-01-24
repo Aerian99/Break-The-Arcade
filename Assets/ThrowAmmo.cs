@@ -26,10 +26,10 @@ public class ThrowAmmo : MonoBehaviour
         {
             if(activeBoss)
             {
-                yield return new WaitForSeconds(30f);
                 GO = Instantiate(ammoPrefab, transform.position, Quaternion.identity);
                 Vector2 vec = new Vector2(position, positionY) * Time.deltaTime;
                 GO.GetComponent<Rigidbody2D>().AddForce(vec);
+                yield return new WaitForSeconds(30f);
             }
 
 
