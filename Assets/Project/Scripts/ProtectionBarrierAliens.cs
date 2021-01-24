@@ -10,7 +10,6 @@ public class ProtectionBarrierAliens : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().color = Color.green;
         timesHitted = 0;
     }
 
@@ -23,9 +22,19 @@ public class ProtectionBarrierAliens : MonoBehaviour
             hitted = false;
         }
         if (timesHitted >= 6 && timesHitted < 12)
-            GetComponent<SpriteRenderer>().color = new Color(235,92,0,255);
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(235,92,0,255);
+            }
+        }
         else if (timesHitted >= 12 && timesHitted < 18)
-            GetComponent<SpriteRenderer>().color = Color.red;
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
         else if (timesHitted > 24)
             Destroy(this.gameObject);
     }
