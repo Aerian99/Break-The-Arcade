@@ -99,7 +99,7 @@ public class enemyPatrol : MonoBehaviour
             //Dead();
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            SoundManagerScript.PlaySound("radialEnemyDeath");
+            SoundManagerScript.PlaySound("patrolEnemyDeath");
         }
     }
 
