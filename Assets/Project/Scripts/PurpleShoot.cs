@@ -111,7 +111,7 @@ public class PurpleShoot : MonoBehaviour
     {
         playerBehaviour.bulletsPurple--;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 2; i++)
         {
             muzzle.Play();
             bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);

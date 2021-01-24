@@ -95,7 +95,7 @@ public class PowerUpArmas : MonoBehaviour
                 //Laser Weapon Green
                 case 2:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2)
-                        .GetComponent<LaserShoot>().bulletForce = 8;
+                        .GetComponent<LaserShoot>().bulletForce = 7;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
                         .GetChild(0).GetComponent<LineRenderer>().materials[0]
                         .SetColor("Color_", new Color(0, 1 * 4.5f, 0));
@@ -118,7 +118,7 @@ public class PowerUpArmas : MonoBehaviour
                 //Laser Weapon Blue
                 case 3:
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2)
-                        .GetComponent<LaserShoot>().bulletForce = 15;
+                        .GetComponent<LaserShoot>().bulletForce = 11;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(2).GetChild(1)
                         .GetChild(0).GetComponent<LineRenderer>().materials[0]
                         .SetColor("Color_", new Color(0, 0, 1 * 4.5f));
