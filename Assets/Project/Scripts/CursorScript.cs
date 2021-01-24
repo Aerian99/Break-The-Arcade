@@ -6,17 +6,27 @@ using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
-    public bool isMenu;
+    public bool isMenu, coinAdded;
+    public Texture2D cursorTextureMoneda, cursorTexturePointer;
+    Vector2 cursorHotspot;
     void Start()
     {
         if (isMenu)
-            Cursor.visible = true;
+        {
+            cursorHotspot = new Vector2(cursorTextureMoneda.width / 2, cursorTextureMoneda.height / 2);
+            Cursor.SetCursor(cursorTextureMoneda, cursorHotspot, CursorMode.ForceSoftware);
+            Cursor.visible = true;        
+        }
         else
             Cursor.visible = false;
     }
 
     private void Update()
     {
+        if (coinAdded) 
+        {
+            Cursor.SetCursor(cursorTexturePointer, cursorHotspot, CursorMode.ForceSoftware);
+        }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
         
