@@ -182,7 +182,6 @@ public class playerBehaviour : MonoBehaviour
         int bulletsNeeded;
         reloadText.SetActive(false);
         isReloading = true;
-        yield return new WaitForSeconds(reloadTime);
 
         if (handController.currentPos == 0)
         {
@@ -229,6 +228,7 @@ public class playerBehaviour : MonoBehaviour
                 reservedAmmoShotgun = 0;
             }
         }
+        yield return new WaitForSeconds(reloadTime);
         isReloading = false;
     }
 
