@@ -25,6 +25,7 @@ public class CursorScript : MonoBehaviour
     {
         if (coinAdded) 
         {
+            cursorHotspot = new Vector2(cursorTexturePointer.width / 2, cursorTexturePointer.height / 2);
             Cursor.SetCursor(cursorTexturePointer, cursorHotspot, CursorMode.ForceSoftware);
         }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
