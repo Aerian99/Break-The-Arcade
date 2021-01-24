@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3059940580566665451}
   - component: {fileID: 2217502773254336653}
   - component: {fileID: 2241746251973152550}
-  - component: {fileID: 6919031180452968639}
+  - component: {fileID: 2813032626292829270}
   m_Layer: 18
   m_Name: healthBox
   m_TagString: Untagged
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6919031180452968639
+--- !u!114 &2813032626292829270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +140,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417248772201850844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8cd80f602c54b4c877349e643f756f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb9500c7169daeb42ae1e6e2f5efdc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

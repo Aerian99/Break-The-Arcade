@@ -6,9 +6,13 @@ using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
+    public bool isMenu;
     void Start()
     {
-        Cursor.visible = false;
+        if (isMenu)
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
     }
 
     private void Update()
