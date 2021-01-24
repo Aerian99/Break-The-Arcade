@@ -12,7 +12,7 @@ public class TowerBehaviour : MonoBehaviour
 
     void Start()
     {
-        lifes = 50f;
+        lifes = 20f;
         fade = 1;
         isDying = false;
 

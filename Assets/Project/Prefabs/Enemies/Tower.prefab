@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea97e7f1c52d34648ab141b9f31705fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: 35
+  lifes: 20
   isDying: 0
   mat: {fileID: 2100000, guid: 755fcbaaebacee344bac428086343fab, type: 2}
   explosionEffect: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,

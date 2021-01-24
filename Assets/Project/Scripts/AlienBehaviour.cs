@@ -83,6 +83,7 @@ public class AlienBehaviour : MonoBehaviour
 
     void Falling()
     {
+        gameObject.tag = "Tower";
         GetComponentInChildren<AlienAttack>().enabled = false;
         this.gameObject.transform.parent = null;
         GetComponent<BoxCollider2D>().isTrigger = false;
