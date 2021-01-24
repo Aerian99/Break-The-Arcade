@@ -34,7 +34,7 @@ public class magneticEffect : MonoBehaviour
         if ((other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "Bullet Pacman" || other.gameObject.tag == "AlienAttack") && absorbCooldown.coolFull == false)
         {
             SoundManagerScript.PlaySound("absorbSound"); // Reproducimos el sonido de absorber al entrar en el trigger de absorción (magneticZone).
-            Destroy(other.gameObject, 0.1f);
+            Destroy(other.gameObject, 1f);
         }
     }
 }

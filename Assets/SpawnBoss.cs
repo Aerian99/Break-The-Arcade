@@ -27,7 +27,7 @@ public class SpawnBoss : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            SoundManagerScript.PlaySound("BossMusic");
+            SoundManagerScript.PlaySound("BossMusic1");
             GameObject.Find("Music").GetComponent<AudioSource>().Stop();
             GameObject.Find("Character_Sprite_Sheet_0").GetComponent<ThrowAmmo>().activeBoss = true;
             GameObject.Find("Character_Sprite_Sheet_1").GetComponent<ThrowAmmo>().activeBoss = true;
