@@ -61,7 +61,6 @@ public class BossPhaseBehaviour : MonoBehaviour
             }
             else if (health < maxHealth / 2)
             {
-                GameObject.Find("Music").GetComponent<AudioSource>().clip = audio;
                 light1.GetComponent<Light2D>().color = new Color(1f,0.352f,0f);
                 light2.GetComponent<Light2D>().color = new Color(1f, 0.352f, 0f);
                 light3.GetComponent<Light2D>().color = new Color(1f, 0.352f, 0f);
@@ -74,7 +73,6 @@ public class BossPhaseBehaviour : MonoBehaviour
         }
         else
         {
-            GameObject.Find("Music").GetComponent<AudioSource>().clip = audioLvl;
             GameObject.Find("CoinSpawner").GetComponent<CoinWinBoss>().coinSpawner = true;
             GameObject.Find("CoinSpawner (1)").GetComponent<CoinWinBoss>().coinSpawner = true;
             GameObject.Find("CoinSpawner (2)").GetComponent<CoinWinBoss>().coinSpawner = true;
