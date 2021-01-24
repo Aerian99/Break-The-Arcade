@@ -30,17 +30,17 @@ public class enemyBulletBehaviour : MonoBehaviour
         if (canExplote)
         {
             cdExplote -= Time.fixedDeltaTime;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             animator.SetTrigger("activeExplosion");
         }
 
         if (cdExplote <= 0)
         {
-            Collider2D[] platforms = Physics2D.OverlapCircleAll(transform.position, explosionRange, PlatformLayer);
-            for (int i = 0; i < platforms.Length; i++)
-            {
-                platforms[i].GetComponent<ProtectionBarrierAliens>().hitted = true;
-            }
+            Collider2D platforms = Physics2D.OverlapCircle(transform.position, explosionRange, PlatformLayer);
+
+            if (platforms)
+                platforms.GetComponent<ProtectionBarrierAliens>().hitted = true;
+
 
             explosionDamaged = Physics2D.OverlapCircle(this.transform.position, explosionRange, layer);
             if (explosionDamaged && !playerBehaviour.activeImmunity)
@@ -103,7 +103,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         }
         if (other.gameObject.tag == "Platform")
         {
-            Destroy(this.gameObject); 
+            Destroy(this.gameObject);
         }
     }
 
