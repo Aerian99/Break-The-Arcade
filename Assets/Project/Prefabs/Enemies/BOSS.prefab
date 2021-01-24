@@ -136,6 +136,9 @@ MonoBehaviour:
     type: 3}
   bulletGrenade: {fileID: 9100151811133454632, guid: 25baf25fa7366ae4bb194336d62ca6ab,
     type: 3}
+  light1: {fileID: 0}
+  light2: {fileID: 0}
+  light3: {fileID: 0}
   rightCheck: {fileID: 3905292813412296759}
   roofCheck: {fileID: 3905292813531639188}
   groundCheck: {fileID: 3905292812650321845}
@@ -151,6 +154,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   firePoint: {fileID: 3905292813773695968}
+  audio: {fileID: 8300000, guid: f0a2f2dc3f877f240b4bb9a2f4fcbfd2, type: 3}
+  audioLvl: {fileID: 8300000, guid: a8bf7490dcf9fbc48baa9810de85242b, type: 3}
 --- !u!50 &3905292812795133818
 Rigidbody2D:
   serializedVersion: 4
