@@ -29,7 +29,7 @@ public class radialEnemyBehaviour : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
-            GameObject explosionGO = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             SoundManagerScript.PlaySound("radialEnemyDeath");
         }
