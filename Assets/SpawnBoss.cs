@@ -27,8 +27,8 @@ public class SpawnBoss : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            
             SoundManagerScript.PlaySound("BossMusic");
+            GameObject.Find("Music").GetComponent<AudioSource>().Stop();
             imageBoss.SetActive(true);
             lifeBoss.SetActive(true);
             Instantiate(boss, m_position, Quaternion.identity);

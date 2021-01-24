@@ -63,7 +63,6 @@ public class SoundManagerScript : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
-        const string robotenemydeath = "robotEnemyDeath";
         switch (clip)
         {
             case "jump":
@@ -145,6 +144,9 @@ public class SoundManagerScript : MonoBehaviour
         switch (clip)
         {
             case "gameOverSong":
+                audioSrc.Stop();
+                break;
+            case "Play":
                 audioSrc.Stop();
                 break;
             default:

@@ -49,7 +49,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health >= 0)
+        if (health > 0)
         {
             Movement();
             if (health < maxHealth / 4)
@@ -77,7 +77,9 @@ public class BossPhaseBehaviour : MonoBehaviour
             sliderHealth.SetActive(false);
             EnemyRB.velocity = new Vector2(0, 0);
             anim.SetBool("dead", true);
+            GameObject.Find("YouWin").GetComponent<Animator>().SetBool("bossDead", true);
             Destroy(gameObject, 1.8f);
+            GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().hasWon = true;
         }
     }
 
