@@ -29,6 +29,8 @@ public class SpawnBoss : MonoBehaviour
         {
             SoundManagerScript.PlaySound("BossMusic");
             GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+            GameObject.Find("Character_Sprite_Sheet_0").GetComponent<ThrowAmmo>().activeBoss = true;
+            GameObject.Find("Character_Sprite_Sheet_1").GetComponent<ThrowAmmo>().activeBoss = true;
             imageBoss.SetActive(true);
             lifeBoss.SetActive(true);
             Instantiate(boss, m_position, Quaternion.identity);
