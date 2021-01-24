@@ -39,7 +39,7 @@ public class BossPhaseBehaviour : MonoBehaviour
         imageBoss = GameObject.Find("ImageBoss");
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
-        speed = 750;
+        speed = 6;
         EnemyRB = GetComponent<Rigidbody2D>();
         health = maxHealth = 1000;
         phase = Phases.INITPHASE;
@@ -90,7 +90,7 @@ public class BossPhaseBehaviour : MonoBehaviour
 
     void Movement()
     {
-        EnemyRB.velocity = new Vector2(dirX, DIRy) * speed * Time.deltaTime;
+        EnemyRB.velocity = new Vector2(dirX, DIRy) * speed ;
         HitDetection();
     }
 
@@ -158,7 +158,7 @@ public class BossPhaseBehaviour : MonoBehaviour
             else if (phase == Phases.PHASE2)
             {
                 renderer.color = Color.yellow;
-                speed = 1000;
+                speed = 10;
                 //Shoot
                 int rand = Random.Range(0, 2);
 
@@ -176,7 +176,7 @@ public class BossPhaseBehaviour : MonoBehaviour
             {
                 renderer.color = Color.red;
                 int rand = Random.Range(0, 2);
-                speed = 1250;
+                speed = 15;
                 //Shoot
                 if (rand == 0)
                 {
