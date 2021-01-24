@@ -59,6 +59,7 @@ public class PowerUp : MonoBehaviour
 
             if (randomObject == 1) //health
             {
+                SoundManagerScript.PlaySound("dropSound");
                 if (playerBehaviour._playerLifes < 6)
                 {
                     playerBehaviour._playerLifes += 1;
@@ -66,6 +67,7 @@ public class PowerUp : MonoBehaviour
             }
             else if (randomObject == 2) //ammo
             {
+                SoundManagerScript.PlaySound("dropSound");
                 if (handController.currentPos == 0) //purple
                 {
                     if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
