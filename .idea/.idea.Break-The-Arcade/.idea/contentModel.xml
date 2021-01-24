@@ -8,7 +8,9 @@
       <e p="Assets" t="Include">
         <e p="ActivateDash.cs" t="Include" />
         <e p="ActivateEnemy.cs" t="Include" />
+        <e p="AdjustMusic.cs" t="Include" />
         <e p="ammoBoxScript.cs" t="Include" />
+        <e p="AmmoBoxScriptBoss.cs" t="Include" />
         <e p="AttackHard.cs" t="Include" />
         <e p="BarrierAlienDead.cs" t="Include" />
         <e p="barrilScript.cs" t="Include" />
@@ -31,6 +33,7 @@
         <e p="healthBox.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
+        <e p="MoveText.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
         <e p="PlaySceneManager.cs" t="Include" />
@@ -111,6 +114,14 @@
             <e p="yellowBulletBehaviour.cs" t="Include" />
             <e p="YellowShoot.cs" t="Include" />
           </e>
+          <e p="Sprites" t="Include">
+            <e p="Legacy-Dungeon_V0.2_vacaroxa" t="Include">
+              <e p="Final" t="Include">
+                <e p="Autor_note.txt" t="Include" />
+                <e p="release.txt" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="TextMesh Pro" t="Include">
             <e p="Fonts" t="Include">
               <e p="LiberationSans - OFL.txt" t="Include" />
@@ -150,6 +161,7 @@
         <e p="reloadScript.cs" t="Include" />
         <e p="SpaceInvadersTrigger.cs" t="Include" />
         <e p="SpawnBoss.cs" t="Include" />
+        <e p="ThrowAmmo.cs" t="Include" />
         <e p="TowerBehaviour.cs" t="Include" />
         <e p="towerShoot.cs" t="Include" />
         <e p="triggerZone_1.cs" t="Include" />

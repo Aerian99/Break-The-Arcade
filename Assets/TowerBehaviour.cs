@@ -26,11 +26,11 @@ public class TowerBehaviour : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
+            SoundManagerScript.PlaySound("radialEnemyDeath");
             Vector3 _position = transform.position;
             _position.x += 1f;
-            GameObject explosionGO = Instantiate(explosionEffect, _position, Quaternion.identity);
+            Instantiate(explosionEffect, _position, Quaternion.identity);
             Destroy(this.gameObject);
-
         }
     }
 
