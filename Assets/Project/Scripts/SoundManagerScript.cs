@@ -24,7 +24,7 @@ public class SoundManagerScript : MonoBehaviour
         powerup,
         radialEnemyHurt,
         radialEnemyDeath,
-        robotDeath,
+        patrolEnemyDeath,
         radialShoot,
         bossMusic,
         gameOverSong;
@@ -53,7 +53,7 @@ public class SoundManagerScript : MonoBehaviour
         powerup = Resources.Load<AudioClip>("powerup");
         radialEnemyHurt = Resources.Load<AudioClip>("radialEnemyHurt");
         radialEnemyDeath = Resources.Load<AudioClip>("radialEnemyDeath");
-        robotDeath = Resources.Load<AudioClip>("robotDeath");
+        patrolEnemyDeath = Resources.Load<AudioClip>("patrolEnemyDeath");
         radialShoot = Resources.Load<AudioClip>("radialShoot");
         bossMusic = Resources.Load<AudioClip>("BossMusic");
         gameOverSong = Resources.Load<AudioClip>("sadChiptune");
@@ -63,6 +63,7 @@ public class SoundManagerScript : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
+        const string robotenemydeath = "robotEnemyDeath";
         switch (clip)
         {
             case "jump":
@@ -125,8 +126,8 @@ public class SoundManagerScript : MonoBehaviour
             case "radialEnemyDeath":
                 audioSrc.PlayOneShot(radialEnemyDeath);
                 break;
-            case "robotDeath":
-                audioSrc.PlayOneShot(robotDeath);
+            case "patrolEnemyDeath":
+                audioSrc.PlayOneShot(patrolEnemyDeath);
                 break;
             case "BossMusic":
                 audioSrc.PlayOneShot(bossMusic);
