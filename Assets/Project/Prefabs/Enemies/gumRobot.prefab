@@ -207,3 +207,5 @@ MonoBehaviour:
   lifes: 0
   isDying: 0
   mat: {fileID: 2100000, guid: 755fcbaaebacee344bac428086343fab, type: 2}
+  explosionEffect: {fileID: 5626103418531632575, guid: 5c35f723d3653c24c9f9d0f378a85d55,
+    type: 3}

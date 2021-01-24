@@ -34,6 +34,8 @@ public class enemyPatrol : MonoBehaviour
     public Material mat;
 
     GameObject bulletGO;
+    
+    public GameObject explosionEffect;
 
     private void Start()
     {
@@ -87,12 +89,17 @@ public class enemyPatrol : MonoBehaviour
             }
         }
 
-        if (lifes < 0f)
+        if (lifes <= 0f)
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isDead", true);
-            Dead();
-            //SoundManagerScript.PlaySound("robotDeath");
+            
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            //Dead();
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            SoundManagerScript.PlaySound("radialEnemyDeath");
         }
     }
 
@@ -157,7 +164,7 @@ public class enemyPatrol : MonoBehaviour
         NextTimeToFire = Time.time + FireRate;
     }
 
-    void Dead()
+   /* void Dead()
     {
         mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
         this.GetComponent<SpriteRenderer>().material = mat;
@@ -172,5 +179,5 @@ public class enemyPatrol : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
+    }*/
 }
