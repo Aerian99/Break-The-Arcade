@@ -27,7 +27,8 @@ public class SoundManagerScript : MonoBehaviour
         patrolEnemyDeath,
         radialShoot,
         bossMusic,
-        gameOverSong;
+        gameOverSong,
+        dropSound;
 
     public static AudioSource audioSrc;
 
@@ -57,6 +58,7 @@ public class SoundManagerScript : MonoBehaviour
         radialShoot = Resources.Load<AudioClip>("radialShoot");
         bossMusic = Resources.Load<AudioClip>("BossMusic");
         gameOverSong = Resources.Load<AudioClip>("sadChiptune");
+        dropSound = Resources.Load<AudioClip>("dropSound");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -133,6 +135,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "gameOverSong":
                 audioSrc.PlayOneShot(gameOverSong);
+                break;
+            case "dropSound":
+                audioSrc.PlayOneShot(dropSound);
                 break;
             default:
                 break;

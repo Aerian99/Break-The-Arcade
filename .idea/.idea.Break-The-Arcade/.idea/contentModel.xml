@@ -10,6 +10,7 @@
         <e p="ActivateEnemy.cs" t="Include" />
         <e p="ammoBoxScript.cs" t="Include" />
         <e p="AttackHard.cs" t="Include" />
+        <e p="BarrierAlienDead.cs" t="Include" />
         <e p="barrilScript.cs" t="Include" />
         <e p="BullerParabola.cs" t="Include" />
         <e p="CameraBoss.cs" t="Include" />
@@ -25,6 +26,7 @@
         <e p="explosionEffect.cs" t="Include" />
         <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />
+        <e p="healthBox.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />

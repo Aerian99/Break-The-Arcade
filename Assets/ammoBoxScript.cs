@@ -10,6 +10,7 @@ public class ammoBoxScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundManagerScript.PlaySound("dropSound");
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(other.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0f);
             Destroy(this.gameObject);
             
