@@ -41,6 +41,7 @@ TagManager:
   - Boss
   - SpawnPoint
   - absorbPoint
+  - BossKnight
   layers:
   - Default
   - TransparentFX

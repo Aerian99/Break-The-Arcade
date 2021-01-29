@@ -33,10 +33,20 @@ public class purpleBulletBehaviour : MonoBehaviour {
         }
         if (other.gameObject.CompareTag("Boss"))
         {
-            other.gameObject.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
-            float slider = bulletForce / other.gameObject.GetComponent<BossPhaseBehaviour>().maxHealth;
-            other.gameObject.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
-            popUpDamage(bulletForce);
+            if(other.gameObject.name == "Boss Knight")
+            {
+                other.gameObject.GetComponent<BossKhightBehaviour>().health -= (int)bulletForce;
+                float slider = bulletForce / other.gameObject.GetComponent<BossKhightBehaviour>().maxHealth;
+                other.gameObject.GetComponent<BossKhightBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                popUpDamage(bulletForce);
+            }
+            else
+            {
+                other.gameObject.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
+                float slider = bulletForce / other.gameObject.GetComponent<BossPhaseBehaviour>().maxHealth;
+                other.gameObject.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                popUpDamage(bulletForce);
+            }
         }
         if (other.gameObject.CompareTag("Tower"))
         {

@@ -7,9 +7,11 @@ public class AlienController : MonoBehaviour
     private float cd, maxCd, speed;
     private bool justActive;
     public GameObject[] spriteEnemies;
+    private GameObject alienTrigger;
     int tempSize;
     private void Start()
     {
+        alienTrigger = GameObject.Find("Transition Space Invaders");
         speed = 2f;
         maxCd = 1f;
         cd = maxCd;
@@ -24,7 +26,7 @@ public class AlienController : MonoBehaviour
 
         if (this.gameObject.transform.childCount == 0)
         {
-            SpaceInvadersTrigger.hasPassedLvl = true;
+            alienTrigger.GetComponent<SpaceInvadersTrigger>().hasPassedLvl = true;
         }
         if (tempSize > this.gameObject.transform.childCount)
         {

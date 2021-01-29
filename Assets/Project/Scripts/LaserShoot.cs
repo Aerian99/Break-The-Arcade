@@ -158,10 +158,21 @@ public class LaserShoot : MonoBehaviour
             }
             if (hit.transform.tag == "Boss" && time >= nextFrame)
             {
-                hit.collider.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
-                float slider = bulletForce / hit.collider.GetComponent<BossPhaseBehaviour>().maxHealth;
-                hit.collider.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
-                popUpDamage(bulletForce, hit);
+                if (hit.transform.name == "Boss Knight")
+                {
+                    hit.transform.GetComponent<BossKhightBehaviour>().health -= (int)bulletForce;
+                    float slider = bulletForce / hit.transform.GetComponent<BossKhightBehaviour>().maxHealth;
+                    hit.transform.GetComponent<BossKhightBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                    popUpDamage(bulletForce, hit);
+                }
+                else
+                {
+                    hit.collider.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
+                    float slider = bulletForce / hit.collider.GetComponent<BossPhaseBehaviour>().maxHealth;
+                    hit.collider.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                    popUpDamage(bulletForce, hit);
+                }
+                
             }
             if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
             {

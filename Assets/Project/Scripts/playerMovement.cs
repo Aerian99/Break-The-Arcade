@@ -233,7 +233,6 @@ public class playerMovement : MonoBehaviour
                 positionToDash.x = mouse.x - transform.position.x;
                 positionToDash.y = mouse.y - transform.position.y;
                 positionToDash = positionToDash.normalized;
-                Debug.Log(positionToDash);
                 isDashing = true;
                 CurrentDashTimer = StartDashTimer;
                 ghostController.enabled = true;

@@ -5,11 +5,15 @@ using UnityEngine;
 public class SpaceInvadersTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool hasPassedLvl = false;
+    public bool hasPassedLvl = false;
     bool nextRoom = false;
     public GameObject cam1, cam2, cam3, globalLight, oldGlobalLight, lightPlayer, spaceInvLimit,
         focoR, focoG, focoB, enemies;
 
+    private void Start()
+    {
+        hasPassedLvl = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
