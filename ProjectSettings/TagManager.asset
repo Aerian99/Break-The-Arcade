@@ -13,8 +13,34 @@ TagManager:
   - Range
   - RedBullet
   - PurpleBullet
-  - NPC
   - YellowBullet
+  - PlayerCenterPivot
+  - footTrigger
+  - Potion
+  - Camara
+  - gunSelector
+  - Bullet Pacman
+  - greyPlatform
+  - Wall
+  - LaserGun
+  - AlienAttack
+  - Triggers
+  - AlienWall
+  - AlienEnemy
+  - Rooms
+  - absorbZone
+  - Camera2
+  - Camera1
+  - PlatformController
+  - RobotPatrol
+  - gameController
+  - AnimationLight
+  - Tower
+  - Barriles
+  - Ammo
+  - Boss
+  - SpawnPoint
+  - absorbPoint
   layers:
   - Default
   - TransparentFX
@@ -27,14 +53,14 @@ TagManager:
   - Platforms
   - Bullet
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - BulletReload
+  - HittableObjects
+  - AlienPlatform
+  - Room
+  - SpawnPoint
+  - Triggers
+  - UncollisionableObjects
   - 
   - 
   - 
@@ -54,6 +80,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2263954501
+    locked: 0
+  - name: Enemy
+    uniqueID: 1633482351
     locked: 0
   - name: Bullet
     uniqueID: 2105085085
