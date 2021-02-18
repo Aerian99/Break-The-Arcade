@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class playerBehaviour : MonoBehaviour
 {
-
     private Animator animator;
     public static int _playerLifes;
     private float _maxLifes;
@@ -17,7 +16,7 @@ public class playerBehaviour : MonoBehaviour
 
     private reloadScript reloadScript;
 
-    [HideInInspector]public bool activePostProcessing;
+    [HideInInspector] public bool activePostProcessing;
     private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity, cdPowerup, maxCdPowerup;
     public float reloadTime;
     public static bool isReloading;
@@ -29,21 +28,28 @@ public class playerBehaviour : MonoBehaviour
     public Image healthBarFill;
     public Image healthBarWhiteFill;
     private float hurtSpeed;
-    
+
     // HEALTHBAR SETTINGS
     public GameObject defaultBar;
     public Sprite[] healthbarimages;
 
     public GameObject deathEffect, noAmmoText;
     private GameObject reloadText;
-    
+
     private int seconds;
 
     public static int bulletsPurple, bulletsYellow, bulletsShotgun;
-    public static int MAX_PURPLE_SHOOT, MAX_YELLOW_SHOOT, MAX_SHOTGUN_SHOOT; //maximo de balas que puede tener en el cargador
+
+    public static int
+        MAX_PURPLE_SHOOT, MAX_YELLOW_SHOOT, MAX_SHOTGUN_SHOOT; //maximo de balas que puede tener en el cargador
+
     public static bool purpleCanReload, yellowCanReload, shotgunCanReload;
     public static int reservedAmmoPurple, reservedAmmoYellow, reservedAmmoShotgun; //counter del total que lleva
     public static int MAX_BULLETS_PURPLE, MAX_BULLETS_YELLOW, MAX_BULLETS_SHOTGUN; //máximo que puede tener en TOTAL
+
+    public GameObject weaponMenu;
+    public static bool weaponMenuUp;
+    public GameObject aimController1, aimController2, aimController3, aimController4;
 
     void Start()
     {
@@ -76,14 +82,17 @@ public class playerBehaviour : MonoBehaviour
         isReloading = false;
         reloadText.SetActive(false);
         reloadScript = GetComponent<reloadScript>();
+        weaponMenu.SetActive(false);
+        weaponMenuUp = false;
     }
 
     void Update()
     {
+        WeaponMenu();
         resetReload();
         //healthBarEffect();
         healthBarPixel();
-        
+
         if (_playerLifes <= 0)
         {
             SoundManagerScript.PlaySound("gameOver");
@@ -92,33 +101,33 @@ public class playerBehaviour : MonoBehaviour
             GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().isDead = true;
             Destroy(this.gameObject);
         }
-        
+
         Immunity();
         PowerUp();
         chromaticAberration();
 
-        if(handController.currentPos == 0) 
+        if (handController.currentPos == 0)
             purpleBulletsCounter.text = "" + reservedAmmoPurple;
-        else if (handController.currentPos == 1) 
+        else if (handController.currentPos == 1)
             yellowBulletsCounter.text = "" + reservedAmmoYellow;
-        else if (handController.currentPos == 2) 
+        else if (handController.currentPos == 2)
             redBulletsCounter.text = "" + reservedAmmoShotgun;
 
         if (isReloading)
             return;
 
-        if (Input.GetKeyDown(KeyCode.R) && 
-            (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT ||
-            handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT ||
-            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT) || 
-            (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0|| 
-             handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0||
-             handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoShotgun > 0))
+        if ((Input.GetKeyDown(KeyCode.R) &&
+             (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
+              handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0  ||
+              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoYellow > 0 ) ||
+             (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
+              handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
+              handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0 )))
         {
             StartCoroutine(Reload());
         }
-        
     }
+
     void Immunity()
     {
         if (activeImmunity)
@@ -130,8 +139,9 @@ public class playerBehaviour : MonoBehaviour
             activeImmunity = false;
             animator.SetBool("isImmune", true);
         }
+
         if (!canBeDamaged)
-        { 
+        {
             cdImmunity -= Time.deltaTime;
         }
 
@@ -152,6 +162,7 @@ public class playerBehaviour : MonoBehaviour
             activePowerUp = false;
             animator.SetBool("hasPowerup", true);
         }
+
         if (!canBeDamagedPowerup)
         {
             cdPowerup -= Time.deltaTime;
@@ -164,6 +175,7 @@ public class playerBehaviour : MonoBehaviour
             cdPowerup = maxCdPowerup;
         }
     }
+
     void chromaticAberration()
     {
         if (activePostProcessing)
@@ -173,6 +185,7 @@ public class playerBehaviour : MonoBehaviour
                 cdAberration = 0;
                 activePostProcessing = false;
             }
+
             cdAberration += Time.deltaTime;
         }
     }
@@ -182,6 +195,7 @@ public class playerBehaviour : MonoBehaviour
         int bulletsNeeded;
         reloadText.SetActive(false);
         isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
 
         if (handController.currentPos == 0)
         {
@@ -201,7 +215,7 @@ public class playerBehaviour : MonoBehaviour
         else if (handController.currentPos == 1)
         {
             bulletsNeeded = MAX_YELLOW_SHOOT - bulletsYellow;
-            
+
             if (reservedAmmoYellow >= bulletsNeeded)
             {
                 bulletsYellow += bulletsNeeded;
@@ -216,7 +230,7 @@ public class playerBehaviour : MonoBehaviour
         else if (handController.currentPos == 2)
         {
             bulletsNeeded = MAX_SHOTGUN_SHOOT - bulletsShotgun;
-            
+
             if (reservedAmmoShotgun >= bulletsNeeded)
             {
                 bulletsShotgun += bulletsNeeded;
@@ -228,13 +242,15 @@ public class playerBehaviour : MonoBehaviour
                 reservedAmmoShotgun = 0;
             }
         }
-         yield return new WaitForSeconds(reloadTime);
+
+        reloadScript.hitReload = false;
         isReloading = false;
     }
-
+    
     void resetReload() // Esta función previene que no acabe la recarga si cambias de arma si estás recargando.
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f && isReloading) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && isReloading
+        ) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
         {
             reloadScript.fill.fillAmount = 0f;
             reloadScript.fill.enabled = false;
@@ -243,7 +259,8 @@ public class playerBehaviour : MonoBehaviour
             StopAllCoroutines();
             isReloading = false;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && isReloading) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && isReloading
+        ) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
         {
             reloadScript.fill.fillAmount = 0f;
             reloadScript.fill.enabled = false;
@@ -281,10 +298,12 @@ public class playerBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("RobotPatrol") || collision.gameObject.CompareTag("Enemy")) && !activePowerUp)
+        if ((collision.gameObject.CompareTag("RobotPatrol") || collision.gameObject.CompareTag("Enemy")) &&
+            !activePowerUp)
         {
             activeImmunity = true;
         }
+
         if (collision.gameObject.CompareTag("Ammo"))
         {
             if (noAmmoText.activeInHierarchy)
@@ -292,5 +311,52 @@ public class playerBehaviour : MonoBehaviour
             if (reloadText.activeInHierarchy)
                 reloadText.SetActive(false);
         }
+    }
+
+    void WeaponMenu()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            // DESACTIVAMOS EL MOVIMIENTO Y EL APUNTADO
+            this.gameObject.GetComponent<playerMovement>().enabled = false;
+            aimController1.GetComponent<playerAimWeapon>().enabled = false;
+            aimController2.GetComponent<playerAimWeapon>().enabled = false;
+            aimController3.GetComponent<playerAimWeapon>().enabled = false;
+            aimController4.GetComponent<playerAimWeapon>().enabled = false;
+            
+            weaponMenu.SetActive(true);
+            weaponMenuUp = true;
+            Time.timeScale = 0.1f;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            this.gameObject.GetComponent<playerMovement>().enabled = true;
+            aimController1.GetComponent<playerAimWeapon>().enabled = true;
+            aimController2.GetComponent<playerAimWeapon>().enabled = true;
+            aimController3.GetComponent<playerAimWeapon>().enabled = true;
+            aimController4.GetComponent<playerAimWeapon>().enabled = true;
+            
+            weaponMenu.SetActive(false);
+            weaponMenuUp = false;
+            
+            // SELECIONAR EL ARMA DONDE TENIAMOS EL RATÓN
+            if (RadialMenu.selection == 0)
+            {
+                handController.currentPos = 0;
+            } 
+            else if (RadialMenu.selection == 2)
+            {
+                handController.currentPos = 1;
+            }
+            else if (RadialMenu.selection == 1)
+            {
+                handController.currentPos = 2;
+            }
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
+
+        
     }
 }

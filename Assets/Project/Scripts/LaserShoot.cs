@@ -84,7 +84,7 @@ public class LaserShoot : MonoBehaviour
                 SoundManagerScript.PlaySound("yellowGun");
             }
             else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
-                     this.gameObject.activeInHierarchy == true && !startedShooting && !playerBehaviour.isReloading)
+                     this.gameObject.activeInHierarchy == true && !startedShooting && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
             {
                 UpdateLaser();
                 nextFrame += period;
@@ -104,13 +104,13 @@ public class LaserShoot : MonoBehaviour
 
             //POPUPS
             if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
-                this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow > 0 && !playerBehaviour.isReloading)
+                this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow > 0 && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
             {
                 reloadText.SetActive(true);
             }
 
             else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
-                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0)
+                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0 && !playerBehaviour.weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
             }

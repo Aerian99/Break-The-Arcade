@@ -30,7 +30,8 @@ public class SoundManagerScript : MonoBehaviour
         bossMusic2,
         gameOverSong,
         dropSound,
-        coinSound;
+        coinSound,
+        menuPick;
 
     public static AudioSource audioSrc;
 
@@ -63,6 +64,7 @@ public class SoundManagerScript : MonoBehaviour
         gameOverSong = Resources.Load<AudioClip>("sadChiptune");
         dropSound = Resources.Load<AudioClip>("dropSound");
         coinSound = Resources.Load<AudioClip>("coin2");
+        menuPick = Resources.Load<AudioClip>("menuPick");
         audioSrc = GetComponent<AudioSource>();
         
     }
@@ -149,6 +151,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "coin":
                 audioSrc.PlayOneShot(coinSound);
+                break;
+            case "menuPick":
+                audioSrc.PlayOneShot(menuPick);
                 break;
             default:
                 break;

@@ -141,9 +141,9 @@ public class enemyPatrol : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
         {
-            lifes -= 10f;
+            GetComponent<Animator>().SetTrigger("hit");
         }
     }
 
@@ -163,21 +163,4 @@ public class enemyPatrol : MonoBehaviour
         bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
         NextTimeToFire = Time.time + FireRate;
     }
-
-   /* void Dead()
-    {
-        mat.SetColor("_Color", new Color(0.1294118f, 0.5921569f, 0.8039216f));
-        this.GetComponent<SpriteRenderer>().material = mat;
-        isDying = true;
-        this.GetComponent<Rigidbody2D>().isKinematic = true;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-        gameObject.GetComponent<Collider2D>().enabled = false;
-        fade -= Time.deltaTime;
-        mat.SetFloat("_Fade", fade);
-
-        if (fade <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }*/
 }

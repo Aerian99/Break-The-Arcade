@@ -48,7 +48,7 @@ public class PurpleShoot : MonoBehaviour
             playerBehaviour.bulletsPurple--;
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
-            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading)
+            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
@@ -57,12 +57,12 @@ public class PurpleShoot : MonoBehaviour
             cursor.GetComponent<Animator>().SetTrigger("click");
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
-           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0 && !playerBehaviour.isReloading)
+           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0 && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
         {
             reloadText.SetActive(true);
         }
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 && playerBehaviour.reservedAmmoPurple == 0 &&
-           this.gameObject.activeInHierarchy == true)
+           this.gameObject.activeInHierarchy == true && !playerBehaviour.weaponMenuUp)
         {
             noAmmoText.SetActive(true);
         }

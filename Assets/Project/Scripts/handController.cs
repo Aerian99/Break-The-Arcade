@@ -126,7 +126,7 @@ public class handController : MonoBehaviour
         }
 
         // ABSORB GUN ZONE
-        if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false)
+        if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false /*&& !playerBehaviour.weaponMenuUp*/)
         {
             absorbGun.SetActive(true);
             purpleGun.SetActive(false);

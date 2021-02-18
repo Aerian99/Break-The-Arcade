@@ -50,6 +50,7 @@ public class RedShoot : MonoBehaviour
     public Sprite reloadGun1, reloadGun2, reloadGun3;
 
     public GameObject cursor;
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -72,29 +73,29 @@ public class RedShoot : MonoBehaviour
             powerUps();
         else
         {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
-            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading)
-        {
-            Shoot();
-            SoundManagerScript.PlaySound("shotgun");
-            ScreenShake.shake = 4.5f;
-            ScreenShake.canShake = true;
-            cursor.GetComponent<Animator>().SetTrigger("click");
-        }
+            if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
+                this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+            {
+                Shoot();
+                SoundManagerScript.PlaySound("shotgun");
+                ScreenShake.shake = 4.5f;
+                ScreenShake.canShake = true;
+                cursor.GetComponent<Animator>().SetTrigger("click");
+            }
 
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0)
-        {
-            reloadText.SetActive(true);
-        }
+            else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
+                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 && !playerBehaviour.weaponMenuUp)
+            {
+                reloadText.SetActive(true);
+            }
 
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
-        {
-            noAmmoText.SetActive(true);
-        }
-        
-        RotateReloadBullet();
+            else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
+                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0 && !playerBehaviour.weaponMenuUp)
+            {
+                noAmmoText.SetActive(true);
+            }
+
+            RotateReloadBullet();
         }
     }
 
@@ -105,8 +106,9 @@ public class RedShoot : MonoBehaviour
             Absorb_Gun.firstTimeAbsorb2 = false;
             Absorb_Gun.ammoFull2 = true;
         }
+
         muzzle.Play();
-        if(powerUpGreen)
+        if (powerUpGreen)
         {
             bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -138,9 +140,8 @@ public class RedShoot : MonoBehaviour
             Destroy(bullet3, bulletLifeTime);
             Destroy(bullet4, bulletLifeTime);
             Destroy(bullet5, bulletLifeTime);
-
         }
-        else if(powerUpBlue)
+        else if (powerUpBlue)
         {
             StartCoroutine(ShootBlue());
         }
@@ -166,13 +167,12 @@ public class RedShoot : MonoBehaviour
             Destroy(bullet2, bulletLifeTime);
             Destroy(bullet3, bulletLifeTime);
         }
-       
     }
 
     IEnumerator ShootBlue()
     {
         playerBehaviour.bulletsShotgun--;
-       
+
         for (int i = 0; i < 2; i++)
         {
             bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
@@ -206,7 +206,6 @@ public class RedShoot : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
 
-       
 
         yield return new WaitForSeconds(0);
     }
@@ -222,7 +221,8 @@ public class RedShoot : MonoBehaviour
             player.AddForce(new Vector2(-25f, 7f), ForceMode2D.Impulse);
         }
 
-        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -20) // Si el jugador dispara hacia abajo con un angulo determinado, se realizara un salto con la potencia de la escopeta;
+        if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -20
+        ) // Si el jugador dispara hacia abajo con un angulo determinado, se realizara un salto con la potencia de la escopeta;
         {
             player.velocity = Vector2.zero;
             player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
@@ -276,13 +276,14 @@ public class RedShoot : MonoBehaviour
         }
 
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 && !playerBehaviour.isReloading)
+                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 &&
+                 !playerBehaviour.isReloading)
         {
             reloadText.SetActive(true);
         }
 
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-            this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
+                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
         {
             noAmmoText.SetActive(true);
         }
@@ -297,6 +298,7 @@ public class RedShoot : MonoBehaviour
             Absorb_Gun.firstTimeAbsorb2 = false;
             Absorb_Gun.ammoFull2 = true;
         }
+
         muzzle.Play();
 
         bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
@@ -336,7 +338,5 @@ public class RedShoot : MonoBehaviour
         Destroy(bullet4, bulletLifeTime);
         Destroy(bullet5, bulletLifeTime);
         Destroy(bullet6, bulletLifeTime);
-
-
     }
 }

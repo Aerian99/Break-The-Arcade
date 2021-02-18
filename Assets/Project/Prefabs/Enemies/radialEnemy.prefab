@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 428050275873865749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.59, y: 5.24, z: 0}
-  m_LocalScale: {x: 1.6119307, y: 1.6119307, z: 1.6119307}
+  m_LocalScale: {x: 1.773349, y: 1.773349, z: 1.773349}
   m_Children:
   - {fileID: 245873817}
   m_Father: {fileID: 0}
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,6 +261,8 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 755fcbaaebacee344bac428086343fab, type: 2}
   explosionEffect: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,
     type: 3}
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  hitMaterial: {fileID: 2100000, guid: e1714d7e8ea790740a079751c3cbb838, type: 2}
 --- !u!95 &1150407230
 Animator:
   serializedVersion: 3

@@ -11,13 +11,15 @@ public class radialEnemyBehaviour : MonoBehaviour
     float fade;
     public Material mat;
     public GameObject explosionEffect;
+    
+    public Material defaultMaterial;
+    public Material hitMaterial;
 
     void Start()
     {
         lifes = 20f;
         fade = 1;
         isDying = false;
-
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
         {
-            //SoundManagerScript.PlaySound("radialEnemyHurt");
+            GetComponent<Animator>().SetTrigger("hit");
         }
     }
 }

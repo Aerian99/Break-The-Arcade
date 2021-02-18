@@ -18,12 +18,15 @@ public class radialEnemyShoot : MonoBehaviour
 
     GameObject bulletGO;
 
+    
+
     private void Start()
     {
         random = Random.Range(0,2f);
         randomBtw = Random.Range(2, 4f);
         StartCoroutine(Shooting());
         SoundManagerScript.PlaySound("radialShoot");
+
     }
 
 
