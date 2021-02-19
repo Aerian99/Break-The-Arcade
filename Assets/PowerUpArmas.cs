@@ -48,7 +48,7 @@ public class PowerUpArmas : MonoBehaviour
             _interpolator.ToMin();
         else if (_interpolator.IsMinPrecise)
             _interpolator.ToMax();
-        _position.y = 1 * 1 * _interpolator.Value + 7.5f;
+        _position.y = 1 * 1 * _interpolator.Value + 27f;
         _position.x = this.transform.position.x;
         this.transform.position = _position;
     }
