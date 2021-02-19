@@ -11,7 +11,7 @@ public class CameraSwitch : MonoBehaviour
     public GameObject fadeImage;
     Vector3 firstPosR, firstPosG, firstPosB;
     float t;
-    public bool treasureRoom;
+    public bool treasureRoom, exitTresure;
 
     bool startCountingFade;
     float cd, maxCd;
@@ -54,7 +54,19 @@ public class CameraSwitch : MonoBehaviour
             {
                 LEDController.isTreasureRoom = true;
             }
-            if (!nextRoom)
+            if(exitTresure)
+                LEDController.isTreasureRoom = false;
+
+            firstPosR = focoR.transform.position;
+            firstPosG = focoG.transform.position;
+            firstPosB = focoB.transform.position;
+            focoR.transform.position = Vector3.Lerp(firstPosR, posFocoR, t);
+            focoG.transform.position = Vector3.Lerp(firstPosG, posFocoG, t);
+            focoB.transform.position = Vector3.Lerp(firstPosB, posFocoB, t);
+
+
+
+            /*if (!nextRoom)
             {
                 firstPosR = focoR.transform.position;
                 firstPosG = focoG.transform.position;
@@ -71,7 +83,7 @@ public class CameraSwitch : MonoBehaviour
                 focoB.transform.position = Vector3.Lerp(posFocoB, firstPosB, t);
                 nextRoom = false;
                 LEDController.isTreasureRoom = false;
-            }
+            }*/
 
         }
 
