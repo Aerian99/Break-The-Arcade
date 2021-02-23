@@ -7,7 +7,7 @@ public class SpaceInvadersTrigger : MonoBehaviour
     // Start is called before the first frame update
     public bool hasPassedLvl = false;
     bool nextRoom = false;
-    public GameObject cam1, cam2, cam3, globalLight, oldGlobalLight, lightPlayer, spaceInvLimit,
+    public GameObject spaceCam, globalLight, oldGlobalLight, lightPlayer, spaceInvLimit,
         focoR, focoG, focoB, enemies;
 
     private void Start()
@@ -22,9 +22,7 @@ public class SpaceInvadersTrigger : MonoBehaviour
             if(!hasPassedLvl)
             { 
                 RenderSettings.ambientLight = Color.black;
-                cam1.SetActive(false);
-                cam2.SetActive(false);
-                cam3.SetActive(true);
+                spaceCam.SetActive(true);
                 oldGlobalLight.SetActive(false);
                 globalLight.SetActive(true); 
                 lightPlayer.SetActive(true);
@@ -36,9 +34,7 @@ public class SpaceInvadersTrigger : MonoBehaviour
             }
             else
             {
-                cam1.SetActive(true);
-                cam2.SetActive(false);
-                cam3.SetActive(false);
+                spaceCam.SetActive(false);
                 oldGlobalLight.SetActive(true);
                 globalLight.SetActive(false);
                 lightPlayer.SetActive(false);

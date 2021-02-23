@@ -8,12 +8,11 @@ public class CameraSwitch : MonoBehaviour
     public Vector3 posFocoR, posFocoG, posFocoB;
     public Vector3 newPos;
     public GameObject focoR, focoG, focoB;
-    public GameObject fadeImage;
     Vector3 firstPosR, firstPosG, firstPosB;
     float t;
     public bool treasureRoom, exitTresure;
 
-    bool startCountingFade;
+    /*bool startCountingFade;
     float cd, maxCd;
 
     private void Start()
@@ -22,33 +21,30 @@ public class CameraSwitch : MonoBehaviour
         cd = 0f;
         maxCd = 1.1f;
         startCountingFade = false;
-    }
+    }*/
 
-    private void Update()
+/*    private void Update()
     {
         if (startCountingFade)
         {
             cd += Time.deltaTime;
             if (cd >= maxCd)
             { 
-                fadeImage.GetComponent<Animator>().SetBool("fadeIn", false);
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.gameObject.GetComponent<playerMovement>().enabled = true;
                 cd = 0;
                 startCountingFade = false;
             }
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            fadeImage.GetComponent<movePlayer>().newPos = newPos;
-            fadeImage.GetComponent<Animator>().SetBool("fadeIn", true);
-            startCountingFade = true;
+            /*startCountingFade = true;
             collision.gameObject.GetComponent<playerMovement>().enabled = false;
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);*/
 
             if (treasureRoom)
             {
