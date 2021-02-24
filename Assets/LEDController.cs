@@ -22,7 +22,7 @@ public class LEDController : MonoBehaviour
         {
             if (isTreasureRoom)
             {
-                intensity = Mathf.Pow(2, 1.5f);
+                intensity = Mathf.Pow(2, 0.2f);
                 if (timeLeft <= Time.deltaTime)
                 {
                     material.color = targetColor;
@@ -44,7 +44,7 @@ public class LEDController : MonoBehaviour
                     justExitTreasure = false;
                 }
 
-                intensity = Mathf.Pow(2, 1.0f);
+                intensity = Mathf.Pow(2, 0.2f);
 
                 if (timeLeft <= Time.deltaTime)
                 {
