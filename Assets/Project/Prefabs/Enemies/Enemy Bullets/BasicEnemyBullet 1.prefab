@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7541272558622887265}
   - component: {fileID: 1403630141148062212}
   - component: {fileID: 1086015493670851298}
-  - component: {fileID: 4094078205778671052}
   m_Layer: 0
   m_Name: BasicEnemyBullet 1
   m_TagString: Bullet Pacman
@@ -152,15 +151,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16021393, y: 0.14019626}
   m_EdgeRadius: 0
---- !u!114 &4094078205778671052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960310769449781454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa50057d14fd2544e8f620cde263e0c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
