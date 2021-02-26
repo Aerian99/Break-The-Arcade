@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class arcadeMachine : MonoBehaviour
 {
-    public GameObject exclamation, dialogCanvas;
+    public GameObject exclamation, dialogCanvas, bocadillo;
 
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -15,6 +15,7 @@ public class arcadeMachine : MonoBehaviour
             if(Input.GetKey(KeyCode.E))
             {
                 this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
+                bocadillo.SetActive(true);
                 dialogCanvas.SetActive(true);
 
             }

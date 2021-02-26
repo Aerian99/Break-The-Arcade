@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     private int index;
     public float speed;
 
-    public GameObject continueButton;
+    public GameObject continueButton, bocadillo;
 
     private void Start()
     {
@@ -45,6 +45,7 @@ public class DialogManager : MonoBehaviour
         {
             displayText.text = "";
             continueButton.SetActive(false);
+            bocadillo.SetActive(false);
         }
     }
 }

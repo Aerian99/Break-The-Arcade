@@ -35,8 +35,8 @@ public class SpawnBoss : MonoBehaviour
             GameObject.Find("Character_Sprite_Sheet_1").GetComponent<ThrowAmmo>().activeBoss = true;
             imageBoss.SetActive(true);
             lifeBoss.SetActive(true);
-            //Instantiate(boss, m_position, Quaternion.identity);
-            boss.SetActive(true);
+            Instantiate(boss, m_position, Quaternion.identity);
+            //boss.SetActive(true);
             Destroy(gameObject);
         }
     }
