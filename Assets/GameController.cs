@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;
+        BeginGame();
     }
 
     // Update is called once per frame
@@ -43,9 +44,13 @@ public class GameController : MonoBehaviour
             cdAbsorb -= Time.deltaTime;
         }
 
-      
+        
     }
 
+    public void BeginGame()
+    {
+        TimerController.instance.BeginTimer();
+    }
     void deactivateEnemyStates()
     {
         radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");
