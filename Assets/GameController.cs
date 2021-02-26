@@ -11,10 +11,10 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BeginGame();
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;
-        BeginGame();
     }
 
     // Update is called once per frame

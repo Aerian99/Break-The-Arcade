@@ -31,14 +31,13 @@ public class TimerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(timerGoing);
     }
 
     public void BeginTimer()
     {
         timerGoing = true;
         elapsedTime = 0f;
-
         StartCoroutine(UpdateTimer());
     }
 
@@ -51,6 +50,7 @@ public class TimerController : MonoBehaviour
     {
         while(timerGoing)
         {
+            
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = timePlaying.ToString("mm' : 'ss' : 'ff");
