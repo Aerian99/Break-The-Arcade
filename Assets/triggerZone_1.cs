@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class triggerZone_1 : MonoBehaviour
 {
-    public GameObject setMapActive, setMapActive2;
+    public GameObject []setMapActive;
     public int radialEnemy;
     private int robotEnemy, tower, alien;
 
@@ -77,8 +77,11 @@ public class triggerZone_1 : MonoBehaviour
                         doors[i].GetComponent<BoxCollider2D>().enabled = true;
                     }
                 }
-                setMapActive.SetActive(false);
-                setMapActive2.SetActive(false);
+                for (int i = 0; i < setMapActive.Length; i++)
+                {
+                    setMapActive[i].SetActive(false);
+                }
+               
             }
         }
     }
