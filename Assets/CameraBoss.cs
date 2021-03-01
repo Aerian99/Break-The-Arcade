@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraBoss : MonoBehaviour
 {
+    public GameObject salaMiniMap;
     public GameObject cam1, cam2, cam3, camBoss;
     public GameObject camMiniMap, roomToFocusMiniMap;
     public bool firstTime;
@@ -26,6 +27,7 @@ public class CameraBoss : MonoBehaviour
             camMiniMap.transform.position = new Vector3(roomToFocusMiniMap.transform.position.x, roomToFocusMiniMap.transform.position.y, camMiniMap.transform.position.z);
             if (firstTime)
             {
+                salaMiniMap.SetActive(false);
                 cam1.SetActive(false);
                 cam2.SetActive(false);
                 cam3.SetActive(false);

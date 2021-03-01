@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwitchSalas : MonoBehaviour
 {
+    
     public GameObject vCam, cameraMiniMap;
     public Vector3 newPos;
     public GameObject focos, minimapSquare;
