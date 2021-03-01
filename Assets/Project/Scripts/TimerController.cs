@@ -31,13 +31,12 @@ public class TimerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(timerGoing);
     }
 
     public void BeginTimer()
     {
-        timerGoing = true;
         elapsedTime = 0f;
+        timerGoing = true;
         StartCoroutine(UpdateTimer());
     }
 
