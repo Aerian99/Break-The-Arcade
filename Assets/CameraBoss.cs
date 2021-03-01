@@ -24,10 +24,10 @@ public class CameraBoss : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            salaMiniMap.SetActive(false);
             camMiniMap.transform.position = new Vector3(roomToFocusMiniMap.transform.position.x, roomToFocusMiniMap.transform.position.y, camMiniMap.transform.position.z);
             if (firstTime)
             {
-                salaMiniMap.SetActive(false);
                 cam1.SetActive(false);
                 cam2.SetActive(false);
                 cam3.SetActive(false);

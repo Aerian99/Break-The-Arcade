@@ -50,7 +50,6 @@ public class TimerController : MonoBehaviour
     {
         while(timerGoing)
         {
-            
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = timePlaying.ToString("mm' : 'ss' : 'ff");
