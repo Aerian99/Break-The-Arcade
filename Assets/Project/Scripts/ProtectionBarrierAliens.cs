@@ -25,6 +25,7 @@ public class ProtectionBarrierAliens : MonoBehaviour
         {
             for (int i = 0; i < transform.childCount; i++)
             {
+                transform.GetChild(i).GetComponent<Animator>().SetBool("startBreaking", true);
                 transform.GetChild(i).GetComponent<SpriteRenderer>().color = new Color(235,92,0,255);
             }
         }
@@ -32,6 +33,7 @@ public class ProtectionBarrierAliens : MonoBehaviour
         {
             for (int i = 0; i < transform.childCount; i++)
             {
+                transform.GetChild(i).GetComponent<Animator>().SetBool("finalBreaking", true);
                 transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
             }
         }

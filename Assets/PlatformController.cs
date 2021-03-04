@@ -31,6 +31,7 @@ public class PlatformController : MonoBehaviour
                 {
                     for (int i = 0; i < _gameObjectsActual[y].transform.childCount; i++)
                     {
+                        _gameObjectsActual[y].transform.GetChild(i).GetComponent<Animator>().SetBool("RedPlatform", true);
                         _gameObjectsActual[y].transform.GetChild(i).GetComponent<Animator>().SetBool("PlayFade", true);
                         _gameObjectsActual[y].transform.GetChild(i).GetComponent<Animator>().SetBool("IsOver", false);
                     }

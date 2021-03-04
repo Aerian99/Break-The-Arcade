@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
+    public GameObject[] setRoomTFalseMiniMap;
     bool nextRoom = false;
     public Vector3 posFocoR, posFocoG, posFocoB;
     public Vector3 newPos;
@@ -42,6 +43,8 @@ public class CameraSwitch : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if(setRoomTFalseMiniMap[0])
+                setRoomTFalseMiniMap[0].SetActive(false);
             /*startCountingFade = true;
             collision.gameObject.GetComponent<playerMovement>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);*/

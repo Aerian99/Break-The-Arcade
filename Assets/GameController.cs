@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BeginGame();
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;
@@ -43,9 +44,13 @@ public class GameController : MonoBehaviour
             cdAbsorb -= Time.deltaTime;
         }
 
-      
+        
     }
 
+    public void BeginGame()
+    {
+        TimerController.instance.BeginTimer();
+    }
     void deactivateEnemyStates()
     {
         radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");

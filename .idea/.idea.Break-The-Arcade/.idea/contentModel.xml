@@ -39,6 +39,7 @@
         <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />
         <e p="healthBox.cs" t="Include" />
+        <e p="InsantiateEnemy.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="MenuItemScript.cs" t="Include" />
@@ -46,6 +47,7 @@
         <e p="MoveSinus.cs" t="Include" />
         <e p="MoveText.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
+        <e p="PatrolTop.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
         <e p="PlaySceneManager.cs" t="Include" />
         <e p="PowerUp.cs" t="Include" />
@@ -123,6 +125,7 @@
             <e p="SpikesBehaviour.cs" t="Include" />
             <e p="spikeTrigger.cs" t="Include" />
             <e p="SwitchSalas.cs" t="Include" />
+            <e p="TimerController.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="UISettings.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />
@@ -175,6 +178,7 @@
         <e p="RadialMenu.cs" t="Include" />
         <e p="redGunReloader.cs" t="Include" />
         <e p="reloadScript.cs" t="Include" />
+        <e p="Shield.cs" t="Include" />
         <e p="SpaceInvadersTrigger.cs" t="Include" />
         <e p="SpawnBoss.cs" t="Include" />
         <e p="ThrowAmmo.cs" t="Include" />

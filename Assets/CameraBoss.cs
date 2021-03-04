@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraBoss : MonoBehaviour
 {
+    public GameObject salaMiniMap;
     public GameObject cam1, cam2, cam3, camBoss;
+    public GameObject camMiniMap, roomToFocusMiniMap;
     public bool firstTime;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class CameraBoss : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            salaMiniMap.SetActive(false);
+            camMiniMap.transform.position = new Vector3(roomToFocusMiniMap.transform.position.x, roomToFocusMiniMap.transform.position.y, camMiniMap.transform.position.z);
             if (firstTime)
             {
                 cam1.SetActive(false);

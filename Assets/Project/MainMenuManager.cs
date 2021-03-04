@@ -17,7 +17,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("MapGeneration");
+        SceneManager.LoadScene("Lvl1");
     }
 
     public void Options()

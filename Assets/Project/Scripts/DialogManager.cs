@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     private int index;
     public float speed;
 
-    public GameObject continueButton;
+    public GameObject continueButton, bocadillo, purple, yellow, red;
 
     private void Start()
     {
@@ -45,6 +45,13 @@ public class DialogManager : MonoBehaviour
         {
             displayText.text = "";
             continueButton.SetActive(false);
+            bocadillo.SetActive(false);
+            if (purple.activeInHierarchy)
+                purple.GetComponent<PurpleShoot>().enabled = true;
+            else if (yellow.activeInHierarchy)
+                yellow.GetComponent<PurpleShoot>().enabled = true;
+            else if (red.activeInHierarchy)
+                red.GetComponent<PurpleShoot>().enabled = true;
         }
     }
 }

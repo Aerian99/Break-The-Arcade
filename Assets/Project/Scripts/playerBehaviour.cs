@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class playerBehaviour : MonoBehaviour
 {
+    public GameObject activeCamera;
     private Animator animator;
     public static int _playerLifes;
     private float _maxLifes;
@@ -90,6 +91,7 @@ public class playerBehaviour : MonoBehaviour
     {
         WeaponMenu();
         resetReload();
+        ActiveMiniMap();
         //healthBarEffect();
         healthBarPixel();
 
@@ -128,6 +130,19 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
+    void ActiveMiniMap()
+    {
+        if(Input.GetKey(KeyCode.Tab))
+        {
+            activeCamera.SetActive(true);
+            Time.timeScale = 0.05f;
+        }
+        else
+        {
+            activeCamera.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
     void Immunity()
     {
         if (activeImmunity)

@@ -64,6 +64,8 @@ TagManager:
   - UncollisionableObjects
   - enemyBullet
   - Enemy
+  - UI 2
+  - PatrolTriggers
   - 
   - 
   - 

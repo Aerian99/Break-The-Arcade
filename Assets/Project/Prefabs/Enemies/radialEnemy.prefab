@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 741874895}
   - component: {fileID: 741874894}
   - component: {fileID: 1150407230}
-  - component: {fileID: 9212663555578008714}
   m_Layer: 8
   m_Name: radialEnemy
   m_TagString: Enemy
@@ -177,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3c04ce9970ebdee4886c49a9f782e8a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -202,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numBullets: 30
-  bulletSpeed: 1
+  bulletSpeed: 15
   bulletPrefab: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
     type: 3}
   bulletPacman: {fileID: 2960310769449781454, guid: 8f9307fb6cc9b2d4890354f4972e70bf,
@@ -274,7 +273,7 @@ Animator:
   m_GameObject: {fileID: 428050275873865749}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 150eb59f49703e447a66fb9890f3eef0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5a24a7b5caf9857428586a49937a07ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -283,18 +282,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9212663555578008714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428050275873865749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa50057d14fd2544e8f620cde263e0c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  frequency: 20
-  magnitude: 0.5
