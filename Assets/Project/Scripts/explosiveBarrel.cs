@@ -37,7 +37,7 @@ public class explosiveBarrel : MonoBehaviour
             explosionBarrelNormal = Physics2D.OverlapCircleAll(this.transform.position, explosionRange, barrelNLayer);
             for (int i = 0; i < explosionBarrelNormal.Length; i++)
             {
-                explosionBarrelNormal[i].gameObject.GetComponent<barrilScript>().Die();
+                explosionBarrelNormal[i].gameObject.GetComponent<barrilScript>().lifes = 0;
             }
 
             CheckExplosion();
