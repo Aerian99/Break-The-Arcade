@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class hitDamagePopUp : MonoBehaviour
 {
@@ -12,7 +14,6 @@ public class hitDamagePopUp : MonoBehaviour
         transform.localPosition += new Vector3(Random.Range(-randomPopup.x, randomPopup.x),
             Random.Range(-randomPopup.y, randomPopup.y), randomPopup.z);
     }
-
     public void Die()
     {
         Destroy(this.gameObject);
