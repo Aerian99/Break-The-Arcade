@@ -28,7 +28,15 @@ public class purpleBulletBehaviour : MonoBehaviour {
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+            if (other.gameObject.GetComponent<radialEnemyBehaviour>())
+            {
+                other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+            }
+            else if (other.gameObject.GetComponent<burstEnemyBehaviour>())
+            {
+                other.gameObject.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
+            }
+            
             popUpDamage(bulletForce);
         }
         if (other.gameObject.CompareTag("Boss"))

@@ -12,7 +12,7 @@ public class SoundManagerScript : MonoBehaviour
         dashSound,
         platformJump,
         gameOver,
-        EnemyShoot,
+        enemyShoot,
         noAmmo,
         alienExplosion,
         openDoor,
@@ -31,7 +31,8 @@ public class SoundManagerScript : MonoBehaviour
         gameOverSong,
         dropSound,
         coinSound,
-        menuPick;
+        menuPick,
+        radialRecharging;
 
     public static AudioSource audioSrc;
 
@@ -45,7 +46,7 @@ public class SoundManagerScript : MonoBehaviour
         dashSound = Resources.Load<AudioClip>("dash");
         platformJump = Resources.Load<AudioClip>("platformJump");
         gameOver = Resources.Load<AudioClip>("gameOver");
-        EnemyShoot = Resources.Load<AudioClip>("EnemyShoot");
+        enemyShoot = Resources.Load<AudioClip>("enemyShoot");
         noAmmo = Resources.Load<AudioClip>("noAmmo");
         alienExplosion = Resources.Load<AudioClip>("alienExplosion");
         openDoor = Resources.Load<AudioClip>("openDoor");
@@ -65,6 +66,7 @@ public class SoundManagerScript : MonoBehaviour
         dropSound = Resources.Load<AudioClip>("dropSound");
         coinSound = Resources.Load<AudioClip>("coin2");
         menuPick = Resources.Load<AudioClip>("menuPick");
+        radialRecharging = Resources.Load<AudioClip>("radialRecharging");
         audioSrc = GetComponent<AudioSource>();
         
     }
@@ -98,8 +100,8 @@ public class SoundManagerScript : MonoBehaviour
             case "gameOver":
                 audioSrc.PlayOneShot(gameOver);
                 break;
-            case "EnemyShoot":
-                audioSrc.PlayOneShot(EnemyShoot);
+            case "enemyShoot":
+                audioSrc.PlayOneShot(enemyShoot);
                 break;
             case "noAmmo":
                 audioSrc.PlayOneShot(noAmmo);
@@ -154,6 +156,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "menuPick":
                 audioSrc.PlayOneShot(menuPick);
+                break;
+            case "radialRecharging":
+                audioSrc.PlayOneShot(radialRecharging);
                 break;
             default:
                 break;
