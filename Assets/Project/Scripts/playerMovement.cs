@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
 {
     // System components
     public static LayerMask platformsLayerMask;
-    public LayerMask copyLayerMask;
+    public LayerMask copyLayerMask, barrelMask, ExpBarrelMask, enemyMask;
 
     GhostController ghostController;
 
@@ -65,7 +65,7 @@ public class playerMovement : MonoBehaviour
         p_RunParticleLeft = this.transform.GetChild(2).GetComponent<ParticleSystem>();
         p_RunParticleRight = this.transform.GetChild(3).GetComponent<ParticleSystem>();
 
-        platformsLayerMask = copyLayerMask;
+        platformsLayerMask = copyLayerMask + barrelMask + ExpBarrelMask + enemyMask;
 
         moveSpeed = 12f;
         jumpForce = 16.5f;

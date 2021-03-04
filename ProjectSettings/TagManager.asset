@@ -42,6 +42,7 @@ TagManager:
   - SpawnPoint
   - absorbPoint
   - BossKnight
+  - BarrilesExplosivos
   layers:
   - Default
   - TransparentFX
@@ -64,9 +65,9 @@ TagManager:
   - UncollisionableObjects
   - UI 2
   - PatrolTriggers
-  - 
-  - 
-  - 
+  - Barril
+  - BarrilExplosivo
+  - Enemy
   - 
   - 
   - 

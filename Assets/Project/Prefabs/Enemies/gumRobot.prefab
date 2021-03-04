@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139695244731412151}
-  m_Layer: 8
+  m_Layer: 23
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2139695245497715725}
   - component: {fileID: 2139695245497715726}
   - component: {fileID: 2139695245497715727}
-  m_Layer: 8
+  m_Layer: 23
   m_Name: gumRobot
   m_TagString: RobotPatrol
   m_Icon: {fileID: 0}
