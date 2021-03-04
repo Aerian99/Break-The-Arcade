@@ -27,7 +27,16 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
-            gameObject.GetComponent<radialEnemyShoot>().enabled = false;
+            if (gameObject.GetComponent<radialEnemyShoot>() == true)
+            {
+                gameObject.GetComponent<radialEnemyShoot>().enabled = false;
+            }
+            if (gameObject.GetComponent<radialEnemyBounce>() == true)
+            {
+                gameObject.GetComponent<radialEnemyBounce>().enabled = false;
+            }
+            
+            //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();

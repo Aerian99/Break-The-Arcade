@@ -15,7 +15,11 @@
         <e p="BarrierAlienDead.cs" t="Include" />
         <e p="barrilScript.cs" t="Include" />
         <e p="BossKhightBehaviour.cs" t="Include" />
+        <e p="bouncingBullet.cs" t="Include" />
         <e p="BullerParabola.cs" t="Include" />
+        <e p="Burst_Attack.cs" t="Include" />
+        <e p="Burst_Enemy_Attack.cs" t="Include" />
+        <e p="burstEnemyBehaviour.cs" t="Include" />
         <e p="CameraBoss.cs" t="Include" />
         <e p="CameraSwitch.cs" t="Include" />
         <e p="CoinWinBoss.cs" t="Include" />
@@ -31,12 +35,15 @@
         <e p="EnemyPatrolRedRobot.cs" t="Include" />
         <e p="EnemyShooting.cs" t="Include" />
         <e p="explosionEffect.cs" t="Include" />
+        <e p="Four_Shooting.cs" t="Include" />
         <e p="GameController.cs" t="Include" />
         <e p="GrenadeShoot.cs" t="Include" />
         <e p="healthBox.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="MenuItemScript.cs" t="Include" />
+        <e p="movePlayer.cs" t="Include" />
+        <e p="MoveSinus.cs" t="Include" />
         <e p="MoveText.cs" t="Include" />
         <e p="ParabolEnemy.cs" t="Include" />
         <e p="PlatformController.cs" t="Include" />
@@ -57,6 +64,7 @@
             <e p="AlienBehaviour.cs" t="Include" />
             <e p="AlienController.cs" t="Include" />
             <e p="AlienMovement.cs" t="Include" />
+            <e p="arcadeMachine.cs" t="Include" />
             <e p="BossPhaseBehaviour.cs" t="Include" />
             <e p="boxMovement.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
@@ -67,6 +75,7 @@
             <e p="CursorScript.cs" t="Include" />
             <e p="dashCooldown.cs" t="Include" />
             <e p="DataScript.cs" t="Include" />
+            <e p="DialogManager.cs" t="Include" />
             <e p="droneBehaviour.cs" t="Include" />
             <e p="dustParticle.cs" t="Include" />
             <e p="enemyBulletBehaviour.cs" t="Include" />
@@ -113,6 +122,7 @@
             <e p="SoundManagerScript.cs" t="Include" />
             <e p="SpikesBehaviour.cs" t="Include" />
             <e p="spikeTrigger.cs" t="Include" />
+            <e p="SwitchSalas.cs" t="Include" />
             <e p="triggerAttack.cs" t="Include" />
             <e p="UISettings.cs" t="Include" />
             <e p="yellowBulletBehaviour.cs" t="Include" />
@@ -160,6 +170,7 @@
         </e>
         <e p="purpleGunReloader.cs" t="Include" />
         <e p="radialEnemyBehaviour.cs" t="Include" />
+        <e p="radialEnemyBounce.cs" t="Include" />
         <e p="radialEnemyShoot.cs" t="Include" />
         <e p="RadialMenu.cs" t="Include" />
         <e p="redGunReloader.cs" t="Include" />

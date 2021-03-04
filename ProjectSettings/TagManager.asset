@@ -62,8 +62,8 @@ TagManager:
   - SpawnPoint
   - Triggers
   - UncollisionableObjects
-  - 
-  - 
+  - enemyBullet
+  - Enemy
   - 
   - 
   - 

@@ -57,7 +57,7 @@ public class playerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
         //_playerLifes = _maxLifes;
-        _playerLifes = 3;
+        _playerLifes = 100000;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
