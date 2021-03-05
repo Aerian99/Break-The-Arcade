@@ -54,15 +54,5 @@ public class burstEnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        float magnitude = 500f;
-        Vector3 force = transform.position - other.transform.position;
-        force.Normalize();
-        
-        if (other.gameObject.CompareTag("Player"))
-        {
-            this.gameObject.GetComponent<Rigidbody2D>().AddForce(force * magnitude);
-        }
-    }
+    
 }
