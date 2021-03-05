@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 245873817}
   - component: {fileID: 245873819}
   - component: {fileID: 245873818}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: AnimationDisable
   m_TagString: AnimationLight
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 741874895}
   - component: {fileID: 741874894}
   - component: {fileID: 1150407230}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: radialEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

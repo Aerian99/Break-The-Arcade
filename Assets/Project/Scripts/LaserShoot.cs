@@ -37,7 +37,7 @@ public class LaserShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hittableMasK = LayerMask.GetMask("Platforms");
+        hittableMasK = LayerMask.GetMask("Enemy");
         //distance = 100;
         startedShooting = false;
         damage = 3f;

@@ -52,6 +52,12 @@ public class playerBehaviour : MonoBehaviour
     public static bool weaponMenuUp;
     public GameObject aimController1, aimController2, aimController3, aimController4;
 
+    //SHIELD
+
+    public GameObject shield;
+    float cdShield, maxCdShield;
+    public bool shieldActivated;
+
     void Start()
     {
         reloadText = GameObject.Find("ReloadText");
@@ -85,6 +91,9 @@ public class playerBehaviour : MonoBehaviour
         reloadScript = GetComponent<reloadScript>();
         weaponMenu.SetActive(false);
         weaponMenuUp = false;
+
+        cdShield = 0f;
+        maxCdShield = 5f;
     }
 
     void Update()
@@ -128,6 +137,8 @@ public class playerBehaviour : MonoBehaviour
         {
             StartCoroutine(Reload());
         }
+        if (shieldActivated)
+            ActivateShield();
     }
 
     void ActiveMiniMap()
@@ -373,5 +384,20 @@ public class playerBehaviour : MonoBehaviour
         }
 
         
+    }
+
+    public void ActivateShield()
+    {
+        if(!shield.activeInHierarchy)
+            shield.SetActive(true);
+
+        cdShield += Time.deltaTime;
+        if (cdShield >= maxCdShield)
+        {
+            shield.SetActive(false);
+            cdShield = 0f;
+            shieldActivated = false;
+        }
+
     }
 }
