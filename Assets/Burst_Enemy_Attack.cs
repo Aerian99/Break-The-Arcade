@@ -24,7 +24,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
     private bool _isDashing;
 
     private Vector2 velocity;
-    
+
     void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -43,7 +43,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
     void Update()
     {
         // Following the player for 10 seconds every 3 seconds.
-        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 15f)
+        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 25f)
         {
             _dashMaxTime -= Time.deltaTime;
             if (_dashMaxTime > 0)
@@ -74,9 +74,8 @@ public class Burst_Enemy_Attack : MonoBehaviour
 
     void Dashing()
     {
-        // THIS NEEDS A REWORK FOR COLLISION KNOCKBACK
-        Vector2 newPosition = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * _moveSpeed);
-        this.GetComponent<Rigidbody2D>().MovePosition(newPosition);
+        this.GetComponent<Rigidbody2D>().AddForce(player.position - transform.position);
+        _isDashing = true;
     }
 
     void Shooting()
@@ -84,15 +83,19 @@ public class Burst_Enemy_Attack : MonoBehaviour
         bulletGO = Instantiate(bulletPrefab, this.transform.GetChild(0).position, Quaternion.identity);
         bulletGO.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * _bulletSpeed;
         this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        _isDashing = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        float magnitude = 500f;
+        float magnitude = 2000f;
+        Vector3 force = transform.position - other.transform.position;
+        force.Normalize();
         
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && _isDashing)
         {
-            
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(force * magnitude);
+            playerBehaviour.activeImmunity = true;
         }
     }
 }
