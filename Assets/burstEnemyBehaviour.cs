@@ -53,6 +53,4 @@ public class burstEnemyBehaviour : MonoBehaviour
             GetComponent<Animator>().SetTrigger("hit");
         }
     }
-
-    
 }

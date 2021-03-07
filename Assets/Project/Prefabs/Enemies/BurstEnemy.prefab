@@ -226,6 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6510735618960470853, guid: b5c551c15ee7a9a4789c343e0ea44501,
     type: 3}
+  bulletPacman: {fileID: 6510735618960470853, guid: cdd3e01b4df30194faeab5243f056ffd,
+    type: 3}
 --- !u!1 &6720234415088616166
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 6720234415088616166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.004, y: -0.029, z: 0}
-  m_LocalScale: {x: 0.5909278, y: 0.5909278, z: 0.5909278}
+  m_LocalScale: {x: 0.3307541, y: 0.3307541, z: 0.3307541}
   m_Children: []
   m_Father: {fileID: 373289210227895925}
   m_RootOrder: 1

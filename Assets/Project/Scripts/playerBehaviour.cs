@@ -99,8 +99,12 @@ public class playerBehaviour : MonoBehaviour
     void Update()
     {
         WeaponMenu();
+        if (!weaponMenuUp)
+        {
+            ActiveMiniMap();
+        }
         resetReload();
-        ActiveMiniMap();
+        //ActiveMiniMap();
         //healthBarEffect();
         healthBarPixel();
 
@@ -129,31 +133,35 @@ public class playerBehaviour : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.R) &&
              (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
-              handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0  ||
-              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoYellow > 0 ) ||
+              handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0 ||
+              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoYellow > 0) ||
              (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
               handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
-              handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0 )))
+              handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0)))
         {
             StartCoroutine(Reload());
         }
+
         if (shieldActivated)
             ActivateShield();
     }
 
     void ActiveMiniMap()
     {
-        if(Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab))
         {
             activeCamera.SetActive(true);
-            Time.timeScale = 0.05f;
+            Time.timeScale = 0.1f;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
         }
         else
         {
             activeCamera.SetActive(false);
             Time.timeScale = 1f;
+            Time.fixedDeltaTime = 0.02F;
         }
     }
+
     void Immunity()
     {
         if (activeImmunity)
@@ -272,7 +280,7 @@ public class playerBehaviour : MonoBehaviour
         reloadScript.hitReload = false;
         isReloading = false;
     }
-    
+
     void resetReload() // Esta función previene que no acabe la recarga si cambias de arma si estás recargando.
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f && isReloading
@@ -341,7 +349,7 @@ public class playerBehaviour : MonoBehaviour
 
     void WeaponMenu()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             // DESACTIVAMOS EL MOVIMIENTO Y EL APUNTADO
             this.gameObject.GetComponent<playerMovement>().enabled = false;
@@ -349,7 +357,7 @@ public class playerBehaviour : MonoBehaviour
             aimController2.GetComponent<playerAimWeapon>().enabled = false;
             aimController3.GetComponent<playerAimWeapon>().enabled = false;
             aimController4.GetComponent<playerAimWeapon>().enabled = false;
-            
+
             weaponMenu.SetActive(true);
             weaponMenuUp = true;
             Time.timeScale = 0.1f;
@@ -362,15 +370,15 @@ public class playerBehaviour : MonoBehaviour
             aimController2.GetComponent<playerAimWeapon>().enabled = true;
             aimController3.GetComponent<playerAimWeapon>().enabled = true;
             aimController4.GetComponent<playerAimWeapon>().enabled = true;
-            
+
             weaponMenu.SetActive(false);
             weaponMenuUp = false;
-            
+
             // SELECIONAR EL ARMA DONDE TENIAMOS EL RATÓN
             if (RadialMenu.selection == 0)
             {
                 handController.currentPos = 0;
-            } 
+            }
             else if (RadialMenu.selection == 2)
             {
                 handController.currentPos = 1;
@@ -379,16 +387,15 @@ public class playerBehaviour : MonoBehaviour
             {
                 handController.currentPos = 2;
             }
-            Time.timeScale = 1;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
 
-        
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02F;
+        }
     }
 
     public void ActivateShield()
     {
-        if(!shield.activeInHierarchy)
+        if (!shield.activeInHierarchy)
             shield.SetActive(true);
 
         cdShield += Time.deltaTime;
@@ -398,6 +405,5 @@ public class playerBehaviour : MonoBehaviour
             cdShield = 0f;
             shieldActivated = false;
         }
-
     }
 }

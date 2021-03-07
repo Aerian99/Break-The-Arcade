@@ -151,3 +151,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   deathExplosion: {fileID: 0}
+  hitEffectPrefab: {fileID: 8984649988707077970, guid: 0e63140c55e82a14bbbb207a77b2a54f,
+    type: 3}

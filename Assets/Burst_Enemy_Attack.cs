@@ -11,6 +11,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
     private Transform player;
     private GameObject bulletGO;
     public GameObject bulletPrefab;
+    public GameObject bulletPacman;
 
     // Stats
     private float _moveSpeed;
@@ -43,7 +44,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
     void Update()
     {
         // Following the player for 10 seconds every 3 seconds.
-        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 25f)
+        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 20f)
         {
             _dashMaxTime -= Time.deltaTime;
             if (_dashMaxTime > 0)
@@ -80,7 +81,16 @@ public class Burst_Enemy_Attack : MonoBehaviour
 
     void Shooting()
     {
-        bulletGO = Instantiate(bulletPrefab, this.transform.GetChild(0).position, Quaternion.identity);
+        int rand = UnityEngine.Random.Range(0, 100);
+
+        if (rand < 30)
+        {
+            bulletGO = Instantiate(bulletPacman, this.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
+        }
         bulletGO.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * _bulletSpeed;
         this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         _isDashing = false;

@@ -14,6 +14,8 @@ public class enemyBulletBehaviour : MonoBehaviour
     public GameObject deathExplosion;
     private Animator animator;
     private bool absorbed;
+    private GameObject effect;
+    public ParticleSystem hitEffectPrefab;
 
     private void Start()
     {
@@ -95,7 +97,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         {
             absorbed = true;
         }
-        if (other.gameObject.CompareTag("absorbPoint") && !other.gameObject.CompareTag("AbsorbGun")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
+        if (other.gameObject.CompareTag("absorbPoint") && !other.gameObject.CompareTag("AbsorbGun") && !other.gameObject.CompareTag("absorbZone")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
         {
             Destroy(this.gameObject);
         }
@@ -120,5 +122,9 @@ public class enemyBulletBehaviour : MonoBehaviour
             Destroy(explosionGO, 0.7f);
             SoundManagerScript.PlaySound("alienExplosion");
         }
+    }
+    void OnDestroy () {
+        effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
+        Destroy (effect, 0.5f);
     }
 }
