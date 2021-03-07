@@ -48,7 +48,7 @@ public class bouncingBullet : MonoBehaviour
             SoundManagerScript.PlaySound("alienExplosion");
         }
 
-        // Destroy(this.gameObject, 3f);
+        Destroy(this.gameObject, 8f);
     }
 
     void OnTriggerEnter2D(Collider2D other)

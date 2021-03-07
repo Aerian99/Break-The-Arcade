@@ -54,34 +54,7 @@ public class PatrolTop : MonoBehaviour
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
         changeDirection();
         triggerDetection();
-        if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
-        {
-            if (Time.time > NextTimeToFire)
-            {
-                if (dist < 13f)
-                {
-                    this.GetComponent<Rigidbody2D>().isKinematic = true;
-                    if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
-                    {
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                    }
-
-                    if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
-                    {
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                    }
-                }
-                else
-                {
-                    patrolSpeed = 15f;
-                    this.GetComponent<Rigidbody2D>().isKinematic = false;
-                }
-            }
-        }
+        
 
         if (lifes <= 0f)
         {
@@ -138,20 +111,5 @@ public class PatrolTop : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        int rand = Random.Range(0, 100);
 
-        if (rand < 30)
-        {
-            bulletGO = Instantiate(bulletPacman, this.transform.position, Quaternion.identity);
-        }
-        else
-        {
-            bulletGO = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity);
-        }
-
-        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
-        NextTimeToFire = Time.time + FireRate;
-    }
 }
