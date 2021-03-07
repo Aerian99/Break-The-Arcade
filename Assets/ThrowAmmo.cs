@@ -28,18 +28,10 @@ public class ThrowAmmo : MonoBehaviour
             {
                 GO = Instantiate(ammoPrefab, transform.position, Quaternion.identity);
                 Vector2 vec = new Vector2(position, positionY) ;
-                GO.GetComponent<Rigidbody2D>().AddForce(vec);
+                GO.GetComponent<Rigidbody2D>().AddForce(vec * Time.deltaTime, ForceMode2D.Impulse);
                 yield return new WaitForSeconds(30f);
             }
-
-
-
             yield return new WaitForSeconds(0);
-
         }
-
-
-
-
     }
 }

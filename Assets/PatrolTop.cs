@@ -37,10 +37,9 @@ public class PatrolTop : MonoBehaviour
 
     private void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
-        patrolSpeed = 2f;
-        patrolDistance = 1f;
+        patrolSpeed = 15f;
+        patrolDistance = 0.01f;
         player = GameObject.FindWithTag("Player");
 
         lifes = 10f;
@@ -78,7 +77,7 @@ public class PatrolTop : MonoBehaviour
                 }
                 else
                 {
-                    patrolSpeed = 2f;
+                    patrolSpeed = 15f;
                     this.GetComponent<Rigidbody2D>().isKinematic = false;
                 }
             }
@@ -115,12 +114,12 @@ public class PatrolTop : MonoBehaviour
         {
             if (movingRight == true)
             {
-                transform.eulerAngles = new Vector3(0, 180, 180);
+                transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false;
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 0, 180);
+                transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
         }
