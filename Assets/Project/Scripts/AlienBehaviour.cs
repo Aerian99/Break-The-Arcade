@@ -37,7 +37,9 @@ public class AlienBehaviour : MonoBehaviour
     {
         if (actualHealth <= 0)
         {
+           
             Falling();
+
         }
 
         if (laserDamage)
@@ -110,6 +112,14 @@ public class AlienBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         triggerZone.GetComponent<triggerZone_1>().radialEnemy--;
+        for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+        {
+            if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Aliens")
+            {
+                GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+            }
+
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
