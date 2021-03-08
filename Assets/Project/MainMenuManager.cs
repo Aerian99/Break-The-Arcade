@@ -40,6 +40,11 @@ public class MainMenuManager : MonoBehaviour
         ExitButton.SetActive(true);
 
     }
+
+    public void Achievements()
+    {
+        SceneManager.LoadScene("Achievements");
+    }
     public void Exit()
     {
         Application.Quit();

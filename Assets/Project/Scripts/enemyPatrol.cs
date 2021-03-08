@@ -91,9 +91,16 @@ public class enemyPatrol : MonoBehaviour
 
         if (lifes <= 0f)
         {
+            for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+            {
+                if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Robot Patrols")
+                {
+                    GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+                }
+
+            }
             anim.SetBool("isRunning", false);
             anim.SetBool("isDead", true);
-            
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();

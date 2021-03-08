@@ -27,13 +27,40 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
+            if(gameObject.name == "4_Enemy(Clone)")
+            {
+                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+                {
+                    if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Rotators")
+                    {
+                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+                    }
+
+                }
+            }
             if (gameObject.GetComponent<radialEnemyShoot>() == true)
             {
                 gameObject.GetComponent<radialEnemyShoot>().enabled = false;
+                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+                {
+                    if(GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Radials")
+                    {
+                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+                    }
+
+                }
             }
             if (gameObject.GetComponent<radialEnemyBounce>() == true)
             {
                 gameObject.GetComponent<radialEnemyBounce>().enabled = false;
+                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+                {
+                    if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Roof Patrols")
+                    {
+                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+                    }
+
+                }
             }
             
             //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
