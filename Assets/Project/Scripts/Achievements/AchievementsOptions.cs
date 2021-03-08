@@ -35,6 +35,15 @@ public class AchievementsOptions : MonoBehaviour
 
     public void ResetAll()
     {
+        for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+        {
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].assigment = "";
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun = 0;
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun = 0;
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageRedGun = 0;
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp = 0;
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes = 0;
+        }
         SaveSystem.ResetAll();
     }
 }
