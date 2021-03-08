@@ -54,6 +54,7 @@ public class QuestSaver : MonoBehaviour
             }
         }
 
+        CheckQuestComplete();
     }
     public void GenerateQuest(int index)
     {
@@ -69,7 +70,16 @@ public class QuestSaver : MonoBehaviour
         quest[index].position = index;
     }
 
-
+    public void CheckQuestComplete()
+    {
+        for (int  i = 0;  i < quest.Length;  i++)
+        {
+            if(quest[i].actualMonstersKilled >= quest[i].monstersToKill)
+            {
+                quest[i].assigment = "";
+            }
+        }
+    }
     IEnumerator Saving()
     {
         while (true)
