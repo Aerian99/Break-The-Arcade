@@ -112,5 +112,14 @@ public static class SaveSystem
         PlayerPrefs.DeleteKey("Quest3TargetMonster");
         PlayerPrefs.DeleteKey("Quest3Reward");
         PlayerPrefs.DeleteKey("Quest3ArrayPos");
+
+
+
+        PlayerPrefs.DeleteKey("PurpleBullet");
+        PlayerPrefs.DeleteKey("YellowBullet");
+        PlayerPrefs.DeleteKey("RedBullet");
+        PlayerPrefs.DeleteKey("HealPowerUp");
+        PlayerPrefs.DeleteKey("PlayerLifes");
+
     }
 }

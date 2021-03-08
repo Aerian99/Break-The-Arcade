@@ -31,4 +31,10 @@ public class AchievementsOptions : MonoBehaviour
             textToRender.SetActive(false);
         }
     }
+
+
+    public void ResetAll()
+    {
+        SaveSystem.ResetAll();
+    }
 }
