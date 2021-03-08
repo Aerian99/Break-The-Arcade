@@ -8,6 +8,8 @@ public class QuestManager : MonoBehaviour
 {
     public Quest[] quest;
     public TextMeshProUGUI[] questToShow, achievementProgress, rewardsToShow, seePowerUps;
+
+    public GameObject[] special;
     QuestSaver questLogic;
     private void Start()
     {
@@ -38,10 +40,10 @@ public class QuestManager : MonoBehaviour
     }
     public void printPowerUps()
     {
-        seePowerUps[0].text = "Purple Weapon DMG: " + questLogic.m_PowerUps.damagePurpleGun;
-        seePowerUps[1].text = "Laser Weapon DMG:  " + questLogic.m_PowerUps.damageLaserGun;
-        seePowerUps[2].text = "Shotgun Weapon DMG: " + questLogic.m_PowerUps.damageRedGun;
-        seePowerUps[3].text = "PowerUp Extra Life: " + questLogic.m_PowerUps.healPowerUp;
-        seePowerUps[4].text = "Player Extra Life: " + questLogic.m_PowerUps.playerUpLifes;
+        seePowerUps[0].text = "Purple Weapon DMG:   " + questLogic.m_PowerUps.damagePurpleGun;
+        seePowerUps[1].text = "Laser Weapon DMG:    " + questLogic.m_PowerUps.damageLaserGun;
+        seePowerUps[2].text = "Shotgun Weapon DMG:   " + questLogic.m_PowerUps.damageRedGun;
+        seePowerUps[3].text = "PowerUp Extra Life:   " + questLogic.m_PowerUps.healPowerUp;
+        seePowerUps[4].text = "Player Extra Life:   " + questLogic.m_PowerUps.playerUpLifes;
     }
 }
