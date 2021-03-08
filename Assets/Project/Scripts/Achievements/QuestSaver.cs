@@ -5,15 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class QuestSaver : MonoBehaviour
 {
+    public struct PowerUps
+    {
+        public int damagePurpleGun, damageLaserGun, damageRedGun, healPowerUp, playerUpLifes;
+    }
+
+    public PowerUps m_PowerUps;
     private static QuestSaver questSaverInstance;
     public Quest[] quest = new Quest[3];
 
 
     private string[] enemies = { "Radials", "Robot Patrols", "Roof Patrols", "Rotators", "Aliens" };
     private string[] fixObjective = { "Kill", "Defeat", "Obliterate" };
+    private string[] rewards = { "1 HP more", "+1 Damage Purple Gun", "+1 Damage Laser Gun", "+1 Damage ShotGun", "Heal powerUp heals 1 more" };
 
     private void Awake()
     {
+        m_PowerUps.damagePurpleGun = m_PowerUps.damageLaserGun = m_PowerUps.healPowerUp = m_PowerUps.damageRedGun = m_PowerUps.playerUpLifes = 0;
+
         DontDestroyOnLoad(this.gameObject);
         if (questSaverInstance == null)
         {
@@ -24,8 +33,7 @@ public class QuestSaver : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        SaveSystem.LoadPlayer(quest);
-
+        m_PowerUps = SaveSystem.LoadPlayer(quest, m_PowerUps);
 
         for (int y = 0; y < quest.Length; y++)
         {
@@ -46,6 +54,7 @@ public class QuestSaver : MonoBehaviour
             GameObject.Find("QuestManager").GetComponent<QuestManager>().quest = quest;
         }
 
+        CheckQuestComplete();
         for (int y = 0; y < quest.Length; y++)
         {
             if (quest[y].assigment == "")
@@ -54,7 +63,6 @@ public class QuestSaver : MonoBehaviour
             }
         }
 
-        CheckQuestComplete();
     }
     public void GenerateQuest(int index)
     {
@@ -63,7 +71,7 @@ public class QuestSaver : MonoBehaviour
         numberOfEnemies = Random.Range(8, 32);
         typeOfEnemy = enemies[Random.Range(0, enemies.Length)];
         quest[index].assigment = fixObjective[Random.Range(0, fixObjective.Length)] + " " + numberOfEnemies + " " + typeOfEnemy;
-        quest[index].reward = "1HP";
+        quest[index].reward = rewards[Random.Range(0, rewards.Length)];
         quest[index].monstersToKill = numberOfEnemies;
         quest[index].typesOfMonsters = typeOfEnemy;
         quest[index].actualMonstersKilled = 0;
@@ -76,6 +84,26 @@ public class QuestSaver : MonoBehaviour
         {
             if(quest[i].actualMonstersKilled >= quest[i].monstersToKill)
             {
+                switch (quest[i].reward)
+                {
+                    case "1 HP more":
+                        m_PowerUps.playerUpLifes += 1;
+                        break;
+                    case "+1 Damage Purple Gun":
+                        m_PowerUps.damagePurpleGun += 1;
+                        break;
+                    case "+1 Damage Laser Gun":
+                        m_PowerUps.damageLaserGun += 1;
+                        break;
+                    case "+1 Damage ShotGun":
+                        m_PowerUps.damageRedGun += 1;
+                        break;
+                    case "Heal powerUp heals 1 more":
+                        m_PowerUps.healPowerUp += 1;
+                        break;
+                    default:
+                        break;
+                }
                 quest[i].assigment = "";
             }
         }
@@ -84,7 +112,7 @@ public class QuestSaver : MonoBehaviour
     {
         while (true)
         {
-            SaveSystem.SaveQuest(quest);
+            SaveSystem.SaveQuest(quest, m_PowerUps);
             yield return new WaitForSeconds(5);
         }
         yield return null;

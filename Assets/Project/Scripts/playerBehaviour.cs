@@ -64,7 +64,7 @@ public class playerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
         //_playerLifes = _maxLifes;
-        _playerLifes = 100000;
+        _playerLifes = 3 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;

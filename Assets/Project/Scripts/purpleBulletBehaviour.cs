@@ -10,6 +10,10 @@ public class purpleBulletBehaviour : MonoBehaviour {
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
+    private void Start()
+    {
+        bulletForce += GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
+    }
     void OnTriggerEnter2D (Collider2D other) {
 
         if (!other.gameObject.CompareTag("Player")

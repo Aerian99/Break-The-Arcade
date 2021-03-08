@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -148,11 +148,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 960304942}
+  - {fileID: 533333968}
   - {fileID: 708603169}
-  - {fileID: 2073054145}
+  - {fileID: 960304942}
   - {fileID: 1354941584}
-  - {fileID: 533333965}
+  - {fileID: 2073054145}
   m_Father: {fileID: 2116003013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f7a7e6baf28c469d1709a92749df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerZone: {fileID: 0}
   hitDamagePopUp:
   - {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89, type: 3}
   - {fileID: 1017683624646179571, guid: 5909007e0e35e32488f4ca84d7623795, type: 3}
@@ -1462,7 +1463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 533333965}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272143011
 PrefabInstance:
@@ -7419,6 +7420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f7a7e6baf28c469d1709a92749df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerZone: {fileID: 0}
   hitDamagePopUp:
   - {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89, type: 3}
   - {fileID: 1017683624646179571, guid: 5909007e0e35e32488f4ca84d7623795, type: 3}
@@ -7786,7 +7788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1567556122}
-  cameraAlien: {fileID: 144497755}
+  camara2: {fileID: 0}
 --- !u!1 &494918492
 GameObject:
   m_ObjectHideFlags: 0
@@ -13254,7 +13256,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc96e538a76f33d448de955e7a9aee29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolSpeed: 0
   groundDetecion: {fileID: 257877573}
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletPrefab: {fileID: 0}
+  bulletPacman: {fileID: 0}
+  lifes: 0
+  isDying: 0
+  mat: {fileID: 0}
+  explosionEffect: {fileID: 0}
+--- !u!4 &533333968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 533333964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &540784338
 GameObject:
   m_ObjectHideFlags: 0
@@ -13355,6 +13372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fbd0cd186fdbe46818077057ea1cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &563489835
 GameObject:
   m_ObjectHideFlags: 0
@@ -18585,7 +18603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1654444706}
-  alienController: {fileID: 879549829}
 --- !u!61 &644670842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18693,6 +18710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f7a7e6baf28c469d1709a92749df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerZone: {fileID: 0}
   hitDamagePopUp:
   - {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89, type: 3}
   - {fileID: 1017683624646179571, guid: 5909007e0e35e32488f4ca84d7623795, type: 3}
@@ -19099,8 +19117,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5f1dcca9676be434ea2849e92bfb86d0, type: 3}
 --- !u!4 &708603169 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6144638873485585603, guid: 5f1dcca9676be434ea2849e92bfb86d0,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 708603168}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &719426610
@@ -19784,6 +19801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a21e9f8038568408d193d617d66afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteEnemies: []
 --- !u!1 &894963662
 GameObject:
   m_ObjectHideFlags: 0
@@ -20083,8 +20101,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5f1dcca9676be434ea2849e92bfb86d0, type: 3}
 --- !u!4 &960304942 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6144638873485585603, guid: 5f1dcca9676be434ea2849e92bfb86d0,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 960304941}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &998129798
@@ -20166,12 +20183,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fdbb5a2f430b4c4199d068fb6ccabcb, type: 3}
---- !u!1 &998129799 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5075396575871029337, guid: 4fdbb5a2f430b4c4199d068fb6ccabcb,
-    type: 3}
-  m_PrefabInstance: {fileID: 998129798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &998129800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5075396575871029338, guid: 4fdbb5a2f430b4c4199d068fb6ccabcb,
@@ -25425,6 +25436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f7a7e6baf28c469d1709a92749df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerZone: {fileID: 0}
   hitDamagePopUp:
   - {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89, type: 3}
   - {fileID: 1017683624646179571, guid: 5909007e0e35e32488f4ca84d7623795, type: 3}
@@ -25754,6 +25766,10 @@ MonoBehaviour:
   yellowGunUI: {fileID: 231556433}
   redGunUI: {fileID: 1038888675}
   noAmmoText: {fileID: 300571915}
+  reloadText: {fileID: 0}
+  purpleReloaderUI: {fileID: 0}
+  yellowReloaderUI: {fileID: 0}
+  redReloaderUI: {fileID: 0}
 --- !u!212 &1157815261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26002,6 +26018,9 @@ MonoBehaviour:
   endVFX: {fileID: 1348822489}
   reloadText: {fileID: 1245658430}
   noAmmoText: {fileID: 300571915}
+  hitDamagePopUp: {fileID: 0}
+  bulletForce: 5
+  cursor: {fileID: 0}
 --- !u!1 &1179769681
 GameObject:
   m_ObjectHideFlags: 0
@@ -26585,6 +26604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f7a7e6baf28c469d1709a92749df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerZone: {fileID: 0}
   hitDamagePopUp:
   - {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89, type: 3}
   - {fileID: 1017683624646179571, guid: 5909007e0e35e32488f4ca84d7623795, type: 3}
@@ -27296,8 +27316,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ee7d47f84e63f6f44baf078384aff647, type: 3}
 --- !u!4 &1354941584 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1999826631166950929, guid: ee7d47f84e63f6f44baf078384aff647,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1354941583}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354941585 stripped
@@ -27654,13 +27673,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548c2c58b83409649a7ee5b2b5b8bfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeCamera: {fileID: 0}
   activePostProcessing: 0
-  postProcessingAberration: {fileID: 998129799}
-  lifes: {fileID: 503916043}
-  bullets: {fileID: 1312343231}
+  reloadTime: 0
+  purpleBulletsCounter: {fileID: 0}
+  yellowBulletsCounter: {fileID: 0}
+  redBulletsCounter: {fileID: 0}
+  healthBarFill: {fileID: 0}
+  healthBarWhiteFill: {fileID: 0}
+  defaultBar: {fileID: 0}
+  healthbarimages: []
   deathEffect: {fileID: 7789471876716411603, guid: ad9bc398b7dc97a41a4acf39a8534d6e,
     type: 3}
-  reloadText: {fileID: 1245658430}
+  noAmmoText: {fileID: 0}
+  weaponMenu: {fileID: 0}
+  aimController1: {fileID: 0}
+  aimController2: {fileID: 0}
+  aimController3: {fileID: 0}
+  aimController4: {fileID: 0}
+  shield: {fileID: 0}
+  shieldActivated: 0
 --- !u!114 &1417856224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27676,9 +27708,23 @@ MonoBehaviour:
   copyLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  barrelMask:
+    serializedVersion: 2
+    m_Bits: 0
+  ExpBarrelMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
   p_sprite: {fileID: 0}
+  dashCooldown: 0
+  dashUp: 0
+  dashDiagonal: 0
+  canDash: 0
+  stopTimer: 0
   dashImage: {fileID: 685443389}
-  postProcessing: {fileID: 232656512}
+  aud: {fileID: 0}
 --- !u!95 &1417856225
 Animator:
   serializedVersion: 3
@@ -33813,7 +33859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1567556122}
-  cameraAlien: {fileID: 144497755}
+  camara2: {fileID: 0}
 --- !u!1001 &1798519566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35165,6 +35211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: {fileID: 211961506}
   warning: {fileID: 2044955902}
+  absorbZone: {fileID: 0}
+  defaultAbsorbZone: {fileID: 0}
+  orangeAbsorbZone: {fileID: 0}
+  redAbsorbZone: {fileID: 0}
 --- !u!114 &1954427177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40679,8 +40729,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ee7d47f84e63f6f44baf078384aff647, type: 3}
 --- !u!4 &2073054145 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1999826631166950929, guid: ee7d47f84e63f6f44baf078384aff647,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2073054144}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073054146 stripped

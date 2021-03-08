@@ -40,7 +40,7 @@ public class LaserShoot : MonoBehaviour
         hittableMasK = LayerMask.GetMask("Enemy");
         //distance = 100;
         startedShooting = false;
-        damage = 3f;
+        damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
         nextFrame = 0;
         time = 0;
         period = 0.1f;

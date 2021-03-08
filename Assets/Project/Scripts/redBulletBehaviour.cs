@@ -11,6 +11,10 @@ public class redBulletBehaviour : MonoBehaviour
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
+    private void Start()
+    {
+        bulletForce += GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageRedGun;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         

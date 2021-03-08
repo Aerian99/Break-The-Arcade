@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    private int healRatio;
     public Sprite health, ammo, inmunity;
     int randomObject;
     public GameObject reloadText;
@@ -11,6 +12,7 @@ public class PowerUp : MonoBehaviour
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     private void Start()
     {
+        healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
         _interpolator.ToMax();
         randomObject = Random.Range(1, 4);
         if (pHealth)
@@ -60,10 +62,8 @@ public class PowerUp : MonoBehaviour
             if (randomObject == 1) //health
             {
                 SoundManagerScript.PlaySound("dropSound");
-                if (playerBehaviour._playerLifes < 6)
-                {
-                    playerBehaviour._playerLifes += 1;
-                }
+                playerBehaviour._playerLifes += healRatio;
+               
             }
             else if (randomObject == 2) //ammo
             {
