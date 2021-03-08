@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CHECK ACHIEVEMENTS
+  m_text: CHECK QUESTS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79c2e8eac49fbb94bbd62fa2870feaec, type: 2}
   m_sharedMaterial: {fileID: 8339661320676454902, guid: 79c2e8eac49fbb94bbd62fa2870feaec,
