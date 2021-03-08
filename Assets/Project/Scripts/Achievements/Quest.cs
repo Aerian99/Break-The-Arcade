@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Quest 
 {
+
+    
     public bool isActive;
     
     public string assigment;
@@ -13,4 +15,10 @@ public class Quest
     public int actualMonstersKilled;
     public string typesOfMonsters;
     public int position;
+
+
+    public Quest()
+    {
+
+    }
 }

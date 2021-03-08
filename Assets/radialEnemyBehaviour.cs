@@ -27,7 +27,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
-            if(gameObject.name == "4_Enemy")
+            if(gameObject.name == "4_Enemy(Clone)")
             {
                 for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
                 {

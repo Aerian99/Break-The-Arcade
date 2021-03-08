@@ -15,7 +15,6 @@ public class QuestSaver : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-
         if (questSaverInstance == null)
         {
             questSaverInstance = this;
@@ -25,7 +24,7 @@ public class QuestSaver : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
+        SaveSystem.LoadPlayer(quest);
 
 
         for (int y = 0; y < quest.Length; y++)
@@ -55,22 +54,6 @@ public class QuestSaver : MonoBehaviour
             }
         }
 
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            QuestData data = SaveSystem.LoadPlayer();
-
-            for (int i = 0; i < 3; i++)
-            {
-                quest[i].assigment = data.descriptions[i];
-                quest[i].monstersToKill = data.totalMonsters[i];
-                quest[i].actualMonstersKilled = data.monstersLeft[i];
-            }
-        }
-
     }
     public void GenerateQuest(int index)
     {
@@ -91,8 +74,8 @@ public class QuestSaver : MonoBehaviour
     {
         while (true)
         {
-            SaveSystem.SaveQuest();
-            yield return new WaitForSeconds(20);
+            SaveSystem.SaveQuest(quest);
+            yield return new WaitForSeconds(5);
         }
         yield return null;
     }
