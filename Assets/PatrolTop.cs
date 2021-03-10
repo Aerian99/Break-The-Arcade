@@ -38,7 +38,7 @@ public class PatrolTop : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        patrolSpeed = 15f;
+        patrolSpeed = 8f;
         patrolDistance = 0.01f;
         player = GameObject.FindWithTag("Player");
 

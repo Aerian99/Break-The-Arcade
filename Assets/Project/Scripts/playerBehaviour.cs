@@ -396,7 +396,9 @@ public class playerBehaviour : MonoBehaviour
     public void ActivateShield()
     {
         if (!shield.activeInHierarchy)
-            shield.SetActive(true);
+        { 
+            shield.SetActive(true);        
+        }
 
         cdShield += Time.deltaTime;
         if (cdShield >= maxCdShield)

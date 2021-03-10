@@ -36,7 +36,6 @@ public class barrilScript : MonoBehaviour
         {
             this.GetComponent<Animator>().SetTrigger("hit");
             lifes--;
-            Debug.Log("HIT");
         }
     }
 

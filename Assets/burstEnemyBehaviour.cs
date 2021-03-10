@@ -35,6 +35,9 @@ public class burstEnemyBehaviour : MonoBehaviour
             {
                 gameObject.GetComponent<radialEnemyBounce>().enabled = false;
             }
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<playerBehaviour>().shieldActivated = true;
             
             //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
