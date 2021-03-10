@@ -9,7 +9,7 @@ public class SpikesBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            playerBehaviour._playerLifes = 0;
+            playerBehaviour.activeImmunity = true;
         }
     }
 }
