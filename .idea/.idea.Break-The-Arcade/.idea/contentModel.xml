@@ -62,6 +62,14 @@
           <e p="Scripts" t="Include">
             <e p="Absorb_Gun.cs" t="Include" />
             <e p="absorbCooldown.cs" t="Include" />
+            <e p="Achievements" t="Include">
+              <e p="AchievementsOptions.cs" t="Include" />
+              <e p="Quest.cs" t="Include" />
+              <e p="QuestData.cs" t="Include" />
+              <e p="QuestManager.cs" t="Include" />
+              <e p="QuestSaver.cs" t="Include" />
+              <e p="SaveSystem.cs" t="Include" />
+            </e>
             <e p="AlienAttack.cs" t="Include" />
             <e p="AlienBehaviour.cs" t="Include" />
             <e p="AlienController.cs" t="Include" />
@@ -180,8 +188,10 @@
         <e p="redGunReloader.cs" t="Include" />
         <e p="reloadScript.cs" t="Include" />
         <e p="Shield.cs" t="Include" />
+        <e p="ShootToPlayer.cs" t="Include" />
         <e p="SpaceInvadersTrigger.cs" t="Include" />
         <e p="SpawnBoss.cs" t="Include" />
+        <e p="testingPatrol.cs" t="Include" />
         <e p="ThrowAmmo.cs" t="Include" />
         <e p="TowerBehaviour.cs" t="Include" />
         <e p="towerShoot.cs" t="Include" />
