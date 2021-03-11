@@ -55,6 +55,7 @@ public class enemyBulletBehaviour : MonoBehaviour
             Destroy(explosionGO, 0.7f);
             SoundManagerScript.PlaySound("alienExplosion");
         }
+        Destroy(this.gameObject, 5f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
