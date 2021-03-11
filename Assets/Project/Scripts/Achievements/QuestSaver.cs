@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class QuestSaver : MonoBehaviour
 {
@@ -50,26 +51,44 @@ public class QuestSaver : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Achievements")
         {
             GameObject.Find("QuestManager").GetComponent<QuestManager>().quest = quest;
-        }
+            CheckQuestComplete();
+            for (int y = 0; y < quest.Length; y++)
+            {
+                if (quest[y].isActive)
+                {
+                    GameObject.Find("QuestManager").GetComponent<QuestManager>().special[y].SetActive(true);
+                }
+                else
+                {
+                    GameObject.Find("QuestManager").GetComponent<QuestManager>().special[y].SetActive(false);
+                }
 
-        CheckQuestComplete();
-        for (int y = 0; y < quest.Length; y++)
+                if (quest[y].assigment == "")
+                {
+                    GenerateQuest(y);
+                }
+            }
+        }
+        else if(SceneManager.GetActiveScene().name == "Lvl1")
         {
-            if(quest[y].isActive)
+            for (int i = 0; i < quest.Length; i++)
             {
-                GameObject.Find("QuestManager").GetComponent<QuestManager>().special[y].SetActive(true);
-            }
-            else
-            {
-                GameObject.Find("QuestManager").GetComponent<QuestManager>().special[y].SetActive(false);
-            }
-
-            if (quest[y].assigment == "")
-            {
-                GenerateQuest(y);
+                if(quest[i].actualMonstersKilled >= quest[i].monstersToKill)
+                {
+                    GameObject.Find("TextAchievements").GetComponent<TextMeshProUGUI>().text = "Quest Completed: " + quest[i].assigment;
+                    GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn",true);
+                    StartCoroutine(DisableAnimationAchievement());
+                    GenerateQuest(i);
+                }
             }
         }
+    }
 
+    IEnumerator DisableAnimationAchievement()
+    {
+        yield return new WaitForSeconds(3f);
+        GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn", false);
+        yield return null;
     }
     public void GenerateQuest(int index)
     {
