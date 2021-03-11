@@ -51,6 +51,7 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         int tempAmmo = 0;
+        int tempAmmo2 = 0;
 
         if (collision.CompareTag("Player"))
         {
@@ -77,6 +78,14 @@ public class PowerUp : MonoBehaviour
                         {
                             tempAmmo = playerBehaviour.bulletsPurple - playerBehaviour.MAX_PURPLE_SHOOT;
                             playerBehaviour.bulletsPurple -= tempAmmo;
+                            playerBehaviour.reservedAmmoPurple += tempAmmo;
+
+                            if (playerBehaviour.reservedAmmoPurple > playerBehaviour.MAX_BULLETS_PURPLE)
+                            {
+                                tempAmmo2 = playerBehaviour.reservedAmmoPurple - playerBehaviour.MAX_BULLETS_PURPLE;
+                                playerBehaviour.reservedAmmoPurple -= tempAmmo2;
+                            }
+
                         }
                     }
                 }
@@ -89,6 +98,13 @@ public class PowerUp : MonoBehaviour
                         {
                             tempAmmo = playerBehaviour.bulletsYellow - playerBehaviour.MAX_YELLOW_SHOOT;
                             playerBehaviour.bulletsYellow -= tempAmmo;
+                            playerBehaviour.reservedAmmoYellow += tempAmmo;
+
+                            if (playerBehaviour.reservedAmmoYellow > playerBehaviour.MAX_BULLETS_YELLOW)
+                            {
+                                tempAmmo2 = playerBehaviour.reservedAmmoYellow - playerBehaviour.MAX_BULLETS_YELLOW;
+                                playerBehaviour.reservedAmmoYellow -= tempAmmo2;
+                            }
                         }
                     }
                 }
@@ -101,6 +117,13 @@ public class PowerUp : MonoBehaviour
                         {
                             tempAmmo = playerBehaviour.bulletsShotgun - playerBehaviour.MAX_SHOTGUN_SHOOT;
                             playerBehaviour.bulletsShotgun -= tempAmmo;
+                            playerBehaviour.reservedAmmoShotgun += tempAmmo;
+
+                            if (playerBehaviour.reservedAmmoShotgun > playerBehaviour.MAX_BULLETS_SHOTGUN)
+                            {
+                                tempAmmo2 = playerBehaviour.reservedAmmoShotgun - playerBehaviour.MAX_BULLETS_SHOTGUN;
+                                playerBehaviour.reservedAmmoShotgun -= tempAmmo2;
+                            }
                         }
                     }
                 }
