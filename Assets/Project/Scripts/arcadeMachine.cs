@@ -16,7 +16,12 @@ public class arcadeMachine : MonoBehaviour
             {
                 this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
 
-                if(purple.activeInHierarchy)
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+                player.GetComponent<Animator>().SetBool("isRunning", false);
+                player.GetComponent<playerMovement>().enabled = false;
+
+                if (purple.activeInHierarchy)
                     purple.GetComponent<PurpleShoot>().enabled = false;
                 else if(yellow.activeInHierarchy)
                     yellow.GetComponent<LaserShoot>().enabled = false;
