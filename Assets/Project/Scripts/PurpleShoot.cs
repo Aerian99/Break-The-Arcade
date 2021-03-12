@@ -55,7 +55,7 @@ public class PurpleShoot : MonoBehaviour
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
-            ScreenShake.shake = 0.5f;
+            ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
             cursor.GetComponent<Animator>().SetTrigger("click");
         }
