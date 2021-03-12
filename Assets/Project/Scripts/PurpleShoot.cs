@@ -16,6 +16,7 @@ public class PurpleShoot : MonoBehaviour
 
     public GameObject reloadText;
     public GameObject noAmmoText;
+    private float maxCdAmmo, cdAmmo;
 
      public bool greenPowerUp, bluePowerUp;
 
@@ -36,6 +37,8 @@ public class PurpleShoot : MonoBehaviour
         shootPoint = this.gameObject.transform.GetChild(1).gameObject.transform;
         muzzle = particlePoint.GetComponent<ParticleSystem>();
         bulletDamage = 2f;
+        maxCdAmmo = 1.1f;
+        cdAmmo = 0.0f;
     }
 
     // Update is called once per frame
@@ -52,7 +55,7 @@ public class PurpleShoot : MonoBehaviour
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
-            ScreenShake.shake = 0.5f;
+            ScreenShake.shake = 1.5f;
             ScreenShake.canShake = true;
             cursor.GetComponent<Animator>().SetTrigger("click");
         }
@@ -65,6 +68,17 @@ public class PurpleShoot : MonoBehaviour
            this.gameObject.activeInHierarchy == true && !playerBehaviour.weaponMenuUp)
         {
             noAmmoText.SetActive(true);
+        }
+
+        if(noAmmoText.activeInHierarchy)
+        {
+            cdAmmo += Time.deltaTime;
+            if (cdAmmo >= maxCdAmmo)
+            {
+                noAmmoText.SetActive(false);
+                cdAmmo = 0;
+            }
+
         }
 
     }

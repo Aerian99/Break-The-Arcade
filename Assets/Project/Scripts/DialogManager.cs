@@ -46,12 +46,15 @@ public class DialogManager : MonoBehaviour
             displayText.text = "";
             continueButton.SetActive(false);
             bocadillo.SetActive(false);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<playerMovement>().enabled = true;
             if (purple.activeInHierarchy)
                 purple.GetComponent<PurpleShoot>().enabled = true;
             else if (yellow.activeInHierarchy)
                 yellow.GetComponent<PurpleShoot>().enabled = true;
             else if (red.activeInHierarchy)
                 red.GetComponent<PurpleShoot>().enabled = true;
+
         }
     }
 }

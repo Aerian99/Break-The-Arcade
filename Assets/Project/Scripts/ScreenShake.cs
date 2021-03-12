@@ -8,7 +8,7 @@ public class ScreenShake : MonoBehaviour
 {
     private float cdShake, maxCdShake;
     public static bool canShake;
-    public CinemachineVirtualCamera camara, camara2/*, cameraAlien*/;
+    //public CinemachineVirtualCamera camara, camara2/*, cameraAlien*/;
     public static float shake;
 
 
@@ -25,6 +25,23 @@ public class ScreenShake : MonoBehaviour
     {
         if (canShake)
         {
+            this.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
+
+            if (cdShake >= maxCdShake)
+            {
+                canShake = false;
+                cdShake = 0;
+            }
+            cdShake += Time.deltaTime;
+        }
+        else 
+        {
+            this.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
+        }
+
+        /*
+        if (canShake)
+        {
             if(camara.isActiveAndEnabled)
             { 
                 camara.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
@@ -33,10 +50,10 @@ public class ScreenShake : MonoBehaviour
             { 
                 camara2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
             }
-            /*else
+            else
             {
                 cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            }*/
+            }
             if (cdShake >= maxCdShake)
             {
                 canShake = false;
@@ -53,11 +70,11 @@ public class ScreenShake : MonoBehaviour
 
             if (camara2.isActiveAndEnabled)
                 camara2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            /*else
+            else
             {
                 cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            }*/
-        }
+            }
+        }*/
 
     }
 }
