@@ -27,9 +27,7 @@ public class TowerBehaviour : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
             SoundManagerScript.PlaySound("radialEnemyDeath");
-            Vector3 _position = transform.position;
-            _position.x += 1f;
-            Instantiate(explosionEffect, _position, Quaternion.identity);
+            Instantiate(explosionEffect, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
