@@ -77,6 +77,7 @@ public class QuestSaver : MonoBehaviour
                 {
                     GameObject.Find("TextAchievements").GetComponent<TextMeshProUGUI>().text = "Quest Completed: " + quest[i].assigment;
                     GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn",true);
+                    CheckQuestComplete();
                     StartCoroutine(DisableAnimationAchievement());
                     GenerateQuest(i);
                 }
@@ -161,7 +162,7 @@ public class QuestSaver : MonoBehaviour
         while (true)
         {
             SaveSystem.SaveQuest(quest, m_PowerUps);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
         }
         yield return null;
     }
