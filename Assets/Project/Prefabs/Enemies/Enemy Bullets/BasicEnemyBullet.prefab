@@ -125,6 +125,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   deathExplosion: {fileID: 0}
+  hitEffectPrefab: {fileID: 8984649988707077970, guid: cf78f4b37f34dc34cb0ef5a7eaaf3486,
+    type: 3}
 --- !u!61 &8961503755092371817
 BoxCollider2D:
   m_ObjectHideFlags: 0
