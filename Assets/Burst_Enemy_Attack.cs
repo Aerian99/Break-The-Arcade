@@ -75,7 +75,9 @@ public class Burst_Enemy_Attack : MonoBehaviour
 
     void Dashing()
     {
-        this.GetComponent<Rigidbody2D>().AddForce(player.position - transform.position);
+        float drag = 0.99f;
+        this.GetComponent<Rigidbody2D>().velocity *= drag;
+        this.GetComponent<Rigidbody2D>().AddForce(player.position - transform.position , ForceMode2D.Force);
         _isDashing = true;
     }
 
