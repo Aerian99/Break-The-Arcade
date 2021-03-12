@@ -28,8 +28,8 @@ public class absorbCooldown : MonoBehaviour
         //coolingDown = true;
         coolFull = false;
         cooldown.fillAmount = 0f;
-        incAbsorbSpeed = 2.0f;
-        decAbsorbSpeed = 0.3f;
+        incAbsorbSpeed = 1f;
+        decAbsorbSpeed = 0.5f;
     }
 
     void Update()
