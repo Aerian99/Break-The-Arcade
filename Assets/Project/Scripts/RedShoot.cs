@@ -40,6 +40,7 @@ public class RedShoot : MonoBehaviour
 
     public GameObject reloadText;
     public GameObject noAmmoText;
+    private float maxCdAmmo, cdAmmo;
 
     // BULLET
     public static float bulletDamage;
@@ -64,6 +65,8 @@ public class RedShoot : MonoBehaviour
         muzzle = particlePoint.GetComponent<ParticleSystem>();
 
         bulletDamage = 5f;
+        maxCdAmmo = 1.1f;
+        cdAmmo = 0.0f;
     }
 
     // Update is called once per frame
@@ -93,6 +96,17 @@ public class RedShoot : MonoBehaviour
                      this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0 && !playerBehaviour.weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
+            }
+
+            if (noAmmoText.activeInHierarchy)
+            {
+                cdAmmo += Time.deltaTime;
+                if (cdAmmo >= maxCdAmmo)
+                {
+                    noAmmoText.SetActive(false);
+                    cdAmmo = 0;
+                }
+
             }
 
             RotateReloadBullet();

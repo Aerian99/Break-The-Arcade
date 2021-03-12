@@ -28,7 +28,8 @@ public class LaserShoot : MonoBehaviour
 
     public GameObject reloadText;
     public GameObject noAmmoText;
-    
+    private float maxCdAmmo, cdAmmo;
+
     public GameObject hitDamagePopUp;
     [HideInInspector]public float bulletForce = 5f;
     
@@ -46,6 +47,8 @@ public class LaserShoot : MonoBehaviour
         period = 0.1f;
         maxShoot = 1f;
         canShoot = maxShoot;
+        maxCdAmmo = 1.1f;
+        cdAmmo = 0.0f;
         FillLists();
         DisableLaser();
     }
@@ -113,6 +116,17 @@ public class LaserShoot : MonoBehaviour
                      this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0 && !playerBehaviour.weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
+            }
+
+            if (noAmmoText.activeInHierarchy)
+            {
+                cdAmmo += Time.deltaTime;
+                if (cdAmmo >= maxCdAmmo)
+                {
+                    noAmmoText.SetActive(false);
+                    cdAmmo = 0;
+                }
+
             }
 
             time += Time.deltaTime;
