@@ -55,18 +55,21 @@ public class enemyBulletBehaviour : MonoBehaviour
             Destroy(explosionGO, 0.7f);
             SoundManagerScript.PlaySound("alienExplosion");
         }
+
         Destroy(this.gameObject, 5f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
+        if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" &&
+            other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
         {
             if (playerBehaviour.canBeDamaged && playerBehaviour.canBeDamagedPowerup)
             {
                 playerBehaviour.activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
             }
+
             Destroy(this.gameObject); // Se destruye al tocar al jugador.
         }
         else if
@@ -86,7 +89,7 @@ public class enemyBulletBehaviour : MonoBehaviour
          && other.gameObject.tag != "Triggers"
          && other.gameObject.tag != "RobotPatrol"
          && other.gameObject.tag != "Bullet"
-          && other.gameObject.tag != "Wall")
+         && other.gameObject.tag != "Wall")
         {
             //Destroy(this.gameObject); 
         }
@@ -94,14 +97,19 @@ public class enemyBulletBehaviour : MonoBehaviour
         {
             other.GetComponent<ProtectionBarrierAliens>().hitted = true;
         }
+
         if (other.gameObject.CompareTag("absorbZone"))
         {
             absorbed = true;
         }
-        if (other.gameObject.CompareTag("absorbPoint") && !other.gameObject.CompareTag("AbsorbGun") && !other.gameObject.CompareTag("absorbZone")) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
+
+        if (other.gameObject.CompareTag("absorbPoint") && !other.gameObject.CompareTag("AbsorbGun") &&
+            !other.gameObject.CompareTag("absorbZone")
+        ) // Si la bala a entrado en la zona de absorción no puede hacer daño y ponemos "absorbed" a true.
         {
             Destroy(this.gameObject);
         }
+
         if (other.gameObject.tag == "Platform")
         {
             Destroy(this.gameObject);
@@ -111,9 +119,9 @@ public class enemyBulletBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         canExplote = true;
-        GetComponent<Rigidbody2D>().gravityScale = 0;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        //GetComponent<Rigidbody2D>().gravityScale = 0;
+        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -124,8 +132,14 @@ public class enemyBulletBehaviour : MonoBehaviour
             SoundManagerScript.PlaySound("alienExplosion");
         }
     }
-    void OnDestroy () {
-        effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
-        Destroy (effect, 0.5f);
+
+    void OnDestroy()
+    {
+        if (!absorbed)
+        {
+            effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation)
+                .gameObject;
+            Destroy(effect, 0.5f);
+        }
     }
 }

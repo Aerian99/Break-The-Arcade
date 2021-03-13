@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class hitDamagePopUp : MonoBehaviour
 {
-    private Vector3 randomPopup = new Vector3(0.75f, 0.75f, 0f);
+    private Vector3 randomPopup = new Vector3(1f, 1f, 0f);
     void Start()
     {
         // Randomizamos la aparición del Pop Up
