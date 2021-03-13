@@ -10,14 +10,16 @@ public class ScreenShake : MonoBehaviour
     public static bool canShake;
     //public CinemachineVirtualCamera camara, camara2/*, cameraAlien*/;
     public static float shake;
-
+    CinemachineVirtualCamera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = gameObject.GetComponent<CinemachineVirtualCamera>();
         //camara = GameObject.FindWithTag("Camara").GetComponent<CinemachineVirtualCamera>();
         maxCdShake = 0.1f;
         canShake = false;
+        shake = 0.0f;
     }
 
     // Update is called once per frame
@@ -25,7 +27,8 @@ public class ScreenShake : MonoBehaviour
     {
         if (canShake)
         {
-            this.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
+
+            cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
 
             if (cdShake >= maxCdShake)
             {
@@ -36,7 +39,7 @@ public class ScreenShake : MonoBehaviour
         }
         else 
         {
-            this.gameObject.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
+            cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
         }
 
         /*

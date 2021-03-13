@@ -55,7 +55,7 @@ public class playerBehaviour : MonoBehaviour
     //SHIELD
 
     public GameObject shield;
-    float cdShield, maxCdShield;
+    public float cdShield, maxCdShield;
     public bool shieldActivated;
 
     void Start()

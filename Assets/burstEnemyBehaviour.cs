@@ -37,6 +37,7 @@ public class burstEnemyBehaviour : MonoBehaviour
             }
 
             GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<playerBehaviour>().cdShield = player.GetComponent<playerBehaviour>().maxCdShield;
             player.GetComponent<playerBehaviour>().shieldActivated = true;
             
             //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
