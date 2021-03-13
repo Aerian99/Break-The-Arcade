@@ -38,7 +38,7 @@ public class LaserShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hittableMasK = LayerMask.GetMask("Enemy");
+        hittableMasK = LayerMask.GetMask("Enemy", "Barril", "BarrilExplosivo", "Platforms");
         //distance = 100;
         startedShooting = false;
         damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
@@ -157,10 +157,10 @@ public class LaserShoot : MonoBehaviour
         Vector2 mousePos = (Vector2) cam.ScreenToWorldPoint(Input.mousePosition);
         lineRenderer.SetPosition(0, (Vector2) firePoint.position);
         startVFX.transform.position = firePoint.position;
-
         lineRenderer.SetPosition(1, mousePos);
 
         Vector2 direction = mousePos - (Vector2) transform.position;
+        
         RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude, hittableMasK);
 
         if (hit)
