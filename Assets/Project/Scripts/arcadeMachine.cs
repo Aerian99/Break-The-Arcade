@@ -12,7 +12,7 @@ public class arcadeMachine : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             exclamation.SetActive(true);
-            if(Input.GetKey(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
 
@@ -29,6 +29,11 @@ public class arcadeMachine : MonoBehaviour
                     red.GetComponent<RedShoot>().enabled = false;
 
                 bocadillo.SetActive(true);
+                if(dialogCanvas.activeInHierarchy)
+                {
+                    dialogCanvas.GetComponent<DialogManager>().index = 0;
+                    dialogCanvas.GetComponent<DialogManager>().StartCoroutine(dialogCanvas.GetComponent<DialogManager>().Typing());
+                }
                 dialogCanvas.SetActive(true);
 
             }
