@@ -7,7 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     public TextMeshProUGUI displayText;
     public string[] sentences;
-    private int index;
+    public int index;
     public float speed;
 
     public GameObject continueButton, bocadillo, purple, yellow, red;
@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour
             continueButton.SetActive(true);
         }
     }
-    IEnumerator Typing()
+    public IEnumerator Typing()
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
@@ -43,6 +43,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
+            index = 0;
             displayText.text = "";
             continueButton.SetActive(false);
             bocadillo.SetActive(false);
