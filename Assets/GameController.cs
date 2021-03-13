@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
 
     public void BeginGame()
     {
-        TimerController.instance.BeginTimer();
+       gameObject.GetComponent<TimerController>().BeginTimer();
     }
     void deactivateEnemyStates()
     {

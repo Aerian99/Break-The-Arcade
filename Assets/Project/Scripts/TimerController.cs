@@ -7,8 +7,6 @@ using TMPro;
 
 public class TimerController : MonoBehaviour
 {
-    public static TimerController instance;
-
     public  TextMeshProUGUI timeCounter;
 
     private TimeSpan timePlaying;
@@ -17,10 +15,8 @@ public class TimerController : MonoBehaviour
 
     private float elapsedTime;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    string timePlayingStr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +24,10 @@ public class TimerController : MonoBehaviour
         timerGoing = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void BeginTimer()
     {
-        elapsedTime = 0f;
         timerGoing = true;
+        elapsedTime = 0f;
         StartCoroutine(UpdateTimer());
     }
 
@@ -45,13 +36,13 @@ public class TimerController : MonoBehaviour
         timerGoing = false;
     }
 
-    private IEnumerator UpdateTimer()
+    public IEnumerator UpdateTimer()
     {
         while(timerGoing)
         {
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            string timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
+            timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
 
             yield return null;
