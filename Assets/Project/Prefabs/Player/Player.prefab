@@ -9979,8 +9979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camara: {fileID: 0}
-  camara2: {fileID: 0}
 --- !u!1 &9031425252067355308
 GameObject:
   m_ObjectHideFlags: 0
@@ -29745,6 +29743,17 @@ MonoBehaviour:
   firePoint: {fileID: 9031425253678405278}
   startVFX: {fileID: 9031425253678783969}
   endVFX: {fileID: 9031425252067355308}
+  layerList:
+  - serializedVersion: 2
+    m_Bits: 8388608
+  - serializedVersion: 2
+    m_Bits: 16777216
+  - serializedVersion: 2
+    m_Bits: 1048576
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 0
   reloadText: {fileID: 9031425252392873347}
   noAmmoText: {fileID: 9031425253124139747}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
@@ -34517,8 +34526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camara: {fileID: 0}
-  camara2: {fileID: 0}
 --- !u!1 &9031425253124139747
 GameObject:
   m_ObjectHideFlags: 0
@@ -40383,6 +40390,10 @@ PrefabInstance:
     - target: {fileID: 2129336065, guid: bd4f4951e4fe0a6419d118f800d505a0, type: 3}
       propertyPath: m_Size.y
       value: 1.5422963
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129336065, guid: bd4f4951e4fe0a6419d118f800d505a0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 107239942054311262, guid: bd4f4951e4fe0a6419d118f800d505a0,
         type: 3}

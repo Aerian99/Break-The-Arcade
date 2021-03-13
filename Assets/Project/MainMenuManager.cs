@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public GameObject playButton, ExitButton, optionsButton, text, slider, volumeButton, backButton, questsButton;
+    public GameObject playButton, ExitButton, optionsButton, text, slider, volumeButton, backButton, questsButton, playerAnimation;
     public void ShowButtons()
     {
         playButton.SetActive(true);
@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
         optionsButton.SetActive(true);
         questsButton.SetActive(true);
         text.SetActive(false);
+        playerAnimation.SetActive(false);
         SoundManagerScript.PlaySound("coin");
         GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
     }
