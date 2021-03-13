@@ -125,7 +125,8 @@ public class enemyBulletBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerBehaviour.activeImmunity = true;
+            if(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().cdImmunity >= GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().maxCdImmunity)
+                playerBehaviour.activeImmunity = true;
             Destroy(this.gameObject);
             GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
             Destroy(explosionGO, 0.7f);
