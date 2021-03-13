@@ -18,7 +18,7 @@ public class playerBehaviour : MonoBehaviour
     private reloadScript reloadScript;
 
     [HideInInspector] public bool activePostProcessing;
-    private float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity, cdPowerup, maxCdPowerup;
+    [HideInInspector] public float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity, cdPowerup, maxCdPowerup;
     public float reloadTime;
     public static bool isReloading;
 
