@@ -15,7 +15,7 @@ public class ScreenShake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = gameObject.GetComponent<CinemachineVirtualCamera>();
+        //cam = gameObject.GetComponent<CinemachineVirtualCamera>();
         //camara = GameObject.FindWithTag("Camara").GetComponent<CinemachineVirtualCamera>();
         maxCdShake = 0.1f;
         canShake = false;
