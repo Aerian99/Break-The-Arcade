@@ -167,8 +167,17 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("Enemy") && time >= nextFrame)
             {
-                hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
-                popUpDamage(bulletForce, hit);
+                if(hit.collider.name == "BurstEnemy(Clone)")
+                {
+                    hit.collider.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
+                    popUpDamage(bulletForce, hit);
+                }
+                else
+                {
+
+                    hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
+                    popUpDamage(bulletForce, hit);
+                }
             }
             if (hit.transform.tag == "Boss" && time >= nextFrame)
             {
@@ -187,6 +196,11 @@ public class LaserShoot : MonoBehaviour
                     popUpDamage(bulletForce, hit);
                 }
                 
+            }
+            if(hit.collider.CompareTag("BarrilesExplosivos") && time >= nextFrame)
+            {
+                hit.collider.GetComponent<Animator>().SetTrigger("hit");
+                hit.collider.GetComponent<explosiveBarrel>().lifes--;
             }
             if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
             {
