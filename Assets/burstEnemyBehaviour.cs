@@ -37,7 +37,7 @@ public class burstEnemyBehaviour : MonoBehaviour
             }
 
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<playerBehaviour>().cdShield = player.GetComponent<playerBehaviour>().maxCdShield;
+            player.GetComponent<playerBehaviour>().cdShield = 0;
             player.GetComponent<playerBehaviour>().shieldActivated = true;
             
             //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
@@ -50,11 +50,26 @@ public class burstEnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
+        if (collision.gameObject.CompareTag("PurpleBullet") || collision.gameObject.CompareTag("RedBullet"))
         {
             GetComponent<Animator>().SetTrigger("hit");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Platform")
+        {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "Platform")
+        {
+                Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         }
     }
 }

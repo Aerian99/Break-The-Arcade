@@ -22,7 +22,7 @@ public class OneSidePlatform : MonoBehaviour
             waitTime = 0.05f;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if (waitTime <= 0)
             {

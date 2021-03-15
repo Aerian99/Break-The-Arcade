@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class explosiveBarrel : MonoBehaviour
 {
-    int lifes;
+    public int lifes;
     public GameObject deathExplosion;
     private float explosionRange;
     public LayerMask playerLayer, enemyLayer, barrelNLayer, barrelELayer;
