@@ -128,22 +128,20 @@ public class playerBehaviour : MonoBehaviour
         else if (handController.currentPos == 2)
             redBulletsCounter.text = "" + reservedAmmoShotgun;
 
-        if (isReloading)
-            return;
+        if (shieldActivated)
+            ActivateShield();
 
         if ((Input.GetKeyDown(KeyCode.R) &&
              (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
               handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0 ||
-              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoYellow > 0) ||
-             (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
-              handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
-              handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0)))
+              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoShotgun > 0)))
+             //(handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 
+             // handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 
+             // handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0)))
         {
+            isReloading = true;
             StartCoroutine(Reload());
         }
-
-        if (shieldActivated)
-            ActivateShield();
     }
 
     void ActiveMiniMap()
@@ -228,8 +226,7 @@ public class playerBehaviour : MonoBehaviour
     {
         int bulletsNeeded;
         reloadText.SetActive(false);
-        isReloading = true;
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitUntil(() => !this.gameObject.GetComponent<reloadScript>().hasReloaded);
 
         if (handController.currentPos == 0)
         {
@@ -276,8 +273,6 @@ public class playerBehaviour : MonoBehaviour
                 reservedAmmoShotgun = 0;
             }
         }
-
-        reloadScript.hitReload = false;
         isReloading = false;
     }
 

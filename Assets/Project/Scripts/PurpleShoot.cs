@@ -46,15 +46,10 @@ public class PurpleShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "PowerUpScene" && Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
-            this.gameObject.activeInHierarchy == true)
-        {
-            StartCoroutine(ShootPower()); //If the scene is PowerUps starts a coroutine to shoot two times in a period of time 0.05 seconds and waste only one bullet
-            player.GetComponent<playerBehaviour>().bulletsPurple--;
-        }
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
             this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
+            Debug.Log(player.GetComponent<playerBehaviour>().isReloading);
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
             ScreenShake.shake = 1.5f;
