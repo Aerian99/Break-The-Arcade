@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BarrierAlienDead : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("AlienEnemy"))
         {
-            playerBehaviour._playerLifes = 0;
+            player.GetComponent<playerBehaviour>()._playerLifes = 0;
         }
     }
 }

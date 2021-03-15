@@ -6,7 +6,7 @@ using UnityEngine;
 public class Absorb_Gun : MonoBehaviour
 {
     private EdgeCollider2D arcCollider;
-    private GameObject effect;
+    private GameObject effect, player;
     public GameObject noAmmoText;
     public static bool firstTimeAbsorb, firstTimeAbsorb0, firstTimeAbsorb1, firstTimeAbsorb2, ammoFull, ammoFull0, ammoFull1, ammoFull2;
 
@@ -15,6 +15,7 @@ public class Absorb_Gun : MonoBehaviour
         arcCollider = GetComponent<EdgeCollider2D>();
         firstTimeAbsorb = firstTimeAbsorb0 = firstTimeAbsorb1 = firstTimeAbsorb2 = true;
         ammoFull = ammoFull0 = ammoFull1 = ammoFull2 = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -24,22 +25,22 @@ public class Absorb_Gun : MonoBehaviour
             //si nos quedamos con esta version, podemos borrar los otros firstTimeAbsorb
             if (firstTimeAbsorb)
             {
-                if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
+                if (player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                 {
-                    playerBehaviour.bulletsPurple += 5;
+                    player.GetComponent<playerBehaviour>().bulletsPurple += 5;
                 }
-                if (playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT)
+                if (player.GetComponent<playerBehaviour>().bulletsYellow < player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT)
                 {
-                    playerBehaviour.bulletsYellow += 5;
+                    player.GetComponent<playerBehaviour>().bulletsYellow += 5;
                 }
-                if (playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)
+                if (player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)
                 {
-                    playerBehaviour.bulletsShotgun += 2;
+                    player.GetComponent<playerBehaviour>().bulletsShotgun += 2;
                 }
 
                 SoundManagerScript.PlaySound("absorbSound");
 
-                if (playerBehaviour.bulletsPurple >= playerBehaviour.MAX_PURPLE_SHOOT || playerBehaviour.bulletsYellow >= playerBehaviour.MAX_YELLOW_SHOOT)
+                if (player.GetComponent<playerBehaviour>().bulletsPurple >= player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT || player.GetComponent<playerBehaviour>().bulletsYellow >= player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT)
                 {
                     firstTimeAbsorb = false;
                     ammoFull = true;
@@ -49,17 +50,17 @@ public class Absorb_Gun : MonoBehaviour
             }
             if (ammoFull)
             {
-                if (playerBehaviour.reservedAmmoPurple < playerBehaviour.MAX_BULLETS_PURPLE)
+                if (player.GetComponent<playerBehaviour>().reservedAmmoPurple < player.GetComponent<playerBehaviour>().MAX_BULLETS_PURPLE)
                 {
-                    playerBehaviour.reservedAmmoPurple += 5;
+                    player.GetComponent<playerBehaviour>().reservedAmmoPurple += 5;
                 }
-                if (playerBehaviour.reservedAmmoYellow < playerBehaviour.MAX_BULLETS_YELLOW)
+                if (player.GetComponent<playerBehaviour>().reservedAmmoYellow < player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW)
                 {
-                    playerBehaviour.reservedAmmoYellow += 5;
+                    player.GetComponent<playerBehaviour>().reservedAmmoYellow += 5;
                 }
-                if (playerBehaviour.reservedAmmoShotgun < playerBehaviour.MAX_BULLETS_SHOTGUN)
+                if (player.GetComponent<playerBehaviour>().reservedAmmoShotgun < player.GetComponent<playerBehaviour>().MAX_BULLETS_SHOTGUN)
                 {
-                    playerBehaviour.reservedAmmoShotgun += 2;
+                    player.GetComponent<playerBehaviour>().reservedAmmoShotgun += 2;
                 }
                 if (noAmmoText.activeInHierarchy) noAmmoText.SetActive(false);
 

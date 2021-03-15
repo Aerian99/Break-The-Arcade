@@ -11,16 +11,16 @@ public class playerBehaviour : MonoBehaviour
 {
     public GameObject activeCamera;
     private Animator animator;
-    public static int _playerLifes;
+    [HideInInspector] public int _playerLifes;
     private float _maxLifes;
-    public static bool activeImmunity, canBeDamaged, canBeDamagedPowerup, activePowerUp;
+    [HideInInspector]  public bool activeImmunity, canBeDamaged, canBeDamagedPowerup, activePowerUp;
 
     private reloadScript reloadScript;
 
     [HideInInspector] public bool activePostProcessing;
     [HideInInspector] public float cdAberration, maxcdAberration, cdImmunity, maxCdImmunity, cdPowerup, maxCdPowerup;
     public float reloadTime;
-    public static bool isReloading;
+    [HideInInspector] public bool isReloading;
 
     public TextMeshProUGUI purpleBulletsCounter;
     public TextMeshProUGUI yellowBulletsCounter;
@@ -39,17 +39,17 @@ public class playerBehaviour : MonoBehaviour
 
     private int seconds;
 
-    public static int bulletsPurple, bulletsYellow, bulletsShotgun;
+    [HideInInspector] public int bulletsPurple, bulletsYellow, bulletsShotgun;
 
-    public static int
-        MAX_PURPLE_SHOOT, MAX_YELLOW_SHOOT, MAX_SHOTGUN_SHOOT; //maximo de balas que puede tener en el cargador
+    [HideInInspector]
+    public int MAX_PURPLE_SHOOT, MAX_YELLOW_SHOOT, MAX_SHOTGUN_SHOOT; //maximo de balas que puede tener en el cargador
 
-    public static bool purpleCanReload, yellowCanReload, shotgunCanReload;
-    public static int reservedAmmoPurple, reservedAmmoYellow, reservedAmmoShotgun; //counter del total que lleva
-    public static int MAX_BULLETS_PURPLE, MAX_BULLETS_YELLOW, MAX_BULLETS_SHOTGUN; //máximo que puede tener en TOTAL
+    [HideInInspector] public bool purpleCanReload, yellowCanReload, shotgunCanReload;
+    [HideInInspector] public int reservedAmmoPurple, reservedAmmoYellow, reservedAmmoShotgun; //counter del total que lleva
+    [HideInInspector] public int MAX_BULLETS_PURPLE, MAX_BULLETS_YELLOW, MAX_BULLETS_SHOTGUN; //máximo que puede tener en TOTAL
 
     public GameObject weaponMenu;
-    public static bool weaponMenuUp;
+    [HideInInspector] public bool weaponMenuUp;
     public GameObject aimController1, aimController2, aimController3, aimController4;
 
     //SHIELD

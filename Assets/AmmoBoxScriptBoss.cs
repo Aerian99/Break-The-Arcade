@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AmmoBoxScriptBoss : MonoBehaviour
 {
+    private GameObject player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine(enableBox());
     }
@@ -26,17 +28,17 @@ public class AmmoBoxScriptBoss : MonoBehaviour
 
             if (handController.currentPos == 0)
             {
-                playerBehaviour.reservedAmmoPurple += 15;
+                player.GetComponent<playerBehaviour>().reservedAmmoPurple += 15;
             }
 
             if (handController.currentPos == 1)
             {
-                playerBehaviour.reservedAmmoYellow += 10;
+                player.GetComponent<playerBehaviour>().reservedAmmoYellow += 10;
             }
 
             if (handController.currentPos == 2)
             {
-                playerBehaviour.reservedAmmoShotgun += 3;
+                player.GetComponent<playerBehaviour>().reservedAmmoShotgun += 3;
             }
         }
     }

@@ -26,10 +26,13 @@ public class Burst_Enemy_Attack : MonoBehaviour
 
     private Vector2 velocity;
 
+    private GameObject playerGO;
+
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        
+        playerGO = GameObject.FindGameObjectWithTag("Player");
+
         _moveSpeed = 75f;
         _bulletSpeed = 15f;
         
@@ -107,7 +110,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && _isDashing)
         {
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(force * magnitude);
-            playerBehaviour.activeImmunity = true;
+            player.GetComponent<playerBehaviour>().activeImmunity = true;
         }
     }
 }

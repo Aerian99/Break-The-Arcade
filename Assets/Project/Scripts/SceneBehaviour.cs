@@ -18,7 +18,7 @@ public class SceneBehaviour : MonoBehaviour
     void Update()
     {
         playGameOver();
-        if (playerBehaviour._playerLifes == 0)
+        if (player.GetComponent<playerBehaviour>()._playerLifes == 0)
         {
             StartCoroutine(PlayAgain(0.8f));
         }
@@ -44,7 +44,7 @@ public class SceneBehaviour : MonoBehaviour
 
         void playGameOver()
         {
-            if (playerBehaviour._playerLifes == 0 && !isPlaying)
+            if (player.GetComponent<playerBehaviour>()._playerLifes == 0 && !isPlaying)
             {
                 SoundManagerScript.PlaySound("gameOver");
                 isPlaying = true;

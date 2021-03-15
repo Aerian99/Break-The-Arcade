@@ -10,8 +10,8 @@ public class reloadScript : MonoBehaviour
     private float waitTime;
     public Image fill;
     public TextMeshProUGUI perTimer;
-    private playerBehaviour p_behaviourScript;
     public static bool hitReload;
+    private GameObject player;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class reloadScript : MonoBehaviour
         fill.fillAmount = 0f;
         fill.enabled = false;
         perTimer.enabled = false;
-        p_behaviourScript = GetComponent<playerBehaviour>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -33,14 +33,14 @@ public class reloadScript : MonoBehaviour
         }
 
         if ((Input.GetKeyDown(KeyCode.R) &&
-             (handController.currentPos == 0 && playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT ||
-              handController.currentPos == 1 && playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT ||
-              handController.currentPos == 2 && playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)) ||
-            (handController.currentPos == 0 && playerBehaviour.bulletsPurple <= 0|| 
-             handController.currentPos == 1 && playerBehaviour.bulletsYellow <= 0||
-             handController.currentPos == 2 && playerBehaviour.bulletsShotgun <= 0))
+             (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT ||
+              handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow < player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT ||
+              handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)) ||
+            (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple <= 0|| 
+             handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow <= 0||
+             handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun <= 0))
         {
-            if (playerBehaviour.reservedAmmoPurple != 0 && handController.currentPos == 0)
+            if (player.GetComponent<playerBehaviour>().reservedAmmoPurple != 0 && handController.currentPos == 0)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
@@ -48,7 +48,7 @@ public class reloadScript : MonoBehaviour
                 fill.fillAmount = 0f;
             }
 
-            if (playerBehaviour.reservedAmmoYellow != 0 && handController.currentPos == 1)
+            if (player.GetComponent<playerBehaviour>().reservedAmmoYellow != 0 && handController.currentPos == 1)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
@@ -56,7 +56,7 @@ public class reloadScript : MonoBehaviour
                 fill.fillAmount = 0f;
             }
 
-            if (playerBehaviour.reservedAmmoShotgun != 0 && handController.currentPos == 2)
+            if (player.GetComponent<playerBehaviour>().reservedAmmoShotgun != 0 && handController.currentPos == 2)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
@@ -71,7 +71,7 @@ public class reloadScript : MonoBehaviour
     {
         if (timer > 0)
         {
-            playerBehaviour.isReloading = false;
+            player.GetComponent<playerBehaviour>().isReloading = false;
             timer -= Time.deltaTime;
             fill.fillAmount += 1.0f / this.GetComponent<playerBehaviour>().reloadTime * Time.deltaTime;
             perTimer.text = (int) (fill.fillAmount * 100) + "%";

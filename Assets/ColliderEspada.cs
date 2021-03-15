@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class ColliderEspada : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameObject player;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
-            if(playerBehaviour.canBeDamaged)
-                playerBehaviour.activeImmunity = true;
+            if(player.GetComponent<playerBehaviour>().canBeDamaged)
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
         }
     }
 }

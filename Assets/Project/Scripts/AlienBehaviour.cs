@@ -18,6 +18,7 @@ public class AlienBehaviour : MonoBehaviour
     private float cdExplosion, cdMaxExplosion;
     private Canvas canvas;
     public GameObject deathExplosion;
+    private GameObject player;
 
     [HideInInspector] public bool laserDamage;
 
@@ -30,6 +31,7 @@ public class AlienBehaviour : MonoBehaviour
         cdMaxExplosion = 4f;
         cdExplosion = cdMaxExplosion;
         canvas = transform.GetChild(1).GetComponent<Canvas>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -96,7 +98,7 @@ public class AlienBehaviour : MonoBehaviour
 
             if (hasExploted)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
             }
            
             Destroy(this.gameObject, 0.1f);

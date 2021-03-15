@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class ammoBoxScript : MonoBehaviour
 {
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -16,17 +22,17 @@ public class ammoBoxScript : MonoBehaviour
             
             if (handController.currentPos == 0)
             {
-                playerBehaviour.bulletsPurple += 5;
+                player.GetComponent<playerBehaviour>().bulletsPurple += 5;
             }
 
             if (handController.currentPos == 1)
             {
-                playerBehaviour.bulletsYellow += 3;
+                player.GetComponent<playerBehaviour>().bulletsYellow += 3;
             }
 
             if (handController.currentPos == 2)
             {
-                playerBehaviour.bulletsShotgun += 1;
+                player.GetComponent<playerBehaviour>().bulletsShotgun += 1;
             }
         }
     }
