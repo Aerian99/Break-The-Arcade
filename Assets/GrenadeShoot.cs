@@ -12,10 +12,12 @@ public class GrenadeShoot : MonoBehaviour
     public float bulletSpeed;
     public GameObject bulletPrefab, lightEffect;
     private bool absorbed;
+    private GameObject player;
 
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Destroy(this.gameObject, 1.5f);
         absorbed = false;
     }
@@ -30,9 +32,9 @@ public class GrenadeShoot : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" && other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
         {
-            if (playerBehaviour.canBeDamaged && playerBehaviour.canBeDamagedPowerup)
+            if (player.GetComponent<playerBehaviour>().canBeDamaged && player.GetComponent<playerBehaviour>().canBeDamagedPowerup)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
             }
             Destroy(this.gameObject);
@@ -97,3 +99,4 @@ public class GrenadeShoot : MonoBehaviour
         }
     }
 }
+

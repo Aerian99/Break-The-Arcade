@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class bouncingBullet : MonoBehaviour
 {
+    private GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Update()
     {
         Destroy(this.gameObject, 8f);
@@ -16,15 +21,12 @@ public class bouncingBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (playerBehaviour.canBeDamaged && playerBehaviour.canBeDamagedPowerup && player.GetComponent<playerBehaviour>().cdImmunity >= player.GetComponent<playerBehaviour>().maxCdImmunity)
+            if (player.GetComponent<playerBehaviour>().canBeDamaged && player.GetComponent<playerBehaviour>().canBeDamagedPowerup && player.GetComponent<playerBehaviour>().cdImmunity >= player.GetComponent<playerBehaviour>().maxCdImmunity)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
                 player.GetComponent<Animator>().SetTrigger("hit");
             }
-           //playerBehaviour.activeImmunity = true;
             Destroy(this.gameObject);
-            //SoundManagerScript.PlaySound("alienExplosion");
         }
     }
 }

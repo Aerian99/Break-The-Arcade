@@ -28,6 +28,7 @@ public class PurpleShoot : MonoBehaviour
     private float timestamp;
 
     public GameObject cursor;
+    private GameObject player;
 
 
     void Start()
@@ -39,19 +40,20 @@ public class PurpleShoot : MonoBehaviour
         bulletDamage = 2f;
         maxCdAmmo = 1.1f;
         cdAmmo = 0.0f;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "PowerUpScene" && Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
+        if (SceneManager.GetActiveScene().name == "PowerUpScene" && Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
             this.gameObject.activeInHierarchy == true)
         {
             StartCoroutine(ShootPower()); //If the scene is PowerUps starts a coroutine to shoot two times in a period of time 0.05 seconds and waste only one bullet
-            playerBehaviour.bulletsPurple--;
+            player.GetComponent<playerBehaviour>().bulletsPurple--;
         }
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple > 0 &&
-            this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
+            this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
@@ -59,13 +61,13 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.canShake = true;
             cursor.GetComponent<Animator>().SetTrigger("click");
         }
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 &&
-           this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoPurple > 0 && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple == 0 &&
+           this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoPurple > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             reloadText.SetActive(true);
         }
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsPurple == 0 && playerBehaviour.reservedAmmoPurple == 0 &&
-           this.gameObject.activeInHierarchy == true && !playerBehaviour.weaponMenuUp)
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple == 0 && player.GetComponent<playerBehaviour>().reservedAmmoPurple == 0 &&
+           this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             noAmmoText.SetActive(true);
         }
@@ -97,7 +99,7 @@ public class PurpleShoot : MonoBehaviour
             timestamp = Time.time + timeBetweenShots;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
-            playerBehaviour.bulletsPurple--;
+            player.GetComponent<playerBehaviour>().bulletsPurple--;
             ReloadBullet();
 
             Destroy(bullet, bulletLifeTime);
@@ -114,7 +116,7 @@ public class PurpleShoot : MonoBehaviour
             timestamp = Time.time + timeBetweenShots;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(shootPoint.right * bulletSpeed, ForceMode2D.Impulse);
-            playerBehaviour.bulletsPurple--;
+            player.GetComponent<playerBehaviour>().bulletsPurple--;
             ReloadBullet();
 
             Destroy(bullet, bulletLifeTime);
@@ -123,7 +125,7 @@ public class PurpleShoot : MonoBehaviour
 
     IEnumerator shootBluePowerUp()
     {
-        playerBehaviour.bulletsPurple--;
+        player.GetComponent<playerBehaviour>().bulletsPurple--;
 
         for (int i = 0; i < 2; i++)
         {

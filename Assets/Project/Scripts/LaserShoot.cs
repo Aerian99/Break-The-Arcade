@@ -34,6 +34,7 @@ public class LaserShoot : MonoBehaviour
     [HideInInspector]public float bulletForce = 5f;
     
     public GameObject cursor;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class LaserShoot : MonoBehaviour
         canShoot = maxShoot;
         maxCdAmmo = 1.1f;
         cdAmmo = 0.0f;
+        player = GameObject.FindGameObjectWithTag("Player");
         FillLists();
         DisableLaser();
     }
@@ -63,14 +65,14 @@ public class LaserShoot : MonoBehaviour
         else
         {
             //SHOOT
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !playerBehaviour.isReloading)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().isReloading)
             {
                 time = nextFrame;
                 EnableLaser();
                 endVFX.SetActive(true);
             }
 
-            if (startedShooting && playerBehaviour.bulletsYellow > 0)
+            if (startedShooting && player.GetComponent<playerBehaviour>().bulletsYellow > 0)
             {
                 CheckFirstAbsorb();
                 UpdateLaser();
@@ -80,40 +82,40 @@ public class LaserShoot : MonoBehaviour
             }
 
             if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
-                playerBehaviour.bulletsYellow > 0)
+                player.GetComponent<playerBehaviour>().bulletsYellow > 0)
             {
                 nextFrame += period;
-                playerBehaviour.bulletsYellow--;
+                player.GetComponent<playerBehaviour>().bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
             }
-            else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow > 0 &&
-                     this.gameObject.activeInHierarchy == true && !startedShooting && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+            else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow > 0 &&
+                     this.gameObject.activeInHierarchy == true && !startedShooting && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 UpdateLaser();
                 nextFrame += period;
                 startedShooting = true;
-                playerBehaviour.bulletsYellow--;
+                player.GetComponent<playerBehaviour>().bulletsYellow--;
                 SoundManagerScript.PlaySound("yellowGun");
                 ScreenShake.shake = 1.5f;
                 ScreenShake.canShake = true;
                 CheckFirstAbsorb();
             }
 
-            if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || playerBehaviour.bulletsYellow == 0)
+            if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || player.GetComponent<playerBehaviour>().bulletsYellow == 0)
             {
                 startedShooting = false;
                 DisableLaser();
             }
 
             //POPUPS
-            if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
-                this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow > 0 && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+            if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+                this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 reloadText.SetActive(true);
             }
 
-            else if (time >= nextFrame && Input.GetButton("Fire1") && playerBehaviour.bulletsYellow == 0 &&
-                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoYellow == 0 && !playerBehaviour.weaponMenuUp)
+            else if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+                     this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow == 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
             }
@@ -261,7 +263,7 @@ public class LaserShoot : MonoBehaviour
     void ChargeShoot()
     {
         CheckFirstAbsorb();
-        if (Input.GetKeyDown(KeyCode.Mouse0) && playerBehaviour.bulletsYellow >= 3)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow >= 3)
         {
             damage = 10f;
             startedShooting = true;
@@ -274,10 +276,10 @@ public class LaserShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) && playerBehaviour.bulletsYellow >= 3 && startedShooting && canShoot <= 0)
+        if (Input.GetKeyUp(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow >= 3 && startedShooting && canShoot <= 0)
         {
             startedShooting = false;
-            playerBehaviour.bulletsYellow -= 3;
+            player.GetComponent<playerBehaviour>().bulletsYellow -= 3;
             EnableLaser();
             UpdateLaser();
             StartCoroutine(EraseLaser());
@@ -289,7 +291,7 @@ public class LaserShoot : MonoBehaviour
             canShoot = maxShoot;
         }
 
-        if (playerBehaviour.bulletsYellow < 3)
+        if (player.GetComponent<playerBehaviour>().bulletsYellow < 3)
         {
             reloadText.SetActive(true);
         }
@@ -298,7 +300,7 @@ public class LaserShoot : MonoBehaviour
             reloadText.SetActive(false);
         }
 
-        if (playerBehaviour.bulletsYellow < 3 && playerBehaviour.reservedAmmoYellow + playerBehaviour.bulletsYellow < 3)
+        if (player.GetComponent<playerBehaviour>().bulletsYellow < 3 && player.GetComponent<playerBehaviour>().reservedAmmoYellow + player.GetComponent<playerBehaviour>().bulletsYellow < 3)
         {
             noAmmoText.SetActive(true);
         }

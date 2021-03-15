@@ -16,6 +16,7 @@ public class enemyBulletBehaviour : MonoBehaviour
     private bool absorbed;
     private GameObject effect;
     public ParticleSystem hitEffectPrefab;
+    private GameObject player;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         canExplote = exploted = false;
         animator = GetComponent<Animator>();
         absorbed = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void FixedUpdate()
@@ -45,9 +47,9 @@ public class enemyBulletBehaviour : MonoBehaviour
 
 
             explosionDamaged = Physics2D.OverlapCircle(this.transform.position, explosionRange, layer);
-            if (explosionDamaged && !playerBehaviour.activeImmunity)
+            if (explosionDamaged && !player.GetComponent<playerBehaviour>().activeImmunity)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
             }
 
             Destroy(this.gameObject);
@@ -64,9 +66,9 @@ public class enemyBulletBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Player" && other.gameObject.tag != "AbsorbGun" &&
             other.gameObject.tag != "Range" && other.gameObject.tag != "absorbZone" && !absorbed)
         {
-            if (playerBehaviour.canBeDamaged && playerBehaviour.canBeDamagedPowerup)
+            if (player.GetComponent<playerBehaviour>().canBeDamaged && player.GetComponent<playerBehaviour>().canBeDamagedPowerup)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
                 other.GetComponent<Animator>().SetTrigger("hit");
             }
 
@@ -125,8 +127,10 @@ public class enemyBulletBehaviour : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().cdImmunity >= GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().maxCdImmunity)
-                playerBehaviour.activeImmunity = true;
+            if (player.GetComponent<playerBehaviour>().cdImmunity >= player.GetComponent<playerBehaviour>().maxCdImmunity)
+            {
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
+            }
             Destroy(this.gameObject);
             GameObject explosionGO = Instantiate(deathExplosion, transform.position, Quaternion.identity);
             Destroy(explosionGO, 0.7f);

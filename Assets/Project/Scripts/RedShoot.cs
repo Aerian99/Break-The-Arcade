@@ -22,7 +22,7 @@ public class RedShoot : MonoBehaviour
     private GameObject bullet6;
 
     private GameObject particlePoint;
-    private Rigidbody2D player;
+    private Rigidbody2D player2D;
     private ParticleSystem muzzle;
 
     private Transform shootPoint;
@@ -51,6 +51,7 @@ public class RedShoot : MonoBehaviour
     public Sprite reloadGun1, reloadGun2, reloadGun3;
 
     public GameObject cursor;
+    private GameObject player;
 
     void Start()
     {
@@ -61,7 +62,8 @@ public class RedShoot : MonoBehaviour
         shootPoint3 = this.gameObject.transform.GetChild(3).gameObject.transform;
         shootPoint4 = this.gameObject.transform.GetChild(4).gameObject.transform;
         shootPoint5 = this.gameObject.transform.GetChild(5).gameObject.transform;
-        player = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
+        player2D = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
         muzzle = particlePoint.GetComponent<ParticleSystem>();
 
         bulletDamage = 5f;
@@ -76,8 +78,8 @@ public class RedShoot : MonoBehaviour
             powerUps();
         else
         {
-            if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
-                this.gameObject.activeInHierarchy == true && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+            if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
+                this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 Shoot();
                 SoundManagerScript.PlaySound("shotgun");
@@ -86,14 +88,14 @@ public class RedShoot : MonoBehaviour
                 cursor.GetComponent<Animator>().SetTrigger("click");
             }
 
-            else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 && !playerBehaviour.weaponMenuUp)
+            else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+                     this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun > 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 reloadText.SetActive(true);
             }
 
-            else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-                     this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0 && !playerBehaviour.weaponMenuUp)
+            else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+                     this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun == 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
             }
@@ -144,7 +146,7 @@ public class RedShoot : MonoBehaviour
             Rigidbody2D rb5 = bullet5.GetComponent<Rigidbody2D>();
             rb5.AddForce(shootPoint5.right * bulletForce, ForceMode2D.Impulse);
             timestamp = Time.time + timeBetweenShots;
-            playerBehaviour.bulletsShotgun--;
+            player.GetComponent<playerBehaviour>().bulletsShotgun--;
             shotgunJump();
 
             ReloadBullet();
@@ -173,7 +175,7 @@ public class RedShoot : MonoBehaviour
             Rigidbody2D rb3 = bullet3.GetComponent<Rigidbody2D>();
             rb3.AddForce(shootPoint3.right * bulletForce, ForceMode2D.Impulse);
             timestamp = Time.time + timeBetweenShots;
-            playerBehaviour.bulletsShotgun--;
+            player.GetComponent<playerBehaviour>().bulletsShotgun--;
             shotgunJump();
 
             ReloadBullet();
@@ -185,7 +187,7 @@ public class RedShoot : MonoBehaviour
 
     IEnumerator ShootBlue()
     {
-        playerBehaviour.bulletsShotgun--;
+        player.GetComponent<playerBehaviour>().bulletsShotgun--;
 
         for (int i = 0; i < 2; i++)
         {
@@ -228,18 +230,18 @@ public class RedShoot : MonoBehaviour
     {
         if (playerMovement.IsGrounded() && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -90)
         {
-            player.AddForce(new Vector2(25f, 7f), ForceMode2D.Impulse);
+            player2D.AddForce(new Vector2(25f, 7f), ForceMode2D.Impulse);
         }
         else if (playerMovement.IsGrounded() && playerAimWeapon.angle > -90 && playerAimWeapon.angle < -20)
         {
-            player.AddForce(new Vector2(-25f, 7f), ForceMode2D.Impulse);
+            player2D.AddForce(new Vector2(-25f, 7f), ForceMode2D.Impulse);
         }
 
         if (playerMovement.IsGrounded() == false && playerAimWeapon.angle > -160 && playerAimWeapon.angle < -20
         ) // Si el jugador dispara hacia abajo con un angulo determinado, se realizara un salto con la potencia de la escopeta;
         {
-            player.velocity = Vector2.zero;
-            player.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
+            player2D.velocity = Vector2.zero;
+            player2D.AddForce(new Vector2(0f, 35f), ForceMode2D.Impulse);
         }
     }
 
@@ -280,7 +282,7 @@ public class RedShoot : MonoBehaviour
 
     void powerUps()
     {
-        if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun > 0 &&
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
             this.gameObject.activeInHierarchy == true)
         {
             ShootPowerUp();
@@ -289,15 +291,15 @@ public class RedShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
 
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun > 0 &&
-                 !playerBehaviour.isReloading)
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+                 this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun > 0 &&
+                 !player.GetComponent<playerBehaviour>().isReloading)
         {
             reloadText.SetActive(true);
         }
 
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && playerBehaviour.bulletsShotgun == 0 &&
-                 this.gameObject.activeInHierarchy == true && playerBehaviour.reservedAmmoShotgun == 0)
+        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+                 this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun == 0)
         {
             noAmmoText.SetActive(true);
         }
@@ -340,7 +342,7 @@ public class RedShoot : MonoBehaviour
         rb6.AddForce(shootPoint6.right * bulletForce, ForceMode2D.Impulse);
 
         timestamp = Time.time + timeBetweenShots;
-        playerBehaviour.bulletsShotgun--;
+        player.GetComponent<playerBehaviour>().bulletsShotgun--;
 
         shotgunJump();
 

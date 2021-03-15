@@ -10,12 +10,14 @@ public class explosiveBarrel : MonoBehaviour
     public LayerMask playerLayer, enemyLayer, barrelNLayer, barrelELayer;
     private bool explosionDamagedPlayer;
     Collider2D[] explosionBarrelNormal, explosionBarrelE, explosionDamagedEnemy;
-
+    private GameObject player;
 
     void Start()
     {
         lifes = 2;
         explosionRange = 2f;
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -24,9 +26,9 @@ public class explosiveBarrel : MonoBehaviour
         if (lifes <= 0)
         {
             explosionDamagedPlayer = Physics2D.OverlapCircle(this.transform.position, explosionRange, playerLayer);
-            if (explosionDamagedPlayer && !playerBehaviour.activeImmunity)
+            if (explosionDamagedPlayer && !player.GetComponent<playerBehaviour>().activeImmunity)
             {
-                playerBehaviour.activeImmunity = true;
+                player.GetComponent<playerBehaviour>().activeImmunity = true;
             }
             explosionDamagedEnemy = Physics2D.OverlapCircleAll(this.transform.position, explosionRange, enemyLayer);
             for (int i = 0; i < explosionDamagedEnemy.Length; i++)

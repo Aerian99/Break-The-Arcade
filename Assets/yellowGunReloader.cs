@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class yellowGunReloader : MonoBehaviour
 {
     public Image imgFill;
+    private GameObject player;
     private void Start()
     {
         imgFill.fillAmount = 0f;
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
 
@@ -17,45 +20,45 @@ public class yellowGunReloader : MonoBehaviour
     void Update()
     {
         // ME DA PEREZA ARREGLARLO CON UN FOR 
-        if (playerBehaviour.bulletsYellow == 10)
+        if (player.GetComponent<playerBehaviour>().bulletsYellow == 10)
         {
             imgFill.fillAmount = 1f;
         }
-        else if (playerBehaviour.bulletsYellow == 9)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 9)
         {
             imgFill.fillAmount = 0.9f;
         }
-        else if (playerBehaviour.bulletsYellow == 8)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 8)
         {
             imgFill.fillAmount = 0.8f;
         }
-        else if (playerBehaviour.bulletsYellow == 7)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 7)
         {
             imgFill.fillAmount = 0.7f;
-        }else if (playerBehaviour.bulletsYellow == 6)
+        }else if (player.GetComponent<playerBehaviour>().bulletsYellow == 6)
         {
             imgFill.fillAmount = 0.6f;
         }
-        else if (playerBehaviour.bulletsYellow == 5)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 5)
         {
             imgFill.fillAmount = 0.5f;
-        }else if (playerBehaviour.bulletsYellow == 4)
+        }else if (player.GetComponent<playerBehaviour>().bulletsYellow == 4)
         {
             imgFill.fillAmount = 0.4f;
         }
-        else if (playerBehaviour.bulletsYellow == 3)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 3)
         {
             imgFill.fillAmount = 0.3f;
         }
-        else if (playerBehaviour.bulletsYellow == 2)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 2)
         {
             imgFill.fillAmount = 0.2f;
         }
-        else if (playerBehaviour.bulletsYellow == 1)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 1)
         {
             imgFill.fillAmount = 0.1f;
         }
-        else if (playerBehaviour.bulletsYellow == 0)
+        else if (player.GetComponent<playerBehaviour>().bulletsYellow == 0)
         {
             imgFill.fillAmount = 0.0f;
         }

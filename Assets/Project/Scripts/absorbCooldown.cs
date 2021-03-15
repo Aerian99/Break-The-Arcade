@@ -20,6 +20,8 @@ public class absorbCooldown : MonoBehaviour
     public Material defaultAbsorbZone;
     public Material orangeAbsorbZone;
     public Material redAbsorbZone;
+    private GameObject player;
+
 
     void Start()
     {
@@ -30,11 +32,12 @@ public class absorbCooldown : MonoBehaviour
         cooldown.fillAmount = 0f;
         incAbsorbSpeed = 1f;
         decAbsorbSpeed = 0.5f;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        if (Input.GetButton("Fire2") && coolFull == false && !playerBehaviour.isReloading && !playerBehaviour.weaponMenuUp)
+        if (Input.GetButton("Fire2") && coolFull == false && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             cooldown.fillAmount += incAbsorbSpeed / waitTime * Time.deltaTime;
         }

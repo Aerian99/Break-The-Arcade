@@ -9,7 +9,8 @@ public class SpikesBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            playerBehaviour.activeImmunity = true;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<playerBehaviour>().activeImmunity = true;
         }
     }
 }

@@ -10,8 +10,10 @@ public class PowerUp : MonoBehaviour
     public GameObject reloadText;
     public bool pHealth, pAmmo, pInmunity;
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
+    private GameObject player;
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
         _interpolator.ToMax();
         randomObject = Random.Range(1, 4);
@@ -63,7 +65,7 @@ public class PowerUp : MonoBehaviour
             if (randomObject == 1) //health
             {
                 SoundManagerScript.PlaySound("dropSound");
-                playerBehaviour._playerLifes += healRatio;
+                player.GetComponent<playerBehaviour>()._playerLifes += healRatio;
                
             }
             else if (randomObject == 2) //ammo
@@ -71,19 +73,19 @@ public class PowerUp : MonoBehaviour
                 SoundManagerScript.PlaySound("dropSound");
                 if (handController.currentPos == 0) //purple
                 {
-                    if (playerBehaviour.bulletsPurple < playerBehaviour.MAX_PURPLE_SHOOT)
+                    if (player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                     {
-                        playerBehaviour.bulletsPurple += 5;
-                        if (playerBehaviour.bulletsPurple > playerBehaviour.MAX_PURPLE_SHOOT)
+                        player.GetComponent<playerBehaviour>().bulletsPurple += 5;
+                        if (player.GetComponent<playerBehaviour>().bulletsPurple > player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                         {
-                            tempAmmo = playerBehaviour.bulletsPurple - playerBehaviour.MAX_PURPLE_SHOOT;
-                            playerBehaviour.bulletsPurple -= tempAmmo;
-                            playerBehaviour.reservedAmmoPurple += tempAmmo;
+                            tempAmmo = player.GetComponent<playerBehaviour>().bulletsPurple - player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT;
+                            player.GetComponent<playerBehaviour>().bulletsPurple -= tempAmmo;
+                            player.GetComponent<playerBehaviour>().reservedAmmoPurple += tempAmmo;
 
-                            if (playerBehaviour.reservedAmmoPurple > playerBehaviour.MAX_BULLETS_PURPLE)
+                            if (player.GetComponent<playerBehaviour>().reservedAmmoPurple > player.GetComponent<playerBehaviour>().MAX_BULLETS_PURPLE)
                             {
-                                tempAmmo2 = playerBehaviour.reservedAmmoPurple - playerBehaviour.MAX_BULLETS_PURPLE;
-                                playerBehaviour.reservedAmmoPurple -= tempAmmo2;
+                                tempAmmo2 = player.GetComponent<playerBehaviour>().reservedAmmoPurple - player.GetComponent<playerBehaviour>().MAX_BULLETS_PURPLE;
+                                player.GetComponent<playerBehaviour>().reservedAmmoPurple -= tempAmmo2;
                             }
 
                         }
@@ -91,38 +93,38 @@ public class PowerUp : MonoBehaviour
                 }
                 else if (handController.currentPos == 1) //laser
                 {
-                    if (playerBehaviour.bulletsYellow < playerBehaviour.MAX_YELLOW_SHOOT)
+                    if (player.GetComponent<playerBehaviour>().bulletsYellow < player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT)
                     {
-                        playerBehaviour.bulletsYellow += 5;
-                        if (playerBehaviour.bulletsYellow > playerBehaviour.MAX_YELLOW_SHOOT)
+                        player.GetComponent<playerBehaviour>().bulletsYellow += 5;
+                        if (player.GetComponent<playerBehaviour>().bulletsYellow > player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT)
                         {
-                            tempAmmo = playerBehaviour.bulletsYellow - playerBehaviour.MAX_YELLOW_SHOOT;
-                            playerBehaviour.bulletsYellow -= tempAmmo;
-                            playerBehaviour.reservedAmmoYellow += tempAmmo;
+                            tempAmmo = player.GetComponent<playerBehaviour>().bulletsYellow - player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT;
+                            player.GetComponent<playerBehaviour>().bulletsYellow -= tempAmmo;
+                            player.GetComponent<playerBehaviour>().reservedAmmoYellow += tempAmmo;
 
-                            if (playerBehaviour.reservedAmmoYellow > playerBehaviour.MAX_BULLETS_YELLOW)
+                            if (player.GetComponent<playerBehaviour>().reservedAmmoYellow > player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW)
                             {
-                                tempAmmo2 = playerBehaviour.reservedAmmoYellow - playerBehaviour.MAX_BULLETS_YELLOW;
-                                playerBehaviour.reservedAmmoYellow -= tempAmmo2;
+                                tempAmmo2 = player.GetComponent<playerBehaviour>().reservedAmmoYellow - player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW;
+                                player.GetComponent<playerBehaviour>().reservedAmmoYellow -= tempAmmo2;
                             }
                         }
                     }
                 }
                 else if (handController.currentPos == 2) //shotgun
                 {
-                    if (playerBehaviour.bulletsShotgun < playerBehaviour.MAX_SHOTGUN_SHOOT)
+                    if (player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)
                     {
-                        playerBehaviour.bulletsShotgun += 5;
-                        if (playerBehaviour.bulletsShotgun > playerBehaviour.MAX_SHOTGUN_SHOOT)
+                        player.GetComponent<playerBehaviour>().bulletsShotgun += 5;
+                        if (player.GetComponent<playerBehaviour>().bulletsShotgun > player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)
                         {
-                            tempAmmo = playerBehaviour.bulletsShotgun - playerBehaviour.MAX_SHOTGUN_SHOOT;
-                            playerBehaviour.bulletsShotgun -= tempAmmo;
-                            playerBehaviour.reservedAmmoShotgun += tempAmmo;
+                            tempAmmo = player.GetComponent<playerBehaviour>().bulletsShotgun - player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT;
+                            player.GetComponent<playerBehaviour>().bulletsShotgun -= tempAmmo;
+                            player.GetComponent<playerBehaviour>().reservedAmmoShotgun += tempAmmo;
 
-                            if (playerBehaviour.reservedAmmoShotgun > playerBehaviour.MAX_BULLETS_SHOTGUN)
+                            if (player.GetComponent<playerBehaviour>().reservedAmmoShotgun > player.GetComponent<playerBehaviour>().MAX_BULLETS_SHOTGUN)
                             {
-                                tempAmmo2 = playerBehaviour.reservedAmmoShotgun - playerBehaviour.MAX_BULLETS_SHOTGUN;
-                                playerBehaviour.reservedAmmoShotgun -= tempAmmo2;
+                                tempAmmo2 = player.GetComponent<playerBehaviour>().reservedAmmoShotgun - player.GetComponent<playerBehaviour>().MAX_BULLETS_SHOTGUN;
+                                player.GetComponent<playerBehaviour>().reservedAmmoShotgun -= tempAmmo2;
                             }
                         }
                     }
@@ -130,7 +132,7 @@ public class PowerUp : MonoBehaviour
             }
             else if (randomObject == 3)// inmunity
             {
-                playerBehaviour.activePowerUp = true;
+                player.GetComponent<playerBehaviour>().activePowerUp = true;
                 SoundManagerScript.PlaySound("powerup");
             }
             Destroy(this.gameObject);
