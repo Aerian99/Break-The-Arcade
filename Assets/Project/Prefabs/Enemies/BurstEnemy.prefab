@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3355381827776657310}
-  m_Layer: 20
+  m_Layer: 27
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 9167698987321652557}
   - component: {fileID: 6391642431945293417}
   - component: {fileID: 6391642431945293398}
-  m_Layer: 20
+  m_Layer: 27
   m_Name: BurstEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 6720234415088616165}
   - component: {fileID: 6720234415088616164}
   - component: {fileID: 6720234415088616162}
-  m_Layer: 20
+  m_Layer: 27
   m_Name: AnimationDisable
   m_TagString: AnimationLight
   m_Icon: {fileID: 0}
