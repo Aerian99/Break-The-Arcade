@@ -23,6 +23,7 @@ public class explosiveBarrel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(lifes);
         if (lifes <= 0)
         {
             explosionDamagedPlayer = Physics2D.OverlapCircle(this.transform.position, explosionRange, playerLayer);

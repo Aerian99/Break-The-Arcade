@@ -31,6 +31,7 @@ public class arcadeMachine : MonoBehaviour
                 bocadillo.SetActive(true);
                 if(dialogCanvas.activeInHierarchy && !dialogCanvas.GetComponent<DialogManager>().typing)
                 {
+                    dialogCanvas.GetComponent<DialogManager>().typing = true;
                     dialogCanvas.GetComponent<DialogManager>().index = 0;
                     dialogCanvas.GetComponent<DialogManager>().StartCoroutine(dialogCanvas.GetComponent<DialogManager>().Typing());
                 }
