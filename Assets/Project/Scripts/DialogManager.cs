@@ -18,7 +18,6 @@ public class DialogManager : MonoBehaviour
         if(!typing)
         {
             StartCoroutine(Typing());
-            typing = true;
         }
     }
     private void Update()

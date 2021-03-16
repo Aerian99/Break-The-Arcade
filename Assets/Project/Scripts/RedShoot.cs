@@ -74,10 +74,7 @@ public class RedShoot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().name == "PowerUpScene")
-            powerUps();
-        else
-        {
+       
             if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
                 this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
@@ -112,7 +109,7 @@ public class RedShoot : MonoBehaviour
             }
 
             RotateReloadBullet();
-        }
+        
     }
 
     void Shoot()
