@@ -38,7 +38,7 @@ public class RedShoot : MonoBehaviour
     public bool powerUpGreen;
     public bool powerUpBlue;
 
-    public GameObject reloadText;
+   // public GameObject reloadText;
     public GameObject noAmmoText;
     private float maxCdAmmo, cdAmmo;
 
@@ -85,11 +85,11 @@ public class RedShoot : MonoBehaviour
                 cursor.GetComponent<Animator>().SetTrigger("click");
             }
 
-            else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+            /*else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
                      this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun > 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 reloadText.SetActive(true);
-            }
+            }*/
 
             else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
                      this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun == 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
@@ -288,12 +288,12 @@ public class RedShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
 
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
+        /*else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
                  this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun > 0 &&
                  !player.GetComponent<playerBehaviour>().isReloading)
         {
             reloadText.SetActive(true);
-        }
+        }*/
 
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun == 0 &&
                  this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoShotgun == 0)

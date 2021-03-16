@@ -26,7 +26,7 @@ public class LaserShoot : MonoBehaviour
     private float period;
     private float canShoot, maxShoot;
 
-    public GameObject reloadText;
+    //public GameObject reloadText;
     public GameObject noAmmoText;
     private float maxCdAmmo, cdAmmo;
 
@@ -58,7 +58,6 @@ public class LaserShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            Debug.Log(player.GetComponent<playerBehaviour>().isReloading);
             //SHOOT
             if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().isReloading)
             {
@@ -103,13 +102,13 @@ public class LaserShoot : MonoBehaviour
             }
 
             //POPUPS
-            if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+           /* if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
                 this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 reloadText.SetActive(true);
-            }
+            }*/
 
-            else if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+            if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
                      this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow == 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 noAmmoText.SetActive(true);
@@ -286,14 +285,14 @@ public class LaserShoot : MonoBehaviour
             canShoot = maxShoot;
         }
 
-        if (player.GetComponent<playerBehaviour>().bulletsYellow < 3)
+       /* if (player.GetComponent<playerBehaviour>().bulletsYellow < 3)
         {
             reloadText.SetActive(true);
         }
         else
         {
             reloadText.SetActive(false);
-        }
+        }*/
 
         if (player.GetComponent<playerBehaviour>().bulletsYellow < 3 && player.GetComponent<playerBehaviour>().reservedAmmoYellow + player.GetComponent<playerBehaviour>().bulletsYellow < 3)
         {

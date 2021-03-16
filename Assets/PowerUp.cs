@@ -75,7 +75,6 @@ public class PowerUp : MonoBehaviour
                 {
                     if (player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                     {
-                        Debug.Log("hola soy mas chikito");
                         player.GetComponent<playerBehaviour>().bulletsPurple += 5;
                         if (player.GetComponent<playerBehaviour>().bulletsPurple > player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                         {
@@ -93,7 +92,6 @@ public class PowerUp : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("hola reserved");
                         player.GetComponent<playerBehaviour>().reservedAmmoPurple += 5;
                     }
                 }

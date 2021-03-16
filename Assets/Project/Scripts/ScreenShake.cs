@@ -8,18 +8,21 @@ public class ScreenShake : MonoBehaviour
 {
     private float cdShake, maxCdShake;
     public static bool canShake;
-    //public CinemachineVirtualCamera camara, camara2/*, cameraAlien*/;
     public static float shake;
-    CinemachineVirtualCamera cam;
+    private CinemachineVirtualCamera cinemachVR;
 
     // Start is called before the first frame update
     void Start()
     {
-        cam = gameObject.GetComponent<CinemachineVirtualCamera>();
         //camara = GameObject.FindWithTag("Camara").GetComponent<CinemachineVirtualCamera>();
         maxCdShake = 0.1f;
         canShake = false;
         shake = 0.0f;
+    }
+
+    private void Awake()
+    {
+        cinemachVR = this.gameObject.GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame
@@ -27,57 +30,19 @@ public class ScreenShake : MonoBehaviour
     {
         if (canShake)
         {
-
-            cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
+            cinemachVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
+            //cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
 
             if (cdShake >= maxCdShake)
             {
                 canShake = false;
                 cdShake = 0;
             }
-            cdShake += Time.deltaTime;
-        }
-        else 
-        {
-            cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-        }
-
-        /*
-        if (canShake)
-        {
-            if(camara.isActiveAndEnabled)
-            { 
-                camara.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            }
-            else if (camara2.isActiveAndEnabled)
-            { 
-                camara2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            }
-            else
-            {
-                cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
-            }
-            if (cdShake >= maxCdShake)
-            {
-                canShake = false;
-                cdShake = 0;
-            }
-
-
             cdShake += Time.deltaTime;
         }
         else
         {
-            if (camara.isActiveAndEnabled)
-                camara.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-
-            if (camara2.isActiveAndEnabled)
-                camara2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            else
-            {
-                cameraAlien.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
-            }
-        }*/
-
+            cinemachVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+        }
     }
 }

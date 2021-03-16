@@ -14,7 +14,7 @@ public class PurpleShoot : MonoBehaviour
     public GameObject bulletReloadPrefab;
     private GameObject bulletReload;
 
-    public GameObject reloadText;
+    //public GameObject reloadText;
     public GameObject noAmmoText;
     private float maxCdAmmo, cdAmmo;
 
@@ -55,11 +55,11 @@ public class PurpleShoot : MonoBehaviour
             ScreenShake.canShake = true;
             cursor.GetComponent<Animator>().SetTrigger("click");
         }
-        else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple == 0 &&
+        /*else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple == 0 &&
            this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoPurple > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             reloadText.SetActive(true);
-        }
+        }*/
         else if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple == 0 && player.GetComponent<playerBehaviour>().reservedAmmoPurple == 0 &&
            this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {

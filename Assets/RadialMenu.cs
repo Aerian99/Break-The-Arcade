@@ -39,8 +39,6 @@ public class RadialMenu : MonoBehaviour
             menuItemSc = menuItems[selection].GetComponent<MenuItemScript>();
             menuItemSc.Select();
         }
-        Debug.Log(selection);
-
         if (selection == 0)
         {
             name1.SetActive(true);
