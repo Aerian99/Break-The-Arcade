@@ -9,6 +9,7 @@ public class PowerUpArmas : MonoBehaviour
     int randomArma;
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     Vector3 _position;
+    public float interpolationValue;
 
     [HideInInspector]public GameObject defaultGun, laserGun, shootGun;
     [HideInInspector]public GameObject defaultGunBullet, shootGunBullet;
@@ -48,7 +49,7 @@ public class PowerUpArmas : MonoBehaviour
             _interpolator.ToMin();
         else if (_interpolator.IsMinPrecise)
             _interpolator.ToMax();
-        _position.y = 1 * 1 * _interpolator.Value + 7.8f;
+        _position.y = 1 * 1 * _interpolator.Value + interpolationValue;
         _position.x = this.transform.position.x;
         this.transform.position = _position;
     }

@@ -49,7 +49,6 @@ public class PurpleShoot : MonoBehaviour
         if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
             this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
-            Debug.Log(player.GetComponent<playerBehaviour>().isReloading);
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");
             ScreenShake.shake = 1.5f;
