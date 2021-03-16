@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8961503755092371817}
   - component: {fileID: 8931617684628174774}
   - component: {fileID: 1200497838176420889}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: demoPacman
   m_TagString: Bullet Pacman
   m_Icon: {fileID: 0}
