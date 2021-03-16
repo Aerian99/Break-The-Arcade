@@ -58,12 +58,7 @@ public class LaserShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "PowerUpScene")
-        {
-            ChargeShoot();
-        }
-        else
-        {
+            Debug.Log(player.GetComponent<playerBehaviour>().isReloading);
             //SHOOT
             if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().isReloading)
             {
@@ -132,7 +127,7 @@ public class LaserShoot : MonoBehaviour
             }
 
             time += Time.deltaTime;
-        }
+        
     }
 
     void CheckFirstAbsorb()
