@@ -75,6 +75,7 @@ public class PowerUp : MonoBehaviour
                 {
                     if (player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                     {
+                        Debug.Log("hola soy mas chikito");
                         player.GetComponent<playerBehaviour>().bulletsPurple += 5;
                         if (player.GetComponent<playerBehaviour>().bulletsPurple > player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT)
                         {
@@ -89,6 +90,11 @@ public class PowerUp : MonoBehaviour
                             }
 
                         }
+                    }
+                    else
+                    {
+                        Debug.Log("hola reserved");
+                        player.GetComponent<playerBehaviour>().reservedAmmoPurple += 5;
                     }
                 }
                 else if (handController.currentPos == 1) //laser
@@ -109,6 +115,10 @@ public class PowerUp : MonoBehaviour
                             }
                         }
                     }
+                    else
+                    {
+                        player.GetComponent<playerBehaviour>().reservedAmmoYellow += 5;
+                    }
                 }
                 else if (handController.currentPos == 2) //shotgun
                 {
@@ -127,6 +137,10 @@ public class PowerUp : MonoBehaviour
                                 player.GetComponent<playerBehaviour>().reservedAmmoShotgun -= tempAmmo2;
                             }
                         }
+                    }
+                    else
+                    {
+                        player.GetComponent<playerBehaviour>().reservedAmmoShotgun += 3;
                     }
                 }
             }

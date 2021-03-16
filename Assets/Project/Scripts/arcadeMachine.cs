@@ -29,8 +29,9 @@ public class arcadeMachine : MonoBehaviour
                     red.GetComponent<RedShoot>().enabled = false;
 
                 bocadillo.SetActive(true);
-                if(dialogCanvas.activeInHierarchy)
+                if(dialogCanvas.activeInHierarchy && !dialogCanvas.GetComponent<DialogManager>().typing)
                 {
+                    dialogCanvas.GetComponent<DialogManager>().typing = true;
                     dialogCanvas.GetComponent<DialogManager>().index = 0;
                     dialogCanvas.GetComponent<DialogManager>().StartCoroutine(dialogCanvas.GetComponent<DialogManager>().Typing());
                 }
