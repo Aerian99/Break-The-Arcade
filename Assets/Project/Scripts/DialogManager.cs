@@ -11,10 +11,15 @@ public class DialogManager : MonoBehaviour
     public float speed;
 
     public GameObject continueButton, bocadillo, purple, yellow, red;
+    public bool typing = false;
 
     private void Start()
     {
-        StartCoroutine(Typing());
+        if(!typing)
+        {
+            StartCoroutine(Typing());
+            typing = true;
+        }
     }
     private void Update()
     {
@@ -43,6 +48,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
+            typing = false;
             index = 0;
             displayText.text = "";
             continueButton.SetActive(false);
