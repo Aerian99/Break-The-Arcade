@@ -39,7 +39,7 @@ public class LaserShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hittableMasK = LayerMask.GetMask("Enemy", "Barril", "BarrilExplosivo", "Platforms");
+        hittableMasK = LayerMask.GetMask("Enemy", "Barril", "BarrilExplosivo", "Platforms", "BurstEnemy");
         //distance = 100;
         startedShooting = false;
         damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
