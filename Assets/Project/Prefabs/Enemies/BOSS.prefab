@@ -143,7 +143,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3905292812650321845}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 67108864
   dirX: 1
   DIRy: 0.25
   circleRadius: 0.1
