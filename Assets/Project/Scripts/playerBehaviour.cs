@@ -98,6 +98,7 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(bulletsShotgun);
         WeaponMenu();
         if (!weaponMenuUp)
         {

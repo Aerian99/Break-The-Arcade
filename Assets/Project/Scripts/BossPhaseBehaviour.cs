@@ -73,13 +73,7 @@ public class BossPhaseBehaviour : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
-            {
-                if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Boss")
-                {
-                    GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
-                }
-            }
+           
             GameObject.Find("CoinSpawner").GetComponent<CoinWinBoss>().coinSpawner = true;
             GameObject.Find("CoinSpawner (1)").GetComponent<CoinWinBoss>().coinSpawner = true;
             GameObject.Find("CoinSpawner (2)").GetComponent<CoinWinBoss>().coinSpawner = true;
@@ -92,7 +86,16 @@ public class BossPhaseBehaviour : MonoBehaviour
             Destroy(gameObject, 1.8f);
         }
     }
-
+    private void OnDestroy()
+    {
+        for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+        {
+            if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Boss")
+            {
+                GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+            }
+        }
+    }
     void Movement()
     {
         EnemyRB.velocity = new Vector2(dirX, DIRy) * speed ;

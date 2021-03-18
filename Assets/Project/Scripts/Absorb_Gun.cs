@@ -47,7 +47,14 @@ public class Absorb_Gun : MonoBehaviour
             }
             if (firstTimeAbsorb2 && player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)
             {
-                player.GetComponent<playerBehaviour>().bulletsShotgun += 2;
+                if(player.GetComponent<playerBehaviour>().bulletsShotgun == 2)
+                {
+                    player.GetComponent<playerBehaviour>().bulletsShotgun += 1;
+                }
+                else
+                {
+                    player.GetComponent<playerBehaviour>().bulletsShotgun += 2;
+                }
             }
 
             SoundManagerScript.PlaySound("absorbSound");
