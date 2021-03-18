@@ -16,7 +16,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
     // Stats
     private float _moveSpeed;
     private float _bulletSpeed;
-    
+
     // Dash timer
     private float _dashMaxTime;
     private float _dashRateTime;
@@ -35,7 +35,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
 
         _moveSpeed = 75f;
         _bulletSpeed = 15f;
-        
+
         _dashMaxTime = 1f;
         _dashRateTime = 3f;
 
@@ -49,38 +49,41 @@ public class Burst_Enemy_Attack : MonoBehaviour
         // Following the player for 10 seconds every 3 seconds.
         if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 20f)
         {
-            _dashMaxTime -= Time.deltaTime;
-            if (_dashMaxTime > 0)
+            if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
             {
-                Dashing();
-                _dashRateTime = 3f;
-            }
-            else if (_dashMaxTime <= 0f)
-            {
-                _dashRateTime -= Time.deltaTime;
-
-                if (_shootingCD <= 0)
+                _dashMaxTime -= Time.deltaTime;
+                if (_dashMaxTime > 0)
                 {
-                    Shooting();
-                    _shootingCD = _shootingMaxCD;
+                    Dashing();
+                    _dashRateTime = 3f;
+                }
+                else if (_dashMaxTime <= 0f)
+                {
+                    _dashRateTime -= Time.deltaTime;
+
+                    if (_shootingCD <= 0)
+                    {
+                        Shooting();
+                        _shootingCD = _shootingMaxCD;
+                    }
+
+                    _shootingCD -= Time.deltaTime;
                 }
 
-                _shootingCD -= Time.deltaTime;
-            }
-
-            if (_dashRateTime <= 0f)
-            {
-                _dashMaxTime = 1f;
+                if (_dashRateTime <= 0f)
+                {
+                    _dashMaxTime = 1f;
+                }
             }
         }
     }
-    
+
 
     void Dashing()
     {
         float drag = 0.99f;
         this.GetComponent<Rigidbody2D>().velocity *= drag;
-        this.GetComponent<Rigidbody2D>().AddForce(player.position - transform.position , ForceMode2D.Force);
+        this.GetComponent<Rigidbody2D>().AddForce(player.position - transform.position, ForceMode2D.Force);
         _isDashing = true;
     }
 
@@ -106,7 +109,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
         float magnitude = 2000f;
         Vector3 force = transform.position - other.transform.position;
         force.Normalize();
-        
+
         if (other.gameObject.CompareTag("Player") && _isDashing)
         {
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(force * magnitude);
