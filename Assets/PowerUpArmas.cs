@@ -11,7 +11,7 @@ public class PowerUpArmas : MonoBehaviour
     Vector3 _position;
     public float interpolationValue;
 
-    [HideInInspector]public GameObject defaultGun, laserGun, shootGun;
+    public GameObject defaultGun, laserGun, shootGun;
     [HideInInspector]public GameObject defaultGunBullet, shootGunBullet;
     [HideInInspector]public Sprite defaultBulletStandard, defaultBulletGreen, defaultBulletBlue, shootGunBulletStandard,shootGunBulletGreen, shootGunBulletBlue;
     [HideInInspector]public Material defaultMatStandard, defaultMatGreenBullet, defaultMatBlueBullet, shootGunMatStandard,shootGunMatGreenBullet, shootGunMatBlueBullet;
