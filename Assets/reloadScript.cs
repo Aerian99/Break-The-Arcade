@@ -33,13 +33,13 @@ public class reloadScript : MonoBehaviour
             perTimer.enabled = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.R) &&
+        if (((Input.GetKeyDown(KeyCode.R) &&
              (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT ||
               handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow < player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT ||
               handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)) ||
             (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple <= 0 ||
              handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow <= 0 ||
-             handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun <= 0) && !hasReloaded)
+             handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun <= 0)) && !hasReloaded)
         {
             if (player.GetComponent<playerBehaviour>().reservedAmmoPurple != 0 && handController.currentPos == 0)
             {

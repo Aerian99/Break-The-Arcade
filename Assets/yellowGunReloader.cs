@@ -19,7 +19,7 @@ public class yellowGunReloader : MonoBehaviour
     void Update()
     {
 
-        float imgFillFloat = (float)player.GetComponent<playerBehaviour>().bulletsYellow / 10;
+        float imgFillFloat = (float)player.GetComponent<playerBehaviour>().bulletsYellow / player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW;
         imgFill.fillAmount = imgFillFloat;
 
         /* // ME DA PEREZA ARREGLARLO CON UN FOR 
