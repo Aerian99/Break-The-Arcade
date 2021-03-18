@@ -26,6 +26,11 @@ public class DialogManager : MonoBehaviour
         { 
             continueButton.SetActive(true);
         }
+
+        if (continueButton.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
+        {
+            NextSentence();
+        }
     }
     public IEnumerator Typing()
     {
