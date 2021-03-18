@@ -50,6 +50,7 @@ public class Absorb_Gun : MonoBehaviour
                 if(player.GetComponent<playerBehaviour>().bulletsShotgun == 2)
                 {
                     player.GetComponent<playerBehaviour>().bulletsShotgun += 1;
+                    player.GetComponent<playerBehaviour>().reservedAmmoShotgun += 1;
                 }
                 else
                 {
