@@ -8,36 +8,40 @@ public class OneSidePlatform : MonoBehaviour
 {
     private PlatformEffector2D pE;
     private float waitTime;
+    private bool justPressed;
 
     void Start()
     {
+        waitTime = 0;
         pE = GetComponent<PlatformEffector2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            waitTime = 0.05f;
-        }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        
+    }
+
+   
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        pE.rotationalOffset = 0f;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Player")
         {
-            if (waitTime <= 0)
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 pE.rotationalOffset = 180f;
-                waitTime = 0.05f;
             }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pE.rotationalOffset = 0f;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                pE.rotationalOffset = 0f;
+            }
         }
     }
 }
