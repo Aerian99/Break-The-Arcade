@@ -8,7 +8,7 @@ public class BossPhaseBehaviour : MonoBehaviour
     public GameObject bulletPrefab, bulletGrenade, light1, light2, light3;
     private float speed;
     Rigidbody2D EnemyRB;
-    GameObject bulletGO;
+    GameObject bulletGO, bulletGO2;
     public GameObject rightCheck, roofCheck, groundCheck;
     public LayerMask groundLayer;
     private bool facingRight = true, groundTouch, roofTouch, rightTouch;
@@ -23,9 +23,9 @@ public class BossPhaseBehaviour : MonoBehaviour
     Phases phase;
     public int health, maxHealth;
 
-    private Vector3 startPoint;
+    private Vector3 startPoint, startPoint2;
 
-    public Transform firePoint;
+    public Transform firePoint, firePoint2;
     public AudioClip audio, audioLvl;
     private float shootForce = 0f;
 
@@ -149,16 +149,17 @@ public class BossPhaseBehaviour : MonoBehaviour
             if (phase == Phases.INITPHASE)
             {
                 int rand = Random.Range(0,2);
-
+                Debug.Log(rand);
                 if (rand == 0)
                 {
-                    anim.SetBool("Attack", true);
                     ShootRadial(30, 10f, 20);
+                    anim.SetBool("Attack", true);
                 }
                 else
                 {
-                    anim.SetBool("Attack", true);
+                    Debug.Log("Hey");
                     ShootGrenade();
+                    anim.SetBool("Attack", true);
                 }
 
                 yield return new WaitForSeconds(3);
@@ -206,7 +207,8 @@ public class BossPhaseBehaviour : MonoBehaviour
     void ShootRadial(int numBullets, float radius, int bulletSpeed)
     {
         
-        startPoint = transform.position;
+        startPoint = firePoint.transform.position;
+        startPoint2 = firePoint2.transform.position;
         float angleStep = 360f / numBullets;
         float angle = 0f;
         for (int i = 0; i <= numBullets - 1; i++)
@@ -214,14 +216,25 @@ public class BossPhaseBehaviour : MonoBehaviour
             float bulletDirXPosition = startPoint.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
             float bulletDirYPosition = startPoint.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
 
+            float bulletDirXPosition2 = startPoint2.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+            float bulletDirYPosition2 = startPoint2.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+
             Vector3 bulletVector = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
             Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
-            
+
+            Vector3 bulletVector2 = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
+            Vector3 bulletMoveDirection2 = (bulletVector - startPoint2).normalized * bulletSpeed;
+
             bulletGO = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
+            bulletGO2 = Instantiate(bulletPrefab, startPoint2, Quaternion.identity);
 
             bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
             bulletGO.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
             Destroy(bulletGO, 2f);
+
+            bulletGO2.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
+            bulletGO2.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
+            Destroy(bulletGO2, 2f);
             angle += angleStep;
         }
     }
@@ -230,25 +243,35 @@ public class BossPhaseBehaviour : MonoBehaviour
     {
         anim.SetBool("AttackHard", true);
         yield return new WaitForSeconds(1f);
-        startPoint = transform.position;
+        startPoint = firePoint.transform.position;
+         startPoint2 = firePoint2.transform.position;
         float angleStep = 360f / numBullets;
         float angle = 0f;
+       
         for (int y = 0; y < nIterations; y++)
         {
             for (int i = 0; i <= numBullets - 1; i++)
             {
                 float bulletDirXPosition = startPoint.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
                 float bulletDirYPosition = startPoint.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+                float bulletDirXPosition2 = startPoint2.x + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+                float bulletDirYPosition2 = startPoint2.y + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
 
                 Vector3 bulletVector = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
                 Vector3 bulletMoveDirection = (bulletVector - startPoint).normalized * bulletSpeed;
+                Vector3 bulletVector2 = new Vector3(bulletDirXPosition, bulletDirYPosition, 0);
+                Vector3 bulletMoveDirection2 = (bulletVector - startPoint2).normalized * bulletSpeed;
 
                 Debug.Log(bulletMoveDirection);
                 bulletGO = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
+                bulletGO2 = Instantiate(bulletPrefab, startPoint, Quaternion.identity);
 
                 bulletGO.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
                 bulletGO.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
                 Destroy(bulletGO, 2f);
+                bulletGO2.GetComponent<Rigidbody2D>().velocity = new Vector3(bulletMoveDirection.x, bulletMoveDirection.y, 0);
+                bulletGO2.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotamos el gameobject en función de su dirección.
+                Destroy(bulletGO2, 2f);
                 angle += angleStep;
             }
             yield return new WaitForSeconds(0.2f);
@@ -262,6 +285,11 @@ public class BossPhaseBehaviour : MonoBehaviour
         bulletGO.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
         bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 20;
         bulletGO.GetComponent<GrenadeShoot>().numBullets = 16;
+
+        bulletGO2 = Instantiate(bulletGrenade, firePoint2.position, transform.rotation);
+        bulletGO2.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
+        bulletGO2.GetComponent<GrenadeShoot>().bulletSpeed = 20;
+        bulletGO2.GetComponent<GrenadeShoot>().numBullets = 16;
     }
     IEnumerator ShootGrenade(int nIterations)
     {
@@ -273,6 +301,11 @@ public class BossPhaseBehaviour : MonoBehaviour
             bulletGO.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
             bulletGO.GetComponent<GrenadeShoot>().bulletSpeed = 20;
             bulletGO.GetComponent<GrenadeShoot>().numBullets = 16;
+
+            bulletGO2 = Instantiate(bulletGrenade, firePoint2.position, transform.rotation);
+            bulletGO2.GetComponent<Rigidbody2D>().AddForce(-transform.up * shootForce, ForceMode2D.Impulse);
+            bulletGO2.GetComponent<GrenadeShoot>().bulletSpeed = 20;
+            bulletGO2.GetComponent<GrenadeShoot>().numBullets = 16;
             yield return new WaitForSeconds(0.5f);
         }
     }

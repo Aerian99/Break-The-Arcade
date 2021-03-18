@@ -39,7 +39,7 @@ public class GrenadeShoot : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-        else if
+        if
         (other.gameObject.tag != "Enemy"
          && other.gameObject.tag != "PurpleBullet"
          && other.gameObject.tag != "YellowBullet"
@@ -55,8 +55,12 @@ public class GrenadeShoot : MonoBehaviour
          && other.gameObject.tag != "greyPlatform"
          && other.gameObject.tag != "Triggers"
          && other.gameObject.tag != "RobotPatrol"
-         && other.gameObject.tag != "Bullet")
+         && other.gameObject.tag != "Bullet"
+         && other.gameObject.tag != "Boss"
+         && other.gameObject.tag != "Triggers"
+         && other.gameObject.tag != "Untagged")
         {
+            Debug.Log(other.gameObject.tag);
             Destroy(this.gameObject);
         }
         else if (other.gameObject.tag == "AlienWall")
@@ -74,6 +78,8 @@ public class GrenadeShoot : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+   
 
     private void OnDestroy()
     {
