@@ -11,12 +11,11 @@ public class arcadeMachine : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
             exclamation.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && player.GetComponent<playerMovement>().enabled)
             {
                 this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
-
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
                 player.GetComponent<Animator>().SetBool("isRunning", false);
                 player.GetComponent<playerMovement>().enabled = false;
@@ -29,7 +28,7 @@ public class arcadeMachine : MonoBehaviour
                     red.GetComponent<RedShoot>().enabled = false;
 
                 bocadillo.SetActive(true);
-                if(dialogCanvas.activeInHierarchy && !dialogCanvas.GetComponent<DialogManager>().typing)
+                if(dialogCanvas.activeInHierarchy )
                 {
                     dialogCanvas.GetComponent<DialogManager>().typing = true;
                     dialogCanvas.GetComponent<DialogManager>().index = 0;
@@ -40,6 +39,8 @@ public class arcadeMachine : MonoBehaviour
             }
         }
     }
+
+   
 
     private void OnTriggerExit2D(Collider2D collision)
     {
