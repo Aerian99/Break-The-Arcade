@@ -63,7 +63,7 @@ public class playerBehaviour : MonoBehaviour
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
         _maxLifes = 100f;
-        _playerLifes = 3;
+        _playerLifes = 100;
         //_playerLifes = 3 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
