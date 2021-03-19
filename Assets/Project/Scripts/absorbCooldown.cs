@@ -65,6 +65,7 @@ public class absorbCooldown : MonoBehaviour
         else if (cooldown.fillAmount > 0.3f && cooldown.fillAmount < 0.8f && coolFull == false)
         {
             absorbZone.GetComponent<SpriteRenderer>().material = orangeAbsorbZone;
+            warning.gameObject.SetActive(false);
         }
         else if (cooldown.fillAmount > 0.8f && coolFull == false)
         {
@@ -75,5 +76,6 @@ public class absorbCooldown : MonoBehaviour
         {
             warning.gameObject.SetActive(false);
         }
+
     }
 }
