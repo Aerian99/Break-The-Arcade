@@ -9,7 +9,7 @@ public class ScreenShake : MonoBehaviour
     private float cdShake, maxCdShake;
     public static bool canShake;
     public static float shake;
-    private CinemachineVirtualCamera cinemachVR;
+    private CinemachineBasicMultiChannelPerlin cinemachVR;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,9 @@ public class ScreenShake : MonoBehaviour
 
     private void Awake()
     {
-        cinemachVR = this.gameObject.GetComponent<CinemachineVirtualCamera>();
+        CinemachineVirtualCamera cVR = gameObject.GetComponent<CinemachineVirtualCamera>();
+        cinemachVR = cVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class ScreenShake : MonoBehaviour
     {
         if (canShake)
         {
-            cinemachVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
+            cinemachVR.m_AmplitudeGain = shake;
             //cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shake;
 
             if (cdShake >= maxCdShake)
@@ -42,7 +44,7 @@ public class ScreenShake : MonoBehaviour
         }
         else
         {
-            cinemachVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+            cinemachVR.m_AmplitudeGain = 0f;
         }
     }
 }

@@ -9967,18 +9967,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &9031425252767759093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031425252027712178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9031425252067355308
 GameObject:
   m_ObjectHideFlags: 0
@@ -29743,18 +29731,6 @@ MonoBehaviour:
   firePoint: {fileID: 9031425253678405278}
   startVFX: {fileID: 9031425253678783969}
   endVFX: {fileID: 9031425252067355308}
-  layerList:
-  - serializedVersion: 2
-    m_Bits: 8388608
-  - serializedVersion: 2
-    m_Bits: 16777216
-  - serializedVersion: 2
-    m_Bits: 1048576
-  - serializedVersion: 2
-    m_Bits: 256
-  - serializedVersion: 2
-    m_Bits: 0
-  reloadText: {fileID: 9031425252392873347}
   noAmmoText: {fileID: 9031425253124139747}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
     type: 3}
@@ -34920,8 +34896,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCamera: {fileID: 0}
+  _playerLifes: 0
+  activeImmunity: 0
+  canBeDamaged: 0
+  canBeDamagedPowerup: 0
+  activePowerUp: 0
   activePostProcessing: 0
+  cdAberration: 0
+  maxcdAberration: 0
+  cdImmunity: 0
+  maxCdImmunity: 0
+  cdPowerup: 0
+  maxCdPowerup: 0
   reloadTime: 0
+  isReloading: 0
   purpleBulletsCounter: {fileID: 0}
   yellowBulletsCounter: {fileID: 0}
   redBulletsCounter: {fileID: 0}
@@ -34936,12 +34924,30 @@ MonoBehaviour:
   deathEffect: {fileID: 7789471876716411603, guid: ad9bc398b7dc97a41a4acf39a8534d6e,
     type: 3}
   noAmmoText: {fileID: 9031425253124139747}
+  bulletsPurple: 0
+  bulletsYellow: 0
+  bulletsShotgun: 0
+  MAX_PURPLE_SHOOT: 0
+  MAX_YELLOW_SHOOT: 0
+  MAX_SHOTGUN_SHOOT: 0
+  purpleCanReload: 0
+  yellowCanReload: 0
+  shotgunCanReload: 0
+  reservedAmmoPurple: 0
+  reservedAmmoYellow: 0
+  reservedAmmoShotgun: 0
+  MAX_BULLETS_PURPLE: 0
+  MAX_BULLETS_YELLOW: 0
+  MAX_BULLETS_SHOTGUN: 0
   weaponMenu: {fileID: 6222976022370312842}
+  weaponMenuUp: 0
   aimController1: {fileID: 9031425252027712178}
   aimController2: {fileID: 9031425252920230145}
   aimController3: {fileID: 9031425253018352967}
   aimController4: {fileID: 9031425252743703391}
   shield: {fileID: 477057041}
+  cdShield: 0
+  maxCdShield: 0
   shieldActivated: 0
 --- !u!114 &9031425253701463737
 MonoBehaviour:
@@ -34972,6 +34978,7 @@ MonoBehaviour:
   timer: 0
   fill: {fileID: 9031425252162527068}
   perTimer: {fileID: 9031425252261454574}
+  hasReloaded: 0
 --- !u!1 &9031425253718317093
 GameObject:
   m_ObjectHideFlags: 0
