@@ -59,7 +59,7 @@ public class LaserShoot : MonoBehaviour
     void Update()
     {
             //SHOOT
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().isReloading)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().hasReloaded)
             {
                 time = nextFrame;
                 EnableLaser();
@@ -83,7 +83,7 @@ public class LaserShoot : MonoBehaviour
                 SoundManagerScript.PlaySound("yellowGun");
             }
             else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow > 0 &&
-                     this.gameObject.activeInHierarchy == true && !startedShooting && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+                     this.gameObject.activeInHierarchy == true && !startedShooting && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 UpdateLaser();
                 nextFrame += period;
