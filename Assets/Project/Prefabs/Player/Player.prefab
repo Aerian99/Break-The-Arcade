@@ -24770,7 +24770,6 @@ GameObject:
   - component: {fileID: 6198460071475474044}
   - component: {fileID: 6198460071475474034}
   - component: {fileID: 6198460071475474035}
-  - component: {fileID: 4331826668064971174}
   - component: {fileID: 6198460072706971200}
   m_Layer: 10
   m_Name: yellowGun
@@ -24855,18 +24854,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 575f387c0bb3da146bd5f33493ab1221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4331826668064971174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6198460071475474045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6198460072706971200
@@ -45028,7 +45015,6 @@ GameObject:
   - component: {fileID: 6198460072651641400}
   - component: {fileID: 6198460072651641401}
   - component: {fileID: 6198460072651641407}
-  - component: {fileID: 6198460071428597624}
   m_Layer: 10
   m_Name: redGun
   m_TagString: Untagged
@@ -45146,18 +45132,6 @@ MonoBehaviour:
   reloadGun3: {fileID: 306299815861982430, guid: b127f140f6093794ebdca4791cec3c30,
     type: 3}
   cursor: {fileID: 0}
---- !u!114 &6198460071428597624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6198460072651641403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3a91e4c4a19be44ba0cba7298d68d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6198460072730262894
 GameObject:
   m_ObjectHideFlags: 0

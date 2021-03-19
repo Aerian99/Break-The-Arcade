@@ -287,7 +287,8 @@ public class playerBehaviour : MonoBehaviour
             reloadScript.fill.enabled = false;
             reloadScript.perTimer.enabled = false;
             reloadScript.timer = 0f;
-            StopAllCoroutines();
+            StopCoroutine("Reload");
+            gameObject.GetComponent<reloadScript>().hasReloaded = false;
             isReloading = false;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f && isReloading
@@ -297,7 +298,8 @@ public class playerBehaviour : MonoBehaviour
             reloadScript.fill.enabled = false;
             reloadScript.perTimer.enabled = false;
             reloadScript.timer = 0f;
-            StopAllCoroutines();
+            StopCoroutine("Reload");
+            gameObject.GetComponent<reloadScript>().hasReloaded = false;
             isReloading = false;
         }
     }
