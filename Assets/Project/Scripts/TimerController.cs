@@ -18,10 +18,14 @@ public class TimerController : MonoBehaviour
     string timePlayingStr;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         timeCounter.text = "00:00:00";
         timerGoing = false;
+    }
+    void Start()
+    {
+        
     }
 
     public void BeginTimer()
