@@ -10,7 +10,7 @@ public class AlienBehaviour : MonoBehaviour
 {
     private Animator anim;
     public GameObject triggerZone;
-    [HideInInspector] public GameObject[] hitDamagePopUp;
+    public GameObject hitDamagePopUp;
     private float actualHealth;
     private float maxHealth;
     public Image life;
@@ -81,7 +81,7 @@ public class AlienBehaviour : MonoBehaviour
 
     void popUpDamage(float hitdamage)
     {
-        GameObject dmg = Instantiate(hitDamagePopUp[Random.Range(0, 4)], transform.position, Quaternion.identity);
+        GameObject dmg = Instantiate(hitDamagePopUp, transform.position, Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 
