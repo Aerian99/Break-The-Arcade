@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class arcadeMachine : MonoBehaviour
 {
-    public GameObject exclamation, dialogCanvas, bocadillo, purple, yellow, red, e_button;
+    public GameObject exclamation, dialogCanvas, bocadillo, purple, yellow, red, e_button, bicho;
     private bool inTrigger = false;
     private GameObject player;
 
@@ -46,6 +46,7 @@ public class arcadeMachine : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            bicho.GetComponent<Animator>().SetBool("disappear", false); 
             exclamation.SetActive(true);
             e_button.SetActive(true);
             inTrigger = true;
@@ -58,9 +59,11 @@ public class arcadeMachine : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            bicho.GetComponent<Animator>().SetBool("disappear", true);
             exclamation.SetActive(false);
             e_button.SetActive(false);
             inTrigger = false;
+
         }
     }
 
