@@ -23,6 +23,10 @@ public class ScreenShake : MonoBehaviour
     private void Awake()
     {
         CinemachineVirtualCamera cVR = gameObject.GetComponent<CinemachineVirtualCamera>();
+        if(cVR == null)
+        {
+            Debug.Log(name);
+        }
         cinemachVR = cVR.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
     }
