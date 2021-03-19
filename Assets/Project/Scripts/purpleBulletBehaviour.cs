@@ -70,6 +70,10 @@ public class purpleBulletBehaviour : MonoBehaviour {
             other.gameObject.GetComponent<enemyPatrol>().lifes -= bulletForce;
             popUpDamage(bulletForce);
         }
+        if (other.gameObject.CompareTag("AlienEnemy"))
+        {
+            popUpDamage(bulletForce);
+        }
 
         Destroy (effect, 0.5f); // Eliminamos la explosión de la bala.
     }
