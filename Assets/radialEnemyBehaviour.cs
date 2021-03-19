@@ -50,9 +50,9 @@ public class radialEnemyBehaviour : MonoBehaviour
 
                 }
             }
-            if (gameObject.GetComponent<radialEnemyBounce>() == true)
+            if (gameObject.GetComponent<PatrolTop>() == true)
             {
-                gameObject.GetComponent<radialEnemyBounce>().enabled = false;
+                gameObject.GetComponent<PatrolTop>().enabled = false;
                 for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
                 {
                     if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Roof Patrols")

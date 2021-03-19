@@ -76,7 +76,7 @@ public class RedShoot : MonoBehaviour
     {
        
             if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
-                this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+                this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 Shoot();
                 SoundManagerScript.PlaySound("shotgun");

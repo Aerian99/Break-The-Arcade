@@ -47,7 +47,7 @@ public class PurpleShoot : MonoBehaviour
     void Update()
     {
         if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
-            this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+            this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {
             Shoot();
             SoundManagerScript.PlaySound("purpleGun");

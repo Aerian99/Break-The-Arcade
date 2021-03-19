@@ -67,6 +67,7 @@ public class playerBehaviour : MonoBehaviour
     public float cdShield, maxCdShield;
     public bool shieldActivated;
 
+    private bool waitingReload;
     void Start()
     {
         timer = 0f;
@@ -75,7 +76,7 @@ public class playerBehaviour : MonoBehaviour
         fill.enabled = false;
         perTimer.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
-        
+        hasReloaded = false;
 
 
         reloadText = GameObject.Find("ReloadText");
@@ -118,55 +119,46 @@ public class playerBehaviour : MonoBehaviour
 
     void ReloadCountdown() // Llena la imagen circular de reload
     {
-        if (timer > 0)
+        if (fill.fillAmount <= 1f)
         {
-            timer -= Time.deltaTime;
             fill.fillAmount += 1.0f / this.GetComponent<playerBehaviour>().reloadTime * Time.deltaTime;
             perTimer.text = (int)(fill.fillAmount * 100) + "%";
-        }
-        else
-        {
-            hasReloaded = false;
-            timer = -1f;
         }
     }
 
     void Update()
     {
-
         if (fill.fillAmount >= 1f)
         {
             fill.enabled = false;
             perTimer.enabled = false;
+            hasReloaded = false;
         }
 
-        if (((Input.GetKeyDown(KeyCode.R) &&
+        if ((((Input.GetKeyDown(KeyCode.R) &&
              (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple < player.GetComponent<playerBehaviour>().MAX_PURPLE_SHOOT ||
               handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow < player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT ||
               handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun < player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT)) ||
             (handController.currentPos == 0 && player.GetComponent<playerBehaviour>().bulletsPurple <= 0 ||
              handController.currentPos == 1 && player.GetComponent<playerBehaviour>().bulletsYellow <= 0 ||
-             handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun <= 0)) && !hasReloaded)
+             handController.currentPos == 2 && player.GetComponent<playerBehaviour>().bulletsShotgun <= 0))) && !hasReloaded && !waitingReload)
         {
             if (player.GetComponent<playerBehaviour>().reservedAmmoPurple != 0 && handController.currentPos == 0)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
             else if (player.GetComponent<playerBehaviour>().reservedAmmoYellow != 0 && handController.currentPos == 1)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
             else if (player.GetComponent<playerBehaviour>().reservedAmmoShotgun != 0 && handController.currentPos == 2)
             {
                 fill.enabled = true;
                 perTimer.enabled = true;
-                timer = this.GetComponent<playerBehaviour>().reloadTime;
                 fill.fillAmount = 0f;
             }
             hasReloaded = true;
@@ -175,13 +167,23 @@ public class playerBehaviour : MonoBehaviour
         if (hasReloaded)
             ReloadCountdown();
 
+        if ((((Input.GetKeyDown(KeyCode.R) &&
+           (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
+            handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0 ||
+            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoShotgun > 0)) ||
+           (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
+            handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
+            handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoShotgun > 0))) && hasReloaded)
+        {
+            StartCoroutine(Reload());
+        }
+
 
         WeaponMenu();
         if (!weaponMenuUp)
         {
             ActiveMiniMap();
         }
-        resetReload();
         //ActiveMiniMap();
         //healthBarEffect();
         healthBarPixel();
@@ -209,17 +211,8 @@ public class playerBehaviour : MonoBehaviour
         if (shieldActivated)
             ActivateShield();
 
-        if (((Input.GetKeyDown(KeyCode.R) &&
-             (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
-              handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0 ||
-              handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoShotgun > 0)) ||
-             (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
-              handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
-              handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoYellow > 0)) && !isReloading)
-        {
-            isReloading = true;
-            StartCoroutine(Reload());
-        }
+      
+        resetReload();
     }
 
     void ActiveMiniMap()
@@ -304,6 +297,7 @@ public class playerBehaviour : MonoBehaviour
     {
         int bulletsNeeded;
         reloadText.SetActive(false);
+        waitingReload = true;
         yield return new WaitUntil(() => !hasReloaded);
 
 
@@ -352,12 +346,12 @@ public class playerBehaviour : MonoBehaviour
                 reservedAmmoShotgun = 0;
             }
         }
-        isReloading = false;
+        waitingReload = false;
     }
 
     void resetReload() // Esta función previene que no acabe la recarga si cambias de arma si estás recargando.
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f && isReloading
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && hasReloaded
         ) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
         {
             fill.fillAmount = 0f;
@@ -368,7 +362,7 @@ public class playerBehaviour : MonoBehaviour
             hasReloaded = false;
             isReloading = false;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && isReloading
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && hasReloaded
         ) // Comprobamos si cambia de arma cuando esta recargando, esto reseteará la recarga.
         {
             fill.fillAmount = 0f;
