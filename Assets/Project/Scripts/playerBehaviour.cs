@@ -453,7 +453,6 @@ public class playerBehaviour : MonoBehaviour
     {
         if(shieldActivated)
         {
-            Debug.LogError(cdShield);
             shield.SetActive(true); 
 
             cdShield += Time.deltaTime;

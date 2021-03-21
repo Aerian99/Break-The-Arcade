@@ -39,7 +39,6 @@ public class PowerUp : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(healRatio);
         _interpolator.Update(Time.deltaTime);
 
         if(_interpolator.IsMaxPrecise)
