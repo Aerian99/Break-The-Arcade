@@ -14,9 +14,11 @@ public class burstEnemyBehaviour : MonoBehaviour
     
     public Material defaultMaterial;
     public Material hitMaterial;
+    GameObject player;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         lifes = 20f;
         fade = 1;
         isDying = false;
@@ -27,16 +29,6 @@ public class burstEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
-            if (gameObject.GetComponent<radialEnemyShoot>() == true)
-            {
-                gameObject.GetComponent<radialEnemyShoot>().enabled = false;
-            }
-            if (gameObject.GetComponent<radialEnemyBounce>() == true)
-            {
-                gameObject.GetComponent<radialEnemyBounce>().enabled = false;
-            }
-
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<playerBehaviour>().cdShield = 0;
             player.GetComponent<playerBehaviour>().shieldActivated = true;
             
@@ -45,8 +37,8 @@ public class burstEnemyBehaviour : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
             SoundManagerScript.PlaySound("radialEnemyDeath");
+            Destroy(this.gameObject);
         }
     }
 
