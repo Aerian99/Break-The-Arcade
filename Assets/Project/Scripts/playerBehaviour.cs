@@ -81,9 +81,7 @@ public class playerBehaviour : MonoBehaviour
 
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _maxLifes = 100f;
-        _playerLifes = 5;
-        //_playerLifes = 3 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+        _playerLifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
@@ -208,8 +206,8 @@ public class playerBehaviour : MonoBehaviour
         else if (handController.currentPos == 2)
             redBulletsCounter.text = "" + reservedAmmoShotgun;
 
-        if (shieldActivated)
-            ActivateShield();
+        
+         ActivateShield();
 
       
         resetReload();
@@ -223,7 +221,7 @@ public class playerBehaviour : MonoBehaviour
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
         }
-        else
+        else if(Input.GetKeyUp(KeyCode.Tab))
         {
             activeCamera.SetActive(false);
             Time.timeScale = 1f;
@@ -375,23 +373,11 @@ public class playerBehaviour : MonoBehaviour
         }
     }
 
-    void healthBarEffect()
-    {
-        healthBarFill.fillAmount = _playerLifes / _maxLifes;
-
-        if (healthBarWhiteFill.fillAmount > healthBarFill.fillAmount)
-        {
-            healthBarWhiteFill.fillAmount -= hurtSpeed;
-        }
-        else
-        {
-            healthBarWhiteFill.fillAmount = healthBarFill.fillAmount;
-        }
-    }
+ 
 
     void healthBarPixel()
     {
-        for (int i = 0; i <= 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (_playerLifes == i)
             {
@@ -465,17 +451,21 @@ public class playerBehaviour : MonoBehaviour
 
     public void ActivateShield()
     {
-        if (!shield.activeInHierarchy)
-        { 
-            shield.SetActive(true);        
-        }
+        if(shieldActivated)
+        {
+            Debug.LogError(cdShield);
+            shield.SetActive(true); 
 
-        cdShield += Time.deltaTime;
-        if (cdShield >= maxCdShield)
+            cdShield += Time.deltaTime;
+            if (cdShield >= maxCdShield)
+            {
+                cdShield = 0f;
+                shieldActivated = false;
+            }
+        }
+        else
         {
             shield.SetActive(false);
-            cdShield = 0f;
-            shieldActivated = false;
         }
     }
 }

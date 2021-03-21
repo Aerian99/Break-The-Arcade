@@ -39,6 +39,7 @@ public class PowerUp : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(healRatio);
         _interpolator.Update(Time.deltaTime);
 
         if(_interpolator.IsMaxPrecise)
@@ -65,7 +66,14 @@ public class PowerUp : MonoBehaviour
             if (randomObject == 1) //health
             {
                 SoundManagerScript.PlaySound("dropSound");
-                player.GetComponent<playerBehaviour>()._playerLifes += healRatio;
+                if(player.GetComponent<playerBehaviour>()._playerLifes < 6)
+                {
+                    if (player.GetComponent<playerBehaviour>()._playerLifes + healRatio > 6)
+                        player.GetComponent<playerBehaviour>()._playerLifes = 6;
+                    else
+                        player.GetComponent<playerBehaviour>()._playerLifes += healRatio;
+                    
+                }
                
             }
             else if (randomObject == 2) //ammo
