@@ -29,7 +29,7 @@ public class burstEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
-            player.GetComponent<playerBehaviour>().cdShield = 0;
+            player.GetComponent<playerBehaviour>().cdShield = 0f;
             player.GetComponent<playerBehaviour>().shieldActivated = true;
             
             //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
