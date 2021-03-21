@@ -223,7 +223,7 @@ public class playerBehaviour : MonoBehaviour
             Time.timeScale = 0.1f;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Tab))
         {
             activeCamera.SetActive(false);
             Time.timeScale = 1f;
