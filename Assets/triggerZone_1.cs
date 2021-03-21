@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class triggerZone_1 : MonoBehaviour
 {
+    public GameObject cameraMiniMap;
     public GameObject []setMapActive;
     public int radialEnemy;
     private int robotEnemy, tower, alien;
@@ -49,7 +50,6 @@ public class triggerZone_1 : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-
         else
         {
         
@@ -73,6 +73,7 @@ public class triggerZone_1 : MonoBehaviour
         {
             if(!hasPassedLevel)
             {
+                
                 if (!isAlien && !hasEnteredAlready)
                 { 
                     for (int i = 0; i < enemies.Length; i++)
@@ -95,6 +96,7 @@ public class triggerZone_1 : MonoBehaviour
                 }
                 for (int i = 0; i < setMapActive.Length; i++)
                 {
+                    cameraMiniMap.transform.position = setMapActive[i].transform.position;
                     setMapActive[i].SetActive(false);
                 }
                

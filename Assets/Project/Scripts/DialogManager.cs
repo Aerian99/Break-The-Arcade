@@ -65,9 +65,9 @@ public class DialogManager : MonoBehaviour
             if (purple.activeInHierarchy)
                 purple.GetComponent<PurpleShoot>().enabled = true;
             else if (yellow.activeInHierarchy)
-                yellow.GetComponent<PurpleShoot>().enabled = true;
+                yellow.GetComponent<YellowShoot>().enabled = true;
             else if (red.activeInHierarchy)
-                red.GetComponent<PurpleShoot>().enabled = true;
+                red.GetComponent<RedShoot>().enabled = true;
 
         }
     }
