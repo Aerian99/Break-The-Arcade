@@ -29,6 +29,7 @@ public class DialogManager : MonoBehaviour
 
         if (continueButton.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
         {
+
             NextSentence();
         }
     }
@@ -36,6 +37,8 @@ public class DialogManager : MonoBehaviour
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
+            SoundManagerScript.StopSound();
+            SoundManagerScript.PlaySound("arcadeSpeaking");
             displayText.text += letter;
             yield return new WaitForSeconds(speed);
         }

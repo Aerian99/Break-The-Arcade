@@ -32,7 +32,9 @@ public class SoundManagerScript : MonoBehaviour
         dropSound,
         coinSound,
         menuPick,
-        radialRecharging;
+        radialRecharging,
+        arcadeSpeaking,
+        continueButton;
 
     public static AudioSource audioSrc;
 
@@ -68,7 +70,10 @@ public class SoundManagerScript : MonoBehaviour
         menuPick = Resources.Load<AudioClip>("menuPick");
         radialRecharging = Resources.Load<AudioClip>("radialRecharging");
         audioSrc = GetComponent<AudioSource>();
-        
+        arcadeSpeaking = Resources.Load<AudioClip>("arcadeSpeaking");
+        continueButton = Resources.Load<AudioClip>("continueButton");
+
+
     }
 
 
@@ -159,6 +164,12 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "radialRecharging":
                 audioSrc.PlayOneShot(radialRecharging);
+                break;
+            case "arcadeSpeaking":
+                audioSrc.PlayOneShot(arcadeSpeaking);
+                break;
+            case "continue":
+                audioSrc.PlayOneShot(continueButton);
                 break;
             default:
                 break;
