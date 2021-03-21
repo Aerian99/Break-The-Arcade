@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class AdjustMusic : MonoBehaviour
 {
-    public AudioSource audSrc;
-    private float musicVolume = 0.5f;
-
-    // Update is called once per frame
-    void Update()
+     public void UpdateVolume(float volume)
     {
-        audSrc.volume = musicVolume;
+        AudioListener.volume = volume;
     }
-
-    public void UpdateVolume(float volume)
-    {
-        musicVolume = volume;
-    }
-
+    
 }
