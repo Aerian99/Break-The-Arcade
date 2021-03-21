@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public GameObject playButton, ExitButton, optionsButton, text, slider, volumeButton, backButton, questsButton, playerAnimation;
+    public GameObject playButton, ExitButton, optionsButton, text, slider, volumeButton, backButton, questsButton, playerAnimation, credits;
     public void ShowButtons()
     {
         playButton.SetActive(true);
@@ -14,6 +14,7 @@ public class MainMenuManager : MonoBehaviour
         questsButton.SetActive(true);
         text.SetActive(false);
         playerAnimation.SetActive(false);
+        credits.SetActive(true);
         SoundManagerScript.PlaySound("coin");
         GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
     }
@@ -28,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
         ExitButton.SetActive(false);
         optionsButton.SetActive(false);
         questsButton.SetActive(false);
+        credits.SetActive(false);
         volumeButton.SetActive(true);
         slider.SetActive(true);
         backButton.SetActive(true);
@@ -42,12 +44,22 @@ public class MainMenuManager : MonoBehaviour
         optionsButton.SetActive(true);
         ExitButton.SetActive(true);
         questsButton.SetActive(true);
+        credits.SetActive(true);
 
     }
 
+    public void GoMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void Achievements()
     {
         SceneManager.LoadScene("Achievements");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
     public void Exit()
     {
