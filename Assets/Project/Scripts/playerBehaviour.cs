@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class playerBehaviour : MonoBehaviour
 {
-
+    public int coins;
     public float timer;
     private float waitTime;
     public Image fill;
-    public TextMeshProUGUI perTimer;
+    public TextMeshProUGUI perTimer, totalCoins;
     public static bool hitReload;
     private GameObject player;
     public bool hasReloaded;
@@ -81,7 +81,8 @@ public class playerBehaviour : MonoBehaviour
 
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _playerLifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+        _playerLifes = 3;
+        //_playerLifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
         cdAberration = 0;
@@ -211,6 +212,8 @@ public class playerBehaviour : MonoBehaviour
 
       
         resetReload();
+
+        totalCoins.text = "x " + coins;
     }
 
     void ActiveMiniMap()

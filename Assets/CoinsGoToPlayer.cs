@@ -34,6 +34,7 @@ public class CoinsGoToPlayer : MonoBehaviour
         if(collision.transform.tag == "Player")
         {
             SoundManagerScript.PlaySound("coin");
+            player.GetComponent<playerBehaviour>().coins++;
             Destroy(gameObject);
         }
     }
