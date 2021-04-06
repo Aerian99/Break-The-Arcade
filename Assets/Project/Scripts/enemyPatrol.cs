@@ -91,7 +91,7 @@ public class enemyPatrol : MonoBehaviour
 
         if (lifes <= 0f)
         {
-            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("NormalPatrol", this.gameObject);
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("gumRobot", this.gameObject);
             for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
             {
                 if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Robot Patrols")

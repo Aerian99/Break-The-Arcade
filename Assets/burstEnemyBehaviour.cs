@@ -29,6 +29,7 @@ public class burstEnemyBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("burstEnemy", this.gameObject);
             player.GetComponent<playerBehaviour>().cdShield = 0f;
             player.GetComponent<playerBehaviour>().shieldActivated = true;
             

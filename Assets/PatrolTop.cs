@@ -59,7 +59,7 @@ public class PatrolTop : MonoBehaviour
         if (lifes <= 0f)
         {
             GameObject player = GameObject.FindWithTag("Player");
-            player.GetComponent<playerBehaviour>().shieldActivated = true;
+            //player.GetComponent<playerBehaviour>().shieldActivated = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
            

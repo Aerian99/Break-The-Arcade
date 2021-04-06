@@ -29,6 +29,7 @@ public class radialEnemyBehaviour : MonoBehaviour
         {
             if(gameObject.name == "4_Enemy(Clone)")
             {
+                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("radialEnemy", this.gameObject);
                 for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
                 {
                     if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Rotators")
@@ -52,6 +53,7 @@ public class radialEnemyBehaviour : MonoBehaviour
             }
             if (gameObject.GetComponent<PatrolTop>() == true)
             {
+                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("patrolTop", this.gameObject);
                 gameObject.GetComponent<PatrolTop>().enabled = false;
                 for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
                 {

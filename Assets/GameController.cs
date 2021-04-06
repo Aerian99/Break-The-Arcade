@@ -80,28 +80,126 @@ public class GameController : MonoBehaviour
 
     public void throwCoins(string m_name, GameObject m_enemy)
     {
-        for (int i = 0; i < 10; i++)
+        switch (m_name)
         {
+            case "gumRobot":
+                for (int i = 0; i < 2; i++)
+                {
+                    Vector2 velocity = new Vector2(Random.Range(-3, 3), 7);
+                    float angle;
+                    angle = 20 * Mathf.Deg2Rad;
 
-       
-            Vector2 velocity = new Vector2(Random.Range(-3,3),7);
-            float angle;
-            angle = 20 * Mathf.Deg2Rad; 
+                    //z  uniformly on [cos0,1]
+                    float Z = RandomFloat(Mathf.Cos(angle), 1);
 
-            //z  uniformly on [cos0,1]
-            float Z = RandomFloat(Mathf.Cos(angle), 1);
+                    //fi  uniformly on [0,2pi).
+                    float fi = RandomFloat(0, (2 * 3.14f));
 
-            //fi  uniformly on [0,2pi).
-            float fi = RandomFloat(0, (2 * 3.14f));
+                    //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
+                    float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
+                    float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
+                    float pointZ = Z;
 
-            //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
-            float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
-            float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
-            float pointZ = Z;
+                    Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
+                    GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
+                    throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                }
+                break;
+            case "radialEnemy":
+                for (int i = 0; i < 4; i++)
+                {
+                    Vector2 velocity = new Vector2(Random.Range(-3, 3), 7);
+                    float angle;
+                    angle = 20 * Mathf.Deg2Rad;
 
-            Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
-            GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
-            throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                    //z  uniformly on [cos0,1]
+                    float Z = RandomFloat(Mathf.Cos(angle), 1);
+
+                    //fi  uniformly on [0,2pi).
+                    float fi = RandomFloat(0, (2 * 3.14f));
+
+                    //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
+                    float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
+                    float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
+                    float pointZ = Z;
+
+                    Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
+                    GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
+                    throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                }
+                break;
+            case "burstEnemy":
+                for (int i = 0; i < 5; i++)
+                {
+                    Vector2 velocity = new Vector2(Random.Range(-3, 3), 7);
+                    float angle;
+                    angle = 20 * Mathf.Deg2Rad;
+
+                    //z  uniformly on [cos0,1]
+                    float Z = RandomFloat(Mathf.Cos(angle), 1);
+
+                    //fi  uniformly on [0,2pi).
+                    float fi = RandomFloat(0, (2 * 3.14f));
+
+                    //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
+                    float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
+                    float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
+                    float pointZ = Z;
+
+                    Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
+                    GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
+                    throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                }
+                break;
+            case "turret":
+                for (int i = 0; i < 3; i++)
+                {
+                    Vector2 velocity = new Vector2(Random.Range(-3, 3), 7);
+                    float angle;
+                    angle = 20 * Mathf.Deg2Rad;
+
+                    //z  uniformly on [cos0,1]
+                    float Z = RandomFloat(Mathf.Cos(angle), 1);
+
+                    //fi  uniformly on [0,2pi).
+                    float fi = RandomFloat(0, (2 * 3.14f));
+
+                    //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
+                    float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
+                    float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
+                    float pointZ = Z;
+
+                    Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
+                    GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
+                    throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                }
+                break;
+            case "patrolTop":
+                for (int i = 0; i < 4; i++)
+                {
+                    Vector2 velocity = new Vector2(Random.Range(-3, 3), 7);
+                    float angle;
+                    angle = 20 * Mathf.Deg2Rad;
+
+                    //z  uniformly on [cos0,1]
+                    float Z = RandomFloat(Mathf.Cos(angle), 1);
+
+                    //fi  uniformly on [0,2pi).
+                    float fi = RandomFloat(0, (2 * 3.14f));
+
+                    //to obtain the vector(sqrt 1-z2 cos angle, sqrt 1-z2 sin fi, z)
+                    float pointX = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Cos(fi);
+                    float pointY = Mathf.Sqrt(1 - Mathf.Pow(Z, 2)) * Mathf.Sin(fi);
+                    float pointZ = Z;
+
+                    Vector3 normalizedVector = Vector3.Normalize(new Vector3(pointX, pointY, pointZ));
+                    GameObject throwedObj = Instantiate(m_coins, m_enemy.transform.position, Quaternion.identity);
+                    throwedObj.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalizedVector.x += velocity.x, normalizedVector.y += velocity.y, 0), ForceMode2D.Impulse);
+                }
+                break;
+            default:
+                break;
         }
+       
     }
 }

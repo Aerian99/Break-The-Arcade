@@ -14,11 +14,6 @@ public class CoinsGoToPlayer : MonoBehaviour
         StartCoroutine(goToPlayer());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     IEnumerator goToPlayer()
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 1f));
