@@ -112,6 +112,7 @@ public class playerBehaviour : MonoBehaviour
 
         cdShield = 0f;
         maxCdShield = 5f;
+        coins = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().coins;
     }
 
 

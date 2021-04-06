@@ -45,8 +45,9 @@ public static class SaveSystem
 
     }
 
-    public static QuestSaver.PowerUps LoadPlayer(Quest[] quests, QuestSaver.PowerUps powerUps)
+    public static QuestSaver.PowerUps LoadPlayer(Quest[] quests, QuestSaver.PowerUps powerUps, out int coins)
     {
+        coins = PlayerPrefs.GetInt("TotalCoins");
        //QUEST 1 PROPERTIES
         quests[0].assigment = PlayerPrefs.GetString("Quest1Assigment");
         quests[0].actualMonstersKilled = PlayerPrefs.GetInt("Quest1MonstersKilled");
@@ -83,6 +84,11 @@ public static class SaveSystem
         //RETURNS THE POWERUPS VALUES
         return powerUps;
 
+    }
+
+    public static void SaveCoins(int coins)
+    {
+        PlayerPrefs.SetInt("TotalCoins", coins);
     }
 
     public static void ResetAll()
