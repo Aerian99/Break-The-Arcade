@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: mainMenuButtons
+  m_Name: Text
   m_EditorClassIdentifier: 
-  hashCode: 1355728125
-  material: {fileID: 368673891979623836}
-  materialHashCode: 281713469
+  hashCode: 2979261
+  material: {fileID: 4135057574702970028}
+  materialHashCode: 48285309
   m_Version: 1.1.0
   m_SourceFontFileGUID: e173eaa6021a9e84dbd3cccd09da2168
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: e173eaa6021a9e84dbd3cccd09da2168,
@@ -1772,7 +1772,7 @@ MonoBehaviour:
     m_GlyphIndex: 233
     m_Scale: 1
   m_AtlasTextures:
-  - {fileID: 718756809140401989}
+  - {fileID: 4461531288094359309}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_UsedGlyphRects:
@@ -2436,14 +2436,14 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!21 &368673891979623836
+--- !u!21 &4135057574702970028
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mainMenuButtons Material
+  m_Name: Text Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_ShaderKeywords: GLOW_ON UNDERLAY_ON
   m_LightmapFlags: 4
@@ -2468,7 +2468,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 718756809140401989}
+        m_Texture: {fileID: 4461531288094359309}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -2490,10 +2490,10 @@ Material:
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.315
-    - _GlowOffset: 0
-    - _GlowOuter: 0.933
-    - _GlowPower: 1
+    - _GlowInner: 0.612
+    - _GlowOffset: -0.33
+    - _GlowOuter: 0.45
+    - _GlowPower: 0.814
     - _GradientScale: 6
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
@@ -2530,21 +2530,21 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 0.25490198}
-    - _GlowColor: {r: 3.027451, g: 0.6431373, b: 1.6156863, a: 0.62352943}
+    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 2.8267288, g: 0.98321, b: 0.9323766, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0.3529412}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 1, g: 0, b: 0.8646321, a: 0.5}
---- !u!28 &718756809140401989
+    - _UnderlayColor: {r: 1, g: 0.4720202, b: 0, a: 0.5}
+--- !u!28 &4461531288094359309
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mainMenuButtons Atlas
+  m_Name: Text Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
