@@ -44,7 +44,7 @@ public class RedShoot : MonoBehaviour
 
     // BULLET
     public static float bulletDamage;
-    private float bulletForce = 40f;
+    [HideInInspector] public float bulletForce = 40f;
     private float bulletLifeTime = 1.5f; // Alcance de la bala
     private float timeBetweenShots = 0.15f;
     private float timestamp;

@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
     private ParticleSystem p_RunParticleRight;
 
     // Movement
-    private float moveSpeed;
+    [HideInInspector]public float moveSpeed;
 
     // Jump
     public static float jumpForce;
@@ -38,7 +38,7 @@ public class playerMovement : MonoBehaviour
     // Dash
     private float dashForce;
     Vector2 positionToDash;
-    private float StartDashTimer;
+    public float StartDashTimer;
     private float CurrentDashTimer;
     private float DashDirection;
     [HideInInspector] public float dashCooldown;
@@ -46,6 +46,7 @@ public class playerMovement : MonoBehaviour
     [HideInInspector] public bool dashUp, dashDiagonal, canDash, stopTimer;
     public Image dashImage;
     Vector2 mousePos;
+    public float maxDashCooldown;
     // Other variables
     public static float movX;
 
@@ -74,6 +75,7 @@ public class playerMovement : MonoBehaviour
         StartDashTimer = 0.1f;
         dashCooldown = 0f;
         maxCdTime = 0.1f;
+        maxDashCooldown = 3f;
         cdTime = maxCdTime;
         stopTimer = false;
         ghostController.enabled = false;
@@ -288,7 +290,7 @@ public class playerMovement : MonoBehaviour
         {
             canDash = true;
             dashImage.fillAmount = 1f;
-            dashCooldown = 3f;
+            dashCooldown = maxDashCooldown;
             dashImage.GetComponent<Animator>().SetTrigger("ready");
         }
 
