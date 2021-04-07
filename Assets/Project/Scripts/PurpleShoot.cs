@@ -22,7 +22,7 @@ public class PurpleShoot : MonoBehaviour
 
     //BULLETS
     public static float bulletDamage;
-    private float bulletSpeed = 50f; // Speed
+    [HideInInspector]public float bulletSpeed = 50f; // Speed
     private float bulletLifeTime = 10f; // Distance
     private float timeBetweenShots = 0.20f; // Cadence
     private float timestamp;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    private GameObject player;
     public GameObject m_coins;
     float cdAbsorb, maxcdAbsorb;
     [HideInInspector]public bool activatedAbsorb;
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         BeginGame();
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
@@ -201,5 +203,67 @@ public class GameController : MonoBehaviour
                 break;
         }
        
+    }
+    public void backToGame()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("backToLevel");
+    }
+
+    public void buySpeed()
+    {
+        if(player.GetComponent<playerBehaviour>().coins >= 10)
+        {
+            player.GetComponent<playerMovement>().moveSpeed += 1.5f;
+            player.GetComponent<playerBehaviour>().coins -= 10;
+        }
+    }
+
+
+    public void buyFasterBullets()
+    {
+        if (player.GetComponent<playerBehaviour>().coins >= 15)
+        {
+            player.transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bulletSpeed += 10f;
+            player.transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().bulletForce += 10f;
+            player.GetComponent<playerBehaviour>().coins -= 15;
+        }
+    }
+
+    public void buyOnePunch()
+    {
+        if (player.GetComponent<playerBehaviour>().coins >= 500)
+        {
+            PurpleShoot.bulletDamage += 100f;
+            RedShoot.bulletDamage += 100f;
+            player.GetComponent<playerBehaviour>().coins -= 500;
+        }
+    }
+
+    public void buyMoreEnemyDrops()
+    {
+        if (player.GetComponent<playerBehaviour>().coins >= 500)
+        {
+            PurpleShoot.bulletDamage += 100f;
+            RedShoot.bulletDamage += 100f;
+            player.GetComponent<playerBehaviour>().coins -= 500;
+        }
+    }
+
+    public void buyDashCooldown()
+    {
+        if (player.GetComponent<playerBehaviour>().coins >= 50)
+        {
+            player.GetComponent<playerMovement>().maxDashCooldown -= 0.5f;
+            player.GetComponent<playerBehaviour>().coins -= 50;
+        }
+    }
+
+    public void buyTryIt()
+    {
+        if (player.GetComponent<playerBehaviour>().coins >= 5000)
+        {
+            player.GetComponent<playerMovement>().maxDashCooldown -= 0.5f;
+            player.GetComponent<playerBehaviour>().coins -= 5000;
+        }
     }
 }
