@@ -10,7 +10,7 @@ public class QuestSaver : MonoBehaviour
     {
         public int damagePurpleGun, damageLaserGun, damageRedGun, healPowerUp, playerUpLifes;
     }
-
+    public int coins;
     public PowerUps m_PowerUps;
     private static QuestSaver questSaverInstance;
     public Quest[] quest = new Quest[3];
@@ -32,7 +32,7 @@ public class QuestSaver : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        m_PowerUps = SaveSystem.LoadPlayer(quest, m_PowerUps);
+        m_PowerUps = SaveSystem.LoadPlayer(quest, m_PowerUps, out coins);
 
         for (int y = 0; y < quest.Length; y++)
         {
@@ -162,6 +162,10 @@ public class QuestSaver : MonoBehaviour
         while (true)
         {
             SaveSystem.SaveQuest(quest, m_PowerUps);
+            if(SceneManager.GetActiveScene().name == "Lvl1" && GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
+            {
+               SaveSystem.SaveCoins(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().coins);
+            }
             yield return new WaitForSeconds(2);
         }
         yield return null;

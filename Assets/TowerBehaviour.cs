@@ -23,6 +23,7 @@ public class TowerBehaviour : MonoBehaviour
     {
         if (lifes <= 0f)
         {
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("turret", this.gameObject);
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
             //Dead();
