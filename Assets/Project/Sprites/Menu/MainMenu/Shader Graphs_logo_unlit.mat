@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bordes
-  m_Shader: {fileID: -6465566751694194690, guid: e50601c264ac4564c8924b0c7eb7e444,
+  m_Name: Shader Graphs_logo_unlit
+  m_Shader: {fileID: -6465566751694194690, guid: be142f1791e4b364e9b0438b7ef03dfd,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -21,13 +21,13 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emission:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31c098979647e694baf3e6a02cb1d5c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 191b1f822cacf5e47ac4b5c73695bc86, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.6066554, g: 0.1655503, b: 0.32383248, a: 0.5384273}
+    - Color_34179DC4: {r: 34.59667, g: 19.216461, b: 34.81957, a: 1}
