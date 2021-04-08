@@ -4675,6 +4675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663ad3ff800df5c4eaa697cbaa2778b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: 0
   quest:
   - isActive: 0
     assigment: 
