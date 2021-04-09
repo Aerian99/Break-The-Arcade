@@ -199,7 +199,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Play Button
+  m_Name: Quest Button
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Normal
@@ -848,7 +848,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.93333334
-    functionName: playTrigger
+    functionName: questTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

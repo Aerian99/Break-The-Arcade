@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 543483352}
   - component: {fileID: 543483351}
   - component: {fileID: 543483350}
+  - component: {fileID: 543483355}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -1431,7 +1432,7 @@ Animator:
   m_GameObject: {fileID: 543483349}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4a6c0528ee89cf6438a63dffc3e76d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1c6f1c12a992a284ea3112c2b28c2c8b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1482,18 +1483,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 543483352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3753907}
-        m_MethodName: Credits
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &543483352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,6 +1541,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -31.2}
   m_SizeDelta: {x: 145.23282, y: 25.666}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &543483355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543483349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da661357ee984546b1ebc6ea287b850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playTriggerBool: 0
+  questTriggerBool: 0
+  optionsTriggerBool: 0
+  creditsTriggerBool: 0
 --- !u!1 &547611472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1706,7 @@ GameObject:
   - component: {fileID: 578472927}
   - component: {fileID: 578472926}
   - component: {fileID: 578472929}
+  - component: {fileID: 578472930}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1769,18 +1776,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 578472927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3753907}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &578472927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,6 +1833,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &578472930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578472924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da661357ee984546b1ebc6ea287b850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playTriggerBool: 0
+  questTriggerBool: 0
+  optionsTriggerBool: 0
+  creditsTriggerBool: 0
 --- !u!1 &771829037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,6 +3685,7 @@ GameObject:
   - component: {fileID: 1618429974}
   - component: {fileID: 1618429973}
   - component: {fileID: 1618429972}
+  - component: {fileID: 1618429977}
   m_Layer: 5
   m_Name: Quest Button
   m_TagString: Untagged
@@ -3690,7 +3703,7 @@ Animator:
   m_GameObject: {fileID: 1618429971}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4a6c0528ee89cf6438a63dffc3e76d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: fdbb197e545585d4c862ad23107e2fcd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3741,18 +3754,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1618429974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3753907}
-        m_MethodName: Achievements
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1618429974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3810,6 +3812,22 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000019073486, y: 36.4}
   m_SizeDelta: {x: 121.63898, y: 25.666}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1618429977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618429971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da661357ee984546b1ebc6ea287b850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playTriggerBool: 0
+  questTriggerBool: 0
+  optionsTriggerBool: 0
+  creditsTriggerBool: 0
 --- !u!1 &1675130058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +3841,7 @@ GameObject:
   - component: {fileID: 1675130061}
   - component: {fileID: 1675130060}
   - component: {fileID: 1675130059}
+  - component: {fileID: 1675130064}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -3840,7 +3859,7 @@ Animator:
   m_GameObject: {fileID: 1675130058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4a6c0528ee89cf6438a63dffc3e76d15, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5172b9c5b0b07c140b0bafd8784fa861, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3891,18 +3910,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1675130061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3753907}
-        m_MethodName: Options
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1675130061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,6 +3968,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: 156.5922, y: 25.666}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1675130064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675130058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da661357ee984546b1ebc6ea287b850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playTriggerBool: 0
+  questTriggerBool: 0
+  optionsTriggerBool: 0
+  creditsTriggerBool: 0
 --- !u!1 &1685263475
 GameObject:
   m_ObjectHideFlags: 0
