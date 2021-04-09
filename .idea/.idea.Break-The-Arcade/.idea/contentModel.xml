@@ -28,6 +28,7 @@
         <e p="collisionGround.cs" t="Include" />
         <e p="CyanShoot.cs" t="Include" />
         <e p="DeathMenu.cs" t="Include" />
+        <e p="DemoCameraAnimation.cs" t="Include" />
         <e p="Destroyer.cs" t="Include" />
         <e p="DetectCollisionBossKnight.cs" t="Include" />
         <e p="DissableCollider.cs" t="Include" />
