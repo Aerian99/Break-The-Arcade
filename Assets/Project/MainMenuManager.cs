@@ -17,6 +17,8 @@ public class MainMenuManager : MonoBehaviour
         credits,
         creditText;
 
+    public Animator camera, fadepanel;
+
     public void ShowButtons()
     {
         playButton.SetActive(true);
@@ -32,6 +34,13 @@ public class MainMenuManager : MonoBehaviour
     public void Play()
     {
         if (playButton.GetComponent<MainMenuTriggers>().playTriggerBool)
+        {
+            //SceneManager.LoadScene("Lvl1");
+            camera.SetBool("In", true);
+            fadepanel.SetBool("In", true);
+        }
+
+        if (camera.GetComponent<DemoCameraAnimation>().endCamAnimation)
         {
             SceneManager.LoadScene("Lvl1");
         }
