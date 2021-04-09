@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
+        //healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
         _interpolator.ToMax();
         randomObject = Random.Range(1, 4);
         if (pHealth)
