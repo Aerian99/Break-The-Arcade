@@ -42,6 +42,8 @@
         <e p="GrenadeShoot.cs" t="Include" />
         <e p="healthBox.cs" t="Include" />
         <e p="InsantiateEnemy.cs" t="Include" />
+        <e p="Lava.cs" t="Include" />
+        <e p="LavaTrigger.cs" t="Include" />
         <e p="LEDController.cs" t="Include" />
         <e p="magneticEffect.cs" t="Include" />
         <e p="MainMenuTriggers.cs" t="Include" />
@@ -195,6 +197,7 @@
         <e p="reloadScript.cs" t="Include" />
         <e p="Shield.cs" t="Include" />
         <e p="ShootToPlayer.cs" t="Include" />
+        <e p="ShotgunAmmo.cs" t="Include" />
         <e p="SpaceInvadersTrigger.cs" t="Include" />
         <e p="SpawnBoss.cs" t="Include" />
         <e p="testingPatrol.cs" t="Include" />
