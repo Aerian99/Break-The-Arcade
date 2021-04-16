@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
+    public GameObject cursorCoin;
     public bool isMenu, coinAdded;
     public Texture2D cursorTextureMoneda, cursorTexturePointer;
     Vector2 cursorHotspot;
@@ -15,7 +16,7 @@ public class CursorScript : MonoBehaviour
         {
             cursorHotspot = new Vector2(cursorTextureMoneda.width / 2, cursorTextureMoneda.height / 2);
             Cursor.SetCursor(cursorTextureMoneda, cursorHotspot, CursorMode.ForceSoftware);
-            Cursor.visible = true;        
+            Cursor.visible = true;
         }
         else
             Cursor.visible = false;

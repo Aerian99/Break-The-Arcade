@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
         credits.SetActive(true);
         SoundManagerScript.PlaySound("coin");
         GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
+        camera.SetBool("CoinInsert", true);
     }
 
     public void Play()
