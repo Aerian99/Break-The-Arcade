@@ -73,7 +73,6 @@ public class triggerZone_1 : MonoBehaviour
         {
             if(!hasPassedLevel)
             {
-                
                 if (!isAlien && !hasEnteredAlready)
                 { 
                     for (int i = 0; i < enemies.Length; i++)

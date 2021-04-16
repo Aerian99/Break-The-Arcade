@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        BeginGame();
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;

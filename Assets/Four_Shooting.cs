@@ -14,9 +14,9 @@ public class Four_Shooting : MonoBehaviour
 
     void Start()
     {
-        _rotationSpeed = 90f;
+        _rotationSpeed = 120f;
         _bulletSpeed = 12f;
-        maxCd = 0.2f;
+        maxCd = 0.1f;
         cd = maxCd;
     }
 
