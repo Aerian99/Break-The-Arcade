@@ -22,23 +22,7 @@ public class spawnBallRight : MonoBehaviour
     {
         if (Yellow)
         {
-            if (collision.tag == "YellowBullet")
-            {
-                //DO BULLETS OR SPAWN MONSTERS
-                transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
-                int randNumber = Random.Range(0, 4);
-                if (randNumber == 0)
-                {
-                    transform.parent.parent.GetComponent<BubbleBehaviour>().spawnEnemy(transform.position);
-                }
-                else
-                {
-                    transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBullets(transform.position);
-                }
-                Destroy(collision.gameObject);
-                Destroy(parentObject);
-            }
-            else if (collision.tag == "RedBullet")
+            if (collision.tag == "RedBullet")
             {
                 Vector3 tempPosition = new Vector3(transform.position.x + 3, transform.position.y, transform.position.z);
                 transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBall(tempPosition, BubbleBehaviour.BallType.RED);
@@ -68,12 +52,6 @@ public class spawnBallRight : MonoBehaviour
                 }
                 Destroy(collision.gameObject);
                 Destroy(parentObject);
-            }
-            else if (collision.tag == "YellowBullet")
-            {
-                Vector3 tempPosition = new Vector3(transform.position.x + 3, transform.position.y, transform.position.z);
-                transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBall(tempPosition, BubbleBehaviour.BallType.YELLOW);
-                Destroy(collision.gameObject);
             }
             else if (collision.tag == "PurpleBullet")
             {
@@ -106,13 +84,30 @@ public class spawnBallRight : MonoBehaviour
                 transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBall(tempPosition, BubbleBehaviour.BallType.RED);
                 Destroy(collision.gameObject);
             }
-            else if (collision.tag == "YellowBullet")
-            {
-                Vector3 tempPosition = new Vector3(transform.position.x + 3, transform.position.y, transform.position.z);
-                transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBall(tempPosition, BubbleBehaviour.BallType.YELLOW);
-                Destroy(collision.gameObject);
-            }
         }
 
+    }
+
+    public void doYesYellow()
+    {
+        //DO BULLETS OR SPAWN MONSTERS
+        transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
+        int randNumber = Random.Range(0, 4);
+        if (randNumber == 0)
+        {
+            transform.parent.parent.GetComponent<BubbleBehaviour>().spawnEnemy(transform.position);
+        }
+        else
+        {
+            transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBullets(transform.position);
+        }
+
+        Destroy(parentObject);
+    }
+
+    public void doNoYellow()
+    {
+        Vector3 tempPosition = new Vector3(transform.position.x + 3, transform.position.y, transform.position.z);
+        transform.parent.parent.GetComponent<BubbleBehaviour>().spawnBall(tempPosition, BubbleBehaviour.BallType.YELLOW);
     }
 }

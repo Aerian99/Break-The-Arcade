@@ -13,6 +13,8 @@ public class BubbleBehaviour : MonoBehaviour
     public GameObject redBall, yellowBall, purpleBall;
     public Vector3 startPosition;
     private int rows, columns;
+
+    float cdWaitSpawn = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,16 @@ public class BubbleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.childCount <= 0)
+        if(cdWaitSpawn <= 0)
         {
-            //WIN
+            if(gameObject.transform.childCount <= 0)
+            {
+                Debug.Log("You win");
+            }
+        }
+        else
+        {
+            cdWaitSpawn -= Time.deltaTime;
         }
     }
 
@@ -116,5 +125,15 @@ public class BubbleBehaviour : MonoBehaviour
     public void spawnAmmo(Vector3 position)
     {
         Instantiate(ammoPrefab, position, Quaternion.identity);
+    }
+
+    public void noHitRightYellow(Vector3 position)
+    {
+
+    }
+
+    public void hitRightYellow(Vector3 position)
+    {
+
     }
 }

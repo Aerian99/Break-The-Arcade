@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8922582171480222588}
   - component: {fileID: 7839002015730017947}
   - component: {fileID: 8525638286503692614}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: TriggerDown
   m_TagString: BubbleTrigger
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 9143308460701208947}
   - component: {fileID: 4189820747927204600}
   - component: {fileID: 6333835121675342988}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: TriggerRight
   m_TagString: BubbleTrigger
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 8306211119747067214}
   - component: {fileID: 2386317676715356622}
   - component: {fileID: 4480148803843935704}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: TriggerLeft
   m_TagString: BubbleTrigger
   m_Icon: {fileID: 0}

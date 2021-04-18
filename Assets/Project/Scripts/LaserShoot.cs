@@ -42,7 +42,8 @@ public class LaserShoot : MonoBehaviour
         hittableMasK = LayerMask.GetMask("Enemy", "Barril", "BarrilExplosivo", "Platforms", "BurstEnemy");
         //distance = 100;
         startedShooting = false;
-        damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
+        //damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
+        damage = 3f;
         nextFrame = 0;
         time = 0;
         period = 0.1f;
@@ -216,6 +217,43 @@ public class LaserShoot : MonoBehaviour
             {
                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
                 popUpDamage(bulletForce, hit);
+            }
+            if(hit.transform.CompareTag("BubbleTrigger") && time >= nextFrame)
+            {
+                Debug.Log("Hit");
+                if(hit.transform.GetComponent<spawnBallLeft>())
+                {
+                    if(hit.transform.GetComponent<spawnBallLeft>().Yellow)
+                    {
+                        hit.transform.GetComponent<spawnBallLeft>().doYesYellow();
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<spawnBallLeft>().doNoYellow();
+                    }
+                }
+                else if (hit.transform.GetComponent<spawnBallRight>())
+                {
+                    if (hit.transform.GetComponent<spawnBallRight>().Yellow)
+                    {
+                        hit.transform.GetComponent<spawnBallRight>().doYesYellow();
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<spawnBallRight>().doNoYellow();
+                    }
+                }
+                else if (hit.transform.GetComponent<spawnBallUp>())
+                {
+                    if (hit.transform.GetComponent<spawnBallUp>().Yellow)
+                    {
+                        hit.transform.GetComponent<spawnBallUp>().doYesYellow();
+                    }
+                    else
+                    {
+                        hit.transform.GetComponent<spawnBallUp>().doNoYellow();
+                    }
+                }
             }
             lineRenderer.SetPosition(1, hit.point);
         }
