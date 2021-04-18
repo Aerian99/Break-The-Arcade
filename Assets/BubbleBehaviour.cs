@@ -126,14 +126,4 @@ public class BubbleBehaviour : MonoBehaviour
     {
         Instantiate(ammoPrefab, position, Quaternion.identity);
     }
-
-    public void noHitRightYellow(Vector3 position)
-    {
-
-    }
-
-    public void hitRightYellow(Vector3 position)
-    {
-
-    }
 }

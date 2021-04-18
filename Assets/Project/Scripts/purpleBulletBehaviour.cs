@@ -26,6 +26,7 @@ public class purpleBulletBehaviour : MonoBehaviour {
           && !other.gameObject.CompareTag("AlienWall") 
           && !other.gameObject.CompareTag("AlienAttack")
           && !other.gameObject.CompareTag("Bullet Pacman")
+          && !other.gameObject.CompareTag("BubbleLimit")
           && !other.gameObject.CompareTag("BubbleTrigger"))
         {
             Destroy (this.gameObject);
