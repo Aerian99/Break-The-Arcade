@@ -40,48 +40,8 @@ public class demoEnemyBehaviour : MonoBehaviour
         
         if (lifes <= 0f)
         {
-            if(gameObject.name == "4_Enemy(Clone)")
-            {
-                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("radialEnemy", this.gameObject);
-                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
-                {
-                    if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Rotators")
-                    {
-                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
-                    }
-
-                }
-            }
-            if (gameObject.GetComponent<radialEnemyShoot>() == true)
-            {
-                gameObject.GetComponent<radialEnemyShoot>().enabled = false;
-                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
-                {
-                    if(GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Radials")
-                    {
-                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
-                    }
-
-                }
-            }
-            if (gameObject.GetComponent<PatrolTop>() == true)
-            {
-                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("patrolTop", this.gameObject);
-                gameObject.GetComponent<PatrolTop>().enabled = false;
-                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
-                {
-                    if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Roof Patrols")
-                    {
-                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
-                    }
-
-                }
-            }
-            
-            //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Collider2D>().enabled = false;
-            //Dead();
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             SoundManagerScript.PlaySound("radialEnemyDeath");
@@ -99,7 +59,7 @@ public class demoEnemyBehaviour : MonoBehaviour
 
     void activateAttack()
     {
-        if (Vector2.Distance(player.transform.position, this.transform.position) < 10)
+        if (Vector2.Distance(player.transform.position, this.transform.position) < 25)
         {
             activationAttack = true;
         }

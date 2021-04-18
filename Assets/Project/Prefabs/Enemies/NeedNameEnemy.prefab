@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 60855025752119744}
   - component: {fileID: 60855025752119745}
   m_Layer: 20
-  m_Name: TurretGroup
+  m_Name: FireGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,7 +425,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.0031453832, y: 0}
   serializedVersion: 2
-  m_Radius: 0.29830816
+  m_Radius: 0.21
 --- !u!95 &4092594566697307033
 Animator:
   serializedVersion: 3

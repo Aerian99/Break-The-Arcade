@@ -31,8 +31,8 @@ public class LaserShoot : MonoBehaviour
     private float maxCdAmmo, cdAmmo;
 
     public GameObject hitDamagePopUp;
-    [HideInInspector]public float bulletForce = 5f;
-    
+    [HideInInspector] public float bulletForce = 5f;
+
     public GameObject cursor;
     private GameObject player;
 
@@ -59,75 +59,80 @@ public class LaserShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            //SHOOT
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().hasReloaded)
+        //SHOOT
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().hasReloaded)
+        {
+            time = nextFrame;
+            EnableLaser();
+            endVFX.SetActive(true);
+        }
+
+        if (startedShooting && player.GetComponent<playerBehaviour>().bulletsYellow > 0)
+        {
+            CheckFirstAbsorb();
+            UpdateLaser();
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
+            cursor.GetComponent<Animator>().SetTrigger("click");
+        }
+
+        if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
+            player.GetComponent<playerBehaviour>().bulletsYellow > 0)
+        {
+            nextFrame += period;
+            player.GetComponent<playerBehaviour>().bulletsYellow--;
+            SoundManagerScript.PlaySound("yellowGun");
+        }
+        else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) &&
+                 player.GetComponent<playerBehaviour>().bulletsYellow > 0 &&
+                 this.gameObject.activeInHierarchy == true && !startedShooting &&
+                 !player.GetComponent<playerBehaviour>().hasReloaded &&
+                 !player.GetComponent<playerBehaviour>().weaponMenuUp)
+        {
+            UpdateLaser();
+            nextFrame += period;
+            startedShooting = true;
+            player.GetComponent<playerBehaviour>().bulletsYellow--;
+            SoundManagerScript.PlaySound("yellowGun");
+            ScreenShake.shake = 1.5f;
+            ScreenShake.canShake = true;
+            CheckFirstAbsorb();
+        }
+
+        if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) ||
+            player.GetComponent<playerBehaviour>().bulletsYellow == 0)
+        {
+            startedShooting = false;
+            DisableLaser();
+        }
+
+        //POPUPS
+        /* if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+             this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+         {
+             reloadText.SetActive(true);
+         }*/
+
+        if (time >= nextFrame && Input.GetButton("Fire1") &&
+            player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
+            this.gameObject.activeInHierarchy == true &&
+            player.GetComponent<playerBehaviour>().reservedAmmoYellow == 0 &&
+            !player.GetComponent<playerBehaviour>().weaponMenuUp)
+        {
+            noAmmoText.SetActive(true);
+        }
+
+        if (noAmmoText.activeInHierarchy)
+        {
+            cdAmmo += Time.deltaTime;
+            if (cdAmmo >= maxCdAmmo)
             {
-                time = nextFrame;
-                EnableLaser();
-                endVFX.SetActive(true);
+                noAmmoText.SetActive(false);
+                cdAmmo = 0;
             }
+        }
 
-            if (startedShooting && player.GetComponent<playerBehaviour>().bulletsYellow > 0)
-            {
-                CheckFirstAbsorb();
-                UpdateLaser();
-                ScreenShake.shake = 1.5f;
-                ScreenShake.canShake = true;
-                cursor.GetComponent<Animator>().SetTrigger("click");
-            }
-
-            if (time >= nextFrame && startedShooting && !Input.GetKeyUp(KeyCode.Mouse0) &&
-                player.GetComponent<playerBehaviour>().bulletsYellow > 0)
-            {
-                nextFrame += period;
-                player.GetComponent<playerBehaviour>().bulletsYellow--;
-                SoundManagerScript.PlaySound("yellowGun");
-            }
-            else if (time >= nextFrame && Input.GetKeyDown(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow > 0 &&
-                     this.gameObject.activeInHierarchy == true && !startedShooting && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
-            {
-                UpdateLaser();
-                nextFrame += period;
-                startedShooting = true;
-                player.GetComponent<playerBehaviour>().bulletsYellow--;
-                SoundManagerScript.PlaySound("yellowGun");
-                ScreenShake.shake = 1.5f;
-                ScreenShake.canShake = true;
-                CheckFirstAbsorb();
-            }
-
-            if ((Input.GetKeyUp(KeyCode.Mouse0) && startedShooting) || player.GetComponent<playerBehaviour>().bulletsYellow == 0)
-            {
-                startedShooting = false;
-                DisableLaser();
-            }
-
-            //POPUPS
-           /* if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
-                this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow > 0 && !player.GetComponent<playerBehaviour>().isReloading && !player.GetComponent<playerBehaviour>().weaponMenuUp)
-            {
-                reloadText.SetActive(true);
-            }*/
-
-            if (time >= nextFrame && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsYellow == 0 &&
-                     this.gameObject.activeInHierarchy == true && player.GetComponent<playerBehaviour>().reservedAmmoYellow == 0 && !player.GetComponent<playerBehaviour>().weaponMenuUp)
-            {
-                noAmmoText.SetActive(true);
-            }
-
-            if (noAmmoText.activeInHierarchy)
-            {
-                cdAmmo += Time.deltaTime;
-                if (cdAmmo >= maxCdAmmo)
-                {
-                    noAmmoText.SetActive(false);
-                    cdAmmo = 0;
-                }
-
-            }
-
-            time += Time.deltaTime;
-        
+        time += Time.deltaTime;
     }
 
     void CheckFirstAbsorb()
@@ -157,62 +162,69 @@ public class LaserShoot : MonoBehaviour
         lineRenderer.SetPosition(1, mousePos);
 
         Vector2 direction = mousePos - (Vector2) transform.position;
-        
-        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude, hittableMasK);
+
+        RaycastHit2D hit = Physics2D.Raycast((Vector2) firePoint.position, direction.normalized, direction.magnitude,
+            hittableMasK);
 
         if (hit)
         {
             if (hit.collider.CompareTag("Enemy") && time >= nextFrame)
             {
-                if(hit.collider.name == "BurstEnemy(Clone)")
+                if (hit.collider.name == "BurstEnemy(Clone)")
                 {
                     hit.collider.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
                     popUpDamage(bulletForce, hit);
                 }
-                else
+                else 
                 {
-
                     hit.collider.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
                     popUpDamage(bulletForce, hit);
                 }
             }
+
             if (hit.transform.tag == "Boss" && time >= nextFrame)
             {
                 if (hit.transform.name == "Boss Knight")
                 {
-                    hit.transform.GetComponent<BossKhightBehaviour>().health -= (int)bulletForce;
+                    hit.transform.GetComponent<BossKhightBehaviour>().health -= (int) bulletForce;
                     float slider = bulletForce / hit.transform.GetComponent<BossKhightBehaviour>().maxHealth;
-                    hit.transform.GetComponent<BossKhightBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                    hit.transform.GetComponent<BossKhightBehaviour>().sliderHealth.transform.GetChild(2)
+                        .GetComponent<Image>().fillAmount -= slider;
                     popUpDamage(bulletForce, hit);
                 }
                 else
                 {
-                    hit.collider.GetComponent<BossPhaseBehaviour>().health -= (int)bulletForce;
+                    hit.collider.GetComponent<BossPhaseBehaviour>().health -= (int) bulletForce;
                     float slider = bulletForce / hit.collider.GetComponent<BossPhaseBehaviour>().maxHealth;
-                    hit.collider.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2).GetComponent<Image>().fillAmount -= slider;
+                    hit.collider.GetComponent<BossPhaseBehaviour>().sliderHealth.transform.GetChild(2)
+                        .GetComponent<Image>().fillAmount -= slider;
                     popUpDamage(bulletForce, hit);
                 }
-                
             }
-            if(hit.collider.CompareTag("BarrilesExplosivos") && time >= nextFrame)
+
+            if (hit.collider.CompareTag("BarrilesExplosivos") && time >= nextFrame)
             {
                 hit.collider.GetComponent<Animator>().SetTrigger("hit");
                 hit.collider.GetComponent<explosiveBarrel>().lifes--;
             }
+
             if (hit.collider.CompareTag("RobotPatrol") && time >= nextFrame)
             {
                 hit.collider.GetComponent<enemyPatrol>().lifes -= bulletForce;
                 popUpDamage(bulletForce, hit);
             }
+
             if (hit.collider.CompareTag("Barriles") && time >= nextFrame)
             {
                 hit.collider.GetComponent<barrilScript>().lifes--;
             }
+
             if (hit.collider.CompareTag("Tower") && time >= nextFrame)
             {
                 hit.transform.GetComponent<TowerBehaviour>().lifes -= bulletForce;
                 popUpDamage(bulletForce, hit);
             }
+
             if (hit.transform.CompareTag("AlienEnemy") && time >= nextFrame)
             {
                 hit.collider.GetComponent<AlienBehaviour>().laserDamage = true;
@@ -308,7 +320,8 @@ public class LaserShoot : MonoBehaviour
             ScreenShake.canShake = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow >= 3 && startedShooting && canShoot <= 0)
+        if (Input.GetKeyUp(KeyCode.Mouse0) && player.GetComponent<playerBehaviour>().bulletsYellow >= 3 &&
+            startedShooting && canShoot <= 0)
         {
             startedShooting = false;
             player.GetComponent<playerBehaviour>().bulletsYellow -= 3;
@@ -323,16 +336,18 @@ public class LaserShoot : MonoBehaviour
             canShoot = maxShoot;
         }
 
-       /* if (player.GetComponent<playerBehaviour>().bulletsYellow < 3)
-        {
-            reloadText.SetActive(true);
-        }
-        else
-        {
-            reloadText.SetActive(false);
-        }*/
+        /* if (player.GetComponent<playerBehaviour>().bulletsYellow < 3)
+         {
+             reloadText.SetActive(true);
+         }
+         else
+         {
+             reloadText.SetActive(false);
+         }*/
 
-        if (player.GetComponent<playerBehaviour>().bulletsYellow < 3 && player.GetComponent<playerBehaviour>().reservedAmmoYellow + player.GetComponent<playerBehaviour>().bulletsYellow < 3)
+        if (player.GetComponent<playerBehaviour>().bulletsYellow < 3 &&
+            player.GetComponent<playerBehaviour>().reservedAmmoYellow +
+            player.GetComponent<playerBehaviour>().bulletsYellow < 3)
         {
             noAmmoText.SetActive(true);
         }
@@ -341,15 +356,18 @@ public class LaserShoot : MonoBehaviour
             noAmmoText.SetActive(false);
         }
     }
-    
+
     IEnumerator EraseLaser()
     {
         yield return new WaitForSeconds(0.5f);
         DisableLaser();
     }
+
     void popUpDamage(float hitdamage, RaycastHit2D hit2D)
     {
-        GameObject dmg = Instantiate(hitDamagePopUp, new Vector3(hit2D.collider.transform.position.x, hit2D.collider.transform.position.y, -0.15f), Quaternion.identity);
+        GameObject dmg = Instantiate(hitDamagePopUp,
+            new Vector3(hit2D.collider.transform.position.x, hit2D.collider.transform.position.y, -0.15f),
+            Quaternion.identity);
         dmg.GetComponent<TextMeshPro>().text = "-" + hitdamage;
     }
 }

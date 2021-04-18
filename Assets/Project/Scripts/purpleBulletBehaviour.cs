@@ -42,7 +42,14 @@ public class purpleBulletBehaviour : MonoBehaviour {
             {
                 other.gameObject.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
             }
-            
+            else if (other.gameObject.GetComponent<demoEnemyBehaviour>())
+            {
+                other.gameObject.GetComponent<demoEnemyBehaviour>().lifes -= bulletForce;
+            }
+            else if (other.gameObject.GetComponent<demoEnemyBehaviour2>())
+            {
+                other.gameObject.GetComponent<demoEnemyBehaviour2>().lifes -= bulletForce;
+            }
             popUpDamage(bulletForce);
         }
         if (other.gameObject.CompareTag("Boss"))

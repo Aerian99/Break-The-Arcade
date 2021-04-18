@@ -9,11 +9,7 @@ public class radialEnemyBehaviour : MonoBehaviour
     public float lifes;
     [HideInInspector] public bool isDying;
     float fade;
-    public Material mat;
     public GameObject explosionEffect;
-    
-    public Material defaultMaterial;
-    public Material hitMaterial;
 
     void Start()
     {
