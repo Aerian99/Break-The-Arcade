@@ -93,7 +93,7 @@ public class playerBehaviour : MonoBehaviour
         cdPowerup = maxCdPowerup;
         activePostProcessing = activeImmunity = activePowerUp = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
-        bulletsPurple = bulletsYellow = bulletsShotgun = 0;
+        bulletsPurple = bulletsYellow = bulletsShotgun = 10;
         reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
         MAX_PURPLE_SHOOT = 15;
         MAX_YELLOW_SHOOT = 10;

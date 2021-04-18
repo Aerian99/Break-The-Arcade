@@ -28,7 +28,8 @@ public class redBulletBehaviour : MonoBehaviour
             && !other.gameObject.CompareTag("AlienWall") 
             && !other.gameObject.CompareTag("AlienAttack")
             && !other.gameObject.CompareTag("Bullet")
-            && !other.gameObject.CompareTag("Bullet Pacman"))
+            && !other.gameObject.CompareTag("Bullet Pacman")
+          && !other.gameObject.CompareTag("BubbleTrigger"))
         {
             Destroy(this.gameObject);
             effect = Instantiate(hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;

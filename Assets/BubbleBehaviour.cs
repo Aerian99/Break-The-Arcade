@@ -1,0 +1,120 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BubbleBehaviour : MonoBehaviour
+{
+    public Vector3 groundReference;
+    public GameObject ammoPrefab;
+
+    public GameObject[] enemiesGround;
+    public GameObject[] flyingEnemies;
+    public enum BallType { RED, YELLOW, PURPLE};
+    public GameObject redBall, yellowBall, purpleBall;
+    public Vector3 startPosition;
+    private int rows, columns;
+    // Start is called before the first frame update
+    void Start()
+    {
+        columns = 7;
+        rows = 3;
+        //GENERATE BALLS
+        StartCoroutine(SpawnBalls());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(gameObject.transform.childCount <= 0)
+        {
+            //WIN
+        }
+    }
+
+    IEnumerator SpawnBalls()
+    {
+        float initX = startPosition.x;
+        GameObject ball;
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                BallType rand = (BallType)Random.Range(0, 3);
+                switch (rand)
+                {
+                    case BallType.RED:
+                        ball = Instantiate(redBall, startPosition, Quaternion.identity);
+                        ball.transform.parent = gameObject.transform;
+                        startPosition.x += 3f;
+                        break;
+                    case BallType.YELLOW:
+                        ball = Instantiate(yellowBall, startPosition, Quaternion.identity);
+                        ball.transform.parent = gameObject.transform;
+                        startPosition.x += 3f;
+                        break;
+                    case BallType.PURPLE:
+                        ball = Instantiate(purpleBall, startPosition, Quaternion.identity);
+                        ball.transform.parent = gameObject.transform;
+                        startPosition.x += 3f;
+                        break;
+                    default:
+                        break;
+                }
+                yield return new WaitForSeconds(0.5f);
+            }
+            startPosition.x = initX;
+            startPosition.y -= 3f;
+        }
+
+        yield return null;
+    }
+
+    public void spawnBall(Vector3 position, BallType type)
+    {
+        GameObject ball;
+        switch (type)
+        {
+            case BallType.RED:
+                ball = Instantiate(redBall, position, Quaternion.identity);
+                ball.transform.parent = gameObject.transform;
+                break;
+            case BallType.YELLOW:
+                ball = Instantiate(yellowBall, position, Quaternion.identity);
+                ball.transform.parent = gameObject.transform;
+                break;
+            case BallType.PURPLE:
+                ball = Instantiate(purpleBall, position, Quaternion.identity);
+                ball.transform.parent = gameObject.transform;
+                break;
+            default:
+                break;
+        }
+       
+        
+    }
+
+    public void spawnEnemy(Vector3 position)
+    {
+        int randNumber = Random.Range(0, 2);
+
+        if(randNumber == 0)
+        {
+            Instantiate(enemiesGround[Random.Range(0, enemiesGround.Length)], groundReference, Quaternion.identity);
+        }
+        else
+        {
+            float positionYToSpawn = Random.Range(groundReference.y, position.y);
+            Instantiate(flyingEnemies[Random.Range(0, flyingEnemies.Length)], new Vector3(position.x, positionYToSpawn, position.z), Quaternion.identity);
+        }
+    }
+
+    public void spawnBullets(Vector3 position)
+    {
+
+    }
+
+    public void spawnAmmo(Vector3 position)
+    {
+        Instantiate(ammoPrefab, position, Quaternion.identity);
+    }
+}

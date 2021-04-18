@@ -43,6 +43,7 @@ TagManager:
   - absorbPoint
   - BossKnight
   - BarrilesExplosivos
+  - BubbleTrigger
   layers:
   - Default
   - TransparentFX

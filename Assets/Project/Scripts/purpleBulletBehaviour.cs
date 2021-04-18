@@ -12,7 +12,7 @@ public class purpleBulletBehaviour : MonoBehaviour {
 
     private void Start()
     {
-        bulletForce += GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
+        //bulletForce += GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
     }
     void OnTriggerEnter2D (Collider2D other) {
 
@@ -25,7 +25,8 @@ public class purpleBulletBehaviour : MonoBehaviour {
           && !other.gameObject.CompareTag("Wall") 
           && !other.gameObject.CompareTag("AlienWall") 
           && !other.gameObject.CompareTag("AlienAttack")
-          && !other.gameObject.CompareTag("Bullet Pacman"))
+          && !other.gameObject.CompareTag("Bullet Pacman")
+          && !other.gameObject.CompareTag("BubbleTrigger"))
         {
             Destroy (this.gameObject);
             effect = Instantiate (hitEffectPrefab, transform.position, hitEffectPrefab.transform.localRotation).gameObject;
