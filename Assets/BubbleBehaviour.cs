@@ -9,6 +9,8 @@ public class BubbleBehaviour : MonoBehaviour
 
     public GameObject[] enemiesGround;
     public GameObject[] flyingEnemies;
+
+    public GameObject[] bubbleBullets;
     public enum BallType { RED, YELLOW, PURPLE};
     public GameObject redBall, yellowBall, purpleBall;
     public Vector3 startPosition;
@@ -119,7 +121,7 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void spawnBullets(Vector3 position)
     {
-
+        Instantiate(bubbleBullets[Random.Range(0, bubbleBullets.Length)], position, Quaternion.identity);
     }
 
     public void spawnAmmo(Vector3 position)

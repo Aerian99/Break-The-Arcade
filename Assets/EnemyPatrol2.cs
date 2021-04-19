@@ -1,0 +1,140 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyPatrol2 : MonoBehaviour
+{
+    public float lifes;
+    
+    private GameObject player;
+    private Animator anim;
+    private Rigidbody2D rb;
+
+    private Transform firePoint;
+    private GameObject bulletGO;
+    public GameObject bulletPrefab;
+    public GameObject explosionEffect;
+
+    private bool movingRight = true;
+    private Transform groundDetecion;
+    private LayerMask platformLayer;
+    private RaycastHit2D groundInfo;
+
+    private float patrolDistance;
+    private float patrolSpeed;
+    
+    private float FireRate = 0.5f;
+    private float NextTimeToFire = 1f;
+    private float shootForce = 15f;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        groundDetecion = transform.GetChild(0);
+        firePoint = transform.GetChild(1);
+        platformLayer = LayerMask.GetMask("Platforms", "OneSidePlatform", "Limits");
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+        patrolSpeed = 5f;
+        patrolDistance = 1f;
+        lifes = 10f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance, platformLayer);
+
+        if (Vector2.Distance(player.transform.position, this.transform.position) < 15f)
+        {
+            anim.SetTrigger("FlyUp");
+            changeDirection();
+            triggerDetection();
+            patrolSpeed = 5f;
+            
+            if (Time.time > NextTimeToFire)
+            {
+                Shoot();
+            }
+            this.GetComponent<Rigidbody2D>().isKinematic = true;
+        }
+        else
+        {
+            anim.SetTrigger("FlyDown");
+            anim.SetBool("Flying", false);
+            rb.gravityScale = 1f;
+            patrolSpeed = 0f;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            this.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
+        
+        if (lifes <= 0f)
+        {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            SoundManagerScript.PlaySound("patrolEnemyDeath");
+        }
+    }
+
+    void flyUpEnd()
+    {
+        anim.SetBool("Flying", true);
+        rb.gravityScale = 0f;
+    }
+
+    void changeDirection()
+    {
+        if (movingRight == true && patrolSpeed > 0)
+        {
+            rb.velocity = Vector2.right * patrolSpeed;
+            anim.SetBool("isRunning", true);
+        }
+        else if (movingRight == false && patrolSpeed > 0)
+        {
+            rb.velocity = Vector2.left * patrolSpeed;
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+    }
+
+    void triggerDetection()
+    {
+        if (groundInfo.collider == false)
+        {
+            if (movingRight == true)
+            {
+                transform.eulerAngles = new Vector3(0, -180, 0);
+                movingRight = false;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                movingRight = true;
+            }
+        }
+    }
+
+    public bool getMovingRight()
+    {
+        return movingRight;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
+        {
+            GetComponent<Animator>().SetTrigger("hit");
+        }
+    }
+
+    void Shoot()
+    {
+        bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
+        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * 50f, ForceMode2D.Impulse);
+        NextTimeToFire = Time.time + FireRate;
+    }
+}

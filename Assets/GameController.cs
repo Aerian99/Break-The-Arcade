@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [HideInInspector] public bool redUnlocked, yellowUnlocked;
     private GameObject player;
     public GameObject m_coins;
     float cdAbsorb, maxcdAbsorb;

@@ -33,7 +33,21 @@ public class handController : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Rueda arriba
         {
-            currentPos--;
+            if(currentPos == 0 && GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked)
+            {
+                currentPos = 2;
+            }
+            else if(currentPos == 2 && GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            {
+                currentPos--;
+            }else if(currentPos == 1)
+            {
+                currentPos--;
+            }else if(currentPos == 2)
+            {
+                currentPos = 0;
+            }
+
             if (noAmmoText.activeInHierarchy)
             {
                 noAmmoText.SetActive(false);
@@ -43,7 +57,23 @@ public class handController : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Rueda abajo
         {
-            currentPos++;
+            if (currentPos == 0 && GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            {
+                currentPos++;
+            }
+            else if (currentPos == 0 && GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked)
+            {
+                currentPos = 2;
+            }else if(currentPos == 0 && GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            {
+                currentPos = 1;
+            }else if(currentPos == 2)
+            {
+                currentPos = 0;
+            }else if(currentPos == 1)
+            {
+                currentPos++;
+            }
             if (noAmmoText.activeInHierarchy)
             {
                 noAmmoText.SetActive(false);
@@ -59,15 +89,21 @@ public class handController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentPos = 1;
-            if (reloadText.activeInHierarchy)
-                reloadText.SetActive(false);
+            if (GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            {
+                currentPos = 1;
+                if (reloadText.activeInHierarchy)
+                    reloadText.SetActive(false);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            currentPos = 2;
-            if (reloadText.activeInHierarchy)
-                reloadText.SetActive(false);
+            if(GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked)
+            { 
+                currentPos = 2;
+                if (reloadText.activeInHierarchy)
+                    reloadText.SetActive(false);
+            }
         }
         WeaponSelector();
     }
@@ -93,36 +129,55 @@ public class handController : MonoBehaviour
         }
         else if (currentPos == 1)
         {
-            purpleGun.SetActive(false);
-            yellowGun.SetActive(true);
-            redGun.SetActive(false);
+            if(GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            { 
+                purpleGun.SetActive(false);
+                yellowGun.SetActive(true);
+                redGun.SetActive(false);
             
-            // GUN COLOR IDENTIFIER
-            purpleGunUI.gameObject.SetActive(false);
-            yellowGunUI.gameObject.SetActive(true);
-            redGunUI.gameObject.SetActive(false);
+                // GUN COLOR IDENTIFIER
+                purpleGunUI.gameObject.SetActive(false);
+                yellowGunUI.gameObject.SetActive(true);
+                redGunUI.gameObject.SetActive(false);
             
-            // RELOADER UI
-            purpleReloaderUI.SetActive(false);
-            yellowReloaderUI.SetActive(true);
-            redReloaderUI.SetActive(false);
+                // RELOADER UI
+                purpleReloaderUI.SetActive(false);
+                yellowReloaderUI.SetActive(true);
+                redReloaderUI.SetActive(false);
+            }else if(GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked)
+            {
+                currentPos = 2;
+            }
+            else
+            {
+                currentPos = 0;
+            }
         }
-
         else if (currentPos == 2)
         {
-            purpleGun.SetActive(false);
-            yellowGun.SetActive(false);
-            redGun.SetActive(true);
+            if (GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked)
+            {
+                purpleGun.SetActive(false);
+                yellowGun.SetActive(false);
+                redGun.SetActive(true);
 
-            // GUN COLOR IDENTIFIER
-            purpleGunUI.gameObject.SetActive(false);
-            yellowGunUI.gameObject.SetActive(false);
-            redGunUI.gameObject.SetActive(true);
-            
-            // RELOADER UI
-            purpleReloaderUI.SetActive(false);
-            yellowReloaderUI.SetActive(false);
-            redReloaderUI.SetActive(true);
+                // GUN COLOR IDENTIFIER
+                purpleGunUI.gameObject.SetActive(false);
+                yellowGunUI.gameObject.SetActive(false);
+                redGunUI.gameObject.SetActive(true);
+
+                // RELOADER UI
+                purpleReloaderUI.SetActive(false);
+                yellowReloaderUI.SetActive(false);
+                redReloaderUI.SetActive(true);
+            }else if(GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+            {
+                currentPos = 1;
+            }
+            else
+            {
+                currentPos = 0;
+            }
         }
 
         // ABSORB GUN ZONE
@@ -155,11 +210,11 @@ public class handController : MonoBehaviour
             redGun.SetActive(true);
         }
 
-        if (currentPos == 3)
+        if (currentPos >= 3)
         {
             currentPos = 0;
         }
-        else if (currentPos == -1)
+        else if (currentPos <= -1)
         {
             currentPos = 2;
         }
