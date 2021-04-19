@@ -112,7 +112,7 @@ public class BubbleBehaviour : MonoBehaviour
         }
         else
         {
-            float positionYToSpawn = Random.Range(groundReference.y, position.y);
+            float positionYToSpawn = Random.Range(groundReference.y + 5, position.y);
             Instantiate(flyingEnemies[Random.Range(0, flyingEnemies.Length)], new Vector3(position.x, positionYToSpawn, position.z), Quaternion.identity);
         }
     }
