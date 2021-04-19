@@ -50,6 +50,10 @@ public class purpleBulletBehaviour : MonoBehaviour {
             {
                 other.gameObject.GetComponent<demoEnemyBehaviour2>().lifes -= bulletForce;
             }
+            else if (other.gameObject.GetComponent<EnemyPatrol2>())
+            {
+                other.gameObject.GetComponent<EnemyPatrol2>().lifes -= bulletForce;
+            }
             popUpDamage(bulletForce);
         }
         if (other.gameObject.CompareTag("Boss"))
