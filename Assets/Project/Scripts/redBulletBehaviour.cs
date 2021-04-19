@@ -41,9 +41,22 @@ public class redBulletBehaviour : MonoBehaviour
             if (other.gameObject.GetComponent<radialEnemyBehaviour>())
             {
                 other.gameObject.GetComponent<radialEnemyBehaviour>().lifes -= bulletForce;
-            } else if (other.gameObject.GetComponent<burstEnemyBehaviour>())
+            } 
+            else if (other.gameObject.GetComponent<burstEnemyBehaviour>())
             {
                 other.gameObject.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
+            }
+            else if (other.gameObject.GetComponent<demoEnemyBehaviour>())
+            {
+                other.gameObject.GetComponent<demoEnemyBehaviour>().lifes -= bulletForce;
+            }
+            else if (other.gameObject.GetComponent<demoEnemyBehaviour2>())
+            {
+                other.gameObject.GetComponent<demoEnemyBehaviour2>().lifes -= bulletForce;
+            }
+            else if (other.gameObject.GetComponent<EnemyPatrol2>())
+            {
+                other.gameObject.GetComponent<EnemyPatrol2>().lifes -= bulletForce;
             }
             popUpDamage(bulletForce);
         }
