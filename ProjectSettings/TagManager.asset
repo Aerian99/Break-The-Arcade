@@ -44,6 +44,7 @@ TagManager:
   - BossKnight
   - BarrilesExplosivos
   - BubbleTrigger
+  - BubbleLimit
   layers:
   - Default
   - TransparentFX
