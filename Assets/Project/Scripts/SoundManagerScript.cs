@@ -34,12 +34,14 @@ public class SoundManagerScript : MonoBehaviour
         menuPick,
         radialRecharging,
         arcadeSpeaking,
+        bubblePop,
         continueButton;
 
     public static AudioSource audioSrc;
 
     void Start()
     {
+        bubblePop = Resources.Load<AudioClip>("pop");
         jumpSound = Resources.Load<AudioClip>("jump");
         shotgunSound = Resources.Load<AudioClip>("shotgun");
         landingSound = Resources.Load<AudioClip>("landing");
@@ -83,6 +85,9 @@ public class SoundManagerScript : MonoBehaviour
         {
             case "jump":
                 audioSrc.PlayOneShot(jumpSound);
+                break;
+            case "pop":
+                audioSrc.PlayOneShot(bubblePop);
                 break;
             case "shotgun":
                 audioSrc.PlayOneShot(shotgunSound);

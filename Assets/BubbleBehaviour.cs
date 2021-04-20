@@ -106,6 +106,7 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void spawnEnemy(Vector3 position)
     {
+        SoundManagerScript.PlaySound("pop");
         int randNumber = Random.Range(0, 2);
 
         if(randNumber == 0)
@@ -121,6 +122,7 @@ public class BubbleBehaviour : MonoBehaviour
 
     public void spawnBullets(Vector3 position)
     {
+        SoundManagerScript.PlaySound("pop");
         Instantiate(bubbleBullets[Random.Range(0, bubbleBullets.Length)], position, Quaternion.identity);
     }
 
