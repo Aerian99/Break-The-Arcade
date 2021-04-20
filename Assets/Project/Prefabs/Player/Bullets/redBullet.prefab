@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6023e3815963b43b219f726318e0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletForce: 12010
   hitEffectPrefab: {fileID: 7889928976846493079, guid: e32566cee8c6ae74abfe1d14de6d6e9e,
     type: 3}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
