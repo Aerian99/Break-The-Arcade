@@ -177,7 +177,7 @@ MonoBehaviour:
     type: 3}
   platformLayer:
     serializedVersion: 2
-    m_Bits: 100663552
+    m_Bits: 104857856
 --- !u!70 &260949988
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
