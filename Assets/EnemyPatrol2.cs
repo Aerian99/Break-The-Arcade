@@ -23,9 +23,9 @@ public class EnemyPatrol2 : MonoBehaviour
     private float patrolDistance;
     private float patrolSpeed;
     
-    private float FireRate = 0.5f;
-    private float NextTimeToFire = 1f;
-    private float shootForce = 15f;
+    private float FireRate = 0.3f;
+    private float NextTimeToFire = 0.2f;
+    private float shootForce = 50f;
 
     void Start()
     {
@@ -133,8 +133,15 @@ public class EnemyPatrol2 : MonoBehaviour
 
     void Shoot()
     {
-        bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
-        bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * 50f, ForceMode2D.Impulse);
-        NextTimeToFire = Time.time + FireRate;
+      
+            bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
+            bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
+            bulletGO.GetComponent<MoveSinus>().top = true;
+            NextTimeToFire = Time.time + FireRate;
+            bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
+            bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
+            bulletGO.GetComponent<MoveSinus>().top = false;
+            NextTimeToFire = Time.time + FireRate;
+       
     }
 }

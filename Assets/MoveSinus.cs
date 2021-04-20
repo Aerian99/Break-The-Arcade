@@ -7,6 +7,7 @@ public class MoveSinus : MonoBehaviour
     private float cdExplote, cdMaxExplote;
     private bool canExplote, explosionDamaged;
     [HideInInspector] public bool exploted;
+    [HideInInspector] public bool top;
     private float explosionRange;
     public LayerMask layer, PlatformLayer;
     public GameObject deathExplosion;
@@ -72,7 +73,14 @@ public class MoveSinus : MonoBehaviour
             _interpolator.ToMin();
         else if (_interpolator.IsMinPrecise)
             _interpolator.ToMax();
-        _position.y = 1 * 1 * _interpolator.Value + interpolationValue;
+        if(top)
+        {
+            _position.y = 1 * 1 * _interpolator.Value + interpolationValue;
+        }
+        else
+        {
+            _position.y = -1 * 1 * _interpolator.Value + interpolationValue;
+        }
         _position.x = this.transform.position.x;
         this.transform.position = _position;
     }
