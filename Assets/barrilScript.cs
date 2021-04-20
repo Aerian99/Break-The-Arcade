@@ -7,11 +7,13 @@ using Random = UnityEngine.Random;
 
 public class barrilScript : MonoBehaviour
 {
+    public bool luckUp;
     public int lifes;
     public GameObject []lootBoxes;
     void Start()
     {
         lifes = 2;
+        luckUp = false;
     }
 
     // Update is called once per frame
@@ -41,11 +43,19 @@ public class barrilScript : MonoBehaviour
 
     public void Die()
     {
-        int randomNumber = Random.Range(0, 2);
-        if (randomNumber == 0)
+        if(!luckUp)
+        { 
+            int randomNumber = Random.Range(0, 2);
+            if (randomNumber == 0)
+            {
+                Instantiate(lootBoxes[(Random.Range(0, lootBoxes.Length))], this.transform.position, Quaternion.identity);
+            }
+            Destroy(this.gameObject);
+        }
+        else
         {
             Instantiate(lootBoxes[(Random.Range(0, lootBoxes.Length))], this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 }

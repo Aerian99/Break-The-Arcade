@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject barrel;
     [HideInInspector] public bool redUnlocked, yellowUnlocked;
     private GameObject player;
-    public GameObject m_coins;
+    public GameObject m_coins, bulletPurple, bulletRed;
     float cdAbsorb, maxcdAbsorb;
     [HideInInspector]public bool activatedAbsorb;
     GameObject[] robotPatrols, radialEnemies;
@@ -206,6 +207,9 @@ public class GameController : MonoBehaviour
     }
     public void backToGame()
     {
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject.active = true;
         gameObject.GetComponent<Animator>().SetTrigger("backToLevel");
     }
 
@@ -233,8 +237,9 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
-            PurpleShoot.bulletDamage += 100f;
-            RedShoot.bulletDamage += 100f;
+            bulletPurple.GetComponent<purpleBulletBehaviour>().bulletForce += 1000f;
+            bulletRed.GetComponent<redBulletBehaviour>().bulletForce += 1000f;
+            LaserShoot.damage += 1000f;
             player.GetComponent<playerBehaviour>().coins -= 500;
         }
     }
@@ -243,8 +248,11 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
-            PurpleShoot.bulletDamage += 100f;
-            RedShoot.bulletDamage += 100f;
+            for (int i = 0; i < GameObject.Find("Barrels").transform.childCount; i++)
+            {
+                GameObject.Find("Barrels").transform.GetChild(i).GetComponent<barrilScript>().luckUp = true;
+            }
+            
             player.GetComponent<playerBehaviour>().coins -= 500;
         }
     }
@@ -262,7 +270,18 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 5000)
         {
-            player.GetComponent<playerMovement>().maxDashCooldown -= 0.5f;
+            player.GetComponent<playerMovement>().maxDashCooldown = 0;
+            for (int i = 0; i < GameObject.Find("Barrels").transform.childCount; i++)
+            {
+                GameObject.Find("Barrels").transform.GetChild(i).GetComponent<barrilScript>().luckUp = true;
+            }
+            bulletPurple.GetComponent<purpleBulletBehaviour>().bulletForce += 1000f;
+            bulletRed.GetComponent<redBulletBehaviour>().bulletForce += 1000f;
+            LaserShoot.damage += 1000f;
+            player.transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bulletSpeed += 10f;
+            player.transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().bulletForce += 10f;
+            player.GetComponent<playerMovement>().moveSpeed += 20;
+            player.GetComponent<playerBehaviour>()._playerLifes += 1000;
             player.GetComponent<playerBehaviour>().coins -= 5000;
         }
     }
