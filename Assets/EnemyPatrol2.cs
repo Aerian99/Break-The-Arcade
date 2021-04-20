@@ -17,7 +17,7 @@ public class EnemyPatrol2 : MonoBehaviour
 
     private bool movingRight = true;
     private Transform groundDetecion;
-    private LayerMask platformLayer;
+    public LayerMask platformLayer;
     private RaycastHit2D groundInfo;
 
     private float patrolDistance;
@@ -32,7 +32,6 @@ public class EnemyPatrol2 : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         groundDetecion = transform.GetChild(0);
         firePoint = transform.GetChild(1);
-        platformLayer = LayerMask.GetMask("Platforms", "OneSidePlatform", "Limits");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -44,29 +43,52 @@ public class EnemyPatrol2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance, platformLayer);
+        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
 
         if (Vector2.Distance(player.transform.position, this.transform.position) < 15f)
         {
-            anim.SetTrigger("FlyUp");
             changeDirection();
             triggerDetection();
-            patrolSpeed = 5f;
-            
-            if (Time.time > NextTimeToFire)
+            if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
             {
-                Shoot();
+                if (Time.time > NextTimeToFire)
+                {
+                    Shoot();
+                }
+                patrolSpeed = 0f;
+                rb.velocity = Vector2.zero;
+                anim.SetTrigger("FlyDown");
+                anim.SetBool("Flying", false);
             }
-            this.GetComponent<Rigidbody2D>().isKinematic = true;
+
+            if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
+            {
+                if (Time.time > NextTimeToFire)
+                {
+                    Shoot();
+                }
+                patrolSpeed = 0f;
+                rb.velocity = Vector2.zero;
+                anim.SetTrigger("FlyDown");
+                anim.SetBool("Flying", false);
+            }
+            //anim.SetTrigger("FlyDown");
+            //anim.SetBool("Flying", false);
+            //rb.velocity = new Vector2(0, rb.velocity.y);
+            //patrolSpeed = 0f;
+            
+
+            this.GetComponent<Rigidbody2D>().isKinematic = false;
         }
         else
         {
-            anim.SetTrigger("FlyDown");
-            anim.SetBool("Flying", false);
+
+            anim.SetTrigger("FlyUp");
+            changeDirection();
+            triggerDetection();
             rb.gravityScale = 1f;
-            patrolSpeed = 0f;
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            this.GetComponent<Rigidbody2D>().isKinematic = false;
+            patrolSpeed = 5f;
+            this.GetComponent<Rigidbody2D>().isKinematic = true;
         }
         
         if (lifes <= 0f)
@@ -88,22 +110,22 @@ public class EnemyPatrol2 : MonoBehaviour
         if (movingRight == true && patrolSpeed > 0)
         {
             rb.velocity = Vector2.right * patrolSpeed;
-            anim.SetBool("isRunning", true);
+            //anim.SetBool("isRunning", true);
         }
         else if (movingRight == false && patrolSpeed > 0)
         {
             rb.velocity = Vector2.left * patrolSpeed;
-            anim.SetBool("isRunning", true);
+            //anim.SetBool("isRunning", true);
         }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
+        //else
+        //{
+        //    anim.SetBool("isRunning", false);
+        //}
     }
 
     void triggerDetection()
     {
-        if (groundInfo.collider == false)
+        if (groundInfo.collider == true)
         {
             if (movingRight == true)
             {

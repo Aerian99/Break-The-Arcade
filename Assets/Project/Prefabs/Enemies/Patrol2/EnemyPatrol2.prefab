@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6117631215001376166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09435, y: -0.09547, z: 0}
+  m_LocalPosition: {x: 0.09435, y: -0.022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8632579869663725293}
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8632579869663725282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +175,9 @@ MonoBehaviour:
     type: 3}
   explosionEffect: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,
     type: 3}
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 100663552
 --- !u!70 &260949988
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632579869741629592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0752, y: -0.1602, z: 0}
+  m_LocalPosition: {x: 0.107, y: -0.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8632579869663725293}
