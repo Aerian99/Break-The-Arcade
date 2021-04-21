@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class purpleBulletBehaviour : MonoBehaviour {
     private GameObject effect;
-    public float bulletForce = 5f;
+    private float bulletForce = 5f;
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 

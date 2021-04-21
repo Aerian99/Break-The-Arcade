@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class redBulletBehaviour : MonoBehaviour
 {
     private GameObject effect;
-    public float bulletForce = 10f;
+    private float bulletForce = 4f;
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
