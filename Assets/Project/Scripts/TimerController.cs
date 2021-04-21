@@ -20,6 +20,7 @@ public class TimerController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         timeCounter.text = "00:00:00";
         timerGoing = false;
     }
