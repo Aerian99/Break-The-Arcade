@@ -19,6 +19,8 @@ public class MainMenuManager : MonoBehaviour
 
     public Animator camera, fadepanel;
 
+    public bool pressedPlay;
+
     public void ShowButtons()
     {
         playButton.SetActive(true);
@@ -28,7 +30,8 @@ public class MainMenuManager : MonoBehaviour
         text.SetActive(false);
         credits.SetActive(true);
         SoundManagerScript.PlaySound("coin");
-        GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
+        //GameObject.Find("p_cursor").GetComponent<CursorScript>().coinAdded = true;
+        GameObject.Find("cursor_alternative").GetComponent<CursorAlternative>().coinAdded = true;
         camera.SetBool("CoinInsert", true);
     }
 
@@ -39,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
             //SceneManager.LoadScene("Lvl1");
             camera.SetBool("In", true);
             fadepanel.SetBool("In", true);
+            pressedPlay = true;
         }
 
         if (camera.GetComponent<DemoCameraAnimation>().endCamAnimation)

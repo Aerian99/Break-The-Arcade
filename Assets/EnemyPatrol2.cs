@@ -82,7 +82,6 @@ public class EnemyPatrol2 : MonoBehaviour
         }
         else
         {
-
             anim.SetTrigger("FlyUp");
             changeDirection();
             triggerDetection();
