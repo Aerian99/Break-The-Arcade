@@ -45,7 +45,7 @@ public class PlaySceneManager : MonoBehaviour
             }
             if (cd >= cdGoMenu)
             { 
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("lvl2.01");
             }
         }
     }

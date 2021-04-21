@@ -21,7 +21,7 @@ public class CoinWinBoss : MonoBehaviour
                 GameObject.Find("CoinSpawner (1)").GetComponent<CoinWinBoss>().coinSpawner = true;
                 GameObject.Find("CoinSpawner (2)").GetComponent<CoinWinBoss>().coinSpawner = true;
                 Instantiate(coin, transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.05f);
             }
             yield return new WaitForSeconds(0f);
         }

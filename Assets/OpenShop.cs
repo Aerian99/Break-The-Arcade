@@ -19,7 +19,7 @@ public class OpenShop : MonoBehaviour
         {
             //GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>().enabled = false;
-            GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject.SetActive(false); 
+            GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("gameController").GetComponent<Animator>().SetTrigger("initShop");
         }
     }

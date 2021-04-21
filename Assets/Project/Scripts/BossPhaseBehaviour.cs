@@ -83,7 +83,7 @@ public class BossPhaseBehaviour : MonoBehaviour
             anim.SetBool("dead", true);
             GameObject.Find("YouWin").GetComponent<Animator>().SetBool("bossDead", true);
             GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().hasWon = true;
-            Destroy(gameObject, 1.8f);
+            Destroy(gameObject, 1f);
         }
     }
     private void OnDestroy()

@@ -4,26 +4,37 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject barrel;
     [HideInInspector] public bool redUnlocked, yellowUnlocked;
     private GameObject player;
     public GameObject m_coins, bulletPurple, bulletRed;
     float cdAbsorb, maxcdAbsorb;
     [HideInInspector]public bool activatedAbsorb;
     GameObject[] robotPatrols, radialEnemies;
+
+    private static GameController gameControllerInstance;
     // Start is called before the first frame update
     void Start()
     {
+        if (gameControllerInstance == null)
+        {
+            gameControllerInstance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         player = GameObject.FindGameObjectWithTag("Player");
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(activatedAbsorb)
+       
+        if (activatedAbsorb)
         {
             radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");
             robotPatrols = GameObject.FindGameObjectsWithTag("RobotPatrol");
