@@ -45,7 +45,7 @@ public class EnemyPatrol2 : MonoBehaviour
     {
         groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
 
-        if (Vector2.Distance(player.transform.position, this.transform.position) < 15f)
+        if (Vector2.Distance(player.transform.position, this.transform.position) < 13f)
         {
             changeDirection();
             triggerDetection();
@@ -71,13 +71,8 @@ public class EnemyPatrol2 : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 anim.SetTrigger("FlyDown");
                 anim.SetBool("Flying", false);
+                
             }
-            //anim.SetTrigger("FlyDown");
-            //anim.SetBool("Flying", false);
-            //rb.velocity = new Vector2(0, rb.velocity.y);
-            //patrolSpeed = 0f;
-            
-
             this.GetComponent<Rigidbody2D>().isKinematic = false;
         }
         else
@@ -109,17 +104,11 @@ public class EnemyPatrol2 : MonoBehaviour
         if (movingRight == true && patrolSpeed > 0)
         {
             rb.velocity = Vector2.right * patrolSpeed;
-            //anim.SetBool("isRunning", true);
         }
         else if (movingRight == false && patrolSpeed > 0)
         {
             rb.velocity = Vector2.left * patrolSpeed;
-            //anim.SetBool("isRunning", true);
         }
-        //else
-        //{
-        //    anim.SetBool("isRunning", false);
-        //}
     }
 
     void triggerDetection()
@@ -154,7 +143,6 @@ public class EnemyPatrol2 : MonoBehaviour
 
     void Shoot()
     {
-      
             bulletGO = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);
             bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
             bulletGO.GetComponent<MoveSinus>().top = true;
@@ -163,6 +151,5 @@ public class EnemyPatrol2 : MonoBehaviour
             bulletGO.GetComponent<Rigidbody2D>().AddForce(transform.right * shootForce, ForceMode2D.Impulse);
             bulletGO.GetComponent<MoveSinus>().top = false;
             NextTimeToFire = Time.time + FireRate;
-       
     }
 }

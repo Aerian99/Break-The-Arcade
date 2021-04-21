@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 60855025752119744}
   - component: {fileID: 60855025752119745}
   m_Layer: 20
-  m_Name: FireGroup
+  m_Name: TurretGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60855025752119751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0e78e8276608674f9d5a572860188de, type: 3}
   m_Name: 
