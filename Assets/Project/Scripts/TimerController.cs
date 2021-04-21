@@ -7,7 +7,7 @@ using TMPro;
 
 public class TimerController : MonoBehaviour
 {
-    public  TextMeshProUGUI timeCounter;
+    private  TextMeshProUGUI timeCounter;
 
     private TimeSpan timePlaying;
 
@@ -20,6 +20,7 @@ public class TimerController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        timeCounter = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
         DontDestroyOnLoad(this.gameObject);
         timeCounter.text = "00:00:00";
         timerGoing = false;
@@ -28,7 +29,10 @@ public class TimerController : MonoBehaviour
     {
         
     }
-
+    private void LateUpdate()
+    {
+        timeCounter = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
+    }
     public void BeginTimer()
     {
         timerGoing = true;
@@ -45,6 +49,7 @@ public class TimerController : MonoBehaviour
     {
         while(timerGoing)
         {
+            
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
