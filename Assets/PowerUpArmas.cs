@@ -10,6 +10,7 @@ public class PowerUpArmas : MonoBehaviour
     Interpolator _interpolator = new Interpolator(1f, Interpolator.Type.SMOOTH);
     Vector3 _position;
     public float interpolationValue;
+    public bool isUnlocked;
 
     public GameObject defaultGun, laserGun, shootGun;
     [HideInInspector]public GameObject defaultGunBullet, shootGunBullet;
@@ -24,6 +25,11 @@ public class PowerUpArmas : MonoBehaviour
         
         _interpolator.ToMax();
         randomArma = Random.Range(0, 6);
+
+        while(isUnlocked && randomArma == 3 || isUnlocked && randomArma == 2)
+        {
+            randomArma = Random.Range(0, 6);
+        }
         if (randomArma == 4)
             GetComponent<SpriteRenderer>().sprite = armas[6];
         else if (randomArma == 5)
