@@ -71,7 +71,7 @@ public class BubbleBehaviour : MonoBehaviour
                     default:
                         break;
                 }
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.1f);
             }
             startPosition.x = initX;
             startPosition.y -= 3f;
