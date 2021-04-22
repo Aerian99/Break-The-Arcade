@@ -8,7 +8,7 @@ public class PlaySceneManager : MonoBehaviour
     // Start is called before the first frame update
     public Animator anim;
     float cd, cdDeath, cdAnim, cdGoMenu, cdFadeOutMenu;
-    public bool isDead, hasWon;
+    public bool isDead, hasWon, finishedGame;
 
     private void Start()
     {
@@ -47,6 +47,10 @@ public class PlaySceneManager : MonoBehaviour
             { 
                 SceneManager.LoadScene("lvl2.01");
             }
+        }
+        if (finishedGame)
+        {
+            SceneManager.LoadSceneAsync("MainMenu");
         }
     }
 }

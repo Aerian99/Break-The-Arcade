@@ -9,10 +9,11 @@ public class BubbleBehaviour : MonoBehaviour
 
     public GameObject[] enemiesGround;
     public GameObject[] flyingEnemies;
+    public GameObject[] coinSpawner;
 
     public GameObject[] bubbleBullets;
     public enum BallType { RED, YELLOW, PURPLE};
-    public GameObject redBall, yellowBall, purpleBall;
+    public GameObject redBall, yellowBall, purpleBall, YouWinText;
     public Vector3 startPosition;
     private int rows, columns;
 
@@ -33,7 +34,11 @@ public class BubbleBehaviour : MonoBehaviour
         {
             if(gameObject.transform.childCount <= 0)
             {
-                Debug.Log("You win");
+                for (int i = 0; i < coinSpawner.Length; i++)
+                    coinSpawner[i].GetComponent<CoinWinBoss>().coinSpawner = true;
+                YouWinText.GetComponent<Animator>().SetBool("bossDead", true);
+                StartCoroutine(EndGame());
+
             }
         }
         else
@@ -80,6 +85,11 @@ public class BubbleBehaviour : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(4.0f);
+        GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().finishedGame = true;
+    }
     public void spawnBall(Vector3 position, BallType type)
     {
         GameObject ball;

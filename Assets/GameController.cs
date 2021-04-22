@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+
         if (gameControllerInstance == null)
         {
             gameControllerInstance = this;
@@ -33,7 +36,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            Destroy(this.gameObject);
         if (activatedAbsorb)
         {
             radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");
