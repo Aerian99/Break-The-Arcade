@@ -47,32 +47,35 @@ public class Burst_Enemy_Attack : MonoBehaviour
     void Update()
     {
         // Following the player for 10 seconds every 3 seconds.
-        if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 20f)
+        if(player)
         {
-            if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
+            if (Vector2.Distance(this.gameObject.transform.position, player.transform.position) < 20f)
             {
-                _dashMaxTime -= Time.deltaTime;
-                if (_dashMaxTime > 0)
+                if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
                 {
-                    Dashing();
-                    _dashRateTime = 3f;
-                }
-                else if (_dashMaxTime <= 0f)
-                {
-                    _dashRateTime -= Time.deltaTime;
-
-                    if (_shootingCD <= 0)
+                    _dashMaxTime -= Time.deltaTime;
+                    if (_dashMaxTime > 0)
                     {
-                        Shooting();
-                        _shootingCD = _shootingMaxCD;
+                        Dashing();
+                        _dashRateTime = 3f;
+                    }
+                    else if (_dashMaxTime <= 0f)
+                    {
+                        _dashRateTime -= Time.deltaTime;
+
+                        if (_shootingCD <= 0)
+                        {
+                            Shooting();
+                            _shootingCD = _shootingMaxCD;
+                        }
+
+                        _shootingCD -= Time.deltaTime;
                     }
 
-                    _shootingCD -= Time.deltaTime;
-                }
-
-                if (_dashRateTime <= 0f)
-                {
-                    _dashMaxTime = 1f;
+                    if (_dashRateTime <= 0f)
+                    {
+                        _dashMaxTime = 1f;
+                    }
                 }
             }
         }

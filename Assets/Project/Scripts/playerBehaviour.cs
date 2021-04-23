@@ -95,7 +95,7 @@ public class playerBehaviour : MonoBehaviour
         cdPowerup = maxCdPowerup;
         activePostProcessing = activeImmunity = activePowerUp = false;
         purpleCanReload = yellowCanReload = shotgunCanReload = false;
-        bulletsPurple = bulletsYellow = bulletsShotgun = 10;
+        bulletsPurple = bulletsYellow = bulletsShotgun = 0;
         reservedAmmoPurple = reservedAmmoYellow = reservedAmmoShotgun = 0;
         MAX_PURPLE_SHOOT = 15;
         MAX_YELLOW_SHOOT = 10;
@@ -171,13 +171,12 @@ public class playerBehaviour : MonoBehaviour
         if (hasReloaded)
             ReloadCountdown();
 
-        if ((((Input.GetKeyDown(KeyCode.R) &&
-           (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
+        if ((((Input.GetKeyDown(KeyCode.R) && (handController.currentPos == 0 && bulletsPurple < MAX_PURPLE_SHOOT && reservedAmmoPurple > 0 ||
             handController.currentPos == 1 && bulletsYellow < MAX_YELLOW_SHOOT && reservedAmmoYellow > 0 ||
-            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoShotgun > 0)) ||
-           (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
+            handController.currentPos == 2 && bulletsShotgun < MAX_SHOTGUN_SHOOT && reservedAmmoShotgun > 0)) && hasReloaded))
+            || (handController.currentPos == 0 && bulletsPurple <= 0 && reservedAmmoPurple > 0 ||
             handController.currentPos == 1 && bulletsYellow <= 0 && reservedAmmoYellow > 0 ||
-            handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoShotgun > 0))) && hasReloaded)
+            handController.currentPos == 2 && bulletsShotgun <= 0 && reservedAmmoShotgun > 0) && hasReloaded)
         {
             StartCoroutine(Reload());
         }

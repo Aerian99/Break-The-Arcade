@@ -83,6 +83,20 @@ public class QuestSaver : MonoBehaviour
                 }
             }
         }
+        else if (SceneManager.GetActiveScene().name == "Lvl2")
+        {
+            for (int i = 0; i < quest.Length; i++)
+            {
+                if (quest[i].actualMonstersKilled >= quest[i].monstersToKill)
+                {
+                    GameObject.Find("TextAchievements").GetComponent<TextMeshProUGUI>().text = "Quest Completed: " + quest[i].assigment;
+                    GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn", true);
+                    CheckQuestComplete();
+                    StartCoroutine(DisableAnimationAchievement());
+                    GenerateQuest(i);
+                }
+            }
+        }
     }
 
     IEnumerator DisableAnimationAchievement()
@@ -161,12 +175,15 @@ public class QuestSaver : MonoBehaviour
     {
         while (true)
         {
-            SaveSystem.SaveQuest(quest, m_PowerUps);
-            if(SceneManager.GetActiveScene().name == "Lvl1" && GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-            {
-               SaveSystem.SaveCoins(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().coins);
+            if (GameObject.FindGameObjectWithTag("Player") != null)
+            { 
+                SaveSystem.SaveQuest(quest, m_PowerUps);
+                if(SceneManager.GetActiveScene().name == "Lvl1" && GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
+                {
+                   SaveSystem.SaveCoins(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().coins);
+                }
             }
-            yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(2);
         }
         yield return null;
     }

@@ -19,6 +19,7 @@ public class redBulletBehaviour : MonoBehaviour
 
     private void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("gameController");
         if(gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen)
         {
             gameObject.GetComponent<SpriteRenderer>().material = green;

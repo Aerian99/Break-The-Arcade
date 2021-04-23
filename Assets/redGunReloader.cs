@@ -15,16 +15,20 @@ public class redGunReloader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // LOOP REVERSIVO PARA ELIMINAR LAS BALAS
-        for (int i = player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT - 1; i >= player.GetComponent<playerBehaviour>().bulletsShotgun; i--)
-        {
-            bulletsHolder[i].SetActive(false);
-        }
+        if (player)
+        { 
+            // LOOP REVERSIVO PARA ELIMINAR LAS BALAS
+            for (int i = player.GetComponent<playerBehaviour>().MAX_SHOTGUN_SHOOT - 1; i >= player.GetComponent<playerBehaviour>().bulletsShotgun; i--)
+            {
+                bulletsHolder[i].SetActive(false);
+            }
         
-        // LOOP PARA RELLENAR LAS BALAS
-        for (int j = 0; j < player.GetComponent<playerBehaviour>().bulletsShotgun; j++)
-        {
-            bulletsHolder[j].SetActive(true);
+            // LOOP PARA RELLENAR LAS BALAS
+            for (int j = 0; j < player.GetComponent<playerBehaviour>().bulletsShotgun; j++)
+            {
+                bulletsHolder[j].SetActive(true);
+            }
+        
         }
     }
 }
