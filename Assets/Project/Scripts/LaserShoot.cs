@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class LaserShoot : MonoBehaviour
 {
+    public Sprite green, blue;
     //private float distance;
     public static float damage;
     private bool startedShooting;
@@ -34,16 +35,18 @@ public class LaserShoot : MonoBehaviour
     [HideInInspector] public float bulletForce = 5f;
 
     public GameObject cursor;
-    private GameObject player;
+    private GameObject player, gameController;
+
+    public bool greenPowerUp, bluePowerUp;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("gameController");
         hittableMasK = LayerMask.GetMask("Enemy", "Barril", "BarrilExplosivo", "Platforms", "BurstEnemy");
         //distance = 100;
         startedShooting = false;
-        //damage = 3f + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageLaserGun;
-        damage = 3f;
+        bulletForce = 3f + GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageYellow;
         nextFrame = 0;
         time = 0;
         period = 0.1f;
@@ -54,11 +57,40 @@ public class LaserShoot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         FillLists();
         DisableLaser();
+       if(gameController.GetComponent<GameController>().playerCaracteristics.LaserGreen)
+       {
+            greenPowerUp = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = green;
+            bulletForce = 7 + GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageYellow;
+            gameObject.transform.GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 1 * 4.5f, 0));
+            //START VFX
+            gameObject.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+            gameObject.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+
+            //END FVX
+            gameObject.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+            gameObject.transform.GetChild(1).GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
+        }
+       if (gameController.GetComponent<GameController>().playerCaracteristics.LaserBlue)
+       {
+            bluePowerUp = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = blue;
+            bulletForce = 11 + GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageYellow;
+            gameObject.transform.GetChild(1).GetChild(0).GetComponent<LineRenderer>().materials[0].SetColor("Color_", new Color(0, 0, 1 * 4.5f));
+            //START VFX
+            gameObject.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+            gameObject.transform.GetChild(1).GetChild(1).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+
+            //END FVX
+            gameObject.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+            gameObject.transform.GetChild(1).GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        bulletForce = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageYellow;
         //SHOOT
         if (Input.GetKeyDown(KeyCode.Mouse0) && !player.GetComponent<playerBehaviour>().hasReloaded)
         {

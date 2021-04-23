@@ -5,14 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+
+    public struct PlayerStats
+    {
+        public bool shotgunBlue, shotgunGreen, purpleBlue, purpleGreen, LaserBlue, LaserGreen;
+        public float damageRed, damageYellow, damagePurple;
+        public float velocity, dashCooldown;
+        public float redVelocity, purpleVelocity;
+        public bool isLuckUp;
+        public int lifes;
+    };
+
     [HideInInspector] public bool redUnlocked, yellowUnlocked;
     private GameObject player;
     public GameObject m_coins, bulletPurple, bulletRed;
     float cdAbsorb, maxcdAbsorb;
     [HideInInspector]public bool activatedAbsorb;
     GameObject[] robotPatrols, radialEnemies;
+    public PlayerStats playerCaracteristics;
 
     private static GameController gameControllerInstance;
+
+
+    private void Awake()
+    {
+        playerCaracteristics.damagePurple = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
+        playerCaracteristics.damageRed = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
+        playerCaracteristics.damageYellow = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
+        playerCaracteristics.velocity = 12f;
+        playerCaracteristics.dashCooldown = 4f;
+        playerCaracteristics.purpleVelocity = 50f;
+        playerCaracteristics.redVelocity = 40f;
+        playerCaracteristics.damagePurple = 5f;
+        playerCaracteristics.damageRed = 4f;
+        playerCaracteristics.damageYellow = 5f;
+        playerCaracteristics.lifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +64,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (SceneManager.GetActiveScene().name == "MainMenu")
             Destroy(this.gameObject);
         if (activatedAbsorb)
@@ -232,7 +261,7 @@ public class GameController : MonoBehaviour
     {
         if(player.GetComponent<playerBehaviour>().coins >= 10)
         {
-            player.GetComponent<playerMovement>().moveSpeed += 1.5f;
+            playerCaracteristics.velocity += 1.5f;
             player.GetComponent<playerBehaviour>().coins -= 10;
         }
     }
@@ -242,8 +271,8 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 15)
         {
-            player.transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bulletSpeed += 10f;
-            player.transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().bulletForce += 10f;
+            playerCaracteristics.purpleVelocity += 10;
+            playerCaracteristics.redVelocity += 10;
             player.GetComponent<playerBehaviour>().coins -= 15;
         }
     }
@@ -252,9 +281,9 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
-            bulletPurple.GetComponent<purpleBulletBehaviour>().bulletForce += 1000f;
-            bulletRed.GetComponent<redBulletBehaviour>().bulletForce += 1000f;
-            LaserShoot.damage += 1000f;
+            playerCaracteristics.damagePurple += 1000f;
+            playerCaracteristics.damageRed += 1000f;
+            playerCaracteristics.damageYellow += 1000f;
             player.GetComponent<playerBehaviour>().coins -= 500;
         }
     }
@@ -263,11 +292,7 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
-            for (int i = 0; i < GameObject.Find("Barrels").transform.childCount; i++)
-            {
-                GameObject.Find("Barrels").transform.GetChild(i).GetComponent<barrilScript>().luckUp = true;
-            }
-            
+            playerCaracteristics.isLuckUp = true;
             player.GetComponent<playerBehaviour>().coins -= 500;
         }
     }
@@ -276,7 +301,7 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 50)
         {
-            player.GetComponent<playerMovement>().maxDashCooldown -= 0.5f;
+            playerCaracteristics.dashCooldown -= 0.5f;
             player.GetComponent<playerBehaviour>().coins -= 50;
         }
     }
@@ -285,18 +310,15 @@ public class GameController : MonoBehaviour
     {
         if (player.GetComponent<playerBehaviour>().coins >= 5000)
         {
-            player.GetComponent<playerMovement>().maxDashCooldown = 0;
-            for (int i = 0; i < GameObject.Find("Barrels").transform.childCount; i++)
-            {
-                GameObject.Find("Barrels").transform.GetChild(i).GetComponent<barrilScript>().luckUp = true;
-            }
-            bulletPurple.GetComponent<purpleBulletBehaviour>().bulletForce += 1000f;
-            bulletRed.GetComponent<redBulletBehaviour>().bulletForce += 1000f;
-            LaserShoot.damage += 1000f;
-            player.transform.GetChild(4).GetChild(0).GetChild(0).GetComponent<PurpleShoot>().bulletSpeed += 10f;
-            player.transform.GetChild(4).GetChild(0).GetChild(3).GetComponent<RedShoot>().bulletForce += 10f;
-            player.GetComponent<playerMovement>().moveSpeed += 20;
-            player.GetComponent<playerBehaviour>()._playerLifes += 1000;
+            playerCaracteristics.dashCooldown = 0;
+            playerCaracteristics.isLuckUp = true;
+            playerCaracteristics.damagePurple = 1000f;
+            playerCaracteristics.damageRed = 1000f;
+            playerCaracteristics.damageYellow = 1000f;
+            playerCaracteristics.purpleVelocity += 10f;
+            playerCaracteristics.redVelocity += 10f;
+            playerCaracteristics.velocity += 20f;
+            playerCaracteristics.lifes = 1000;
             player.GetComponent<playerBehaviour>().coins -= 5000;
         }
     }

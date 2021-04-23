@@ -51,7 +51,9 @@ public class RedShoot : MonoBehaviour
     public Sprite reloadGun1, reloadGun2, reloadGun3;
 
     public GameObject cursor;
-    private GameObject player;
+    private GameObject player, gameController;
+
+    public Sprite green, blue;
 
     void Start()
     {
@@ -69,13 +71,39 @@ public class RedShoot : MonoBehaviour
         bulletDamage = 5f;
         maxCdAmmo = 1.1f;
         cdAmmo = 0.0f;
+
+        gameController = GameObject.FindGameObjectWithTag("gameController");
+        powerUpGreen = gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen;
+        powerUpBlue = gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue;
+
+        if(powerUpGreen)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = green;
+        }
+        if (powerUpBlue)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = blue;
+        }
     }
 
+    private void Update()
+    {
+        if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue)
+        {
+            powerUpBlue = true;
+        }
+
+        if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen)
+        {
+            powerUpGreen = true;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-            if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
+       bulletForce = gameController.GetComponent<GameController>().playerCaracteristics.purpleVelocity;
+
+        if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsShotgun > 0 &&
                 this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
             {
                 Shoot();

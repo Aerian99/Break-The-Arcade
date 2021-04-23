@@ -52,7 +52,7 @@ public class playerMovement : MonoBehaviour
 
     // Audio
     public AudioSource aud;
-
+    GameObject gameController;
     void Start()
     {
         ghostController = GetComponent<GhostController>();
@@ -67,6 +67,7 @@ public class playerMovement : MonoBehaviour
         p_RunParticleRight = this.transform.GetChild(3).GetComponent<ParticleSystem>();
 
         platformsLayerMask = copyLayerMask + barrelMask + ExpBarrelMask + enemyMask;
+        gameController = GameObject.FindGameObjectWithTag("gameController");
 
         moveSpeed = 12f;
         jumpForce = 16.5f;
@@ -83,6 +84,9 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
+
+        //Change Variables
+        moveSpeed = gameController.GetComponent<GameController>().playerCaracteristics.velocity;
         // FUNCTIONS
         if(!stopTimer)
         { 
@@ -290,7 +294,7 @@ public class playerMovement : MonoBehaviour
         {
             canDash = true;
             dashImage.fillAmount = 1f;
-            dashCooldown = maxDashCooldown;
+            dashCooldown = gameController.GetComponent<GameController>().playerCaracteristics.dashCooldown;
             dashImage.GetComponent<Animator>().SetTrigger("ready");
         }
 

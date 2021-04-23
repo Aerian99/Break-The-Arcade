@@ -11,9 +11,29 @@ public class redBulletBehaviour : MonoBehaviour
     public ParticleSystem hitEffectPrefab;
     public GameObject hitDamagePopUp;
 
+    private GameObject gameController;
+
+    public Material green, blue;
+    public ParticleSystem effectGreen, effecBlue;
+
+
     private void Start()
     {
-        bulletForce += GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damageRedGun;
+        if(gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material = green;
+            gameObject.GetComponent<redBulletBehaviour>().hitEffectPrefab = effectGreen;
+        }else if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material = blue;
+            gameObject.GetComponent<redBulletBehaviour>().hitEffectPrefab = effecBlue;
+        }
+        //bulletForce += GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageRed;
+    }
+
+    private void Update()
+    {
+        bulletForce = GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damageRed;
     }
     void OnTriggerEnter2D(Collider2D other)
     {

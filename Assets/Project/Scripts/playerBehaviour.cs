@@ -68,6 +68,8 @@ public class playerBehaviour : MonoBehaviour
     public bool shieldActivated;
 
     private bool waitingReload;
+
+    private GameObject gameController;
     void Start()
     {
         timer = 0f;
@@ -77,11 +79,11 @@ public class playerBehaviour : MonoBehaviour
         perTimer.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
         hasReloaded = false;
-
+        gameController = GameObject.FindGameObjectWithTag("gameController");
 
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
-        _playerLifes = 3;
+        _playerLifes = gameController.GetComponent<GameController>().playerCaracteristics.lifes;
         //_playerLifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
         hurtSpeed = 0.0005f;
         maxcdAberration = 0.1f;
@@ -129,6 +131,7 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
+        _playerLifes = gameController.GetComponent<GameController>().playerCaracteristics.lifes;
         if (fill.fillAmount >= 1f)
         {
             fill.enabled = false;
@@ -239,7 +242,7 @@ public class playerBehaviour : MonoBehaviour
         if (activeImmunity)
         {
             SoundManagerScript.PlaySound("hurt");
-            _playerLifes -= 1;
+            gameController.GetComponent<GameController>().playerCaracteristics.lifes--;
             activePostProcessing = true;
             canBeDamaged = false;
             activeImmunity = false;
