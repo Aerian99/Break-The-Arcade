@@ -27,7 +27,7 @@ public class OpenShop : MonoBehaviour
             inShop = true;
         }
 
-        else if (inShop && Input.GetKeyDown(KeyCode.E))
+        else if (inShop && Input.GetKeyDown(KeyCode.E) && playerIn)
         {
             inShop = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>().enabled = true;
