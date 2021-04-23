@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+    public int level;
     public struct PlayerStats
     {
         public bool shotgunBlue, shotgunGreen, purpleBlue, purpleGreen, LaserBlue, LaserGreen;
@@ -29,6 +29,14 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        if (gameControllerInstance == null)
+        {
+            gameControllerInstance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         playerCaracteristics.damagePurple = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
         playerCaracteristics.damageRed = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
         playerCaracteristics.damageYellow = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.damagePurpleGun;
@@ -44,16 +52,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-
-        if (gameControllerInstance == null)
-        {
-            gameControllerInstance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
         player = GameObject.FindGameObjectWithTag("Player");
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
@@ -64,7 +62,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(SceneManager.GetActiveScene().name == "Lvl1")
+        {
+            level = 1;
+        }else if(SceneManager.GetActiveScene().name == "Lvl2.01")
+        {
+            level = 2;
+        }
         if (SceneManager.GetActiveScene().name == "MainMenu")
             Destroy(this.gameObject);
         if (activatedAbsorb)

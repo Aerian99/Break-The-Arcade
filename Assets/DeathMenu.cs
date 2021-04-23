@@ -18,7 +18,17 @@ public class DeathMenu : MonoBehaviour
         anim.SetBool("fadeIn", true);
         yield return new WaitForSeconds(1.5f);
         this.gameObject.GetComponent<AudioSource>().Stop();
-        SceneManager.LoadScene("MainMenu");
+        if(GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().level == 1)
+        {
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.lifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+            SceneManager.LoadScene("Lvl1");
+        }
+
+        if (GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().level == 2)
+        {
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.lifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+            SceneManager.LoadScene("Lvl2.01");
+        }
 
     }
 }

@@ -11,6 +11,10 @@ public class PickUpYellowGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked)
+        {
+            Destroy(gameObject);
+        }
         _interpolator.ToMax();
     }
 

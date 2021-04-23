@@ -83,6 +83,20 @@ public class QuestSaver : MonoBehaviour
                 }
             }
         }
+        else if (SceneManager.GetActiveScene().name == "Lvl2")
+        {
+            for (int i = 0; i < quest.Length; i++)
+            {
+                if (quest[i].actualMonstersKilled >= quest[i].monstersToKill)
+                {
+                    GameObject.Find("TextAchievements").GetComponent<TextMeshProUGUI>().text = "Quest Completed: " + quest[i].assigment;
+                    GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn", true);
+                    CheckQuestComplete();
+                    StartCoroutine(DisableAnimationAchievement());
+                    GenerateQuest(i);
+                }
+            }
+        }
     }
 
     IEnumerator DisableAnimationAchievement()
