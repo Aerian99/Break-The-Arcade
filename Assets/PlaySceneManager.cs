@@ -44,7 +44,8 @@ public class PlaySceneManager : MonoBehaviour
                 GameObject.Find("fadeOut").GetComponent<Animator>().SetBool("fadeIn", true);
             }
             if (cd >= cdGoMenu)
-            { 
+            {
+                Debug.LogError("GO LEVEL");
                 SceneManager.LoadScene("lvl2.01");
             }
         }
