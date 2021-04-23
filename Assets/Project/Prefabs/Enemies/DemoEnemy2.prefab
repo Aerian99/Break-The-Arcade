@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2289048108909249814}
   - component: {fileID: 2122144627}
   - component: {fileID: 2122144626}
+  - component: {fileID: 7620296859354984099}
   m_Layer: 20
   m_Name: DemoEnemy2
   m_TagString: Enemy
@@ -146,6 +147,27 @@ MonoBehaviour:
   explosionEffect: {fileID: 6397616948278149452, guid: 11cac3ff1b4ab1c409f8244be83edd8e,
     type: 3}
   lifes: 0
+--- !u!50 &7620296859354984099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289048108909249813}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2289048109288661343
 GameObject:
   m_ObjectHideFlags: 0
