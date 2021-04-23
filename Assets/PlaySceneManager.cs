@@ -45,7 +45,6 @@ public class PlaySceneManager : MonoBehaviour
             }
             if (cd >= cdGoMenu)
             {
-                Debug.LogError("GO LEVEL");
                 SceneManager.LoadScene("lvl2.01");
             }
         }

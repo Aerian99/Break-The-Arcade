@@ -65,9 +65,11 @@ public class GameController : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Lvl1")
         {
             level = 1;
+
         }else if(SceneManager.GetActiveScene().name == "Lvl2.01")
         {
             level = 2;
+            transform.GetChild(1).position = new Vector3(15.63f, -0.29f, 0f);
         }
         if (SceneManager.GetActiveScene().name == "MainMenu")
             Destroy(this.gameObject);
