@@ -81,7 +81,7 @@ public class BossPhaseBehaviour : MonoBehaviour
             sliderHealth.SetActive(false);
             EnemyRB.velocity = new Vector2(0, 0);
             anim.SetBool("dead", true);
-            GameObject.Find("YouWin").GetComponent<Animator>().SetBool("bossDead", true);
+            //GameObject.Find("YouWin").GetComponent<Animator>().SetBool("bossDead", true);
             GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().hasWon = true;
             Destroy(gameObject, 1f);
         }
