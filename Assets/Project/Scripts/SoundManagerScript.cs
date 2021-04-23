@@ -35,12 +35,14 @@ public class SoundManagerScript : MonoBehaviour
         radialRecharging,
         arcadeSpeaking,
         bubblePop,
-        continueButton;
+        continueButton,
+        buyShop;
 
     public static AudioSource audioSrc;
 
     void Start()
     {
+        buyShop = Resources.Load<AudioClip>("rise03");
         bubblePop = Resources.Load<AudioClip>("pop");
         jumpSound = Resources.Load<AudioClip>("jump");
         shotgunSound = Resources.Load<AudioClip>("shotgun");
@@ -83,6 +85,9 @@ public class SoundManagerScript : MonoBehaviour
     {
         switch (clip)
         {
+            case "buyShop":
+                audioSrc.PlayOneShot(buyShop);
+                break;
             case "jump":
                 audioSrc.PlayOneShot(jumpSound);
                 break;
