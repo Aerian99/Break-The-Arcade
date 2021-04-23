@@ -267,6 +267,7 @@ public class GameController : MonoBehaviour
         {
             playerCaracteristics.velocity += 1.5f;
             player.GetComponent<playerBehaviour>().coins -= 10;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 
@@ -278,6 +279,7 @@ public class GameController : MonoBehaviour
             playerCaracteristics.purpleVelocity += 10;
             playerCaracteristics.redVelocity += 10;
             player.GetComponent<playerBehaviour>().coins -= 15;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 
@@ -289,6 +291,7 @@ public class GameController : MonoBehaviour
             playerCaracteristics.damageRed += 1000f;
             playerCaracteristics.damageYellow += 1000f;
             player.GetComponent<playerBehaviour>().coins -= 500;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 
@@ -298,6 +301,7 @@ public class GameController : MonoBehaviour
         {
             playerCaracteristics.isLuckUp = true;
             player.GetComponent<playerBehaviour>().coins -= 500;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 
@@ -307,6 +311,7 @@ public class GameController : MonoBehaviour
         {
             playerCaracteristics.dashCooldown -= 0.5f;
             player.GetComponent<playerBehaviour>().coins -= 50;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 
@@ -324,6 +329,7 @@ public class GameController : MonoBehaviour
             playerCaracteristics.velocity += 20f;
             playerCaracteristics.lifes = 1000;
             player.GetComponent<playerBehaviour>().coins -= 5000;
+            SoundManagerScript.PlaySound("buyShop");
         }
     }
 }
