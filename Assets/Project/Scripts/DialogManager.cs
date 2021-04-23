@@ -12,6 +12,8 @@ public class DialogManager : MonoBehaviour
 
     public GameObject continueButton, bocadillo, purple, yellow, red;
     public bool typing = false;
+    public bool isDashTutorial;
+    public GameObject highlight;
 
     private void Start()
     {
@@ -32,6 +34,16 @@ public class DialogManager : MonoBehaviour
 
             NextSentence();
         }
+        if (isDashTutorial && index == 2)
+        {
+            highlight.SetActive(true);
+            isDashTutorial = false;
+        }
+        if (!isDashTutorial && index == 0)
+        {
+            highlight.SetActive(false);
+        }
+
     }
     public IEnumerator Typing()
     {
