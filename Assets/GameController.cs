@@ -263,7 +263,8 @@ public class GameController : MonoBehaviour
 
     public void buySpeed()
     {
-        if(player.GetComponent<playerBehaviour>().coins >= 10)
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player.GetComponent<playerBehaviour>().coins >= 10)
         {
             playerCaracteristics.velocity += 1.5f;
             player.GetComponent<playerBehaviour>().coins -= 10;
@@ -274,6 +275,7 @@ public class GameController : MonoBehaviour
 
     public void buyFasterBullets()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.GetComponent<playerBehaviour>().coins >= 15)
         {
             playerCaracteristics.purpleVelocity += 10;
@@ -285,6 +287,7 @@ public class GameController : MonoBehaviour
 
     public void buyOnePunch()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
             playerCaracteristics.damagePurple += 1000f;
@@ -297,6 +300,7 @@ public class GameController : MonoBehaviour
 
     public void buyMoreEnemyDrops()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.GetComponent<playerBehaviour>().coins >= 500)
         {
             playerCaracteristics.isLuckUp = true;
@@ -307,6 +311,7 @@ public class GameController : MonoBehaviour
 
     public void buyDashCooldown()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.GetComponent<playerBehaviour>().coins >= 50)
         {
             playerCaracteristics.dashCooldown -= 0.5f;
@@ -317,6 +322,7 @@ public class GameController : MonoBehaviour
 
     public void buyTryIt()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.GetComponent<playerBehaviour>().coins >= 5000)
         {
             playerCaracteristics.dashCooldown = 0;
