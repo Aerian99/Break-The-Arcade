@@ -10,8 +10,10 @@ public class barrilScript : MonoBehaviour
     public bool luckUp;
     public int lifes;
     public GameObject []lootBoxes;
+    public GameObject gameController;
     void Start()
     {
+        gameController = GameObject.FindGameObjectWithTag("gameController");
         lifes = 2;
         luckUp = false;
     }
@@ -19,6 +21,10 @@ public class barrilScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameController.GetComponent<GameController>().playerCaracteristics.isLuckUp)
+        {
+            luckUp = true;
+        }
         if (lifes <= 0)
         {
             this.GetComponent<CapsuleCollider2D>().enabled = false;

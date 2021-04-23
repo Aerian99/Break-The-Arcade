@@ -28,7 +28,9 @@ public class PurpleShoot : MonoBehaviour
     private float timestamp;
 
     public GameObject cursor;
-    private GameObject player;
+    private GameObject player, gameController;
+
+    public Sprite green, blue;
 
 
     void Start()
@@ -40,12 +42,35 @@ public class PurpleShoot : MonoBehaviour
         bulletDamage = 2f;
         maxCdAmmo = 1.1f;
         cdAmmo = 0.0f;
+        gameController = GameObject.FindGameObjectWithTag("gameController");
         player = GameObject.FindGameObjectWithTag("Player");
+        greenPowerUp = gameController.GetComponent<GameController>().playerCaracteristics.purpleGreen;
+        bluePowerUp = gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue;
+
+        if (greenPowerUp)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = green;
+        }
+        if (bluePowerUp)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = blue;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameController.GetComponent<GameController>().playerCaracteristics.purpleGreen)
+        {
+            greenPowerUp = true;
+        }
+
+        if(gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue)
+        {
+            bluePowerUp = true;
+        }
+
+        bulletSpeed = gameController.GetComponent<GameController>().playerCaracteristics.purpleVelocity;
         if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
             this.gameObject.activeInHierarchy == true && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
         {

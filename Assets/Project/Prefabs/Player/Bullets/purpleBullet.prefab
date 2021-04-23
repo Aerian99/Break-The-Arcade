@@ -148,3 +148,9 @@ MonoBehaviour:
     type: 3}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
     type: 3}
+  green: {fileID: 2100000, guid: 22b0737d5f1c0524ba1a6ee9f59c533f, type: 2}
+  blue: {fileID: 2100000, guid: dd31db69244c40a469853ba4d7ebb46a, type: 2}
+  effectGreen: {fileID: 8984649988707077970, guid: 38f7fbc6541759049a9704da3f346809,
+    type: 3}
+  effecBlue: {fileID: 8984649988707077970, guid: d61283bcdf11d8d4094a7f48b2f0a20a,
+    type: 3}

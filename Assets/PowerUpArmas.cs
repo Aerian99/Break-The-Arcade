@@ -18,11 +18,13 @@ public class PowerUpArmas : MonoBehaviour
     [HideInInspector]public Material defaultMatStandard, defaultMatGreenBullet, defaultMatBlueBullet, shootGunMatStandard,shootGunMatGreenBullet, shootGunMatBlueBullet;
     [HideInInspector]public ParticleSystem defaultStandardHit, defaultGreenHit, defaultBlueHit, shootGunStandardHit, shootGunGreenHit, shootGunBlueHit;
 
+    private GameObject gameController;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController = GameObject.FindGameObjectWithTag("gameController");
         _interpolator.ToMax();
         randomArma = Random.Range(0, 6);
 
@@ -69,10 +71,12 @@ public class PowerUpArmas : MonoBehaviour
             {
                 //Basic Weapon Green
                 case 0:
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
-                        .GetComponent<PurpleShoot>().greenPowerUp = true;
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
-                        .GetComponent<PurpleShoot>().bluePowerUp = false;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
+                    //    .GetComponent<PurpleShoot>().greenPowerUp = true;
+                    gameController.GetComponent<GameController>().playerCaracteristics.purpleGreen = true;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
+                    //    .GetComponent<PurpleShoot>().bluePowerUp = false;
+                    gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
                         .GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetChild(0)
@@ -85,10 +89,12 @@ public class PowerUpArmas : MonoBehaviour
 
                 //Basic Weapon Blue
                 case 1:
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
-                        .GetComponent<PurpleShoot>().bluePowerUp = true;
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
-                        .GetComponent<PurpleShoot>().greenPowerUp = false;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
+                    //    .GetComponent<PurpleShoot>().bluePowerUp = true;
+                    gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue = true;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
+                    //    .GetComponent<PurpleShoot>().greenPowerUp = false;
+                    gameController.GetComponent<GameController>().playerCaracteristics.purpleGreen = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0)
                         .GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(0).GetChild(0)
@@ -120,6 +126,8 @@ public class PowerUpArmas : MonoBehaviour
                         .GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 1 * 4.5f, 0);
 
                     laserGun.GetComponent<Image>().sprite = armas[randomArma];
+                    gameController.GetComponent<GameController>().playerCaracteristics.LaserBlue = false;
+                    gameController.GetComponent<GameController>().playerCaracteristics.LaserGreen = true;
                     break;
 
                 //Laser Weapon Blue
@@ -144,14 +152,19 @@ public class PowerUpArmas : MonoBehaviour
                         .GetChild(2).GetChild(1).GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1 * 4.5f);
 
                     laserGun.GetComponent<Image>().sprite = armas[randomArma];
+
+                    gameController.GetComponent<GameController>().playerCaracteristics.LaserBlue = true;
+                    gameController.GetComponent<GameController>().playerCaracteristics.LaserGreen = false;
                     break;
 
                 //Shotgun Weapon Green
                 case 4:
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
-                        .GetComponent<RedShoot>().powerUpGreen = true;
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
-                        .GetComponent<RedShoot>().powerUpBlue = false;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
+                    //    .GetComponent<RedShoot>().powerUpGreen = true;
+                    gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen = true;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
+                    //    .GetComponent<RedShoot>().powerUpBlue = false;
+                    gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
                         .GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetChild(0)
@@ -164,10 +177,12 @@ public class PowerUpArmas : MonoBehaviour
 
                 //Shotgun Weapon Blue
                 case 5:
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
-                        .GetComponent<RedShoot>().powerUpBlue = true;
-                    GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
-                        .GetComponent<RedShoot>().powerUpGreen = false;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
+                    //    .GetComponent<RedShoot>().powerUpBlue = true;
+                    gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue = true;
+                    //GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
+                    //    .GetComponent<RedShoot>().powerUpGreen = false;
+                    gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen = false;
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3)
                         .GetComponent<SpriteRenderer>().sprite = armas[randomArma];
                     GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetChild(0).GetChild(3).GetChild(0)
