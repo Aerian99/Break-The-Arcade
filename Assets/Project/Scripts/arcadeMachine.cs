@@ -16,6 +16,11 @@ public class arcadeMachine : MonoBehaviour
 
     private void Update()
     {
+        if (bocadillo.activeSelf)
+        {
+            e_button.SetActive(false);
+        }
+
         if (inTrigger && Input.GetKeyDown(KeyCode.E) && player.GetComponent<playerMovement>().enabled)
         {
                 this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
@@ -59,7 +64,6 @@ public class arcadeMachine : MonoBehaviour
         {
             e_button.SetActive(false);
             inTrigger = false;
-
         }
     }
 

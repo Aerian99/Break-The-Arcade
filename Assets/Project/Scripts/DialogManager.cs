@@ -10,13 +10,15 @@ public class DialogManager : MonoBehaviour
     public int index;
     public float speed;
 
-    public GameObject continueButton, bocadillo, purple, yellow, red;
+    public GameObject bocadillo, purple, yellow, red;
     public bool typing = false;
     public bool isDashTutorial;
     public GameObject highlight;
+    private bool endType;
 
     private void Start()
     {
+        endType = false;
         if(!typing)
         {
             StartCoroutine(Typing());
@@ -24,15 +26,10 @@ public class DialogManager : MonoBehaviour
     }
     private void Update()
     {
-        if (displayText.text == sentences[index])
-        { 
-            continueButton.SetActive(true);
-        }
-
-        if (continueButton.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && endType)
         {
-
             NextSentence();
+            endType = false;
         }
         if (isDashTutorial && index == 2)
         {
@@ -54,11 +51,12 @@ public class DialogManager : MonoBehaviour
             displayText.text += letter;
             yield return new WaitForSeconds(speed);
         }
+
+        endType = true;
     }
 
     public void NextSentence()
     {
-        continueButton.SetActive(false);
         if (index < sentences.Length - 1)
         {
             index++;
@@ -70,7 +68,6 @@ public class DialogManager : MonoBehaviour
             typing = false;
             index = 0;
             displayText.text = "";
-            continueButton.SetActive(false);
             bocadillo.SetActive(false);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<playerMovement>().enabled = true;
@@ -80,7 +77,6 @@ public class DialogManager : MonoBehaviour
                 yellow.GetComponent<YellowShoot>().enabled = true;
             else if (red.activeInHierarchy)
                 red.GetComponent<RedShoot>().enabled = true;
-
         }
     }
 }
