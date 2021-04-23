@@ -5,23 +5,36 @@ using UnityEngine;
 public class OpenShop : MonoBehaviour
 {
     bool playerIn;
+    public Camera camera;
+    private bool inShop;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inShop = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerIn && Input.GetKeyDown(KeyCode.E))
+        if (playerIn && Input.GetKeyDown(KeyCode.E) && !inShop)
         {
+            GameObject.FindGameObjectWithTag("gameController").GetComponentInChildren<Canvas>().worldCamera = camera;
             //GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("gameController").GetComponent<Animator>().SetTrigger("initShop");
+            inShop = true;
         }
+
+        else if (inShop && Input.GetKeyDown(KeyCode.E))
+        {
+            inShop = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>().enabled = true;
+            GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).gameObject.active = true;
+            GameObject.FindGameObjectWithTag("gameController").GetComponent<Animator>().SetTrigger("backToLevel");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
