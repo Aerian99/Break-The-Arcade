@@ -18,15 +18,15 @@ public class purpleBulletBehaviour : MonoBehaviour {
     {
         gameController = GameObject.FindGameObjectWithTag("gameController");
 
-        if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen)
+        if (gameController.GetComponent<GameController>().playerCaracteristics.purpleGreen)
         {
             gameObject.GetComponent<SpriteRenderer>().material = green;
-            gameObject.GetComponent<redBulletBehaviour>().hitEffectPrefab = effectGreen;
+            hitEffectPrefab = effectGreen;
         }
-        else if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunBlue)
+        else if (gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue)
         {
             gameObject.GetComponent<SpriteRenderer>().material = blue;
-            gameObject.GetComponent<redBulletBehaviour>().hitEffectPrefab = effecBlue;
+            hitEffectPrefab = effecBlue;
         }
         //bulletForce += GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.damagePurple;
     }

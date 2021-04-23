@@ -50,21 +50,25 @@ public class PatrolTop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
-        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
-        changeDirection();
-        triggerDetection();
+        if (player)
+        { 
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
+            changeDirection();
+            triggerDetection();
         
 
-        if (lifes <= 0f)
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            //player.GetComponent<playerBehaviour>().shieldActivated = true;
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            if (lifes <= 0f)
+            {
+                //GameObject player = GameObject.FindWithTag("Player");
+                //player.GetComponent<playerBehaviour>().shieldActivated = true;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                gameObject.GetComponent<Collider2D>().enabled = false;
            
-            //Dead();
-            SoundManagerScript.PlaySound("patrolEnemyDeath");
+                //Dead();
+                SoundManagerScript.PlaySound("patrolEnemyDeath");
+            }
+        
         }
     }
 
@@ -106,7 +110,8 @@ public class PatrolTop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
         {
-            GetComponent<Animator>().SetTrigger("hit");
+            if (gameObject.GetComponent<Animator>())
+                gameObject.GetComponent<Animator>().SetTrigger("hit");
         }
     }
 

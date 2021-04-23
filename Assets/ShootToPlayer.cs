@@ -20,15 +20,19 @@ public class ShootToPlayer : MonoBehaviour
 
     IEnumerator Shoot(int interactions)
     {
+
         Vector3 directionToShoot;
         while(gameObject.GetComponent<radialEnemyBehaviour>().lifes >= 0)
         {
+            if (player)
+            {
                 for (int i = 0; i < firepoints.Length; i++)
-                {
-                    directionToShoot = (player.transform.position - gameObject.transform.position).normalized;
-                    ShootDirection(directionToShoot, firepoints[i]);
-                    yield return new WaitForSeconds(0.3f);
-                }
+                    {
+                        directionToShoot = (player.transform.position - gameObject.transform.position).normalized;
+                        ShootDirection(directionToShoot, firepoints[i]);
+                        yield return new WaitForSeconds(0.3f);
+                    }
+            }
             yield return new WaitForSeconds(1f);
         }
         yield return null;

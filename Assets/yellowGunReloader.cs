@@ -18,9 +18,12 @@ public class yellowGunReloader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log((float)player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW);
-        float imgFillFloat = (float)player.GetComponent<playerBehaviour>().bulletsYellow / (float)player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT;
-        imgFill.fillAmount = imgFillFloat;
+        //Debug.Log((float)player.GetComponent<playerBehaviour>().MAX_BULLETS_YELLOW);
+        if (player)
+        { 
+            float imgFillFloat = (float)player.GetComponent<playerBehaviour>().bulletsYellow / (float)player.GetComponent<playerBehaviour>().MAX_YELLOW_SHOOT;
+            imgFill.fillAmount = imgFillFloat;     
+        }
 
         /* // ME DA PEREZA ARREGLARLO CON UN FOR 
          if (player.GetComponent<playerBehaviour>().bulletsYellow == 10)

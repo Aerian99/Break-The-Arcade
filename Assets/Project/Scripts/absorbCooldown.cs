@@ -37,44 +37,47 @@ public class absorbCooldown : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire2") && coolFull == false && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+        if (player)
         {
-            cooldown.fillAmount += incAbsorbSpeed / waitTime * Time.deltaTime;
-        }
-        else
-        {
-            cooldown.fillAmount -= decAbsorbSpeed / waitTime * Time.deltaTime;
-            //coolingDown = true;
-        }
+            if (Input.GetButton("Fire2") && coolFull == false && !player.GetComponent<playerBehaviour>().hasReloaded && !player.GetComponent<playerBehaviour>().weaponMenuUp)
+            {
+                cooldown.fillAmount += incAbsorbSpeed / waitTime * Time.deltaTime;
+            }
+            else
+            {
+                cooldown.fillAmount -= decAbsorbSpeed / waitTime * Time.deltaTime;
+                //coolingDown = true;
+            }
 
-        if (cooldown.fillAmount >= 1f)
-        {
-            cooldown.color = new Color(255, 0, 0);
-            coolFull = true;
-        }
-        else if (cooldown.fillAmount <= 0f)
-        {
-            cooldown.color = _initColor;
-            //coolingDown = false;
-            coolFull = false;
-        }
-        else if (cooldown.fillAmount < 0.3f && coolFull == false)
-        {
-            absorbZone.GetComponent<SpriteRenderer>().material = defaultAbsorbZone;
-        }
-        else if (cooldown.fillAmount > 0.3f && cooldown.fillAmount < 0.8f && coolFull == false)
-        {
-            absorbZone.GetComponent<SpriteRenderer>().material = orangeAbsorbZone;
-            warning.gameObject.SetActive(false);
-        }
-        else if (cooldown.fillAmount > 0.8f && coolFull == false)
-        {
-            absorbZone.GetComponent<SpriteRenderer>().material = redAbsorbZone;
-            warning.gameObject.SetActive(true);
-        }
-        else
-        {
-            warning.gameObject.SetActive(false);
+            if (cooldown.fillAmount >= 1f)
+            {
+                cooldown.color = new Color(255, 0, 0);
+                coolFull = true;
+            }
+            else if (cooldown.fillAmount <= 0f)
+            {
+                cooldown.color = _initColor;
+                //coolingDown = false;
+                coolFull = false;
+            }
+            else if (cooldown.fillAmount < 0.3f && coolFull == false)
+            {
+                absorbZone.GetComponent<SpriteRenderer>().material = defaultAbsorbZone;
+            }
+            else if (cooldown.fillAmount > 0.3f && cooldown.fillAmount < 0.8f && coolFull == false)
+            {
+                absorbZone.GetComponent<SpriteRenderer>().material = orangeAbsorbZone;
+                warning.gameObject.SetActive(false);
+            }
+            else if (cooldown.fillAmount > 0.8f && coolFull == false)
+            {
+                absorbZone.GetComponent<SpriteRenderer>().material = redAbsorbZone;
+                warning.gameObject.SetActive(true);
+            }
+            else
+            {
+                warning.gameObject.SetActive(false);
+            }
         }
 
     }

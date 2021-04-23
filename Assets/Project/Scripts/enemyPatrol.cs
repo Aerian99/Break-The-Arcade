@@ -54,60 +54,63 @@ public class enemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
-        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance, platformLayer);
-        changeDirection();
-        triggerDetection();
-        if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
-        {
-            if (Time.time > NextTimeToFire)
+        if (player)
+        {  
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.down, patrolDistance, platformLayer);
+            changeDirection();
+            triggerDetection();
+            if (!GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().activatedAbsorb)
             {
-                if (dist < 13f)
+                if (Time.time > NextTimeToFire)
                 {
-                    this.GetComponent<Rigidbody2D>().isKinematic = true;
-                    if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
+                    if (dist < 13f)
                     {
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                        anim.SetBool("isRunning", false);
-                    }
+                        this.GetComponent<Rigidbody2D>().isKinematic = true;
+                        if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
+                        {
+                            Shoot();
+                            patrolSpeed = 0f;
+                            rb.velocity = Vector2.zero;
+                            anim.SetBool("isRunning", false);
+                        }
 
-                    if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
-                    {
-                        Shoot();
-                        patrolSpeed = 0f;
-                        rb.velocity = Vector2.zero;
-                        anim.SetBool("isRunning", false);
+                        if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
+                        {
+                            Shoot();
+                            patrolSpeed = 0f;
+                            rb.velocity = Vector2.zero;
+                            anim.SetBool("isRunning", false);
+                        }
                     }
-                }
-                else
-                {
-                    patrolSpeed = 2f;
-                    this.GetComponent<Rigidbody2D>().isKinematic = false;
+                    else
+                    {
+                        patrolSpeed = 2f;
+                        this.GetComponent<Rigidbody2D>().isKinematic = false;
+                    }
                 }
             }
-        }
 
-        if (lifes <= 0f)
-        {
-            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("gumRobot", this.gameObject);
-            for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+            if (lifes <= 0f)
             {
-                if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Robot Patrols")
+                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("gumRobot", this.gameObject);
+                for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
                 {
-                    GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
-                }
+                    if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].typesOfMonsters == "Robot Patrols")
+                    {
+                        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].actualMonstersKilled += 1;
+                    }
 
+                }
+                anim.SetBool("isRunning", false);
+                anim.SetBool("isDead", true);
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                //Dead();
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+                SoundManagerScript.PlaySound("patrolEnemyDeath");
             }
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isDead", true);
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            //Dead();
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            SoundManagerScript.PlaySound("patrolEnemyDeath");
         }
     }
 

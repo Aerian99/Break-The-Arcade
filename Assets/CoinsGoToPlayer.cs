@@ -21,7 +21,8 @@ public class CoinsGoToPlayer : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         while (true)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity =  Vector3.Normalize(player.transform.position - gameObject.transform.position) * speed;
+            if(player)
+                gameObject.GetComponent<Rigidbody2D>().velocity =  Vector3.Normalize(player.transform.position - gameObject.transform.position) * speed;
             yield return null;
         }
 

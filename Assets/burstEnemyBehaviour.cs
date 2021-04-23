@@ -27,19 +27,22 @@ public class burstEnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lifes <= 0f)
-        {
-            GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("burstEnemy", this.gameObject);
-            player.GetComponent<playerBehaviour>().cdShield = 0f;
-            player.GetComponent<playerBehaviour>().shieldActivated = true;
+        if (player)
+        {    
+            if (lifes <= 0f)
+            {
+                GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().throwCoins("burstEnemy", this.gameObject);
+                player.GetComponent<playerBehaviour>().cdShield = 0f;
+                player.GetComponent<playerBehaviour>().shieldActivated = true;
             
-            //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            //Dead();
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            SoundManagerScript.PlaySound("radialEnemyDeath");
-            Destroy(this.gameObject);
+                //gameObject.GetComponent<radialEnemyBounce>().enabled = false;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                //Dead();
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                SoundManagerScript.PlaySound("radialEnemyDeath");
+                Destroy(this.gameObject);
+            }
         }
     }
 

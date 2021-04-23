@@ -175,12 +175,15 @@ public class QuestSaver : MonoBehaviour
     {
         while (true)
         {
-            SaveSystem.SaveQuest(quest, m_PowerUps);
-            if(SceneManager.GetActiveScene().name == "Lvl1" && GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-            {
-               SaveSystem.SaveCoins(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().coins);
+            if (GameObject.FindGameObjectWithTag("Player") != null)
+            { 
+                SaveSystem.SaveQuest(quest, m_PowerUps);
+                if(SceneManager.GetActiveScene().name == "Lvl1" && GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
+                {
+                   SaveSystem.SaveCoins(GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>().coins);
+                }
             }
-            yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(2);
         }
         yield return null;
     }

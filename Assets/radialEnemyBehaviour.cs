@@ -75,7 +75,8 @@ public class radialEnemyBehaviour : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PurpleBullet") || other.gameObject.CompareTag("RedBullet"))
         {
-            GetComponent<Animator>().SetTrigger("hit");
+            if (gameObject.GetComponent<Animator>())
+                gameObject.GetComponent<Animator>().SetTrigger("hit");
         }
     }
 }

@@ -14,7 +14,7 @@ public class PowerUp : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
+        healRatio = 1 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.healPowerUp;
         _interpolator.ToMax();
         randomObject = Random.Range(1, 4);
         if (pHealth)
@@ -67,10 +67,10 @@ public class PowerUp : MonoBehaviour
                 SoundManagerScript.PlaySound("dropSound");
                 if(player.GetComponent<playerBehaviour>()._playerLifes < 6)
                 {
-                    if (player.GetComponent<playerBehaviour>()._playerLifes + healRatio > 6)
-                        player.GetComponent<playerBehaviour>()._playerLifes = 6;
+                    if (GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.lifes + healRatio >= 5)
+                        GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.lifes = 5;
                     else
-                        player.GetComponent<playerBehaviour>()._playerLifes += healRatio;
+                        GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().playerCaracteristics.lifes += healRatio;
                     
                 }
                
