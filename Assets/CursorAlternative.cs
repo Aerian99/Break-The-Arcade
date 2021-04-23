@@ -15,13 +15,17 @@ public class CursorAlternative : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("Canvas").transform.GetChild(0).GetComponent<MainMenuManager>().pressedPlay)
-        {
-            this.GetComponent<Animator>().enabled = false;
-            this.GetComponent<SpriteRenderer>().enabled = false;
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        { 
+        
+            if (GameObject.Find("Canvas").transform.GetChild(0).GetComponent<MainMenuManager>().pressedPlay)
+            {
+                this.GetComponent<Animator>().enabled = false;
+                this.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
         
-        if (SceneManager.GetActiveScene().name == "Achievements")
+        else if (SceneManager.GetActiveScene().name == "Achievements")
         {
             coinAdded = true;
         }

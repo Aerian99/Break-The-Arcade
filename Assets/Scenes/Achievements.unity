@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3753906}
-  - component: {fileID: 3753907}
   - component: {fileID: 3753909}
   - component: {fileID: 3753908}
   - component: {fileID: 3753910}
@@ -160,30 +159,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3753907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3753905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d473e2882406094b920db49c1eff828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playButton: {fileID: 0}
-  ExitButton: {fileID: 0}
-  optionsButton: {fileID: 0}
-  text: {fileID: 0}
-  slider: {fileID: 0}
-  volumeButton: {fileID: 0}
-  backButton: {fileID: 0}
-  questsButton: {fileID: 0}
-  credits: {fileID: 0}
-  creditText: {fileID: 0}
-  camera: {fileID: 0}
-  fadepanel: {fileID: 0}
 --- !u!114 &3753908
 MonoBehaviour:
   m_ObjectHideFlags: 0
