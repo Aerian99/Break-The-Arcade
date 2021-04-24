@@ -222,18 +222,7 @@ public class playerBehaviour : MonoBehaviour
 
     void ActiveMiniMap()
     {
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            activeCamera.SetActive(true);
-            Time.timeScale = 0.1f;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
-        else if(Input.GetKeyUp(KeyCode.Tab))
-        {
-            activeCamera.SetActive(false);
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = 0.02F;
-        }
+      
     }
 
     void Immunity()

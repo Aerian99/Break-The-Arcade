@@ -35,6 +35,7 @@ public class PickUpYellowGun : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            SoundManagerScript.PlaySound("newWeapon");
             GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().yellowUnlocked = true;
             collision.gameObject.GetComponent<playerBehaviour>().bulletsYellow = 0;
             collision.gameObject.GetComponent<playerBehaviour>().reservedAmmoYellow = 0;
