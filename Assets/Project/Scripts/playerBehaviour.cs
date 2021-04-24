@@ -72,6 +72,7 @@ public class playerBehaviour : MonoBehaviour
     private GameObject gameController;
     void Start()
     {
+        GameObject.Find("Quest Saver").GetComponent<QuestSaver>().LoadSystem();
         timer = 0f;
         waitTime = 2f;
         fill.fillAmount = 0f;

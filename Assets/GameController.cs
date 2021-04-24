@@ -73,6 +73,11 @@ public class GameController : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "MainMenu")
             Destroy(this.gameObject);
+
+        if(SceneManager.GetActiveScene().name == "GameOver")
+        {
+            GameObject.Find("Quest Saver").GetComponent<QuestSaver>().LoadSystem();
+        }
         if (activatedAbsorb)
         {
             radialEnemies = GameObject.FindGameObjectsWithTag("AnimationLight");

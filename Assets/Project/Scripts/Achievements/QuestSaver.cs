@@ -32,7 +32,7 @@ public class QuestSaver : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        m_PowerUps = SaveSystem.LoadPlayer(quest, m_PowerUps, out coins);
+        LoadSystem();
 
         for (int y = 0; y < quest.Length; y++)
         {
@@ -44,7 +44,10 @@ public class QuestSaver : MonoBehaviour
 
         StartCoroutine(Saving());
     }
-
+    public void LoadSystem()
+    {
+        m_PowerUps = SaveSystem.LoadPlayer(quest, m_PowerUps, out coins);
+    }
     // Update is called once per frame
     void Update()
     {
