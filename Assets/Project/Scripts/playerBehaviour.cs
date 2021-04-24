@@ -60,7 +60,7 @@ public class playerBehaviour : MonoBehaviour
     public GameObject weaponMenu;
     [HideInInspector] public bool weaponMenuUp;
     public GameObject aimController1, aimController2, aimController3, aimController4;
-
+    public TextMeshProUGUI textMesh; 
     //SHIELD
 
     public GameObject shield;
@@ -70,6 +70,7 @@ public class playerBehaviour : MonoBehaviour
     private bool waitingReload;
 
     private GameObject gameController;
+    private int extraLifes;
     void Start()
     {
         GameObject.Find("Quest Saver").GetComponent<QuestSaver>().LoadSystem();
@@ -81,7 +82,7 @@ public class playerBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         hasReloaded = false;
         gameController = GameObject.FindGameObjectWithTag("gameController");
-
+        textMesh = GameObject.Find("TextExtraLifes").GetComponent<TextMeshProUGUI>();
         reloadText = GameObject.Find("ReloadText");
         animator = GetComponent<Animator>();
         _playerLifes = gameController.GetComponent<GameController>().playerCaracteristics.lifes;
@@ -116,6 +117,7 @@ public class playerBehaviour : MonoBehaviour
         cdShield = 0f;
         maxCdShield = 5f;
         coins = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().coins;
+        extraLifes = GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
     }
 
 
@@ -131,6 +133,7 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
+        textMesh.text = "+ " + extraLifes;
         _playerLifes = gameController.GetComponent<GameController>().playerCaracteristics.lifes;
         if (fill.fillAmount >= 1f)
         {
@@ -222,18 +225,7 @@ public class playerBehaviour : MonoBehaviour
 
     void ActiveMiniMap()
     {
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            activeCamera.SetActive(true);
-            Time.timeScale = 0.1f;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
-        else if(Input.GetKeyUp(KeyCode.Tab))
-        {
-            activeCamera.SetActive(false);
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = 0.02F;
-        }
+     
     }
 
     void Immunity()
