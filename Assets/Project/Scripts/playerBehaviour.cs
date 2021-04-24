@@ -60,7 +60,7 @@ public class playerBehaviour : MonoBehaviour
     public GameObject weaponMenu;
     [HideInInspector] public bool weaponMenuUp;
     public GameObject aimController1, aimController2, aimController3, aimController4;
-    public TextMeshProUGUI textMesh; 
+    [HideInInspector] public TextMeshProUGUI textMesh; 
     //SHIELD
 
     public GameObject shield;

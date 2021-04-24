@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
     public Animator camera, fadepanel;
 
     public bool pressedPlay;
+    public static bool comesFromQuests;
 
     public void ShowButtons()
     {
@@ -47,6 +48,7 @@ public class MainMenuManager : MonoBehaviour
 
         if (camera.GetComponent<DemoCameraAnimation>().endCamAnimation)
         {
+            GameObject.Find("Music").GetComponent<MusicScript>().StopMusic();
             SceneManager.LoadScene("Lvl1");
         }
     }
@@ -118,5 +120,18 @@ public class MainMenuManager : MonoBehaviour
         Achievements();
         Options();
         Credits();
+
+        if (comesFromQuests)
+        {
+            GameObject.Find("cursor_alternative").GetComponent<CursorAlternative>().coinAdded = true;
+            playButton.SetActive(true);
+            ExitButton.SetActive(true);
+            optionsButton.SetActive(true);
+            questsButton.SetActive(true);
+            text.SetActive(false);
+            credits.SetActive(true);
+            camera.SetBool("CoinInsert", true);
+            comesFromQuests = false;
+        }
     }
 }

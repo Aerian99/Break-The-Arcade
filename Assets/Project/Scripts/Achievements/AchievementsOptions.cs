@@ -18,6 +18,7 @@ public class AchievementsOptions : MonoBehaviour
         }
         else
         {
+            MainMenuManager.comesFromQuests = true;
             SceneManager.LoadScene("MainMenu");
         }
     }
