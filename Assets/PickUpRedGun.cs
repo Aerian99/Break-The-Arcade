@@ -37,6 +37,7 @@ public class PickUpRedGun : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SoundManagerScript.PlaySound("newWeapon");
             GameObject.FindGameObjectWithTag("gameController").GetComponent<GameController>().redUnlocked = true;
             collision.gameObject.GetComponent<playerBehaviour>().bulletsShotgun = 0;
             collision.gameObject.GetComponent<playerBehaviour>().reservedAmmoShotgun = 0;

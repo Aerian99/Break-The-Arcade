@@ -36,7 +36,8 @@ public class SoundManagerScript : MonoBehaviour
         arcadeSpeaking,
         bubblePop,
         continueButton,
-        buyShop;
+        buyShop,
+        getNewGun;
 
     public static AudioSource audioSrc;
 
@@ -76,6 +77,7 @@ public class SoundManagerScript : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         arcadeSpeaking = Resources.Load<AudioClip>("arcadeSpeaking");
         continueButton = Resources.Load<AudioClip>("continueButton");
+        getNewGun = Resources.Load<AudioClip>("Rise03");
 
 
     }
@@ -180,6 +182,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "continue":
                 audioSrc.PlayOneShot(continueButton);
+                break;
+            case "newWeapon":
+                audioSrc.PlayOneShot(getNewGun);
                 break;
             default:
                 break;
