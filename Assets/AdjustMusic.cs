@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class AdjustMusic : MonoBehaviour
 {
-     public void UpdateVolume(float volume)
+
+    private void Start()
+    {
+        UpdateVolume(0.5f);
+    }
+    public void UpdateVolume(float volume)
     {
         AudioListener.volume = volume;
     }

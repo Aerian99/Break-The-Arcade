@@ -202,7 +202,22 @@ public class LaserShoot : MonoBehaviour
         {
             if (hit.collider.CompareTag("Enemy") && time >= nextFrame)
             {
-                if (hit.collider.name == "BurstEnemy(Clone)")
+                if (hit.collider.name == "NeedNameEnemy(Clone)")
+                {
+                    hit.collider.GetComponent<demoEnemyBehaviour>().lifes -= bulletForce;
+                    popUpDamage(bulletForce, hit);
+                }
+                else if (hit.collider.name == "DemoEnemy2(Clone)")
+                {
+                    hit.collider.GetComponent<demoEnemyBehaviour2>().lifes -= bulletForce;
+                    popUpDamage(bulletForce, hit);
+                }
+                else if (hit.collider.name == "EnemyPatrol2(Clone)")
+                {
+                    hit.collider.GetComponent<EnemyPatrol2>().lifes -= bulletForce;
+                    popUpDamage(bulletForce, hit);
+                }
+                else if (hit.collider.name == "BurstEnemy(Clone)")
                 {
                     hit.collider.GetComponent<burstEnemyBehaviour>().lifes -= bulletForce;
                     popUpDamage(bulletForce, hit);
