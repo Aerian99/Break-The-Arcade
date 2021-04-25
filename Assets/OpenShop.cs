@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class OpenShop : MonoBehaviour
 {
-    bool playerIn;
+    [HideInInspector]public bool playerIn;
     public Camera camera;
-    private bool inShop;
+    [HideInInspector]public bool inShop;
 
     // Start is called before the first frame update
     void Start()

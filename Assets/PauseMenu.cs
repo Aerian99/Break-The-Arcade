@@ -24,7 +24,13 @@ public class PauseMenu : MonoBehaviour
                 ResumeGame();
             }
             else
-                PauseGame();
+            {
+                if (GameObject.Find("Temp Shop").GetComponent<OpenShop>().playerIn == false)
+                { 
+                    PauseGame();
+                }
+            
+            }
         }
     }
 

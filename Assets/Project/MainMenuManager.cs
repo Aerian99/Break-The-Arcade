@@ -48,7 +48,7 @@ public class MainMenuManager : MonoBehaviour
 
         if (camera.GetComponent<DemoCameraAnimation>().endCamAnimation)
         {
-            GameObject.Find("Music").GetComponent<MusicScript>().StopMusic();
+            Destroy(GameObject.Find("Music"));
             SceneManager.LoadScene("Lvl1");
         }
     }
