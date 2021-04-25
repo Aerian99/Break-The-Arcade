@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
 
     private static GameController gameControllerInstance;
 
-
     private void Awake()
     {
         if (gameControllerInstance == null)
@@ -47,7 +46,7 @@ public class GameController : MonoBehaviour
         playerCaracteristics.damagePurple = 5f;
         playerCaracteristics.damageRed = 4f;
         playerCaracteristics.damageYellow = 5f;
-        playerCaracteristics.lifes = 1000 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+        playerCaracteristics.lifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
     }
     // Start is called before the first frame update
     void Start()
@@ -56,7 +55,6 @@ public class GameController : MonoBehaviour
         maxcdAbsorb = 2.5f;
         cdAbsorb = maxcdAbsorb;
         activatedAbsorb = false;
-        
     }
 
     // Update is called once per frame
@@ -101,8 +99,6 @@ public class GameController : MonoBehaviour
            
             cdAbsorb -= Time.deltaTime;
         }
-
-        
     }
 
     public void BeginGame()
@@ -271,24 +267,33 @@ public class GameController : MonoBehaviour
     public void buySpeed()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if (player.GetComponent<playerBehaviour>().coins >= 10)
+        if (player.GetComponent<playerBehaviour>().coins >= 10 && playerCaracteristics.velocity < 18f)
         {
             playerCaracteristics.velocity += 1.5f;
             player.GetComponent<playerBehaviour>().coins -= 10;
             SoundManagerScript.PlaySound("buyShop");
         }
+        if (playerCaracteristics.velocity >= 18f)
+        {
+            SoundManagerScript.PlaySound("error");
+        }
+
     }
 
 
     public void buyFasterBullets()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if (player.GetComponent<playerBehaviour>().coins >= 15)
+        if (player.GetComponent<playerBehaviour>().coins >= 15 && playerCaracteristics.purpleVelocity < 80f)
         {
             playerCaracteristics.purpleVelocity += 10;
             playerCaracteristics.redVelocity += 10;
             player.GetComponent<playerBehaviour>().coins -= 15;
             SoundManagerScript.PlaySound("buyShop");
+        }
+        if (playerCaracteristics.purpleVelocity >= 80f)
+        {
+            SoundManagerScript.PlaySound("error");
         }
     }
 

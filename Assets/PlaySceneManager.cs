@@ -34,6 +34,7 @@ public class PlaySceneManager : MonoBehaviour
 
         if (hasWon)
         {
+            CheckRemainingBullets();
             cd += Time.deltaTime;
             if (cd >= cdDeath)
             {
@@ -51,6 +52,14 @@ public class PlaySceneManager : MonoBehaviour
         if (finishedGame)
         {
             SceneManager.LoadSceneAsync("MainMenu");
+        }
+    }
+
+    private void CheckRemainingBullets()
+    {
+        if (GameObject.Find("demoBullet(Clone)"))
+        {
+            Destroy(GameObject.Find("demoBullet(Clone)"));
         }
     }
 }

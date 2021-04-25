@@ -36,15 +36,18 @@ public class demoEnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activateAttack();
-        
-        if (lifes <= 0f)
+        if (player)
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            SoundManagerScript.PlaySound("radialEnemyDeath");
+            activateAttack();
+        
+            if (lifes <= 0f)
+            {
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+                SoundManagerScript.PlaySound("radialEnemyDeath");
+            }      
         }
     }
 

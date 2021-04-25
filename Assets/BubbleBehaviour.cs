@@ -34,6 +34,7 @@ public class BubbleBehaviour : MonoBehaviour
         {
             if(gameObject.transform.childCount <= 0)
             {
+                CheckRemainingBullets();
                 for (int i = 0; i < coinSpawner.Length; i++)
                     coinSpawner[i].GetComponent<CoinWinBoss>().coinSpawner = true;
                 YouWinText.GetComponent<Animator>().SetBool("bossDead", true);
@@ -139,5 +140,13 @@ public class BubbleBehaviour : MonoBehaviour
     public void spawnAmmo(Vector3 position)
     {
         Instantiate(ammoPrefab, position, Quaternion.identity);
+    }
+
+    private void CheckRemainingBullets()
+    {
+        if (GameObject.Find("demoBullet(Clone)"))
+        {
+            Destroy(GameObject.Find("demoBullet(Clone)"));
+        }
     }
 }

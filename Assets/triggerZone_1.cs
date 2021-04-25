@@ -11,7 +11,7 @@ public class triggerZone_1 : MonoBehaviour
     private int robotEnemy, tower, alien;
 
     public GameObject[] doors;
-    private bool hasPassedLevel = false;
+    public bool hasPassedLevel = false;
     public GameObject[] enemies;
     public Vector3[] positions;
 

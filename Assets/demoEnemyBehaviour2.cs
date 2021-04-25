@@ -38,9 +38,12 @@ public class demoEnemyBehaviour2 : MonoBehaviour
 
     void followPlayer()
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) < followDistance)
-        {
-            this.transform.position = Vector2.MoveTowards (this.transform.position, new Vector2(player.transform.position.x, this.transform.position.y), moveSpeed * Time.deltaTime);
+        if (player)
+        { 
+            if (Vector2.Distance(this.transform.position, player.transform.position) < followDistance)
+            {
+                this.transform.position = Vector2.MoveTowards (this.transform.position, new Vector2(player.transform.position.x, this.transform.position.y), moveSpeed * Time.deltaTime);
+            }      
         }
     }
     

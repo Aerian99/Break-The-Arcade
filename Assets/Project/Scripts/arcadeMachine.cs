@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class arcadeMachine : MonoBehaviour
 {
     public GameObject dialogCanvas, bocadillo, purple, yellow, red, e_button;
     private bool inTrigger = false;
     private GameObject player;
+    private bool levelTrigger;
 
     private void Start()
     {
@@ -16,35 +18,39 @@ public class arcadeMachine : MonoBehaviour
 
     private void Update()
     {
-        if (bocadillo.activeSelf)
-        {
-            e_button.SetActive(false);
-        }
+        if (!GameObject.Find("zone_3"))
+        { 
+            if (bocadillo.activeSelf)
+            {
+                e_button.SetActive(false);
+            }
 
-        if (inTrigger && Input.GetKeyDown(KeyCode.E) && player.GetComponent<playerMovement>().enabled)
-        {
-                this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
+            if (inTrigger && Input.GetKeyDown(KeyCode.E) && player.GetComponent<playerMovement>().enabled)
+            {
+                    this.gameObject.GetComponent<Animator>().SetBool("turnOn", true);
 
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                player.GetComponent<Animator>().SetBool("isRunning", false);
-                player.GetComponent<playerMovement>().enabled = false;
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                    player.GetComponent<Animator>().SetBool("isRunning", false);
+                    player.GetComponent<playerMovement>().enabled = false;
 
-                if (purple.activeInHierarchy)
-                    purple.GetComponent<PurpleShoot>().enabled = false;
-                else if (yellow.activeInHierarchy)
-                    yellow.GetComponent<LaserShoot>().enabled = false;
-                else if (red.activeInHierarchy)
-                    red.GetComponent<RedShoot>().enabled = false;
+                    if (purple.activeInHierarchy)
+                        purple.GetComponent<PurpleShoot>().enabled = false;
+                    else if (yellow.activeInHierarchy)
+                        yellow.GetComponent<LaserShoot>().enabled = false;
+                    else if (red.activeInHierarchy)
+                        red.GetComponent<RedShoot>().enabled = false;
 
-                bocadillo.SetActive(true);
-                if (dialogCanvas.activeInHierarchy && !dialogCanvas.GetComponent<DialogManager>().typing)
-                {
-                    dialogCanvas.GetComponent<DialogManager>().typing = true;
-                    dialogCanvas.GetComponent<DialogManager>().index = 0;
-                    dialogCanvas.GetComponent<DialogManager>().StartCoroutine(dialogCanvas.GetComponent<DialogManager>().Typing());
-                }
-                dialogCanvas.SetActive(true);
+                    bocadillo.SetActive(true);
+                    if (dialogCanvas.activeInHierarchy && !dialogCanvas.GetComponent<DialogManager>().typing)
+                    {
+                        dialogCanvas.GetComponent<DialogManager>().typing = true;
+                        dialogCanvas.GetComponent<DialogManager>().index = 0;
+                        dialogCanvas.GetComponent<DialogManager>().StartCoroutine(dialogCanvas.GetComponent<DialogManager>().Typing());
+                    }
+                    dialogCanvas.SetActive(true);
+            }
+        
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

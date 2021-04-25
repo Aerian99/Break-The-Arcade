@@ -43,53 +43,56 @@ public class EnemyPatrol2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
-
-        if (Vector2.Distance(player.transform.position, this.transform.position) < 13f)
+        if (player)
         {
-            changeDirection();
-            triggerDetection();
-            if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
+            groundInfo = Physics2D.Raycast(groundDetecion.position, Vector2.right, patrolDistance, platformLayer);
+      
+            if (Vector2.Distance(player.transform.position, this.transform.position) < 13f)
             {
-                if (Time.time > NextTimeToFire)
+                changeDirection();
+                triggerDetection();
+                if ((player.transform.position.x - this.transform.position.x) > 0 && movingRight)
                 {
-                    Shoot();
+                    if (Time.time > NextTimeToFire)
+                    {
+                        Shoot();
+                    }
+                    patrolSpeed = 0f;
+                    rb.velocity = Vector2.zero;
+                    anim.SetTrigger("FlyDown");
+                    anim.SetBool("Flying", false);
                 }
-                patrolSpeed = 0f;
-                rb.velocity = Vector2.zero;
-                anim.SetTrigger("FlyDown");
-                anim.SetBool("Flying", false);
-            }
 
-            if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
-            {
-                if (Time.time > NextTimeToFire)
+                if ((player.transform.position.x - this.transform.position.x) < 0 && !movingRight)
                 {
-                    Shoot();
-                }
-                patrolSpeed = 0f;
-                rb.velocity = Vector2.zero;
-                anim.SetTrigger("FlyDown");
-                anim.SetBool("Flying", false);
+                    if (Time.time > NextTimeToFire)
+                    {
+                        Shoot();
+                    }
+                    patrolSpeed = 0f;
+                    rb.velocity = Vector2.zero;
+                    anim.SetTrigger("FlyDown");
+                    anim.SetBool("Flying", false);
                 
+                }
+                this.GetComponent<Rigidbody2D>().isKinematic = false;
             }
-            this.GetComponent<Rigidbody2D>().isKinematic = false;
-        }
-        else
-        {
-            anim.SetTrigger("FlyUp");
-            changeDirection();
-            triggerDetection();
-            rb.gravityScale = 1f;
-            patrolSpeed = 5f;
-            this.GetComponent<Rigidbody2D>().isKinematic = true;
-        }
+            else
+            {
+                anim.SetTrigger("FlyUp");
+                changeDirection();
+                triggerDetection();
+                rb.gravityScale = 1f;
+                patrolSpeed = 5f;
+                this.GetComponent<Rigidbody2D>().isKinematic = true;
+            }
         
-        if (lifes <= 0f)
-        {
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            SoundManagerScript.PlaySound("patrolEnemyDeath");
+            if (lifes <= 0f)
+            {
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+                SoundManagerScript.PlaySound("patrolEnemyDeath");
+            }
         }
     }
 

@@ -39,9 +39,10 @@ public class spawnBallRight : MonoBehaviour
         {
             if (collision.tag == "RedBullet")
             {
-                //DO BULLETS OR SPAWN MONSTERS
-                transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
-                int randNumber = Random.Range(0, 4);
+                int randNumber = Random.Range(0, 2);
+                if (randNumber == 1)
+                    transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
+                randNumber = Random.Range(0, 4);
                 if (randNumber == 0)
                 {
                     transform.parent.parent.GetComponent<BubbleBehaviour>().spawnEnemy(transform.position);
@@ -64,9 +65,10 @@ public class spawnBallRight : MonoBehaviour
         {
             if (collision.tag == "PurpleBullet")
             {
-                //DO BULLETS OR SPAWN MONSTERS
-                transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
-                int randNumber = Random.Range(0, 4);
+                int randNumber = Random.Range(0, 2);
+                if (randNumber == 1)
+                    transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
+                randNumber = Random.Range(0, 4);
                 if (randNumber == 0)
                 {
                     transform.parent.parent.GetComponent<BubbleBehaviour>().spawnEnemy(transform.position);
@@ -90,9 +92,10 @@ public class spawnBallRight : MonoBehaviour
 
     public void doYesYellow()
     {
-        //DO BULLETS OR SPAWN MONSTERS
-        transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
-        int randNumber = Random.Range(0, 4);
+        int randNumber = Random.Range(0, 2);
+        if (randNumber == 1)
+            transform.parent.parent.GetComponent<BubbleBehaviour>().spawnAmmo(transform.position);
+        randNumber = Random.Range(0, 4);
         if (randNumber == 0)
         {
             transform.parent.parent.GetComponent<BubbleBehaviour>().spawnEnemy(transform.position);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionBubble : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class CollisionBubble : MonoBehaviour
     {
         if(collision.tag == "BubbleTrigger")
         {
+            GameObject.Find("GameController").GetComponent<GameController>().playerCaracteristics.lifes = 0;
             Destroy(GameObject.FindGameObjectWithTag("Player"));
+            GameObject.Find("-----SCENEMANAGEMENT").GetComponent<PlaySceneManager>().isDead = true;
+
         }
     }
 }
