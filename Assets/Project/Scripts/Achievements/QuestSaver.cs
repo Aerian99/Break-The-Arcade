@@ -78,14 +78,11 @@ public class QuestSaver : MonoBehaviour
             {
                 if(quest[i].actualMonstersKilled >= quest[i].monstersToKill)
                 {
-                    if (quest[0].assigment != "")
-                    { 
                         GameObject.Find("TextAchievements").GetComponent<TextMeshProUGUI>().text = "Quest Completed: " + quest[i].assigment;
                         GameObject.Find("ImageAchievements").GetComponent<Animator>().SetBool("PlayIn",true);
                         CheckQuestComplete();
                         StartCoroutine(DisableAnimationAchievement());
                         GenerateQuest(i);                   
-                    }
                 }
             }
         }
