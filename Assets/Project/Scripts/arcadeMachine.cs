@@ -8,7 +8,7 @@ public class arcadeMachine : MonoBehaviour
     public GameObject dialogCanvas, bocadillo, purple, yellow, red, e_button;
     private bool inTrigger = false;
     private GameObject player;
-    private bool levelTrigger;
+    public bool firstArcade;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class arcadeMachine : MonoBehaviour
 
     private void Update()
     {
-        if (!GameObject.Find("zone_3"))
+        if (!GameObject.Find("zone_3") || firstArcade)
         { 
             if (bocadillo.activeSelf)
             {

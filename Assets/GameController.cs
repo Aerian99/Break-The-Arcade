@@ -273,7 +273,7 @@ public class GameController : MonoBehaviour
             player.GetComponent<playerBehaviour>().coins -= 10;
             SoundManagerScript.PlaySound("buyShop");
         }
-        if (playerCaracteristics.velocity >= 18f)
+        else
         {
             SoundManagerScript.PlaySound("error");
         }
@@ -291,7 +291,7 @@ public class GameController : MonoBehaviour
             player.GetComponent<playerBehaviour>().coins -= 15;
             SoundManagerScript.PlaySound("buyShop");
         }
-        if (playerCaracteristics.purpleVelocity >= 80f)
+        else
         {
             SoundManagerScript.PlaySound("error");
         }
@@ -308,6 +308,10 @@ public class GameController : MonoBehaviour
             player.GetComponent<playerBehaviour>().coins -= 500;
             SoundManagerScript.PlaySound("buyShop");
         }
+        else
+        {
+            SoundManagerScript.PlaySound("error");
+        }
     }
 
     public void buyMoreEnemyDrops()
@@ -319,6 +323,10 @@ public class GameController : MonoBehaviour
             player.GetComponent<playerBehaviour>().coins -= 500;
             SoundManagerScript.PlaySound("buyShop");
         }
+        else
+        {
+            SoundManagerScript.PlaySound("error");
+        }
     }
 
     public void buyDashCooldown()
@@ -329,6 +337,10 @@ public class GameController : MonoBehaviour
             playerCaracteristics.dashCooldown -= 0.5f;
             player.GetComponent<playerBehaviour>().coins -= 50;
             SoundManagerScript.PlaySound("buyShop");
+        }
+        else
+        {
+            SoundManagerScript.PlaySound("error");
         }
     }
 
@@ -348,6 +360,10 @@ public class GameController : MonoBehaviour
             playerCaracteristics.lifes = 1000;
             player.GetComponent<playerBehaviour>().coins -= 5000;
             SoundManagerScript.PlaySound("buyShop");
+        }
+        else
+        {
+            SoundManagerScript.PlaySound("error");
         }
     }
 }
