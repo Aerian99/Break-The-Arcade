@@ -17,8 +17,8 @@ public class CursorAlternative : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         { 
-        
-            if (GameObject.Find("Canvas").transform.GetChild(0).GetComponent<MainMenuManager>().pressedPlay)
+            //if (GameObject.Find("Canvas").transform.GetChild(0).GetComponent<MainMenuManager>().pressedPlay)
+            if(GameObject.Find("MainMenu").GetComponent<MainMenuManager>().pressedPlay)
             {
                 this.GetComponent<Animator>().enabled = false;
                 this.GetComponent<SpriteRenderer>().enabled = false;

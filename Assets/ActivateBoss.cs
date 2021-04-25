@@ -20,6 +20,7 @@ public class ActivateBoss : MonoBehaviour
         for (int i = 0; i < doors.Length; i++)
         {
             doors[i].GetComponent<Animator>().SetBool("hasPassed", true);
+            doors[i].GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

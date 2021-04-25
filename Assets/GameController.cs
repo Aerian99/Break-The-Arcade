@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
         playerCaracteristics.damagePurple = 5f;
         playerCaracteristics.damageRed = 4f;
         playerCaracteristics.damageYellow = 5f;
-        playerCaracteristics.lifes = 5 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
+        playerCaracteristics.lifes = 1000 + GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes;
     }
     // Start is called before the first frame update
     void Start()

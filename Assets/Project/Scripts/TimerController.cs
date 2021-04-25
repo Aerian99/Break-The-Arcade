@@ -31,7 +31,8 @@ public class TimerController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        timeCounter = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
+        if(GameObject.Find("Time"))
+            timeCounter = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
     }
     public void BeginTimer()
     {

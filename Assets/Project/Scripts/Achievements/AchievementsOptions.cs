@@ -46,5 +46,15 @@ public class AchievementsOptions : MonoBehaviour
             GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps.playerUpLifes = 0;
         }
         SaveSystem.ResetAll();
+        for (int i = 0; i < GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest.Length; i++)
+        { 
+            if (GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest[i].assigment == "")
+            {
+                GameObject.Find("Quest Saver").GetComponent<QuestSaver>().GenerateQuest(i);
+            }
+        }
+        SaveSystem.SaveQuest(GameObject.Find("Quest Saver").GetComponent<QuestSaver>().quest, GameObject.Find("Quest Saver").GetComponent<QuestSaver>().m_PowerUps);
     }
+
 }
+
