@@ -28,6 +28,7 @@ public class PlaySceneManager : MonoBehaviour
                 anim.SetBool("fadeIn", true);
             if (cd >= cdDeath)
             {
+                MainMenuManager.comesFromLevel = true;
                 SceneManager.LoadScene("GameOver");
             }
         }
@@ -51,6 +52,7 @@ public class PlaySceneManager : MonoBehaviour
         }
         if (finishedGame)
         {
+            MainMenuManager.comesFromLevel = true;
             SceneManager.LoadSceneAsync("MainMenu");
         }
     }

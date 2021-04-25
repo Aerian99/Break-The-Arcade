@@ -20,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
     public Animator camera, fadepanel;
 
     public bool pressedPlay;
-    public static bool comesFromQuests;
+    public static bool comesFromQuests, comesFromLevel;
 
     public void ShowButtons()
     {

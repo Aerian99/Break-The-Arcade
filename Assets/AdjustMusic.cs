@@ -8,7 +8,7 @@ public class AdjustMusic : MonoBehaviour
 
     private void Start()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu" && !MainMenuManager.comesFromQuests)
+        if(SceneManager.GetActiveScene().name == "MainMenu" && !MainMenuManager.comesFromQuests && !MainMenuManager.comesFromLevel)
             UpdateVolume(0.5f);
     }
     public void UpdateVolume(float volume)
