@@ -122,7 +122,7 @@ public class BubbleBehaviour : MonoBehaviour
 
         if(randNumber == 0)
         {
-            Instantiate(enemiesGround[Random.Range(0, enemiesGround.Length)], groundReference, Quaternion.identity);
+            Instantiate(enemiesGround[0], groundReference, Quaternion.identity);
         }
         else
         {
