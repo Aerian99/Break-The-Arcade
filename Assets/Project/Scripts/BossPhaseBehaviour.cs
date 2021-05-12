@@ -41,7 +41,7 @@ public class BossPhaseBehaviour : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         speed = 6;
         EnemyRB = GetComponent<Rigidbody2D>();
-        health = maxHealth = 1000;
+        health = maxHealth = 300;
         phase = Phases.INITPHASE;
         StartCoroutine(shootBehaviour());
     }

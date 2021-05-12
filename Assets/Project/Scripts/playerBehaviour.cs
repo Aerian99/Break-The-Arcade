@@ -133,6 +133,15 @@ public class playerBehaviour : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            player.transform.position = new Vector3(-188.72f, -34.6f, 0.0f);
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            player.transform.position = new Vector3(-180.4f, -11.32f, 0.0f);
+        }
         textMesh.text = "+ " + extraLifes;
         _playerLifes = gameController.GetComponent<GameController>().playerCaracteristics.lifes;
         if (fill.fillAmount >= 1f)

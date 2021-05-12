@@ -51,12 +51,16 @@ public class barrilScript : MonoBehaviour
     {
         if(!luckUp)
         { 
-            int randomNumber = Random.Range(0, 2);
-            if (randomNumber == 0)
+            int randomNumber = Random.Range(0, 4);
+            if (randomNumber != 0)
             {
                 if (lootBoxes.Length > 0)
                 {
-                    Instantiate(lootBoxes[(Random.Range(0, lootBoxes.Length))], this.transform.position, Quaternion.identity);
+                    int randomLoot = Random.Range(0, 4);
+                    if (randomLoot != 0)
+                      Instantiate(lootBoxes[0], this.transform.position, Quaternion.identity);
+                    else
+                      Instantiate(lootBoxes[1], this.transform.position, Quaternion.identity);
                 }
             }
             Destroy(this.gameObject);
