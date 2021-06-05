@@ -24,7 +24,7 @@ public class demoEnemyShoot : MonoBehaviour
     void Start()
     {
         _rotationSpeed = 60f; // Firepoints rotation speed
-        _bulletSpeed = 12f; // Bullet speed
+        _bulletSpeed = 7f; // Bullet speed
         maxCd = 0.03f; // Time between bullets
         cd = maxCd;
         cdRate = maxCdRate;

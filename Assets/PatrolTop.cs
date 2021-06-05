@@ -22,7 +22,7 @@ public class PatrolTop : MonoBehaviour
     public GameObject bulletPrefab, bulletPacman;
     private float FireRate = 0.5f;
     private float NextTimeToFire = 1f;
-    private float shootForce = 15f;
+    private float shootForce = 10f;
 
     private GameObject player;
 

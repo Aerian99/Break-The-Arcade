@@ -13,7 +13,7 @@ public class ShootToPlayer : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        bulletSpeed = 7f;
+        bulletSpeed = 4f;
         shootTimes = 2;
         StartCoroutine(Shoot(shootTimes));
     }

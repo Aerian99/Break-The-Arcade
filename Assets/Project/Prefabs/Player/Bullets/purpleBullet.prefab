@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dda2ec6e3c7205042bbf4e3f9bf91522, type: 2}
+  - {fileID: 2100000, guid: 96bc25deda9fb3a408865cc853473015, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10c81a5b321ade14498618621acca3a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4dae7264953e9c949b8bb2467a220b19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletForce: 3005
-  hitEffectPrefab: {fileID: 8984649988707077970, guid: 713bc9bd6451d8a459cf8890f79f3f8d,
+  hitEffectPrefab: {fileID: 8984649988707077970, guid: d61283bcdf11d8d4094a7f48b2f0a20a,
     type: 3}
   hitDamagePopUp: {fileID: 1017683624646179571, guid: 9b84de7f97f610d478a31686c6274e89,
     type: 3}

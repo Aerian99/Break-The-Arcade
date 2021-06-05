@@ -17,7 +17,7 @@ public class radialEnemyBehaviour : MonoBehaviour
         fade = 1;
         isDying = false;
     }
-
+        
     // Update is called once per frame
     void Update()
     {

@@ -34,7 +34,7 @@ public class Burst_Enemy_Attack : MonoBehaviour
         playerGO = GameObject.FindGameObjectWithTag("Player");
 
         _moveSpeed = 75f;
-        _bulletSpeed = 15f;
+        _bulletSpeed = 10f;
 
         _dashMaxTime = 1f;
         _dashRateTime = 3f;

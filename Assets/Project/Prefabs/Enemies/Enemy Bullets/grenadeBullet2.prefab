@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7f6a37b88a47244910919e857ca230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numBullets: 12
-  bulletSpeed: 10
+  numBullets: 10
+  bulletSpeed: 8
   bulletPrefab: {fileID: 6510735618960470853, guid: f16c5657e65a4304aaee465829daddd6,
     type: 3}
   lightEffect: {fileID: 2144508844022983516, guid: b4276309be84ea342b8f772a7487fb96,
