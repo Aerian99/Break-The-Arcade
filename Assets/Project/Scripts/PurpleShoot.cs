@@ -64,11 +64,15 @@ public class PurpleShoot : MonoBehaviour
         {
             greenPowerUp = true;
         }
-
-        if(gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue)
+        else
+            greenPowerUp = false;
+      
+        if (gameController.GetComponent<GameController>().playerCaracteristics.purpleBlue)
         {
             bluePowerUp = true;
         }
+        else
+            bluePowerUp = false;
 
         bulletSpeed = gameController.GetComponent<GameController>().playerCaracteristics.purpleVelocity;
         if (Time.time >= timestamp && Input.GetButton("Fire1") && player.GetComponent<playerBehaviour>().bulletsPurple > 0 &&
@@ -130,6 +134,7 @@ public class PurpleShoot : MonoBehaviour
         }
         else
         {
+            timeBetweenShots = 0.20f;
             muzzle.Play();
             bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
             timestamp = Time.time + timeBetweenShots;

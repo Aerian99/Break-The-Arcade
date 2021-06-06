@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     [HideInInspector]public bool activatedAbsorb;
     GameObject[] robotPatrols, radialEnemies;
     public PlayerStats playerCaracteristics;
+    public PlayerStats pCaracteristicsBeforeBoss;
 
     private static GameController gameControllerInstance;
 

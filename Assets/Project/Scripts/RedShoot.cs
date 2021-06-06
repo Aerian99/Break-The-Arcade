@@ -92,11 +92,15 @@ public class RedShoot : MonoBehaviour
         {
             powerUpBlue = true;
         }
+        else
+            powerUpBlue = false;
 
         if (gameController.GetComponent<GameController>().playerCaracteristics.shotgunGreen)
         {
             powerUpGreen = true;
         }
+        else
+            powerUpGreen = false;
     }
     // Update is called once per frame
     void FixedUpdate()
