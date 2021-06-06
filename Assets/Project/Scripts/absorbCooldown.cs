@@ -8,6 +8,7 @@ public class absorbCooldown : MonoBehaviour
 {
     public Image cooldown;
     public TextMeshProUGUI warning;
+    private bool isPlayingError;
     //private bool coolingDown;
     public static bool coolFull;
     private float waitTime;
@@ -33,6 +34,7 @@ public class absorbCooldown : MonoBehaviour
         incAbsorbSpeed = 1f;
         decAbsorbSpeed = 0.5f;
         player = GameObject.FindGameObjectWithTag("Player");
+        isPlayingError = false;
     }
 
     void Update()
@@ -53,6 +55,7 @@ public class absorbCooldown : MonoBehaviour
             {
                 cooldown.color = new Color(255, 0, 0);
                 coolFull = true;
+                SoundManagerScript.StopSound();
             }
             else if (cooldown.fillAmount <= 0f)
             {
@@ -68,9 +71,15 @@ public class absorbCooldown : MonoBehaviour
             {
                 absorbZone.GetComponent<SpriteRenderer>().material = orangeAbsorbZone;
                 warning.gameObject.SetActive(false);
+                isPlayingError = false;
             }
             else if (cooldown.fillAmount > 0.8f && coolFull == false)
             {
+                if (!isPlayingError)
+                {
+                    SoundManagerScript.PlaySound("errorAbsorb");
+                    isPlayingError = true;
+                }
                 absorbZone.GetComponent<SpriteRenderer>().material = redAbsorbZone;
                 warning.gameObject.SetActive(true);
             }

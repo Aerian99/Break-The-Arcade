@@ -183,6 +183,8 @@ public class handController : MonoBehaviour
         // ABSORB GUN ZONE
         if (Input.GetButton("Fire2") && absorbCooldown.coolFull == false /*&& !playerBehaviour.weaponMenuUp*/)
         {
+            if (!SoundManagerScript.IsPlaying())
+                SoundManagerScript.PlaySound("Absorbing");
             absorbGun.SetActive(true);
             purpleGun.SetActive(false);
             yellowGun.SetActive(false);
@@ -209,6 +211,9 @@ public class handController : MonoBehaviour
             yellowGun.SetActive(false);
             redGun.SetActive(true);
         }
+
+        if (Input.GetButtonUp("Fire2"))
+            SoundManagerScript.StopSound();
 
         if (currentPos >= 3)
         {

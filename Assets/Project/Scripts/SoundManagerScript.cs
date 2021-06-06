@@ -38,7 +38,9 @@ public class SoundManagerScript : MonoBehaviour
         continueButton,
         buyShop,
         getNewGun,
-        error;
+        error,
+        errorAbsorb,
+        absorbing;
 
     public static AudioSource audioSrc;
 
@@ -80,6 +82,8 @@ public class SoundManagerScript : MonoBehaviour
         continueButton = Resources.Load<AudioClip>("continueButton");
         getNewGun = Resources.Load<AudioClip>("Rise03");
         error = Resources.Load<AudioClip>("error");
+        errorAbsorb = Resources.Load<AudioClip>("errorAbsorb");
+        absorbing = Resources.Load<AudioClip>("absorb");
 
     }
 
@@ -190,6 +194,12 @@ public class SoundManagerScript : MonoBehaviour
             case "error":
                 audioSrc.PlayOneShot(error);
                 break;
+            case "errorAbsorb":
+                audioSrc.PlayOneShot(errorAbsorb);
+                break;
+            case "Absorbing":
+                audioSrc.PlayOneShot(absorbing);
+                break;
             default:
                 break;
         }
@@ -198,6 +208,11 @@ public class SoundManagerScript : MonoBehaviour
     public static void StopSound()
     {
         audioSrc.Stop();
+    }
+
+    public static bool IsPlaying()
+    {
+        return audioSrc.isPlaying;
     }
 
 }
