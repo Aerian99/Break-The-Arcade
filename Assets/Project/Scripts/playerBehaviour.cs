@@ -195,10 +195,7 @@ public class playerBehaviour : MonoBehaviour
 
 
         WeaponMenu();
-        if (!weaponMenuUp)
-        {
-            ActiveMiniMap();
-        }
+      
         //ActiveMiniMap();
         //healthBarEffect();
         healthBarPixel();

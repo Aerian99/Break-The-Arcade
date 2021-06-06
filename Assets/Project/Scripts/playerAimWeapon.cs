@@ -25,9 +25,10 @@ public class playerAimWeapon : MonoBehaviour
     void HandleAiming()
     {
         Vector3 mousePosition = GetMouseWorldPosition();
-        Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        Vector3 aimDirection = (mousePosition - player.transform.position).normalized;
         angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         aimPos.eulerAngles = new Vector3(0, 0, angle);
+        Debug.Log(aimDirection);
 
         Vector3 aimlocalScale = Vector3.one;
         if (angle > 90 || angle < -90)
